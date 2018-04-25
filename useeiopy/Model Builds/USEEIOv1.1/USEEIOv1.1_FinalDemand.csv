@@ -1,0 +1,389 @@
+"BEA_389_code","BEA_389_def","Location","2007_US_Consumption","2007_US_Production"
+"1111A0","Fresh soybeans, canola, flaxseeds, and other oilseeds","US",0,9318615589.53449
+"1111B0","Fresh wheat, corn, rice, and other grains","US",1816353138.97649,32367876968.385
+"111200","Fresh vegetables, melons, and potatoes","US",17926957254.9409,14942955288.5093
+"111300","Fresh fruits and tree nuts","US",18124893977.0746,9939498842.29483
+"111400","Greenhouse crops, mushrooms, nurseries, and flowers","US",14061723169.275,12691663535.3188
+"111900","Tobacco, cotton, sugarcane, peanuts, sugar beets, herbs and spices, and other crops","US",416746623.492821,5529553544.79997
+"112120","Dairies","US",187613829.982437,253532202.678969
+"1121A0","Cattle ranches and feedlots","US",143354450.611213,-3287946114.93607
+"112300","Poultry farms","US",5392572503.51819,5819452348.81339
+"112A00","Animal farms and aquaculture ponds (except cattle and poultry)","US",4539545098.72141,3985784987.38801
+"113000","Timber and raw forest products","US",0,-1899299669.37702
+"114000","Wild-caught fish and game","US",6477839002.77362,-3955396563.26713
+"115000","Agriculture and forestry support","US",200890878.567431,120286513.710129
+"211000","Unrefined oil and gas","US",0,-269689661132.476
+"212100","Coal","US",24176164.3627909,1390840514.51821
+"212230","Copper, nickel, lead, and zinc","US",0,2416479088.39018
+"2122A0","Iron, gold, silver, and other metal ores","US",232306050.480408,-676202962.22641
+"212310","Dimensional stone","US",0,-733544871.510855
+"2123A0","Sand, gravel, clay, phosphate, other nonmetallic minerals","US",137301036.139158,-996494117.958422
+"213111","Well drilling","US",59796914183.4306,59795778288.5503
+"21311A","Other support activities for mining","US",53159029331.7376,53874639650.6746
+"221100","Electricity","US",161509797819.461,159970883194.43
+"221200","Natural gas","US",55995985426.7677,56463766939.5285
+"221300","Drinking water and wastewater treatment","US",42229224952.741,42624034026.465
+"230301","Nonresidential maintenance and repair","US",0,94273127.0614104
+"230302","Residential maintenance and repair","US",0,14351550.0514331
+"233210","Health care structures","US",46077496600.7689,46077496600.7689
+"233230","Manufacturing structures","US",47570560736.459,47570560736.459
+"233240","Power and communication structures","US",113820541325.32,113820541325.32
+"233262","Educational and vocational structures","US",114948163531.713,114948163531.713
+"233293","Highways and streets","US",97676063271.3483,97676063271.3483
+"2332A0","Commercial structures, including farm structures","US",173978761802.232,173978761802.232
+"2332B0","Other nonresidential structures","US",172557431304.26,172557431304.26
+"233411","Single-family residential structures","US",302622930091.185,302622930091.185
+"233412","Multifamily residential structures","US",58601583963.1942,58601583963.1942
+"2334A0","Other residential structures","US",188823342129.083,188823342129.083
+"311111","Dog and cat food","US",16680077854.6084,17708875389.0308
+"311119","Other animal food","US",2890083396.44074,4583940221.50701
+"311210","Flours and malts","US",4002177793.32288,4945070686.32871
+"311221","Corn products","US",694443821.093319,1575099392.60077
+"311225","Refined vegetable, olive, and seed oils","US",5355889042.90429,5735418657.86579
+"31122A","Vegetable oils and by-products","US",1174135052.07444,1824498268.25044
+"311230","Breakfast cereals","US",9377867110.41671,9864660766.64598
+"311300","Sugar, candy, and chocolate","US",25108769906.8867,20888416053.0618
+"311410","Frozen food","US",24545431781.7724,22695002773.1436
+"311420","Fruit and vegetable preservation","US",29851779276.3083,26981768928.1084
+"311513","Cheese","US",13028246954.3671,12511359350.265
+"311514","Dry, condensed, and evaporated dairy","US",7308292401.70076,8973486935.92559
+"31151A","Fluid milk and butter","US",22128009186.845,22210973805.5726
+"311520","Ice cream and frozen desserts","US",3308679582.68127,3385208492.4361
+"311615","Packaged poultry","US",34751438895.3673,38325753821.6898
+"31161A","Packaged meat (except poultry)","US",74436537619.2158,78520513049.9627
+"311700","Seafood","US",5431588570.92406,3125919811.06047
+"311810","Bread and other baked goods","US",46784226081.1585,45037734392.3638
+"3118A0","Cookies, crackers, pastas, and tortillas","US",22084961022.9899,21815196593.07
+"311910","Snack foods","US",26517944066.0144,27996885274.7554
+"311920","Coffee and tea","US",5388678319.0046,5059562316.33913
+"311930","Flavored drink concentrates","US",255135615.778001,-3547549578.72233
+"311940","Seasonings and dressings","US",10790954078.0694,9986048242.73941
+"311990","All other foods","US",17033535012.4378,17513518594.5274
+"312110","Soft drinks, bottled water, and ice","US",44191394265.8875,42425497626.0044
+"312120","Breweries and beer","US",29154049394.3901,25184399660.0085
+"312130","Wineries and wine","US",14756699713.7014,9946469918.20041
+"312140","Distilleries and spirits","US",10128024031.4039,6112130878.72297
+"312200","Tobacco products","US",68007835185.4848,68581899075.3761
+"313100","Fiber, yarn, and thread","US",127154617.328226,439154372.80952
+"313200","Fabric","US",1728152979.82168,-688422336.931018
+"313300","Finished and coated fabric","US",449118348.141039,122068063.853718
+"314110","Carpets and rugs","US",14078171487.0745,12385197658.0497
+"314120","Curtains and linens","US",13944894466.0285,1725141583.42621
+"314900","Other textiles","US",4570855679.13858,488237620.249995
+"315000","Clothing","US",109138448309.374,11744591091.314
+"316000","Leather","US",37894434133.6395,1824242183.17512
+"321100","Lumber and treated lumber","US",0,-5411711667.98131
+"321200","Plywood and veneer","US",0,-7092140165.96079
+"321910","Wooden windows, door, and flooring","US",0,-2239278596.16175
+"3219A0","Veneer, plywood, and engineered wood","US",10746969299.5288,7474252161.5432
+"322110","Wood pulp","US",0,275303986.945222
+"322120","Paper","US",14560226736.8353,12133896368.0178
+"322130","Cardboard","US",0,-3495504014.45828
+"322210","Cardboard containers","US",650862231.939041,1033353524.3117
+"322220","Paper bags and coated paper","US",1378594558.47255,296066327.234155
+"322230","Stationery","US",873840768.658406,1254922843.00087
+"322291","Sanitary paper (tissues, napkins, diapers, etc.)","US",6286515805.95374,6291075382.24092
+"322299","All other converted paper products","US",888158998.222315,247779389.312977
+"323110","Books, newspapers, magazines, and other print media","US",2561304443.88143,2346565675.19635
+"323120","Printing support","US",0,76673282.6576577
+"324110","Gasoline, fuels, and by-products of petroleum refining","US",288962350364.964,209182963503.65
+"324121","Asphalt pavement","US",0,-215087637.925984
+"324122","Asphalt shingles","US",0,44349720.3930558
+"324190","Other petroleum and coal products","US",7766283274.73631,8867226566.05889
+"325110","Petrochemicals","US",0,-3728580188.52801
+"325120","Compressed Gases","US",82302282.8368517,286847662.240204
+"325130","Synthetic dyes and pigments","US",0,271936981.185687
+"325180","Other basic inorganic chemicals","US",6181389503.38921,4934253453.01909
+"325190","Other basic organic chemicals","US",1512319921.71761,11745730846.7162
+"325211","Plastics","US",0,16947217020.6916
+"3252A0","Synthetic rubber and artificial and synthetic fibers","US",0,1786363104.56492
+"325310","Fertilizers","US",320669007.566577,-6537859259.75401
+"325320","Pesticides","US",3578869950.72733,4717918611.89835
+"325411","Medicinal and botanical ingredients","US",0,-430586358.831843
+"325412","Pharmaceutical products (pills, powders, solutions, etc.)","US",220134202820.185,127354541120.302
+"325413","Blood sugar, pregnancy, and other diagnostic test kits","US",0,153651172.951886
+"325414","Vaccines and other biological medical products","US",0,1411527624.28064
+"325510","Paints and coatings","US",428053491.32649,1408308918.5938
+"325520","Adhesives","US",1150790415.72936,2165350190.34435
+"325610","Soap and cleaning compounds","US",28541577181.2081,31481869606.9032
+"325620","Toiletries","US",34768703441.8586,34629427213.2374
+"325910","Ink and ink cartridges","US",0,409099736.744873
+"3259A0","Chemicals (except basic chemicals, agrichemicals, polymers, paints, pharmaceuticals,soaps, cleaning compounds)","US",2494022951.89868,5397736913.06517
+"326110","Plastic bags, films, and sheets","US",3437067805.12305,3594212456.05224
+"326120","Plastic pipe, fittings, and sausage casings","US",0,371295854.383514
+"326130","Laminated plastic plates and shapes","US",0,47037206.436724
+"326140","Polystyrene foam products","US",726889369.915015,722207312.781907
+"326150","Urethane and other foam products","US",756166084.611169,813214117.621775
+"326160","Plastic bottles","US",0,-228288638.719616
+"326190","Other plastic products","US",11865361793.2731,5266707808.45739
+"326210","Rubber tires","US",13019120284.7919,4020340091.98249
+"326220","Rubber and plastic belts and hoses","US",612380355.936022,-390607096.192836
+"326290","Other rubber products","US",1580669504.52689,426136606.23609
+"327100","Clay and ceramic products","US",2551903374.78934,-3229629370.48019
+"327200","Glass and glass products","US",3286585264.5319,157434708.740379
+"327310","Cement","US",0,-1465807662.15951
+"327320","Ready-mix concrete","US",0,-312562580.821515
+"327330","Concrete pipe, bricks, and blocks","US",0,-107382259.263191
+"327390","Other concrete products","US",31656015.7586439,-1137433393.81059
+"327400","Lime and gypsum products","US",24403564.2937674,16269042.8625116
+"327910","Abrasive products","US",184315936.999466,-1000062600.10678
+"327991","Cut stone and stone products","US",3658089556.72427,-291343250.688705
+"327992","Ground or treated minerals and earth","US",195838987.861586,46494148.1973549
+"327993","Mineral wool","US",0,8843780.87068789
+"327999","Other nonmetallic mineral products","US",0,-140049953.233084
+"331110","Primary iron, steel, and ferroalloy products","US",40885516.0300166,-23086688051.616
+"331200","Secondary steel products","US",530061747.877258,-4167539247.82635
+"33131A","Aluminum","US",0,-5281372643.78211
+"33131B","Aluminum products","US",0,-1112875458.17382
+"331411","Primary copper","US",0,-4936520910.70003
+"331419","Other primary nonferrous metals","US",0,-13146082610.7776
+"331420","Secondary copper products","US",0,-1658727075.31339
+"331490","Other secondary nonferrous metal products","US",28657921.8106996,728465883.44617
+"331510","Cast iron and steel","US",0,-99801371.1484748
+"331520","Nonferrous metal casts","US",208413475.163905,228212755.304476
+"332114","Custom metal rolls","US",0,25096989.6459159
+"33211A","All other forging, stamping, and sintering","US",0,226611758.469071
+"33211B","Lids, jars, bottle caps, other metal closures and crowns","US",572987214.894275,535094272.827118
+"332200","Cutlery and handtools","US",6107795559.03977,1403142223.02265
+"332310","Metal structural products","US",235504829.738451,-2358396707.28601
+"332320","Metal windows, doors, and architectural products","US",471157274.25282,-570168585.508847
+"332410","Power boilers and heat exchangers","US",3103210510.90004,2406897024.98012
+"332420","Heavy gauge metal tanks","US",4060209551.22447,4153026675.46831
+"332430","Light gauge metal cans, boxes, and containers","US",413957189.259926,432253639.613956
+"332500","Metal hinges, keys, lock, and other hardware","US",777550946.150461,-3939817821.76092
+"332600","Springs and wires","US",104015028.094557,-857546120.512906
+"332710","Machine shops","US",649631167.294716,988819121.899921
+"332720","Screws, nuts, and bolts","US",247859777.259777,-1967591711.99171
+"332800","Metal coatings, engravings, and heat treatments","US",0,-61917093.2700712
+"332913","Metal plumbing drains, faucets, valves, and other fittings","US",0,-1201457908.76313
+"33291A","Valve and fittings (except for plumbing)","US",3428637726.14306,-2970511292.23055
+"332991","Ball and roller bearings","US",0,-873193406.834513
+"332996","Fabricated pipe and pipe fittings","US",1033571592.63172,1083668174.92765
+"33299A","Ammunition, arms, ordnance, and related accessories","US",6665604192.70863,6474568286.33356
+"33299B","Metal pipe fittings, ball and roller bearings, industrial patterns, metal bath fixtures, other misc. fabricated metals","US",4450481252.98174,-500330138.352778
+"333111","Farm machinery and equipment","US",20731452698.126,19217883538.1522
+"333112","Lawn and garden equipment","US",7021670694.86405,7324862511.80947
+"333120","Construction machinery","US",29976452757.8346,30748137710.6457
+"333130","Mining and oil/gas field machinery","US",11803936712.4857,20217393558.9039
+"333220","Plastics and rubber industry machinery","US",4395352202.46882,3150530517.93851
+"333295","Semiconductor machinery","US",5141673353.14512,9311246409.11342
+"33329A","Machinery for the paper, textile, food or other industries (except semiconductor machinery)","US",19041733805.117,16493291235.7104
+"333313","Office machinery","US",3488524134.55326,-1365311727.55883
+"333314","Optical instruments and lenses","US",3570131347.14216,3089411533.53001
+"333315","Photography and photocopying equipment","US",2484340138.8988,1939098891.46109
+"33331A","Vending, commercial laundry, and other commercial and service industry machinery","US",11220798629.9765,11004469515.3781
+"333414","Heating equipment other than warm air furnaces","US",2147464552.34167,1473773562.85081
+"333415","Air conditioning, refrigeration, and warm air heating equipment","US",9548108241.30213,5984146195.63504
+"33341A","Air purification and ventilation equipment","US",3241238923.02885,2233272388.29289
+"333511","Industrial molds","US",5725427169.37517,4861996632.22502
+"333514","Special tools, dies, jigs, and fixtures","US",8154907042.48184,7272345953.9417
+"33351A","Metal cutting and forming machine tools","US",9429922928.80987,5101207239.35497
+"33351B","Cutting and machine tool accessory, rolling mill, and other metalworking machines","US",2455141015.54404,2594214569.94819
+"333611","Turbines and turbine generator sets","US",8387654391.74667,10897996847.6859
+"333612","Speed changers, industrial high-speed drives, and gears","US",0,-2951802768.43324
+"333613","Mechanical power transmission equipment","US",0,-995347421.276021
+"333618","Other engine equipment","US",3790041914.33428,2027509528.38456
+"333912","Air and gas compressors","US",7733015567.03763,7803167660.30737
+"33391A","Pumps and pumping equipment","US",10384017745.2802,10025307685.6612
+"333920","Material handling equipment","US",23069580263.1863,21656075217.7013
+"333991","Power tools","US",5094995242.86171,2414993550.51751
+"333993","Packaging machinery","US",5255594377.51004,3432224899.59839
+"333994","Industrial process furnaces and ovens","US",1386228421.36663,2103792107.89849
+"33399A","Welding and Soldering Equipment, Scales and Balances, and other general purpose machinery","US",14100593105.3086,13793774093.6556
+"33399B","Hydraulic pumps, motors, cylinders and actuators","US",519317117.728138,-664964677.182926
+"334111","Computers","US",34239613339.8576,20118933314.4956
+"334112","Computer storage device readers","US",5540593622.04178,-753946804.080783
+"33411A","Computer terminals and other computer peripheral equipment","US",26510812222.0685,-9517615075.99265
+"334210","Telephones","US",20939313091.8217,6094314841.66425
+"334220","Wireless communications","US",51861666404.5827,16641709617.7999
+"334290","Communications equipment","US",1265260679.17045,777699020.903908
+"334300","Audio and video equipment","US",40531836716.7219,898126489.501252
+"334413","Semiconductors","US",0,13029908087.7614
+"334418","Printed circuit and electronic assembly","US",159111754.247333,5618753634.92691
+"33441A","Electronic capacitors, resistors, coils, transformers, connectors and other components (except  semiconductors and printed circuit assemblies)","US",492533344.240169,-5752316284.5866
+"334510","Electromedical appartuses","US",23489101948.9241,21615440657.8223
+"334511","Navigation instruments","US",35271522809.1673,34825442112.5868
+"334512","Automatic controls for HVAC and refrigeration equipment","US",0,-630149688.720703
+"334513","Industrial process variable instruments","US",6949008438.63964,7193578629.8872
+"334514","Fluid meters and counting devices","US",2769935933.44173,1603082543.23542
+"334515","Signal testing instruments","US",7555794318.6358,9875418711.4952
+"334516","Analytical laboratory instruments","US",9589990860.29305,10872137893.5152
+"334517","Irradiation apparatuses","US",6230810460.90109,5667980422.61959
+"33451A","Watches, clocks, and other measuring and controlling devices","US",9421262977.19284,6204298209.76048
+"334610","External hard drives, CDs, other storage media","US",1181213863.81146,-185456282.965568
+"335110","Light bulbs","US",1325246943.91485,-622097651.988622
+"335120","Light fixtures","US",3357788129.9978,-3598493727.53283
+"335210","Small electrical appliances","US",10710840958.4246,1895724063.43799
+"335221","Home cooking appliances","US",8577591046.06113,4735925269.04864
+"335222","Home refrigerators and freezers","US",8394022377.35075,5815717359.17051
+"335224","Home laundry machines","US",5619909293.4208,4446178477.2053
+"335228","Major home appliances (except ovens, stoves, refrigerators and laundry machines)","US",2459941317.17786,1749291603.32648
+"335311","Specialty transformers","US",7758772417.75016,5254917322.53629
+"335312","Motors and generators","US",4321111896.5536,-1361395765.13578
+"335313","Switchgear and switchboards","US",5440583812.77528,3821061189.43752
+"335314","Relay and industrial controls","US",2082459508.9855,-378521802.029641
+"335911","Storage batteries","US",2839153656.90002,908782666.07023
+"335912","Primary batteries","US",2655209194.96617,2745179978.4987
+"335920","Communication and energy wire and cable","US",409369123.566492,-2523728497.37981
+"335930","Wiring devices","US",66450674.9740395,-561916233.991
+"335991","Carbon and graphite products","US",0,326651856.57412
+"335999","other miscellaneous electrical equipment and components","US",8331552085.5485,6661557857.64195
+"336111","Automobiles","US",141146784221.969,83710304172.2746
+"336112","Pickup trucks, vans, and SUVs","US",240856759566.147,181207031308.338
+"336120","Heavy duty trucks","US",26015969440.567,24403307054.6548
+"336211","Vehicle bodies","US",3738275130.58988,3652784431.13772
+"336212","Truck trailers","US",8396703151.3994,8366482458.99403
+"336213","Motor homes","US",5405235852.34458,5737550162.81131
+"336214","Travel trailer and campers","US",8578066358.53417,10152543083.5259
+"336310","Vehicle engines and engine parts","US",1553799360.08155,-8395478777.92565
+"336320","Vehicle electrical and electronic equipment","US",2994543439.26966,-5996340097.9424
+"336350","Transmission and power train parts","US",1882489657.4048,-5694367613.73722
+"336360","Vehicle seating and interior trim (upholstery)","US",756556569.781408,-1753514292.57747
+"336370","Vehicle metal stamping","US",0,986957588.318019
+"336390","Other vehicle parts","US",4706611142.37479,-1733558431.81392
+"3363A0","Motor vehicle steering, suspension components (except spring), and brake systems","US",1150987795.3594,-5073911871.1417
+"336411","Aircraft","US",42586579192.3538,78761457145.517
+"336412","Aircraft engines and parts","US",979906952.34593,10746671851.0026
+"336413","Other aircraft parts","US",0,15598534880.0522
+"336414","Guided missiles and space vehicles","US",5967345931.46533,7369875570.17408
+"33641A","Propulsion units and parts for space vehicles and guided missiles","US",1590305601.18867,1772575584.13293
+"336500","Railroad rolling stock","US",9872509242.19176,9408308807.62854
+"336611","Ships and ship repair","US",13493673474.5655,14956074527.4642
+"336612","Boats","US",9853892421.00161,11455947548.6529
+"336991","Motorcycle, bicycle, and parts","US",9527697579.02853,5563712814.18658
+"336992","Military armored vehicles and tanks","US",5982513552.64383,7710283638.58238
+"336999","Other transportation equipment","US",6066331496.28812,6244455344.02697
+"337110","Wood kitchen cabinets and countertops","US",1085192799.51761,133562190.70986
+"337121","Home furniture - upholstered","US",14279742295.082,10988525393.9714
+"337122","Home furniture - wood, nonupholstered","US",19787497951.4085,7319466514.84032
+"337127","Institutional furniture","US",9469559185.87702,5550400777.41187
+"33712A","Home furniture - Cabinets and non-wood, nonupholstered","US",6741379207.25344,3227656114.1068
+"337215","Shelving and lockers","US",8221722977.80959,3310984609.87831
+"33721A","Office furniture and custom architectural woodwork and millwork","US",15029945258.607,13678151381.2506
+"337900","Mattresses, blinds and shades","US",11955600307.1934,10619063059.9881
+"339112","Surgical and medical instruments","US",18838791093.0351,17247987717.336
+"339113","Surgical appliance and supplies","US",15127321484.4925,11443872662.982
+"339114","Dental equipment and supplies","US",2326723103.02218,2010878337.90605
+"339115","Ophthalmic goods","US",8842791110.74732,6400462132.68396
+"339116","Dental laboratories","US",0,17215687.5601014
+"339910","Jewelry and silverware","US",36076699081.5775,14535148838.4657
+"339920","Sporting and athletic goods","US",15129626760.8359,10225851112.6161
+"339930","Dolls, toys, and games","US",22167087958.081,931266635.502843
+"339940","Office supplies (not paper)","US",3041509734.2398,1517039235.68191
+"339950","Signs","US",8483850033.24535,8492112852.85406
+"339990","Gaskets, seals, musical instruments, fasteners, brooms, brushes, mop and other misc. goods","US",23782770286.9933,14264106748.1626
+"420000","Wholesale trade","US",637645835292.437,821478139166.299
+"441000","Vehicles and parts sales","US",136564678352.594,136564678352.594
+"445000","Food and beverage stores","US",190910752228.665,190910752228.665
+"452000","General merchandise stores","US",208158356221.101,208158356221.101
+"481000","Air transport","US",107190815536.929,114859429188.937
+"482000","Rail transport","US",11285688932.1869,21855441568.8932
+"483000","Water transport (boats, ships, ferries)","US",15612243885.5388,37735024326.7538
+"484000","Truck transport","US",129298522004.579,154279631137.115
+"485000","Passenger ground transport","US",37171151655.4986,37171151655.4986
+"486000","Pipeline transport","US",2265424093.84115,3507589214.95855
+"48A000","Scenic and sightseeing transportation and support activities for transportation","US",9950036370.11945,18032719736.1383
+"491000","Postal service","US",11585497436.451,11448785061.2553
+"492000","Couriers and messengers","US",2411183887.7652,21861784223.4368
+"493000","Warehousing","US",169107685.391379,3811276678.2716
+"4A0000","Other retail","US",656712973560.641,656712973560.641
+"511110","Newspapers","US",10772472390.2318,11167229114.6296
+"511120","Magazines and journals","US",14251344798.6316,15443318177.5774
+"511130","Books","US",33875916342.9745,34460974393.5454
+"5111A0","Directory, mailing list, and other publishers","US",8133724865.5941,7721307764.3316
+"511200","Software","US",84126548331.4328,109518442092.092
+"512100","Movies and film","US",56489373403.5182,69306371345.5433
+"512200","Sound recording","US",11565786126.1872,11006816061.7368
+"515100","Radio and television","US",13846448734.9656,13850892752.8537
+"515200","Cable and subscription programming","US",13753157730.3813,13753157730.3813
+"517110","Telecommunications","US",177326855958.455,183713626062.925
+"517210","Wireless telecommunications","US",68474643302.0798,68706735082.0522
+"517A00","Satellite, telecommunications resellers, and all other telecommunications","US",11091627478.0776,14550491887.2164
+"518200","Data processing and hosting","US",0,739884184.924664
+"519130","Internet publishing and broadcasting","US",2886768868.69015,3758055551.04691
+"5191A0","News syndicates, libraries, archives, Internet publishing and all other information services","US",3584104284.05701,4263186505.63474
+"522A00","Nondepository credit intermediation and related activities","US",39306534587.6036,48852119346.0163
+"523900","Investment advice, portfolio management, and other financial advising services","US",130676741842.891,162766301036.846
+"523A00","Securities and commodities brokerage and exchanges","US",44100588175.9992,64789354367.2194
+"524100","Insurance carriers","US",324691142228.156,286279180641.479
+"524200","Insurance agencies and brokerages","US",0,0
+"525000","Funds, trusts, and financial vehicles","US",136328098626.113,136328098626.113
+"52A000","Monetary authorities and depository credit intermediation","US",177937705107.469,192019642572.331
+"5310HS","Housing","US",1629503400479.92,1629503400479.92
+"531ORE","Other real estate","US",118008830625.851,121114218923.565
+"532100","Vehicle rental and leasing","US",56579815798.9436,58150592048.2907
+"532400","Commercial equipment rental","US",398709569.223309,4287449850.48089
+"532A00","Consumer goods and general rental centers","US",26955767900.7801,27892637506.007
+"533000","Lessors of nonfinancial intangible assets","US",0,46759217389.5229
+"541100","Legal services","US",136564726304.023,146044528107.142
+"541200","Accounting, tax preparation, bookkeeping, and payroll","US",16013123306.6502,15123331896.5517
+"541300","Architectural, engineering, and related services","US",42617130035.0443,56876553968.254
+"541400","Specialized design","US",4593589427.33033,4472241501.614
+"541511","Custom computer programming","US",205612423079.649,203171606240.698
+"541512","Computer systems design","US",18864781158.7319,15314441906.7638
+"54151A","Other computer related services, including facilities management","US",0,399972977.751584
+"541610","Management consulting","US",0,989468607.713825
+"5416A0","Environmental and other technical consulting services","US",0,81458239.41705
+"541700","Scientific research and development","US",406819461926.035,415558668992.106
+"541800","Advertising and public relations","US",2518412662.48723,4541213301.42007
+"541920","Photographers","US",9487582608.69565,9508730434.78261
+"541940","Veterinarians","US",25463300978.6211,25463300978.6211
+"5419A0","Marketing research and all other miscellaneous professional, scientific, and technical services","US",0,1805232234.9249
+"550000","Company and enterprise management","US",0,330451141.024184
+"561100","Office administration","US",0,0
+"561200","Facilities support","US",0,0
+"561300","Employment services","US",1584591774.23771,852357869.332874
+"561400","Business support","US",4661382125.06918,4585247289.34801
+"561500","Travel arrangement and reservation","US",14980533236.2783,17014359204.5535
+"561600","Investigation and security","US",8132800068.54081,8112682479.51564
+"561700","Buildings and dwellings services","US",16153864946.052,16201594684.8946
+"561900","Other support services","US",371064469.320066,605708177.860696
+"562000","Waste management and remediation","US",17655237584.893,17553685452.4652
+"611100","Elementary and secondary schools","US",43911536755.9902,43911536755.9902
+"611A00","Colleges, universities, junior colleges, and professional schools","US",189777737512.592,190249988436.031
+"611B00","Other educational services","US",59818684046.1058,60807443003.3394
+"621100","Physicians","US",378013339164.71,378090786832.332
+"621200","Dentists","US",116709346264.586,116709346264.586
+"621300","Healthcare practitioners (except physicians and dentists)","US",68536785803.8414,68536785803.8414
+"621400","Outpatient healthcare","US",89206498170.924,89211008504.1522
+"621500","Medical laboratories","US",28652946906.9654,28652946906.9654
+"621600","Home healthcare","US",69059941041.1095,69059941041.1095
+"621900","Ambulances","US",28670393970.0611,28670393970.0611
+"622000","Hospitals","US",734908382297.967,733440458679.855
+"623A00","Nursing and community care facilities","US",154082022842.531,154082022842.531
+"623B00","Residential mental retardation, mental health, substance abuse and other facilities","US",37937007981.9829,37937007981.9829
+"624100","Individual and family services","US",64434163596.5637,64434163596.5637
+"624400","Child day care","US",49555949702.3873,49555949702.3873
+"624A00","Community food, housing, and other relief services, including rehabilitation services","US",38187513951.9792,38187513951.9792
+"711100","Performances","US",25087291308.303,25549033741.3166
+"711200","Sports","US",17747915132.1227,17804643109.915
+"711500","Independent artists, writers, and performers","US",556391562.871628,1254088919.48843
+"711A00","Promoters and agents","US",10001916171.1554,10885202274.5821
+"712000","Museums, historical sites, zoos, and parks","US",13362195463.9691,13362195463.9691
+"713100","Amusement parks and arcades","US",12649829600.3784,12649829600.3784
+"713200","Gambling establishments (except casino hotels)","US",96664944613.8528,96664944613.8528
+"713900","Golf courses, marinas, ski resorts, fitness and other rec centers and industries","US",52241510127.401,52241510127.401
+"721000","Hotels and campgrounds","US",103884730671.769,103884730671.769
+"722110","Full-service restaurants","US",213436195100.367,214524115659.4
+"722211","Limited-service restaurants","US",282944217055.618,284028696039.139
+"722A00","All other food and drinking places","US",80649385125.2078,80980932082.1492
+"811100","Vehicle repair","US",180417213232.807,180459067440.617
+"811200","Electronic  equipment repair and maintenance","US",4693558793.70969,4698211640.0975
+"811300","Commercial machinery repair","US",0,13131372.1429584
+"811400","Household goods repair","US",21736012068.4755,18315839524.2572
+"812100","Salons and barber shops","US",66339933184.9497,66339933184.9497
+"812200","Funerary services","US",21754260627.6357,21754260627.6357
+"812300","Dry-cleaning and laundry","US",14951068596.1689,14951068596.1689
+"812900","Pet care, photofinishing, parking and other sundry services","US",63310326041.5262,63310326041.5262
+"813100","Religious organizations","US",88671069243.5645,88671069243.5645
+"813A00","Grantmaking, giving, and social advocacy organizations","US",45412319931.3382,45412319931.3382
+"813B00","Civic, social, professional, and similar organizations","US",42844247682.5951,43037138756.865
+"814000","Household employees","US",19955418202.8012,19955418202.8012
+"S00102","Other federal government enterprises","US",0,0
+"S00203","Other state and local government enterprises","US",60210589289.1015,60210589289.1015
+"S00300","Noncomparable imports","US",91286672052.8005,-126698842643.285
+"S00402","Used and secondhand goods","US",-12344986359.497,-2497121069.5951
+"S00500","Federal general government (defense)","US",581186103759.938,581186103759.938
+"S00600","Federal general government (nondefense)","US",307586729021.758,307586729021.758
+"S00700","State and local general government","US",1640222347679.55,1640222347679.55
+"S00900","Rest of the world adjustment","US",-141259712095.42,1932377067.47959

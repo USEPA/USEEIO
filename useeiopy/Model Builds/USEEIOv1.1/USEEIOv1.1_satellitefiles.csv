@@ -1,0 +1,12 @@
+﻿Table,ExcelFile,NewFile,NewFilewithnewG&S
+Energy,USEEIOv1.1_Satellite_Energy.xlsx,USEEIO_Satellite_Energy.csv,USEEIO_Satellite_Energy_newG&Snames.csv
+GHG,USEEIOv1.1_Satellite_GHG.xlsx,USEEIO_Satellite_GHG.csv,USEEIO_Satellite_GHG_newG&Snames.csv
+Land,USEEIOv1.1_Satellite_Land.xlsx,USEEIO_Satellite_Land.csv,USEEIO_Satellite_Land_newG&Snames.csv
+N&P,USEEIOv1.1_Satellite_N&P.xlsx,USEEIO_Satellite_N&P.csv,USEEIO_Satellite_N&P_newG&Snames.csv
+TRI,USEEIOv1.1_Satellite_TRI.xlsx,USEEIO_Satellite_TRI.csv,USEEIO_Satellite_TRI_newG&Snames.csv
+NEI,USEEIOv1.1_Satellite_NEI.xlsx,USEEIO_Satellite_NEI.csv,USEEIO_Satellite_NEI_newG&Snames.csv
+Value Added,USEEIOv1.1_Satellite_ValueAdded.xlsx,USEEIO_Satellite_ValueAdded.csv,USEEIO_Satellite_ValueAdded_newG&Snames.csv
+Employment,USEEIOv1.1_Satellite_Employment.xlsx,USEEIO_Satellite_Employment.csv,USEEIO_Satellite_Employment_newG&Snames.csv
+Pesticides,USEEIOv1.1_Satellite_Pesticides.xlsx,USEEIO_Satellite_Pesticides.csv,USEEIO_Satellite_Pesticides_newG&Snames.csv
+Water,USEEIOv1.1_Satellite_Water.xlsx,USEEIO_Satellite_Water.csv,USEEIO_Satellite_Water_newG&Snames.csv
+Minerals,USEEIOv1.1_Satellite_Minerals.xlsx,USEEIO_Satellite_Minerals.csv,USEEIO_Satellite_Minerals_newG&Snames.csv

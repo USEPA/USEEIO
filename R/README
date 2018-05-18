@@ -1,3 +1,0 @@
-Run the "R package install function.R" first
-
-The "USEEIO_BEA_NAICS_allocation.R" contains adjusting industry output from BEA_403 to BEA_389 and generating the allocation between BEA and NAICS.

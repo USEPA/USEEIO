@@ -10,7 +10,7 @@ Please see the [wiki](https://github.com/USEPA/USEEIO/wiki) pages for instructio
 
 ## Citation
 If you use this framework to develop models that are then published, please cite the use of
-the framework in the following manner. Include the version  the version used:
+the framework in the following manner. Include the version used.
 
 Ingwersen, WW, Li, M, Yang, Y. United States Environmentally-Extended Input-Output (USEEIO) Modeling Framework. 
 vX.X. DOI: 10.5281/zenodo.1248955

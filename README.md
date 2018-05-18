@@ -3,7 +3,7 @@ A modeling framework for creating versions of the USEEIO model for estimating po
 
 Yang Y, Ingwersen WW, Hawkins TR, Srocka M, Meyer DE (2017) 
 USEEIO: A New and Transparent United States Environmentally-Extended Input-Output Model. 
-Journal of Cleaner Production 158:308-318. http://dx.doi.org/10.1016/j.jclepro.2017.04.150
+Journal of Cleaner Production 158:308-318. https://doi.org/10.1016/j.jclepro.2017.04.150
 
 ## Installation and Use
 Please see the [wiki](https://github.com/USEPA/USEEIO/wiki) pages for instructions.

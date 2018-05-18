@@ -49,7 +49,7 @@ def extract_sat_tables(modelname, modelpath, excelfilepath, exportsheetname):
             logging.debug(row[3] + " already exists.")
         else:
             path = excelfilepath + row[2]
-            table = pd.read_excel(path, sheetname=exportsheetname, header=0)
+            table = pd.read_excel(path, sheet_name=exportsheetname, header=0)
             table.to_csv(modelpath + 'satellite_tables/' + row[3], index=False)
             logging.info("Wrote " + row[1] + " satellite file to csv.")
     return satcsvfiles

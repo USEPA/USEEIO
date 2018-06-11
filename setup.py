@@ -5,7 +5,7 @@ setup(
     version='0.1',
     packages=['useeiopy'],
     package_data={'useeiopy': ["Model Builds/*.*"]},
-    install_requires=['IO-Model-Builder>=1.1','pandas>=0.17'],
+    install_requires=['IO-Model-Builder>=1.1','pandas>=0.17','requests>=2.0'],
     url='http://www.github.com/usepa/useeio',
     license='CC0',
     author='Wesley Ingwersen',

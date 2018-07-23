@@ -6,9 +6,12 @@ generateLCIA  = function (version) { # version is numeric value, e.g. 1 or 2
   #Melt these so there is one indicator score per line
   lciafactlong = melt(lciafact,id.vars = c(1:5))
   #drop zeroes
-  lciafactlong = subset(lciafactlong,value!=0) 
-  #convert to numeric
-  lciafactlong$value = as.numeric(lciafactlong$value)
+  lciafactlong = subset(lciafactlong,value!=0)
+  #Change colname for merging later
+  names(lciafactlong)[names(lciafactlong) == "variable"] = "Abbreviation"
+  
+  #Previously lciafactlong$value was converted to numeric here but this was changing the value!
+  #https://github.com/USEPA/USEEIO/issues/4
   
   #Import LCIA indicator info 
   lciainfo = read.table(paste(LCIApath,"LCIA_indicators.csv",sep=""),header=TRUE,sep=",",check.names=FALSE,encoding="UTF-8")
@@ -25,7 +28,7 @@ generateLCIA  = function (version) { # version is numeric value, e.g. 1 or 2
   lciainfo = lciainfo[,c("Full name","Abbreviation","Category","Units")]
   
   #merge in info for getting indicator metadata
-  lciafactlongwithmeta = merge(lciafactlong,lciainfo, by.x="variable", by.y="Abbreviation")
+  lciafactlongwithmeta = merge(lciafactlong,lciainfo, by="Abbreviation")
   
   #import LCIA fields for IOMB
   lciafields = read.table(paste(IOMBpath,"LCIA_fields.csv",sep=""),header=TRUE,sep=",")

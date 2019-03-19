@@ -758,7 +758,7 @@ ZOXAMIDE,air,low population density,kg,ab235860-467c-3408-965a-d6aa17637b19,0,0,
 "Water, fresh",water,surface water,m3,37880630-22b3-3c88-b701-4abde6f0b9a8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 "Water, saline",resource,surface water,m3,760ae0a6-2ca9-32b4-926f-3d11edcd4e11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 "Water, saline",water,surface water,m3,39f733bc-fd54-38f0-ada6-05299cfcc2da,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-nitrogen oxides,air,unspecified,kg,c1b91234-6f24-417b-8309-46111d09c457,0.7,0.08858,0,0,0,0,0,0.0072222,0,24.794,0,0,0,0,0,0,0,0,0,0,0
+nitrogen oxides,air,unspecified,kg,c1b91234-6f24-417b-8309-46111d09c457,0.7,0.04429,0,0,0,0,0,0.0072222,0,24.794,0,0,0,0,0,0,0,0,0,0,0
 chlorine,air,unspecified,kg,39d1390a-ded6-41cb-a536-d47510bf2fbc,0,0,0,0,0,0,0,0,0,19.11820513,0,0,0,0,0,0,0,0,1,0,0
 methyl methacrylate,air,unspecified,kg,1ddb3480-3426-4541-a201-592d4c6fe6aa,0,0,0.013840458,0,0,0.000000962,0.000000962,0,0,15.60846154,0,0,0,0,0,0,0,0,1,0,0
 NITROUS ACID,air,unspecified,kg,b633a270-97fe-3bdb-9fb0-a25de3323e03,0,0,0,0,0,0,0,0,0,15.50102564,0,0,0,0,0,0,0,0,0,0,0

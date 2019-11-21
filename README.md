@@ -19,6 +19,9 @@ model out for serving on the [USEEIO API](https://github.com/USEPA/useeio_api/) 
 
 The former framework used to generate USEEIO versions <= 1.2 is still accessible under [Releases](https://github.com/USEPA/USEEIO/releases).
 
+## Model Versioning
+See the [Versioning Scheme](VersioningScheme.md) for an explanation of USEEIO model version numbers and names.
+
 ## Citation
 If you use this framework to develop models that are then published, please cite the use of
 the framework in the following manner. For general uses and referring the concept of this framework, cite:

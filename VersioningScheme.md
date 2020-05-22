@@ -13,7 +13,7 @@ The following table shows the parts of a model name.
 |Major version number | Indicates a major methodological/data update | Integer | NA | `1`|
 |Minor version number | Indicates a minor methodological/data update | Integer after a dot| NA| `.1`|
 |Commodity or industry form| Indicates CommodityxCommodity or IndustryxIndustry | 'i' for IxI form | Blank, assumes default CXC| `i`|
-|Level of Detail | Base level of BEA | 's' for summary level, 'c' for sector level | Blank, assumes detailed level| `s`|
+|Level of Detail | Base level of BEA ([see definitions](https://www.bea.gov/sites/default/files/methodologies/industry_primer.pdf#page=17)) | 's' for summary level, 'c' for sector level | Blank, assumes detailed level| `s`|
 |Satellite table/indicator subset | Names of subset of satellite tables used | hyphen followed by 3-6 digit string with letter in CAPS | Blank, assumes all satellite tables availble for that region are present| `-GHG`
 
 ### Full Examples

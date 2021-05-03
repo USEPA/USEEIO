@@ -7,6 +7,8 @@ but may also be useful for other purposes. It is built using methods from input-
 [useeior](https://github.com/USEPA/useeior). An R package that reads in economic data, houses model configuration files, generates model components, result matrices and price adjustment matrices, and performs model calculations. useeior is used to generate USEEIO models >= v2.0
 
 ### Supporting software
+[stateior](https://github.com/USEPA/stateio). An R package that builds Make and Use Input-Output economic model for US states. These support state-specific USEEIO models.
+
 [flowsa](https://github.com/USEPA/flowsa). A Python package that provides the environmental and employment data in the form of regional totals
 of flows by North American Industry Classification System (NAICS) industry codes. flowsa in turn gets USEPA facility-based reporting data from [StEWI](https://github.com/usepa/standardizedinventories). useeior either uses flowsa directly or uses datasets output from flowsa for environmental data input. 
 

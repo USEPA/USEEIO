@@ -1,0 +1,93 @@
+# General Information
+description: &desc >
+    This USEEIO model version [model_version] was built useing useeior
+    v[useeior_package_version] which can be found at
+    https://github.com/USEPA/useeior. More information at USEEIO is available at
+    https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models.
+
+time_description: >
+    [target_year] is the year in which this version of USEEIO was released and
+    is the target date for the model. All dollar values reflect USD in 2012.
+
+geographic_description: >
+    Data represent the 50 US states.
+
+technology_descripton: >
+    The process describes the average US production of this good or service
+    within this NAICS-based grouping defined in the BEA 2012 detailed input-output
+    tables. Distribution, wholesale and retailing of this good or service, use,
+    and final disposal are not included. Creation of a product system with this
+    process will enable modeling of all upstream (supply-chain) activities.
+
+# Administrative information
+intended_application: >
+    The primary application is for use in the US Environmentally-Extended Input-Ouput
+    model, USEEIO, version [model_version]. This model is being used by the US EPA for
+    supporting tools that prioritize goods and services based on potential environmental
+    impacts, resource use or emissions for large regions, including the US and US
+    states, and as a strealined tool for organizations as a starting point to
+    consider sustainable materials management. Model results are designed to
+    provide meso/macro-level decision support.
+
+access_restrictions: >
+    This model should be appropriately cited (cite the dataset) when used. Any
+    changes or derivations of this model by the user should be documented.
+    The model itself and any results from use of this model shall not be construed
+    to constitute US EPA opinion or policy.
+
+project: >
+    This research was funded by the USEPAs Sustainable and Healthy Communities
+    Research Program. This research was supported through USEPA contract
+    HHSN316201200013W, Task Order EP-G16H-01256 with General Dynamics IT (GDIT)
+    and contract EP-C-16-015, Task Order 68HERC19F0292 with Eastern Research
+    Group (ERG). Processing of Criteria and Hazardous Air Emissions was supported
+    by the office of Fossil Energy (FE) for the United States Department of
+    Energy (DOE), National Energy Technology Laboratory (NETL) under NETL
+    Contract Number DE-FE0025912.
+
+
+# Modeling and validation
+lci_method: 'Input-output'
+
+model_constants: >
+    The reference unit of all processes is 1 USD2012 of the good or service.
+    The technosphere inputs are based on the US BEA detailed input-output tables
+    for 2012. The IO tables are combined to develop a commodity-by-commodity
+    model based on the the industry-technology assumption, which assumes all
+    commodities produced by a given industry have the same input structure, but
+    that multiple industries can produce the same commodity. Thus, model
+    technosphere flows represent commodity outputs (and not industry outputs)
+    from other processes in the model. There are no by-products included in these
+    processes. All commodity production is based on US-conditions, despite in
+    reality that some goods and services are produced overseas, as USEEIO
+    v[model_version] is a single-region IO model.
+
+data_completeness: >
+    The input-output approach assures that all purchased inputs associated with
+    the sectors making these commodities as reported in the US census for 2012
+    are included. The direct resources extracted including minerals, energy
+    sources, water and land occupied are included. Emissions to air include all
+    critieria air pollutants, greenhouse gases, and hazardous and toxic air
+    pollutants as defined by US EPA. Releases to water include toxics, total
+    nitrogen and total phosphorus, and water discharges. Releases to soil or
+    groundwater include toxics and agriculutural pesticides. Solid hazardous
+    and non-hazardous wastes generated are included as waste flows.
+
+data_selection: >
+
+data_treatment: >
+
+sampling_procedure: >
+
+data_collection_period: >
+    Satellite data characterizing environmental flows reflect the best available data
+    at the time of model development, typically 2012 - 2017.
+
+demand_processes:
+    demand_desc: &demand_desc >
+        text for demand vector description
+
+    description:
+        - *demand_desc
+        - *desc
+

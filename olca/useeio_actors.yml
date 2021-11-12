@@ -1,0 +1,24 @@
+# Actors
+owner:
+    name: US EPA
+    id: "6e9920b7-8b49-32a1-a6d1-85988edc7ad7"
+    description:
+    email: "lca@epa.gov"
+
+generator:
+    name: US EPA with GDIT and ERG
+    id:
+    description: US EPA staff with GDIT and ERG staff working under contract to US EPA
+    email:
+
+documentor:
+    name:
+    id:
+    description:
+    email:
+
+reviewer:
+    name:
+    id:
+    description:
+    email:

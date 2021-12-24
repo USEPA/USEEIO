@@ -24,11 +24,13 @@ The following table define the parts of a model name.
 | minor  | Minor version number. Advances indicate a minor methodological/data update | Integer | NA | `0` |
 | update | Update number. Advances indicates a minor fix or data update | Integer | NA | `1` |
 | form   | Indicator for CommodityxCommodity or IndustryxIndustry form | 'i' for IxI form | Blank, assumes default CXC | `i` |
-| sectors<sup>1</sup> | Base level of BEA ([see definitions](https://www.bea.gov/sites/default/files/methodologies/industry_primer.pdf#page=17)) or number of sectors | <ul><li>Character for a BEA level - 's' for Summary, 'c' for Sector, OR</li><li>Integer for an arbitrary number</li></ul> | Blank, assumes Detail level | `s` or `75` |
+| sectors<sup>1</sup> | Base level of BEA ([see definitions](https://www.bea.gov/sites/default/files/methodologies/industry_primer.pdf#page=17)) or number of sectors | <ul><li>Character for a BEA level - 's' for Summary, 'c' for Sector, OR</li><li>Integer for an arbitrary number<sup>2</sup></li></ul> | Blank, assumes Detail level | `s` or `75` |
 | IOyear | Optional year of base input-output data | Integer | For deviation from IO year in base version | `2017` |
 | subset | Short name for a satellite or indicator subset | Hyphen followed by 3-6 digit string with letter in CAPS | Blank, assumes all satellite tables available for that region are present | `-GHG` |
 
 <sup>1</sup> If `sectors` is a letter, it means the model uses the original BEA Summary sectors; if it is a number, it means model sectors are hybridized (e.g. disaggregated and/or aggregated) and are not identical with the original BEA Summary sectors.
+
+<sup>2</sup> If the previous part is also an integer, a hyphen will be added before the integer, e.g. `USEEIOv2.0-411`.
 
 ## Examples of model names
 

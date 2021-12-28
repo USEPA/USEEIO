@@ -8,7 +8,7 @@ A named model does not imply that the model has been reviewed or released.
 
 ## Naming pattern
 Model names are composed of parts in a clear pattern.
-The naming pattern is a set sequence of these parts with required separator characters.
+The naming pattern is a set sequence of these parts with separator characters that are required when the given part is present.
 ```
 {loc}{root} v{major}.{minor}.{patch}+{build}-{form}{#sectors}-{#regions}r-{IOyear}-{subset}
 

@@ -2,7 +2,7 @@
 
 USEEIO model names follow a scheme.
 These model names are intended to identify a model by version and a set of key characteristics. 
-They are independent of the software or authors producing the model.
+They are independent of the software (with the exception of the `build` identifier) or authors producing the model.
 They are not full model descriptions.
 A named model does not imply that the model has been reviewed or released. 
 

@@ -24,10 +24,10 @@ The following table define the parts of a model name.
 | root  | Main model type | string | `EEIO`| not applicable|
 | major | Major version number. Advances are for use of a new base IO schema | integer | `2` | not applicable|
 | minor | Minor version number. Advances indicate a minor methodological/data update | integer |  `0` | not applicable|
-| patch |  OPTIONAL. A patch number. Advances indicates a minor fix, format, or data update | integer | `1` | `0`|
-| build |  OPTIONAL. A build identifier derived from software during model build time | string | `c2nde3d` | blank means not available|
+| patch | OPTIONAL. A patch number. Advances indicates a minor fix, format, or data update | integer | `1` | `0`|
+| build | OPTIONAL. A build identifier derived from software during model build time | string | `c2nde3d` | blank means not available|
 | form  | OPTIONAL. Indicator for Commodity x Commodity or Industry x Industry form | 'c' for commodityxcommodity , 'i' for industryxindustry | `i` | `c`|
-| #sectors<sup>1</sup> | OPTIONAL. Base level of BEA, ([see definitions](https://www.bea.gov/sites/default/files/methodologies/industry_primer.pdf#page=17)); or number of sectors | <ul><li>string for a BEA level - 'd' for detail, 's' for Summary, 'c' for Sector, OR</li><li>integer for an arbitrary number<sup>2</sup></li></ul> | `s` or `75` | `d` |
+| #sectors<sup>1</sup> | OPTIONAL. Base level of BEA, ([see definitions](https://www.bea.gov/sites/default/files/methodologies/industry_primer.pdf#page=17)); or number of sectors | <ul><li>string for a BEA level - 'd' for detail, 's' for Summary, 'c' for Sector, OR</li><li>integer for an arbitrary number | `s` or `75` | `d` |
 | #regions | OPTIONAL. Number of model regions when greater than 1 | integer | `2` | `1` |
 | IOyear | OPTIONAL. Year of base input-output data. Used for deviations from the benchmark IO year of the major version | integer |  `2017` | IO data year for IO schema and major model version, see [Base IO Schema and Benchmark IO Data Year for Major Model Versions](#base-io-schema-and-benchmark-io-data-year-for-major-model-versions) |
 | subset | OPTIONAL. Short name for a satellite or indicator subset or blank if full set is included | string, 3-6 digit, all CAPS |  `GHG` | All resource, emission and waste flow classes found in the most recent version with a complete set of tables|
@@ -42,8 +42,8 @@ USEEIO models alter names for commodities in the schema and may add or remove se
 
 | Major Version | IO Schema | Benchmark IO Data Year |
 |---|---|---|
-| 1  | BEA 2007 | 2007 |
-| 2  | BEA 2012 | 2012 |
+| 1 | BEA 2007 | 2007 |
+| 2 | BEA 2012 | 2012 |
 
 ## Examples of model names
 

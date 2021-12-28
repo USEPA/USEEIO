@@ -38,7 +38,7 @@ The following table define the parts of a model name.
 
 The base IO schema is the set of sector codes and names for commodities and industries.
 USEEIO models have used the BEA IO schema, which is updated every 5 years along with the release of the benchmark, detailed level IO tables for the same year.
-USEEIO models alter names for commodities in the schema and may add or remove sectors, and hence the IO schema is used as the basis for the model but will not necessarily be identical to the model IO schema.
+USEEIO models alter names for commodities in the schema and may add or remove sectors, and hence the IO schema is used as the base schema for the model but will not necessarily be identical to the model IO schema.
 
 | Major Version | IO Schema | Benchmark IO Data Year |
 |---|---|---|

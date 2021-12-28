@@ -13,7 +13,7 @@ The naming pattern is a set sequence of these parts with separator characters th
 {loc}{root} v{major}.{minor}.{patch}+{build}-{form}{#sectors}-{#regions}r-{IOyear}-{subset}
 
 ```
-The version number is the major.minor.patch sequence. The version number plus the build identifier follows [Semantic Versioning 2.0.0](http://semver.org/) for software with some adaptations appropriate for use for a computational model versioning scheme.
+The version number is the major.minor.patch sequence. The version number plus the build identifier follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) for software with some adaptations appropriate for use for a computational model versioning scheme.
 
 ## Name parts
 The following table define the parts of a model name.

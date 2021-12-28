@@ -50,8 +50,8 @@ USEEIO models alter names for commodities in the schema and may add or remove se
 | Model Name | Interpretation |
 |---|---|
 | USEEIO v1.3.0-WASTE       | A US v1.3.0 detailed level commodity form 1-region model using a 2007 base IO year with only the waste satellite tables |
-| USEEIO v2.0.0-i75-2016-WAT | A US v2.0.0 75-industry form model using 2016 base IO tables a only the water (WAT) satellite table |
-| GAEEIO v2.0.0-2r           | A Georgia detailed commodity model in 2 region form of the full v2.0.0 model |
+| USEEIO v2.0.0-i75-2016-WAT | A US v2.0.0 75-industry form model using 2016 base IO data and the 2012 IO schema with only the water satellite table |
+| GAEEIO v2.1.0-cs-2r        | A Georgia v2.1.0 BEA summary-level commodity model in 2 region form using a 2012 base IO year with all satellite tables and flows|
 | USEEIO v2.0.0-is-GHG+    | A national v2.0.0 model in industry form at the BEA summary level with GHG table and customized GHG indicators (like 20 yr GWP) |
 
 ## Rules

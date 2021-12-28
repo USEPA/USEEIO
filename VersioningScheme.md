@@ -24,7 +24,7 @@ The following table define the parts of a model name.
 | root  | Main model type | string | `EEIO`| not applicable|
 | major | Major version number. Advances are for use of a new base IO schema | integer | `2` | not applicable|
 | minor | Minor version number. Advances indicate a minor methodological/data update | integer |  `0` | not applicable|
-| patch | OPTIONAL. A patch number. Advances indicates a minor fix, format, or data update | integer | `1` | `0`|
+| patch | OPTIONAL but PREFERRED. A patch number. Advances indicates a minor fix, format, or data update | integer | `1` | `0`|
 | build | OPTIONAL. A build identifier derived from software during model build time | string | `c2nde3d` | blank means not available|
 | form  | OPTIONAL. Indicator for Commodity x Commodity or Industry x Industry form | 'c' for commodityxcommodity , 'i' for industryxindustry | `i` | `c`|
 | #sectors<sup>1</sup> | OPTIONAL. Base level of BEA, ([see definitions](https://www.bea.gov/sites/default/files/methodologies/industry_primer.pdf#page=17)); or number of sectors | <ul><li>string for a BEA level - 'd' for detail, 's' for Summary, 'c' for Sector, OR</li><li>integer for an arbitrary number | `s` or `75` | `d` |

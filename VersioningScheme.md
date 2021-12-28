@@ -9,8 +9,9 @@ They are not full model descriptions.
 ## Naming pattern
 Model names are composed of parts in a clear pattern.
 The naming pattern is a set sequence of these parts with required separator characters.
+The version number is the major.minor.patch sequence which follows [Semantic Versioning 2.0.0](https://semvar.org/).
 ```
-{prefix}{root} v{major}.{minor}.{update}{form}{sectors}-{IOyear}-{subset}
+{loc}{root} v{major}.{minor}.{patch}-{form}{sectors}-{IOyear}-{subset}
 ```
 
 ## Name parts
@@ -18,11 +19,11 @@ The following table define the parts of a model name.
 
 | Name part | Definition | Format | Default|  Example |
 |---|---|---|---|---|
-| prefix | Primary model region | Two-letter state name for state models| Blank, assumes national model| `GA`|
-| root   | Main model name | String | USEEIO | `USEEIO`|
+| loc | Primary model location/region | Two-letter primary region acronym | US | `US`|
+| root   | Main model type | String | EEIO | `EEIO`|
 | major  | Major version number. Advances indicate a major methodological/data update | Integer | NA | `2` |
 | minor  | Minor version number. Advances indicate a minor methodological/data update | Integer | NA | `0` |
-| update | Update number. Advances indicates a minor fix or data update | Integer | NA | `1` |
+| patch |  A patch number. Advances indicates a minor fix or data update | Integer | NA | `1` |
 | form   | Indicator for CommodityxCommodity or IndustryxIndustry form | 'i' for IxI form | Blank, assumes default CXC | `i` |
 | sectors<sup>1</sup> | Base level of BEA ([see definitions](https://www.bea.gov/sites/default/files/methodologies/industry_primer.pdf#page=17)) or number of sectors | <ul><li>Character for a BEA level - 's' for Summary, 'c' for Sector, OR</li><li>Integer for an arbitrary number<sup>2</sup></li></ul> | Blank, assumes Detail level | `s` or `75` |
 | IOyear | Optional year of base input-output data | Integer | For deviation from IO year in base version | `2017` |
@@ -36,14 +37,14 @@ The following table define the parts of a model name.
 
 | Model Name | Interpretation |
 |---|---|
-| USEEIO v1.3-WASTE       | A national v1.3 model with only the waste satellite tables |
-| USEEIO v2.0i75-2016-WAT | A national v2.0 model in industry form with 75 industries using 2016 IO tables and the water (WAT) satellite table and indicators |
-| GAUSEEIOv2.0            | A GA model (in 2 region form) of the full v2.0 model |
-| USEEIOv2.0is-GHG+       | A national v2.0 model in industry form at the BEA summary level with GHG table and customized GHG indicators (like 20 yr GWP) |
+| USEEIO v1.3.0-WASTE       | A national v1.3.0 model with only the waste satellite tables |
+| USEEIO v2.0.0-i75-2016-WAT | A national v2.0.0 model in industry form with 75 industries using 2016 IO tables and the water (WAT) satellite table and indicators |
+| GAEEIO v2.0.0            | A GA model (in 2 region form) of the full v2.0.0 model |
+| USEEIO v2.0.0-is-GHG+     | A national v2.0.0 model in industry form at the BEA summary level with GHG table and customized GHG indicators (like 20 yr GWP) |
 
 ### Rules
 
-1. Models with the same version number (major.minor.update) will use the same data sources, data years (except when IOyear is specified as something else) and currency year.
+1. Models with the same version number (major.minor.patch) will use the same data sources, data years (except when IOyear is specified as something else) and currency year.
    
 2. Model names do not indicate intended application or release status of models.
 

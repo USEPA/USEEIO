@@ -56,5 +56,5 @@ USEEIO models alter names for commodities in the schema and may add or remove se
 
 ## Rules
 
-1. Models with the same version number (major.minor.patch) will use the same data sources, data years (except when IOyear is specified as something else) and currency year.
+1. Models with the same major and minor version number (major.minor) will use the same data sources, data years (except when IOyear is specified as something else) and currency year.
    

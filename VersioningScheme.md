@@ -17,17 +17,17 @@ The version number is the major.minor.patch sequence which follows [Semantic Ver
 ## Name parts
 The following table define the parts of a model name.
 
-| Name part | Definition | Format | Default|  Example |
-|---|---|---|---|---|
-| loc | Primary model location/region | Two-letter primary region acronym | US | `US`|
-| root   | Main model type | String | EEIO | `EEIO`|
-| major  | Major version number. Advances indicate a major methodological/data update | Integer | NA | `2` |
-| minor  | Minor version number. Advances indicate a minor methodological/data update | Integer | NA | `0` |
-| patch |  A patch number. Advances indicates a minor fix or data update | Integer | NA | `1` |
-| form   | Indicator for CommodityxCommodity or IndustryxIndustry form | 'i' for IxI form | Blank, assumes default CXC | `i` |
-| sectors<sup>1</sup> | Base level of BEA ([see definitions](https://www.bea.gov/sites/default/files/methodologies/industry_primer.pdf#page=17)) or number of sectors | <ul><li>Character for a BEA level - 's' for Summary, 'c' for Sector, OR</li><li>Integer for an arbitrary number<sup>2</sup></li></ul> | Blank, assumes Detail level | `s` or `75` |
-| IOyear | Optional year of base input-output data | Integer | For deviation from IO year in base version | `2017` |
-| subset | Short name for a satellite or indicator subset | Hyphen followed by 3-6 digit string with letter in CAPS | Blank, assumes all satellite tables available for that region are present | `-GHG` |
+| Name part | Definition | Format | Example |
+|---|---|---|---|
+| loc | Primary model location/region | Two-letter primary region acronym | `US`|
+| root   | Main model type | String | `EEIO`|
+| major  | Major version number. Advances indicate a major methodological/data update | Integer | `2` |
+| minor  | Minor version number. Advances indicate a minor methodological/data update | Integer |  `0` |
+| patch |  A patch number. Advances indicates a minor fix or data update | Integer | `1` |
+| form  | Indicator for Commodity x Commodity or Industry x Industry form | 'c' for commodityxcommodity , 'i' for industryxindustry | `i` |
+| sectors<sup>1</sup> | Base level of BEA ([see definitions](https://www.bea.gov/sites/default/files/methodologies/industry_primer.pdf#page=17)) or number of sectors | <ul><li>Character for a BEA level - 'd' for detail, 's' for Summary, 'c' for Sector, OR</li><li>Integer for an arbitrary number<sup>2</sup></li></ul> | `s` or `75` |
+| IOyear | Optional year of base input-output data for deviation from IO year in base version | Integer |  `2017` |
+| subset | Short name for a satellite or indicator subset or blank if full set is included | Hyphen followed by 3-6 digit string with letter in CAPS |  `-GHG` |
 
 <sup>1</sup> If `sectors` is a letter, it means the model uses the original BEA Summary sectors; if it is a number, it means model sectors are hybridized (e.g. disaggregated and/or aggregated) and are not identical with the original BEA Summary sectors.
 

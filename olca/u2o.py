@@ -896,8 +896,10 @@ def generate_sources(bib_path, bibids):
 
     def parse_for_olca(bibids, d):
 
-        key_dict = {'description': ['plain_publisher',
+        key_dict = {'description': ['plain_author',
+                                    'plain_publisher',
                                     'plain_title',
+                                    'plain_journal',
                                     'year'],
                     'textReference': '',
                     'year': 'plain_year',
@@ -915,7 +917,7 @@ def generate_sources(bib_path, bibids):
             for key, value in key_dict.items():
                 try:
                     if isinstance(value, list):
-                        source[key] = ', '.join([record[v] for v in value])
+                        source[key] = ', '.join([record[v] for v in value if v in record])
                     else:
                         source[key] = record[value]
                 except KeyError:

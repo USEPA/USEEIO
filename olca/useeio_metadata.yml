@@ -97,9 +97,3 @@ demand_processes:
         - *demand_desc
         - *desc
 
-process_creation: >
-    These openLCA processes and flows for USEEIO were created from a complete model
-    build in useeior using the script 'u2o.py' in the USEEIO respository at
-    https://github.com/USEPA/USEEIO/blob/master/olca/u2o.py. The JSON was imported into
-    an empty database containing only the Federal LCA Commons Core Database.
-

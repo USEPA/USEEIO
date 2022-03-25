@@ -1,13 +1,13 @@
 # General Information
 description: &desc >
-    This USEEIO model, [model_name], was built useing useeior
+    This USEEIO model, [model_name], was built using useeior
     v[useeior_package_version] which can be found at
-    https://github.com/USEPA/useeior. More information at USEEIO is available at
+    https://github.com/USEPA/useeior/releases. More information at USEEIO is available at
     https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models.
 
 time_description: >
     [target_year] is the year in which this version of USEEIO was released and
-    is the target date for the model. All dollar values reflect USD in 2012.
+    is the target year for the model. All dollar values reflect USD in 2012.
 
 geographic_description: >
     Data represent the 50 US states.
@@ -15,17 +15,17 @@ geographic_description: >
 technology_descripton: >
     The process describes the average US production of this good or service
     within this NAICS-based grouping defined in the BEA 2012 detailed input-output
-    tables. Distribution, wholesale and retailing of this good or service, use,
+    tables. Distribution (transportation), wholesaling and retailing of this good or service, use,
     and final disposal are not included. Creation of a product system with this
     process will enable modeling of all upstream (supply-chain) activities.
 
 # Administrative information
 intended_application: >
     The primary application is for use in the US Environmentally-Extended Input-Ouput
-    model, USEEIO, version [model_version]. This model is being used by the US EPA for
+    model, USEEIO, version [model_version]. This model is being used by the U.S. EPA for
     supporting tools that prioritize goods and services based on potential environmental
     impacts, resource use or emissions for large regions, including the US and US
-    states, and as a strealined tool for organizations as a starting point to
+    states, and as a streamlined tool for organizations as a starting point to
     consider sustainable materials management. Model results are designed to
     provide meso/macro-level decision support.
 
@@ -39,11 +39,11 @@ access_restrictions: >
     This model should be appropriately cited (Ingwersen et al. 2022, see 'Publication' field
     above) when used. Any changes or derivations of this model by the user should be documented.
     The model itself and any results from use of this model shall not be construed
-    to constitute US EPA opinion or policy.
+    to constitute U.S. EPA opinion or policy.
 
 project: >
-    This research was funded by the USEPAs Sustainable and Healthy Communities
-    Research Program. This research was supported through USEPA contract
+    This research was funded by the U.S. EPA's Sustainable and Healthy Communities
+    Research Program. This research was supported through U.S. EPA contract
     HHSN316201200013W, Task Order EP-G16H-01256 with General Dynamics IT (GDIT)
     and contract EP-C-16-015, Task Order 68HERC19F0292 with Eastern Research
     Group (ERG). Processing of Criteria and Hazardous Air Emissions was supported
@@ -56,7 +56,7 @@ project: >
 lci_method: 'Input-output'
 
 model_constants: >
-    The reference unit of all processes is 1 USD2012 of the good or service.
+    The reference unit of all processes is 1 USD (2012) of the good or service.
     The technosphere inputs are based on the US BEA detailed input-output tables
     for 2012. The IO tables are combined to develop a commodity-by-commodity
     model based on the the industry-technology assumption, which assumes all
@@ -74,7 +74,7 @@ data_completeness: >
     are included. The direct resources extracted including minerals, energy
     sources, water and land occupied are included. Emissions to air include all
     critieria air pollutants, greenhouse gases, and hazardous and toxic air
-    pollutants as defined by US EPA. Releases to water include toxics, total
+    pollutants as defined by U.S. EPA. Releases to water include toxics, total
     nitrogen and total phosphorus, and water discharges. Releases to soil or
     groundwater include toxics and agriculutural pesticides. Solid hazardous
     and non-hazardous wastes generated are included as waste flows.

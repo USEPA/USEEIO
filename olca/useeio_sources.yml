@@ -1,0 +1,22 @@
+# Sources
+
+# SourceID keys correspond to bib references, values are used as
+# object names in openLCA
+epa_us_2018: "USEPA 2018 GHGI"
+epa_national_2017: "USEPA 2019 NEI"
+us_epa_toxics_2018: "USEPA 2018 TRI"
+us_epa_discharge_2018: "USEPA 2018 DMR"
+usda_census_2012: "USDA 2012 CoA"
+usda_census_2017: "USDA 2017 CoA"
+eia_2014_2017: "EIA 2017 MECS"
+bureau_of_economic_analysis_input-output_2019: "BEA 2019"
+bls_quarterly_2012: "BLS 2012 QCEW"
+zeng_impact_2020: "Zeng 2020"
+eia_commercial_2012: "EIA 2016 CBECS"
+blm_public_2012: "BLM 2013 PLS"
+us_department_of_transportation_federal_highway_administration_addendum_1997: "FHWA 1997"
+bigelow_major_2017: "Bigelow 2017"
+usgs_water_2015: "USGS 2018"
+usda_irrigation_2018: "USDA 2019 IWMS"
+usgs_method_2005: "Lovelace 2009"
+

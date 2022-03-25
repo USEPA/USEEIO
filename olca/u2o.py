@@ -26,19 +26,20 @@ from typing import Dict, List, Optional, Tuple
 import numpy
 
 MODEL_VERSION = '2.0.1'
-USEEIOR_VERSION = '0.4.2'
+MODEL_NAME = '2.0.1-411'
+USEEIOR_VERSION = '1.0.2'
 TARGET_YEAR = 2021
 NOW = datetime.datetime.now().isoformat(timespec='seconds')
 FLOW_STR = 'Flow generated for use in USEEIO models'
 indicators_to_write = ['Waste Generated', 'Economic & Social']
-SOURCES = ['epa_us_2018', 'us_epa_national_2020', 'us_epa_toxics_2018',
-           'us_epa_discharge_2018', 'usda_census_2012', 'usda_census_2017',
-           'eia_2014_2017', 'bls_quarterly_2014', 'bea_use_2012',
-           'bls_quarterly_2012', 'zeng_impact_2020', 'bea_gross_2017',
-           'bls_quarterly_2017', 'eia_commercial_2012', 'blm_public_2012',
-           'us_department_of_transportation_federal_highway_administration_addendum_1997',
-           'bigelow_major_2017', 'usgs_water_2015', 'bls_quarterly_2015',
-           'usda_irrigation_2018', 'usgs_method_2005']
+
+useeio_source = {'name': 'Ingwersen et al. 2022, USEEIO 2.0',
+                 'description': 'Ingwersen, W.; Li, M.; Young, B.; Vendries, J.; Birney, C. '
+                         'USEEIO v2.0, the US Environmentally-Extended Input-Output Model V2.0. '
+                         'Scientific Data',
+                 'textReference': '',
+                 'year': '2022',
+                 'url': ''}
 
 class _RefIds:
     LOCATION_US = '0b3b97fa-6688-3c56-88ee-4ae80ec0c3c2'
@@ -180,6 +181,7 @@ def convert(folder_path, zip_path, bib_path=None):
     source_list = []
     if bib_path:
         try:
+            SOURCES = _read_metadata('useeio_sources.yml')
             source_list = generate_sources(bib_path, SOURCES)
         except:
             print('error generating source list')
@@ -204,6 +206,7 @@ def convert(folder_path, zip_path, bib_path=None):
                          compression=zipfile.ZIP_DEFLATED) as zipf:
         _write_ref_data(zipf)
         _write_sources(zipf, source_list)
+        _write_sources(zipf, [_Source(useeio_source)])
         _write_categories(zipf, 'FLOW',
                           ['Elementary flows/' + f.context for f in env_flows])
         _write_categories(zipf, 'FLOW',
@@ -780,6 +783,7 @@ def _write_impacts(zip_file: zipfile.ZipFile, indicators: List[_Indicator],
 
 def _write_obj(zip_file: zipfile.ZipFile, path: str, obj: dict):
     uid = obj.get('@id')
+    obj["@context"] = "http://greendelta.github.io/olca-schema/"
     if uid is None or uid == '':
         log.error('invalid @id for object %s in %s', obj, path)
         return
@@ -810,7 +814,8 @@ def _parse_metadata(m, subset=None):
         else:
             value = _conc_meta(value)
         # update key words
-        value = value.replace('[model_version]', MODEL_VERSION)
+        value = value.replace('[model_name]', MODEL_NAME)
+        value = value.replace('[model_version]', MODEL_NAME)
         value = value.replace('[useeior_package_version]', USEEIOR_VERSION)
         value = value.replace('[target_year]', str(TARGET_YEAR))
         metadata[key] = value
@@ -840,7 +845,7 @@ def _process_doc(m, source_list=None):
                  'dataSetOwner': {'@id': _parse_metadata(actor_dict, 'owner')['id']},
                  'dataGenerator': {'@id': _parse_metadata(actor_dict, 'generator')['id']},
                  'dataDocumentor': {'@id': _parse_metadata(actor_dict, 'generator')['id']},
-                 #'publication': ,
+                 'publication': {'@id': _Source(useeio_source).json_obj()['@id']},
                  'restrictionsDescription': m['access_restrictions'],
                  'projectDescription': m['project'],
                  'creationDate': NOW,
@@ -891,22 +896,28 @@ def generate_sources(bib_path, bibids):
 
     def parse_for_olca(bibids, d):
 
-        key_dict = {'name': 'ID',
-                    'description': 'plain_title',
+        key_dict = {'description': ['plain_publisher',
+                                    'plain_title',
+                                    'year'],
                     'textReference': '',
                     'year': 'plain_year',
                     'url': 'url',
                     }
         s = []
-        for bibid in bibids:
+        for bibid, name in bibids.items():
             try:
                 record = d[bibid]
             except KeyError:
-                print('id not found')
+                print(f'{bibid} not found')
+                continue
             source = {}
+            source['name'] = bibids[bibid]
             for key, value in key_dict.items():
                 try:
-                    source[key] = record[value]
+                    if isinstance(value, list):
+                        source[key] = ', '.join([record[v] for v in value])
+                    else:
+                        source[key] = record[value]
                 except KeyError:
                     source[key] = ''
             s.append(_Source(source))

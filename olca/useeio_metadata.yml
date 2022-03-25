@@ -1,6 +1,6 @@
 # General Information
 description: &desc >
-    This USEEIO model version [model_version] was built useing useeior
+    This USEEIO model, [model_name], was built useing useeior
     v[useeior_package_version] which can be found at
     https://github.com/USEPA/useeior. More information at USEEIO is available at
     https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models.
@@ -30,8 +30,8 @@ intended_application: >
     provide meso/macro-level decision support.
 
 access_restrictions: >
-    This model should be appropriately cited (cite the dataset) when used. Any
-    changes or derivations of this model by the user should be documented.
+    This model should be appropriately cited (Ingwersen et al. 2022, see 'Publication' field
+    above) when used. Any changes or derivations of this model by the user should be documented.
     The model itself and any results from use of this model shall not be construed
     to constitute US EPA opinion or policy.
 

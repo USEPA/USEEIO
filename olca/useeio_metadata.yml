@@ -29,6 +29,12 @@ intended_application: >
     consider sustainable materials management. Model results are designed to
     provide meso/macro-level decision support.
 
+    The openLCA processes and flows for USEEIO were created from a complete model
+    build in useeior using the script 'u2o.py' in the USEEIO respository at
+    https://github.com/USEPA/USEEIO/blob/master/olca/u2o.py. The JSON was imported into
+    an empty database containing only the Federal LCA Commons Core Database.
+
+
 access_restrictions: >
     This model should be appropriately cited (Ingwersen et al. 2022, see 'Publication' field
     above) when used. Any changes or derivations of this model by the user should be documented.
@@ -90,4 +96,10 @@ demand_processes:
     description:
         - *demand_desc
         - *desc
+
+process_creation: >
+    These openLCA processes and flows for USEEIO were created from a complete model
+    build in useeior using the script 'u2o.py' in the USEEIO respository at
+    https://github.com/USEPA/USEEIO/blob/master/olca/u2o.py. The JSON was imported into
+    an empty database containing only the Federal LCA Commons Core Database.
 

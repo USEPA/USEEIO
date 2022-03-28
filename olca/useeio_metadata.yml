@@ -91,13 +91,13 @@ data_collection_period: >
 
 demand_processes:
     demand_desc: &demand_desc >
-        The final demand vectors represent purchases of goods and services by 
-        final consumers, including by households, investors and governments. 
-        Consumption is defined as final use within the US of all goods and services 
-        that are both produced in the US and imported from overseas. Production is 
-        defined as final use, either within the US or abroad, of all goods and services 
-        that are produced in the US. "Complete" indicates the consumption and production 
-        demand vectors are from the BEA Use table, while "domestic" indicates the 
+        The final demand vectors represent purchases of goods and services by
+        final consumers, including by households, investors and governments.
+        "Consumption" is defined as final use within the US of all goods and services
+        that are both produced in the US and imported from overseas. "Production" is
+        defined as final use, either within the US or abroad, of all goods and services
+        that are produced in the US. "Complete" indicates the consumption and production
+        demand vectors are from the BEA Use table, while "Domestic" indicates the
         demand vectors are from the BEA Domestic Use table.
 
     description:

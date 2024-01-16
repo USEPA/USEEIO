@@ -1,6 +1,7 @@
 import pandas as pd
 import pickle as pkl
 import yaml
+import sys
 import statistics
 from currency_converter import CurrencyConverter
 from datetime import date
@@ -9,6 +10,9 @@ from pathlib import Path
 import fedelemflowlist as fedelem
 from esupy.dqi import get_weighted_average
 
+# add path to subfolder for importing modules
+path_proj = Path(__file__).parents[1]
+sys.path.append(str(path_proj / 'import_factors_exio'))  # accepts str, not pathlib obj
 from API_Imports_Data_Script import get_imports_data
 from Exiobase_downloads import process_exiobase
 #%%
@@ -39,6 +43,7 @@ dataPath = Path(__file__).parent / 'data'
 conPath = Path(__file__).parent / 'concordances'
 resource_Path = Path(__file__).parent / 'processed_mrio_resources'
 out_Path = Path(__file__).parent / 'output'
+out_Path.mkdir(exist_ok=True)
 
 flow_cols = ('Flow', 'Compartment', 'Unit',
              'CurrencyYear', 'EmissionYear', 'PriceType',
@@ -474,7 +479,6 @@ def store_data(sr_i,
                weighted_multipliers_bea_summary,
                year,
                mrio):
-    out_Path.mkdir(exist_ok=True)
     imports_multipliers.to_csv(
         out_Path /f'imports_multipliers_{mrio}_{year}.csv', index=False)
     sr_i.to_csv(

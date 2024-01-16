@@ -1,0 +1,7 @@
+import_factors_exio/*__pycache__*
+import_factors_exio/mrio_models/*
+import_factors_exio/processed_mrio_resources/*
+import_factors_exio/output/*
+import_factors_exio/response_data/*
+import_factors_exio/API/*API_key.yaml
+!import_factors_exio/output/imports_multipliers*

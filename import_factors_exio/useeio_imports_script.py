@@ -90,18 +90,18 @@ def generate_exio_factors(years: list, io_level='Summary'):
         check = e_d.query('`Carbon dioxide` >= 100')
         e_d = e_d.query('`Carbon dioxide` < 100') # Drop Outliers
         ## TODO consider an alternate approach here
-    
+        export_field = list(config.get('exports').values())[0]
         e_d = (e_d.merge(e_bil, on=['CountryCode','Exiobase Sector'], how='left')
                   .merge(e_u, on='Exiobase Sector', how='left')
                   .drop(columns=['Exiobase Sector','Year']))
-        e_d = e_d.query('`Bilateral Trade Total` > 0')
+        e_d = e_d.query(f'`{export_field}` > 0')
         # INSERT HERE TO REVIEW SECTOR CONTRIBUTIONS WITHIN A COUNTRY
         agg = e_d.groupby(['BEA Detail', 'CountryCode']).agg('sum')
-        for c in [c for c in agg.columns if c not in ['Bilateral Trade Total']]:
-            agg[c] = get_weighted_average(e_d, c, 'Bilateral Trade Total', 
+        for c in [c for c in agg.columns if c != export_field]:
+            agg[c] = get_weighted_average(e_d, c, export_field, 
                                           ['BEA Detail','CountryCode'])
     
-        multiplier_df = c_d.merge(agg.reset_index().drop(columns='Bilateral Trade Total'),
+        multiplier_df = c_d.merge(agg.reset_index().drop(columns=export_field),
                                   how='left',
                                   on=['CountryCode', 'BEA Detail'])
         multiplier_df = multiplier_df.melt(
@@ -332,8 +332,7 @@ def pull_exiobase_bilateral_trade(year):
         print(f"Exiobase data not found for {year}")
         process_exiobase(year_start=year, year_end=year, download=True)
     exio = pkl.load(open(file,'rb'))
-    fields = {**config['fields']}
-    fields['US'] = 'Bilateral Trade Total'
+    fields = {**config['fields'], **config['exports']}
     t_df = exio['Bilateral Trade']
     t_df = (t_df
             .filter(['US'])

@@ -1,6 +1,8 @@
 fields:
     region: CountryCode
     sector: Exiobase Sector
+exports:
+    US: Exports to US
 flows:
     Carbon dioxide (CO2) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Carbon dioxide
     Methane (CH4) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Methane

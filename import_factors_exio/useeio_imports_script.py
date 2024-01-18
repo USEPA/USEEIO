@@ -324,7 +324,8 @@ def pull_exiobase_multipliers(year):
 
 def pull_exiobase_bilateral_trade(year):
     '''
-    Extracts industry output vector from stored Exiobase model.
+    Extracts bilateral trade data by industry from countries to the U.S.
+    from stored Exiobase model.
     '''
     file = resource_Path / f'exio_all_resources_{year}.pkl'
     if not file.exists():

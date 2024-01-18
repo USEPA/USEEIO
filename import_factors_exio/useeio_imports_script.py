@@ -15,7 +15,7 @@ path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_factors_exio'))  # accepts str, not pathlib obj
 from API_Imports_Data_Script import get_imports_data
 from Exiobase_downloads import process_exiobase
-#%%
+
 ''' 
 VARIABLES:
 path = data path, set to parent directory
@@ -39,6 +39,10 @@ e_d = Exiobase emission factors per unit currency
 '''
 
 #%%
+# set list of years to run for factors
+years = [2014]
+# years = list(range(2012,2020))
+
 dataPath = Path(__file__).parent / 'data'
 conPath = Path(__file__).parent / 'concordances'
 resource_Path = Path(__file__).parent / 'processed_mrio_resources'
@@ -55,11 +59,10 @@ with open(dataPath / "exio_config.yml", "r") as file:
     config = yaml.safe_load(file)
 
 
-def generate_exio_factors(year_start, year_end, io_level='Summary'):
+def generate_exio_factors(years: list, io_level='Summary'):
     '''
     Runs through script to produce emission factors for U.S. imports from exiobase
     '''
-    years = list(range(year_start, year_end+1))
     for year in years:
         # Country imports by detail sector
         sr_i = get_subregion_imports(year)
@@ -491,4 +494,4 @@ def store_data(sr_i,
 
 #%%
 if __name__ == '__main__':
-    generate_exio_factors(year_start=2013, year_end=2013)
+    generate_exio_factors(years = years)

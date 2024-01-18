@@ -332,7 +332,7 @@ def pull_exiobase_bilateral_trade(year):
         print(f"Exiobase data not found for {year}")
         process_exiobase(year_start=year, year_end=year, download=True)
     exio = pkl.load(open(file,'rb'))
-    fields = {**config['fields'], **config['flows']}
+    fields = {**config['fields']}
     fields['US'] = 'Bilateral Trade Total'
     t_df = exio['Bilateral Trade']
     t_df = (t_df

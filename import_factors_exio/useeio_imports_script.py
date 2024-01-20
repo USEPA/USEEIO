@@ -258,7 +258,6 @@ def get_exio_to_useeio_concordance():
     path = conPath / "exio_to_bea_commodity_concordance.csv"
     e_u_b = (pd.read_csv(path, dtype=str)
                .rename(columns={'Unnamed: 0':'BEA Detail'}))
-    e_u_b = e_u_b.iloc[:,:-4]
     e_u_l = pd.melt(e_u_b, id_vars=['BEA Detail'], var_name='Exiobase Sector')
     e_u = (e_u_l.query('value == "1"')
                 .reset_index(drop=True))

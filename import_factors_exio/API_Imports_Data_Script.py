@@ -164,6 +164,9 @@ def get_census_df(d, c_d, data_years):
     ## Merge in BEA Codes and flatten
     c_b = pd.read_csv(apiPath / 'Census_API_Mappings.csv')
     df = df.merge(c_b, how='left', on='NAICS')
+    check = set(df[df['BEA Sector'].isna()]['NAICS'])
+    if len(check) > 0:
+        print(f'WARNING: BEA mapping missing for NAICS: {sorted(check)}')
     df = (df.drop(columns='NAICS')
             .groupby(['BEA Sector', 'Year']).agg(sum)
             .reset_index()

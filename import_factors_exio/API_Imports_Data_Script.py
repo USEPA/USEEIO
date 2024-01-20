@@ -166,7 +166,8 @@ def get_census_df(d, c_d, data_years):
     df = df.merge(c_b, how='left', on='NAICS')
     check = set(df[df['BEA Sector'].isna()]['NAICS'])
     if len(check) > 0:
-        print(f'WARNING: BEA mapping missing for NAICS: {sorted(check)}')
+        print(f'WARNING: BEA mapping missing for Census data '
+              f'for NAICS: {sorted(check)}')
     df = (df.drop(columns='NAICS')
             .groupby(['BEA Sector', 'Year']).agg(sum)
             .reset_index()

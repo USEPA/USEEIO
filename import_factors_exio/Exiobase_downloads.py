@@ -5,7 +5,7 @@ import pickle as pkl
 
 model_Path = Path(__file__).parent / 'mrio_models'
 resource_Path = Path(__file__).parent / 'processed_mrio_resources'
-model_type = 'pxp' #model type
+model_type = 'pxp'
 
 def process_exiobase(year_start=2012, year_end=2022, download=False):
     years = list(range(year_start, year_end+1))
@@ -21,7 +21,8 @@ def process_exiobase(year_start=2012, year_end=2022, download=False):
         e = pymrio.parse_exiobase3(file)
         trade = pymrio.IOSystem.get_gross_trade(e)
         d = {}
-        d['M'] = e.impacts.M
+        d['M'] = e.satellite.M # raw satellite multipliers
+        d['N'] = e.impacts.M # characterized multipliers
         d['Trade Total'] = trade[1]
         # ^^ df with gross total imports and exports per sector and region
         d['Bilateral Trade'] = trade[0]

@@ -40,8 +40,8 @@ e_d = Exiobase emission factors per unit currency
 
 #%%
 # set list of years to run for factors
-years = [2014]
-# years = list(range(2012,2020))
+years = [2019]
+# years = list(range(2012,2021))
 
 dataPath = Path(__file__).parent / 'data'
 conPath = Path(__file__).parent / 'concordances'
@@ -131,8 +131,11 @@ def generate_exio_factors(years: list, io_level='Summary'):
                    left_on=['Flow', 'Compartment'],
                    right_on=['Flowable', 'Context'],
                    )
+            .assign(Flowable=lambda x: x['Flowable'].fillna(x['Flow']))
             .drop(columns=['Flow', 'Compartment'])
             .rename(columns={'Flow UUID': 'FlowUUID'})
+            .assign(FlowUUID=lambda x: x['FlowUUID'].fillna('n.a.'))
+            .assign(Context=lambda x: x['Context'].fillna('emission/air'))
             )
     
         weighted_multipliers_bea_detail, weighted_multipliers_bea_summary = (
@@ -162,6 +165,7 @@ def generate_exio_factors(years: list, io_level='Summary'):
             .assign(ReferenceCurrency='USD')
             .assign(BaseIOLevel='Summary')
             )
+        ##TODO update units to kg CO2e for HFCs and PFCs unspecified
         store_data(sr_i,
                    imports_multipliers,
                    weighted_multipliers_bea_detail,
@@ -307,11 +311,21 @@ def pull_exiobase_multipliers(year):
         print(f"Exiobase data not found for {year}")
         process_exiobase(year_start=year, year_end=year, download=True)
     exio = pkl.load(open(file,'rb'))
-    M_df = exio['M']
 
+    # for satellite
+    M_df = exio['M'].copy().reset_index()
     fields = {**config['fields'], **config['flows']}
+    M_df['flow'] = M_df.stressor.str.split(' -', 1, expand=True)[0]
+    M_df['flow'] = M_df['flow'].map(fields)
+    M_df = M_df.loc[M_df.flow.isin(fields.values())]
+    M_df = M_df.drop(columns='stressor').groupby('flow').agg('sum')
+    M_df = M_df / 1000000 # units are kg / million Euro
 
-    M_df = M_df.loc[M_df.index.isin(fields.keys())]
+    # # for impacts
+    # M_df = exio['N']
+    # fields = {**config['fields'], **config['impacts']}
+    # M_df = M_df.loc[M_df.index.isin(fields.keys())]
+
     M_df = (M_df
             .transpose()
             .reset_index()

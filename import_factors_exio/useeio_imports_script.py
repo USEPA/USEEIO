@@ -165,7 +165,11 @@ def generate_exio_factors(years: list, io_level='Summary'):
             .assign(ReferenceCurrency='USD')
             .assign(BaseIOLevel='Summary')
             )
-        ##TODO update units to kg CO2e for HFCs and PFCs unspecified
+
+        imports_multipliers.loc[imports_multipliers['Flowable'] == 'HFCs and '
+                                'PFCs, unspecified', 'Unit'] = 'kg CO2e'
+        #^^ update units to kg CO2e for HFCs and PFCs unspecified, consider
+        # more dynamic implementation
         store_data(sr_i,
                    imports_multipliers,
                    weighted_multipliers_bea_detail,
@@ -297,8 +301,6 @@ def get_subregion_imports(year):
                )
     sr_i = (sr_i.merge(regions, on='CountryCode', how='left', validate='m:1')
                 .rename(columns={'BEA Sector':'BEA Detail'}))
-    # sr_i['Subregion Contribution'] = sr_i['Import Quantity']/sr_i.groupby('BEA Sector')['Import Quantity'].transform('sum')
-    # sr_i = sr_i.fillna(0).drop(columns={'Import Quantity'}).rename(columns={'BEA Sector':'BEA Detail'})
     return sr_i
 
 
@@ -318,7 +320,8 @@ def pull_exiobase_multipliers(year):
     M_df['flow'] = M_df.stressor.str.split(' -', 1, expand=True)[0]
     M_df['flow'] = M_df['flow'].map(fields)
     M_df = M_df.loc[M_df.flow.isin(fields.values())]
-    M_df = M_df.drop(columns='stressor').groupby('flow').agg('sum')
+    M_df = M_df.drop(columns='stressor', level=0).groupby('flow').agg('sum')
+    ##  ^^ TODO fix performance warning
     M_df = M_df / 1000000 # units are kg / million Euro
 
     # # for impacts

@@ -145,7 +145,7 @@ def generate_exio_factors(years: list, io_level='Summary'):
         weighted_multipliers_bea_detail_nation) = (
             calculate_specific_emission_factors(multiplier_df))
         
-        nation_summary, nation_detail = calc_summary_national(
+        nation_summary, nation_detail = calc_weighted_multipliers_national(
             weighted_multipliers_bea_summary_nation,
             weighted_multipliers_bea_detail_nation)
         # Aggregate by TiVa Region
@@ -529,7 +529,7 @@ def calculateWeightedEFsImportsData(weighted_multipliers,
     # INSERT HERE FOR DEVELOPING DETAIL-LEVEL MULTIPLIERS USING t_c and u_c
     
 
-def calc_summary_national(weighted_multipliers_bea_summary_nation, 
+def calc_weighted_multipliers_national(weighted_multipliers_bea_summary_nation, 
                           weighted_multipliers_bea_detail_nation):
     '''
     Calcaulates multipliers for summary- and detail- level codes without need

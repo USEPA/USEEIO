@@ -144,7 +144,10 @@ def generate_exio_factors(years: list, io_level='Summary'):
         weighted_multipliers_bea_summary_nation,
         weighted_multipliers_bea_detail_nation) = (
             calculate_specific_emission_factors(multiplier_df))
-    
+        
+        nation_summary, nation_detail = calc_summary_national(
+            weighted_multipliers_bea_summary_nation,
+            weighted_multipliers_bea_detail_nation)
         # Aggregate by TiVa Region
         t_c = calc_tiva_coefficients(year)
         imports_multipliers = calculateWeightedEFsImportsData(
@@ -162,8 +165,8 @@ def generate_exio_factors(years: list, io_level='Summary'):
                                 c.convert(1, 'EUR', 'USD', date=date(year, 12, 30))])
         imports_multipliers = (
             imports_multipliers
-            .assign(FlowAmount=lambda x: x['Amount_summary_tiva']/exch)
-            .drop(columns='Amount_summary_tiva')
+            .assign(FlowAmount=lambda x: x['Amount']/exch)
+            .drop(columns='Amount')
             .rename(columns={'BEA Summary': 'Sector'})
             .assign(Unit='kg')
             .assign(ReferenceCurrency='USD')
@@ -172,6 +175,8 @@ def generate_exio_factors(years: list, io_level='Summary'):
         ##TODO update units to kg CO2e for HFCs and PFCs unspecified
         store_data(sr_i,
                    imports_multipliers,
+                   nation_summary,
+                   nation_detail,
                    weighted_multipliers_bea_detail_tiva,
                    weighted_multipliers_bea_summary_tiva,
                    weighted_multipliers_bea_detail_nation,
@@ -518,11 +523,38 @@ def calculateWeightedEFsImportsData(weighted_multipliers,
         .agg({'Amount': 'sum'})
         .reset_index()
         )
-
     return imports_multipliers
+
+#def calc_tiva_detail(weighted_multipliers_tiva_detail):
+    # INSERT HERE FOR DEVELOPING DETAIL-LEVEL MULTIPLIERS USING t_c and u_c
+    
+
+def calc_summary_national(weighted_multipliers_bea_summary_nation, 
+                          weighted_multipliers_bea_detail_nation):
+    '''
+    Calcaulates multipliers for summary- and detail- level codes without need
+    for TiVA data. Weighs on basis of imports that were collected from BEA & 
+    Census API.
+    '''
+    
+    s_col = [c for c in weighted_multipliers_bea_summary_nation if c in flow_cols]
+    d_col = [c for c in weighted_multipliers_bea_detail_nation if c in flow_cols]
+
+    nation_summary = (weighted_multipliers_bea_summary_nation
+                      .groupby(['BEA Summary'] + s_col)
+                      .agg({'Amount_summary_nation': sum})
+                      .reset_index())
+    nation_detail = (weighted_multipliers_bea_detail_nation
+                    .groupby(['BEA Detail'] + d_col)
+                    .agg({'Amount_detail_nation':sum})
+                    .reset_index())
+    
+    return (nation_summary, nation_detail)
 
 def store_data(sr_i,
                imports_multipliers,
+               nation_summary,
+               nation_detail,
                weighted_multipliers_bea_detail_tiva,
                weighted_multipliers_bea_summary_tiva,
                weighted_multipliers_bea_detail_nation,
@@ -531,12 +563,20 @@ def store_data(sr_i,
                mrio):
     imports_multipliers.to_csv(
         out_Path /f'imports_multipliers_{mrio}_{year}.csv', index=False)
+    nation_summary.to_csv(
+        out_Path /f'nation_summary_imports_multipliers_{mrio}_{year}.csv', index=False)
+    nation_detail.to_csv(
+        out_Path /f'nation_detail_imports_multipliers_{mrio}_{year}.csv', index=False)
     sr_i.to_csv(
         out_Path / f'subregion_imports_{mrio}_{year}.csv', index=False)
     weighted_multipliers_bea_detail_tiva.to_csv(
         out_Path / f'weighted_multipliers_detail_tiva_{mrio}_{year}.csv', index=False)
     weighted_multipliers_bea_summary_tiva.to_csv(
         out_Path / f'weighted_multipliers_summary_tiva_{mrio}_{year}.csv', index=False)
+    weighted_multipliers_bea_detail_nation.to_csv(
+        out_Path / f'weighted_multipliers_detail_nation_{mrio}_{year}.csv', index=False)
+    weighted_multipliers_bea_summary_nation.to_csv(
+        out_Path / f'weighted_multipliers_summary_nation_{mrio}_{year}.csv', index=False)
 
 
 #%%

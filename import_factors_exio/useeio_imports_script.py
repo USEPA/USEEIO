@@ -220,16 +220,16 @@ def calc_tiva_coefficients(year):
     '''
     t_df = get_tiva_data(year)
     corr = (pd.read_csv(conPath / 'bea_imports_corr.csv',
-                        usecols=['BEA Imports', 'BEA Summary'])
+                        usecols=['TiVA', 'BEA Summary'])
             .drop_duplicates())
     # ^^ requires mapping of import codes to summary codes. These codes are 
     # between detail and summary.
 
     t_c = (t_df
            .reset_index()
-           .rename(columns={'IOCode': 'BEA Imports'})
-           .merge(corr, on='BEA Imports', how='left', validate='one_to_many')
-           .drop(columns='BEA Imports')
+           .rename(columns={'IOCode': 'TiVA'})
+           .merge(corr, on='TiVA', how='left', validate='one_to_many')
+           .drop(columns='TiVA')
            .groupby('BEA Summary').agg('sum'))
     count = list(t_c.loc[(t_c.sum(axis=1) != 0),].reset_index()['BEA Summary'])
     ## ^^ Sectors with imports
@@ -370,7 +370,7 @@ def calc_contribution_coefficients(df):
     '''
     Appends contribution coefficients to prepared dataframe.
     '''
-    
+    df['Import Quantity'] = df['Import Quantity'].fillna(0)
     df = calc_coefficients_bea_summary(df)
     df = calc_coefficients_bea_detail(df)
 

@@ -33,7 +33,6 @@ u_cc = complete useeio internal concordance
 u_c = useeio detail to summary code concordance
 r_i = imports, by NAICS category, from countries aggregated in 
       TiVA regions (ROW, EU, APAC)
-c_d = Contribution coefficient matrix
 e_d = Exiobase emission factors per unit currency
 '''
 
@@ -63,16 +62,11 @@ def generate_exio_factors(years: list, io_level='Summary'):
     Runs through script to produce emission factors for U.S. imports from exiobase
     '''
     for year in years:
-        # Country imports by detail AND summary sector
+        # Country imports by detail sector
         sr_i = get_subregion_imports(year)
         if len(sr_i.query('`Import Quantity` <0')) > 0:
             print('WARNING: negative import values...')
-        u_c = get_detail_to_summary_useeio_concordance()
-        sr_i = (sr_i.merge(u_c, how='left', on='BEA Detail', validate='m:1'))
-        c_d = calc_contribution_coefficients(sr_i.filter(
-            ['TiVA Region', 'CountryCode', 'BEA Summary',
-                       'BEA Detail', 'Import Quantity']))
-        if sum(c_d.duplicated(['CountryCode', 'BEA Detail'])) > 0:
+        if sum(sr_i.duplicated(['CountryCode', 'BEA Detail'])) > 0:
             print('Error calculating country coefficients by detail sector')
 
         ## Generate country specific emission factors by BEA sector weighted
@@ -86,30 +80,21 @@ def generate_exio_factors(years: list, io_level='Summary'):
                   .drop(columns=['Exiobase Sector','Year']))
         e_d = e_d.query(f'`{export_field}` > 0')
         # INSERT HERE TO REVIEW SECTOR CONTRIBUTIONS WITHIN A COUNTRY
-        agg = e_d.groupby(['BEA Detail', 'CountryCode']).agg('sum')
+        agg = e_d.groupby(['BEA Detail', 'CountryCode', 'TiVA Region']).agg('sum')
         for c in [c for c in agg.columns if c != export_field]:
             agg[c] = get_weighted_average(e_d, c, export_field, 
                                           ['BEA Detail','CountryCode'])
 
+        u_c = get_detail_to_summary_useeio_concordance()
         ## Combine EFs with contributions by country
         multiplier_df = (agg.reset_index().drop(columns=export_field)
-                            .merge(c_d,
+                            .merge(sr_i.drop(columns=['Unit', 'TiVA Region']),
                                    how='left',
                                    on=['CountryCode', 'BEA Detail'])
+                            .merge(u_c, how='left', on='BEA Detail', validate='m:1')
                             )
-        ## Need to renormalize this for countries that have no emissions data
-        for k, v in {'Contribution to Detail': 'BEA Detail',
-                     'Contribution to Summary': 'BEA Summary'}.items():
-            col = 'Subregion ' + k
-            multiplier_df[col] = (
-                multiplier_df[col] /
-                multiplier_df.groupby(['TiVA Region', v])
-                [col].transform('sum'))
-            col = 'National ' + k
-            multiplier_df[col] = (
-                multiplier_df[col] /
-                multiplier_df.groupby(v)
-                [col].transform('sum'))
+
+        multiplier_df = calc_contribution_coefficients(multiplier_df)
 
         multiplier_df = multiplier_df.melt(
             id_vars = [c for c in multiplier_df if c not in 
@@ -352,6 +337,12 @@ def pull_exiobase_multipliers(year):
             .rename(columns=fields)
             .assign(Year=str(year))
             )
+    path = conPath / 'exio_tiva_concordance.csv'
+    regions = (pd.read_csv(path, dtype=str,
+                           usecols=['ISO 3166-alpha-2', 'TiVA Region'])
+               .rename(columns={'ISO 3166-alpha-2': 'CountryCode'})
+               )
+    M_df = M_df.merge(regions, how='left', on='CountryCode')
     return M_df
 
 
@@ -375,19 +366,14 @@ def pull_exiobase_bilateral_trade(year):
     return t_df
 
 
-def calc_contribution_coefficients(p_d):
+def calc_contribution_coefficients(df):
     '''
     Appends contribution coefficients to prepared dataframe.
     '''
     
-    df = calc_coefficients_bea_summary(p_d)
+    df = calc_coefficients_bea_summary(df)
     df = calc_coefficients_bea_detail(df)
 
-    df = df[['TiVA Region','CountryCode','BEA Summary','BEA Detail',
-             'Subregion Contribution to Summary',
-             'Subregion Contribution to Detail',
-             'National Contribution to Summary',
-             'National Contribution to Detail']]
     if not(df['Subregion Contribution to Summary'].fillna(0).between(0,1).all() &
            df['Subregion Contribution to Detail'].fillna(0).between(0,1).all() &
            df['National Contribution to Summary'].fillna(0).between(0,1).all() &
@@ -411,6 +397,7 @@ def calc_coefficients_bea_summary(df):
                                                            'BEA Summary'])
                                                ['Import Quantity']
                                                .transform('sum'))
+
     df['National Contribution to Summary'] =(df['Import Quantity']/
                                               df.groupby(['BEA Summary'])
                                               ['Import Quantity']
@@ -438,6 +425,17 @@ def calc_coefficients_bea_detail(df):
                                                           'BEA Detail'])
                                               ['Import Quantity']
                                               .transform('sum'))
+    ## If no imports identified for detail code,
+    ## where the country == region, set contribution to 1
+    ## where country != region, set contribution to detail equal for all countries
+    df.loc[(df['Subregion Contribution to Detail'].isna() &
+        (df['CountryCode'] == df['TiVA Region'])),
+        'Subregion Contribution to Detail'] = 1
+    df.loc[(df['Subregion Contribution to Detail'].isna() &
+        (df['CountryCode'] != df['TiVA Region'])),
+        'Subregion Contribution to Detail'] = (
+            1 / df.groupby(['TiVA Region', 'BEA Detail'])
+                ['CountryCode'].transform('count'))
     df['National Contribution to Detail'] =(df['Import Quantity']/
                                               df.groupby(['BEA Detail'])
                                               ['Import Quantity']

@@ -3,7 +3,6 @@ import pickle as pkl
 import yaml
 import sys
 import statistics
-import pymrio
 from currency_converter import CurrencyConverter
 from datetime import date
 from pathlib import Path
@@ -34,7 +33,6 @@ u_cc = complete useeio internal concordance
 u_c = useeio detail to summary code concordance
 r_i = imports, by NAICS category, from countries aggregated in 
       TiVA regions (ROW, EU, APAC)
-p_d = dataframe prepared for final factor calculation
 c_d = Contribution coefficient matrix
 e_d = Exiobase emission factors per unit currency
 '''
@@ -65,32 +63,23 @@ def generate_exio_factors(years: list, io_level='Summary'):
     Runs through script to produce emission factors for U.S. imports from exiobase
     '''
     for year in years:
-        # Country imports by detail sector
+        # Country imports by detail AND summary sector
         sr_i = get_subregion_imports(year)
         if len(sr_i.query('`Import Quantity` <0')) > 0:
             print('WARNING: negative import values...')
-    
-        if io_level == 'Summary':
-            u_c = get_detail_to_summary_useeio_concordance()
-            sr_i = (sr_i.merge(u_c, how='left', on='BEA Detail', validate='m:1'))
-    
-        else: # Detail
-            print('ERROR: not yet implemented')
-            sr_i = sr_i.rename(columns={'BEA Detail': 'BEA'})
-    
-        p_d = sr_i.copy()
-        p_d = p_d[['TiVA Region', 'CountryCode', 'BEA Summary',
-                   'BEA Detail', 'Import Quantity']]
-        c_d = calc_contribution_coefficients(p_d)
-    
+        u_c = get_detail_to_summary_useeio_concordance()
+        sr_i = (sr_i.merge(u_c, how='left', on='BEA Detail', validate='m:1'))
+        c_d = calc_contribution_coefficients(sr_i.filter(
+            ['TiVA Region', 'CountryCode', 'BEA Summary',
+                       'BEA Detail', 'Import Quantity']))
         if sum(c_d.duplicated(['CountryCode', 'BEA Detail'])) > 0:
             print('Error calculating country coefficients by detail sector')
+
+        ## Generate country specific emission factors by BEA sector weighted
+        ## by exports to US when sector mappings are not clean
         e_u = get_exio_to_useeio_concordance()
         e_d = pull_exiobase_multipliers(year)
         e_bil = pull_exiobase_bilateral_trade(year)
-        check = e_d.query('`Carbon dioxide` >= 100')
-        e_d = e_d.query('`Carbon dioxide` < 100') # Drop Outliers
-        ## TODO consider an alternate approach here
         export_field = list(config.get('exports').values())[0]
         e_d = (e_d.merge(e_bil, on=['CountryCode','Exiobase Sector'], how='left')
                   .merge(e_u, on='Exiobase Sector', how='left')
@@ -101,10 +90,27 @@ def generate_exio_factors(years: list, io_level='Summary'):
         for c in [c for c in agg.columns if c != export_field]:
             agg[c] = get_weighted_average(e_d, c, export_field, 
                                           ['BEA Detail','CountryCode'])
-    
-        multiplier_df = c_d.merge(agg.reset_index().drop(columns=export_field),
-                                  how='left',
-                                  on=['CountryCode', 'BEA Detail'])
+
+        ## Combine EFs with contributions by country
+        multiplier_df = (agg.reset_index().drop(columns=export_field)
+                            .merge(c_d,
+                                   how='left',
+                                   on=['CountryCode', 'BEA Detail'])
+                            )
+        ## Need to renormalize this for countries that have no emissions data
+        for k, v in {'Contribution to Detail': 'BEA Detail',
+                     'Contribution to Summary': 'BEA Summary'}.items():
+            col = 'Subregion ' + k
+            multiplier_df[col] = (
+                multiplier_df[col] /
+                multiplier_df.groupby(['TiVA Region', v])
+                [col].transform('sum'))
+            col = 'National ' + k
+            multiplier_df[col] = (
+                multiplier_df[col] /
+                multiplier_df.groupby(v)
+                [col].transform('sum'))
+
         multiplier_df = multiplier_df.melt(
             id_vars = [c for c in multiplier_df if c not in 
                        config['flows'].values()],

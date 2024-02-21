@@ -57,7 +57,7 @@ with open(dataPath / "exio_config.yml", "r") as file:
     config = yaml.safe_load(file)
 
 
-def generate_exio_factors(years: list, io_level='Summary'):
+def generate_exio_factors(years: list):
     '''
     Runs through script to produce emission factors for U.S. imports from exiobase
     '''
@@ -84,7 +84,7 @@ def generate_exio_factors(years: list, io_level='Summary'):
         for c in [c for c in agg.columns if c != export_field]:
             agg[c] = get_weighted_average(e_d, c, export_field, 
                                           ['BEA Detail','CountryCode'])
-
+        # ^^ make sure not to drop when all exports to US are 0 but only single sector e.g. "USED"
         u_c = get_detail_to_summary_useeio_concordance()
         ## Combine EFs with contributions by country
         multiplier_df = (agg.reset_index().drop(columns=export_field)
@@ -93,7 +93,7 @@ def generate_exio_factors(years: list, io_level='Summary'):
                                    on=['CountryCode', 'BEA Detail'])
                             .merge(u_c, how='left', on='BEA Detail', validate='m:1')
                             )
-
+            ## CONSIDER OUTER MERGE ^^
         multiplier_df = calc_contribution_coefficients(multiplier_df)
 
         multiplier_df = multiplier_df.melt(
@@ -129,54 +129,37 @@ def generate_exio_factors(years: list, io_level='Summary'):
             .assign(FlowUUID=lambda x: x['FlowUUID'].fillna('n.a.'))
             .assign(Context=lambda x: x['Context'].fillna('emission/air'))
             )
-    
-        (weighted_multipliers_bea_detail_tiva, 
-        weighted_multipliers_bea_summary_tiva,
-        weighted_multipliers_bea_summary_nation,
-        weighted_multipliers_bea_detail_nation) = (
-            calculate_specific_emission_factors(multiplier_df))
-        
-        nation_summary, nation_detail = calc_weighted_multipliers_national(
-            weighted_multipliers_bea_summary_nation,
-            weighted_multipliers_bea_detail_nation)
-        # Aggregate by TiVa Region
-        t_c = calc_tiva_coefficients(year)
-        imports_multipliers = calculateWeightedEFsImportsData(
-            # weighted_multipliers_bea_summary, t_c)
-            weighted_multipliers_bea_summary_tiva.query('Amount_summary_tiva != 0'),
-            t_c.query('region_contributions_imports != 0'),
-            year)
-        check = (set(t_c.query('region_contributions_imports != 0')['BEA Summary']) - 
-                 set(weighted_multipliers_bea_summary_tiva.query('Amount_summary_tiva != 0')['BEA Summary']))
-        if len(check) > 0:
-            print(f'There are sectors with imports but no emisson factors: {check}')
+
         # Currency adjustment
         c = CurrencyConverter(fallback_on_missing_rate=True)
         exch = statistics.mean([c.convert(1, 'EUR', 'USD', date=date(year, 1, 1)),
                                 c.convert(1, 'EUR', 'USD', date=date(year, 12, 30))])
-        imports_multipliers = (
-            imports_multipliers
-            .assign(FlowAmount=lambda x: x['Amount']/exch)
-            .drop(columns='Amount')
-            .rename(columns={'BEA Summary': 'Sector'})
-            .assign(Unit='kg')
+        multiplier_df = (
+            multiplier_df
+            .assign(EF=lambda x: x['EF']/exch)
             .assign(ReferenceCurrency='USD')
-            .assign(BaseIOLevel='Summary')
             )
-
-        imports_multipliers.loc[imports_multipliers['Flowable'] == 'HFCs and '
-                                'PFCs, unspecified', 'Unit'] = 'kg CO2e'
+        multiplier_df.loc[multiplier_df['Flowable'] == 'HFCs and '
+                              'PFCs, unspecified', 'Unit'] = 'kg CO2e'
         #^^ update units to kg CO2e for HFCs and PFCs unspecified, consider
         # more dynamic implementation
-        store_data(sr_i,
-                   imports_multipliers,
-                   nation_summary,
-                   nation_detail,
-                   weighted_multipliers_bea_detail_tiva,
-                   weighted_multipliers_bea_summary_tiva,
-                   weighted_multipliers_bea_detail_nation,
-                   weighted_multipliers_bea_summary_nation,
-                   year, mrio='exio')
+
+        multiplier_df.to_csv(
+            out_Path /f'multiplier_df_exio_{year}.csv', index=False)
+        calculate_and_store_emission_factors(multiplier_df)
+        
+        # # Recalculat using TiVA regions
+        # t_c = calc_tiva_coefficients(year)
+        # imports_multipliers = calculateWeightedEFsImportsData(
+        #     # weighted_multipliers_bea_summary, t_c)
+        #     weighted_multipliers_bea_summary_tiva.query('Amount_summary_tiva != 0'),
+        #     t_c.query('region_contributions_imports != 0'),
+        #     year)
+        # check = (set(t_c.query('region_contributions_imports != 0')['BEA Summary']) - 
+        #          set(weighted_multipliers_bea_summary_tiva.query('Amount_summary_tiva != 0')['BEA Summary']))
+        # if len(check) > 0:
+        #     print(f'There are sectors with imports but no emisson factors: {check}')
+
 
 
 def get_tiva_data(year):
@@ -459,42 +442,38 @@ def calc_coefficients_bea_detail(df):
     return df
 
 
-def calculate_specific_emission_factors(multiplier_df):
+def calculate_and_store_emission_factors(multiplier_df):
     '''
     Calculates TiVA-exiobase sector and TiVA-bea summary sector emission
     multipliers.
     '''
-    
-    multiplier_df = (multiplier_df
-                     .assign(Amount_detail_tiva = (multiplier_df['EF'] *
-                             multiplier_df['Subregion Contribution to Detail']))
-                     .assign(Amount_summary_tiva = (multiplier_df['EF'] *
-                             multiplier_df['Subregion Contribution to Summary']))
-                     .assign(Amount_detail_nation = (multiplier_df['EF'] *
-                            multiplier_df['National Contribution to Detail']))
-                     .assign(Amount_summary_nation = (multiplier_df['EF'] *
-                            multiplier_df['National Contribution to Summary']))
-                     )
-    # INSERT HERE TO GET DATA BY COUNTRY
-    col = [c for c in multiplier_df if c in flow_cols]
+    cols = [c for c in multiplier_df if c in flow_cols]
+    year = multiplier_df['Year'][0]
+    for k, v in {'Subregion Contribution to Detail': 'Detail',
+                 'Subregion Contribution to Summary': 'Summary',
+                 'National Contribution to Detail': 'Detail',
+                 'National Contribution to Summary': 'Summary'}.items():
+        r = 'nation' if 'National' in k else 'subregion'
+        c =  'CountryCode' if 'National' in k else 'TiVA Region'
+        agg_df = (multiplier_df
+                  .assign(Amount = (multiplier_df['EF'] * multiplier_df[k])))
+        agg_df = (agg_df
+                  .groupby([c, f'BEA {v}'] + cols)
+                  .agg({'Amount': sum}).reset_index()
+                  .rename(columns={f'BEA {v}': 'Sector'})
+                  .assign(BaseIOLevel='Summary')
+                  )
 
-    weighted_multipliers_bea_detail_tiva = (multiplier_df
-        .groupby(['TiVA Region','BEA Detail'] + col)
-        .agg({'Amount_detail_tiva': 'sum'}).reset_index())
-    weighted_multipliers_bea_summary_tiva = (multiplier_df
-        .groupby(['TiVA Region','BEA Summary'] + col)
-        .agg({'Amount_summary_tiva': 'sum'}).reset_index())
-    weighted_multipliers_bea_detail_nation = (multiplier_df
-        .groupby(['CountryCode','BEA Detail'] + col)
-        .agg({'Amount_detail_nation': 'sum'}).reset_index())
-    weighted_multipliers_bea_summary_nation = (multiplier_df
-        .groupby(['CountryCode','BEA Summary'] + col)
-        .agg({'Amount_summary_nation': 'sum'}).reset_index())
-    return(weighted_multipliers_bea_detail_tiva, 
-           weighted_multipliers_bea_summary_tiva,
-           weighted_multipliers_bea_summary_nation,
-           weighted_multipliers_bea_detail_nation
-           )
+        agg_df.to_csv(
+           out_Path / f'weighted_multipliers_{v}_{r}_exio_{year}.csv', index=False)
+
+        if r == 'nation':
+            agg_df = (agg_df
+                      .groupby(['Sector'] + cols)
+                      .agg({'Amount': sum})
+                      .reset_index())
+            agg_df.to_csv(
+                out_Path /f'nation_{v}_imports_multipliers_exio_{year}.csv', index=False)
 
 
 def calculateWeightedEFsImportsData(weighted_multipliers,
@@ -547,59 +526,6 @@ def calculateWeightedEFsImportsData(weighted_multipliers,
         .reset_index()
         )
     return imports_multipliers
-
-#def calc_tiva_detail(weighted_multipliers_tiva_detail):
-    # INSERT HERE FOR DEVELOPING DETAIL-LEVEL MULTIPLIERS USING t_c and u_c
-    
-
-def calc_weighted_multipliers_national(weighted_multipliers_bea_summary_nation, 
-                          weighted_multipliers_bea_detail_nation):
-    '''
-    Calcaulates multipliers for summary- and detail- level codes without need
-    for TiVA data. Weighs on basis of imports that were collected from BEA & 
-    Census API.
-    '''
-    
-    s_col = [c for c in weighted_multipliers_bea_summary_nation if c in flow_cols]
-    d_col = [c for c in weighted_multipliers_bea_detail_nation if c in flow_cols]
-
-    nation_summary = (weighted_multipliers_bea_summary_nation
-                      .groupby(['BEA Summary'] + s_col)
-                      .agg({'Amount_summary_nation': sum})
-                      .reset_index())
-    nation_detail = (weighted_multipliers_bea_detail_nation
-                    .groupby(['BEA Detail'] + d_col)
-                    .agg({'Amount_detail_nation':sum})
-                    .reset_index())
-    
-    return (nation_summary, nation_detail)
-
-def store_data(sr_i,
-               imports_multipliers,
-               nation_summary,
-               nation_detail,
-               weighted_multipliers_bea_detail_tiva,
-               weighted_multipliers_bea_summary_tiva,
-               weighted_multipliers_bea_detail_nation,
-               weighted_multipliers_bea_summary_nation,
-               year,
-               mrio):
-    imports_multipliers.to_csv(
-        out_Path /f'imports_multipliers_{mrio}_{year}.csv', index=False)
-    nation_summary.to_csv(
-        out_Path /f'nation_summary_imports_multipliers_{mrio}_{year}.csv', index=False)
-    nation_detail.to_csv(
-        out_Path /f'nation_detail_imports_multipliers_{mrio}_{year}.csv', index=False)
-    sr_i.to_csv(
-        out_Path / f'subregion_imports_{mrio}_{year}.csv', index=False)
-    weighted_multipliers_bea_detail_tiva.to_csv(
-        out_Path / f'weighted_multipliers_detail_tiva_{mrio}_{year}.csv', index=False)
-    weighted_multipliers_bea_summary_tiva.to_csv(
-        out_Path / f'weighted_multipliers_summary_tiva_{mrio}_{year}.csv', index=False)
-    weighted_multipliers_bea_detail_nation.to_csv(
-        out_Path / f'weighted_multipliers_detail_nation_{mrio}_{year}.csv', index=False)
-    weighted_multipliers_bea_summary_nation.to_csv(
-        out_Path / f'weighted_multipliers_summary_nation_{mrio}_{year}.csv', index=False)
 
 
 #%%

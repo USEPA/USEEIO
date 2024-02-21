@@ -246,17 +246,6 @@ def calc_tiva_coefficients(year, level='Summary'):
     return t_c
 
 
-def get_tiva_to_exio_concordance():
-    '''
-    Opens concordance dataframe of TiVA regions to exiobase countries.
-    '''
-    path = conPath / 'exio_tiva_concordance.csv'
-    t_e = (pd.read_csv(path)
-             .rename(columns={'ISO 3166-alpha-2': 'CountryCode'}))
-    t_e = t_e[["TiVA Region","CountryCode"]]
-    return t_e
-
-
 def get_exio_to_useeio_concordance():
     '''
     Opens Exiobase to USEEIO binary concordance.
@@ -371,6 +360,10 @@ def calc_contribution_coefficients(df):
     Appends contribution coefficients to prepared dataframe.
     '''
     df['Import Quantity'] = df['Import Quantity'].fillna(0)
+    t_c = (calc_tiva_coefficients(year=df['Year'][0], level="Detail")
+           .rename(columns={'region_contributions_imports': 'TiVA_coefficients'})
+           )
+    df = df.merge(t_c, on=['BEA Detail', 'TiVA Region'])
     df = calc_coefficients_bea_summary(df)
     df = calc_coefficients_bea_detail(df)
 
@@ -379,7 +372,7 @@ def calc_contribution_coefficients(df):
            df['National Contribution to Summary'].fillna(0).between(0,1).all() &
            df['National Contribution to Detail'].fillna(0).between(0,1).all()):
         print('ERROR: Check contribution values outside of [0-1]')
-    return df
+    return df.drop(columns=['TiVA_coefficients'])
 
 
 def calc_coefficients_bea_summary(df):
@@ -398,11 +391,31 @@ def calc_coefficients_bea_summary(df):
                                                ['Import Quantity']
                                                .transform('sum'))
 
+    ## If no imports identified for summary code,
+    ## where the country == region, set contribution to 1
+    ## where country != region, set contribution to detail equal for all countries
+    ## then multiply by the TiVA contributions
+    df.loc[(df['Subregion Contribution to Summary'].isna() &
+        (df['CountryCode'] == df['TiVA Region'])),
+        'detail_contrib'] = 1
+    df.loc[(df['Subregion Contribution to Summary'].isna() &
+        (df['CountryCode'] != df['TiVA Region'])),
+        'detail_contrib'] = (
+            1 / df.groupby(['TiVA Region', 'BEA Detail'])
+                ['CountryCode'].transform('count'))
+
     df['National Contribution to Summary'] =(df['Import Quantity']/
                                               df.groupby(['BEA Summary'])
                                               ['Import Quantity']
                                               .transform('sum'))
-    return df
+    df['Subregion Contribution to Summary'] = (
+        df['Subregion Contribution to Summary'].fillna(
+            df['TiVA_coefficients'] / df.groupby(['TiVA Region', 'BEA Summary'])
+            ['TiVA_coefficients'].transform('sum')))
+    df['National Contribution to Summary'] = (
+        df['National Contribution to Summary'].fillna(
+            df['TiVA_coefficients'] * df['detail_contrib']))
+    return df.drop(columns='detail_contrib')
 
 
 def calc_coefficients_bea_detail(df):
@@ -440,6 +453,9 @@ def calc_coefficients_bea_detail(df):
                                               df.groupby(['BEA Detail'])
                                               ['Import Quantity']
                                               .transform('sum'))
+    df['National Contribution to Detail'] = (
+        df['National Contribution to Detail'].fillna(
+            df['TiVA_coefficients'] * df['Subregion Contribution to Detail']))
     return df
 
 

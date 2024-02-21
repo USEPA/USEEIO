@@ -219,7 +219,7 @@ def calc_tiva_coefficients(year):
     by BEA-summary sector. Resulting dataframe is long format. 
     '''
     t_df = get_tiva_data(year)
-    corr = (pd.read_csv(conPath / 'bea_imports_corr.csv',
+    corr = (pd.read_csv(conPath / 'tiva_imports_corr.csv',
                         usecols=['TiVA', 'BEA Summary'])
             .drop_duplicates())
     # ^^ requires mapping of import codes to summary codes. These codes are 

@@ -213,14 +213,14 @@ def get_tiva_data(year):
     return ri_df
 
 
-def calc_tiva_coefficients(year):
+def calc_tiva_coefficients(year, level='Summary'):
     '''
     Calculate the fractional contributions, by TiVA region, to total imports
     by BEA-summary sector. Resulting dataframe is long format. 
     '''
     t_df = get_tiva_data(year)
     corr = (pd.read_csv(conPath / 'tiva_imports_corr.csv',
-                        usecols=['TiVA', 'BEA Summary'])
+                        usecols=['TiVA', f'BEA {level}'])
             .drop_duplicates())
     # ^^ requires mapping of import codes to summary codes. These codes are 
     # between detail and summary.
@@ -230,17 +230,17 @@ def calc_tiva_coefficients(year):
            .rename(columns={'IOCode': 'TiVA'})
            .merge(corr, on='TiVA', how='left', validate='one_to_many')
            .drop(columns='TiVA')
-           .groupby('BEA Summary').agg('sum'))
-    count = list(t_c.loc[(t_c.sum(axis=1) != 0),].reset_index()['BEA Summary'])
+           .groupby(f'BEA {level}').agg('sum'))
+    count = list(t_c.loc[(t_c.sum(axis=1) != 0),].reset_index()[f'BEA {level}'])
     ## ^^ Sectors with imports
     t_c = (t_c.div(t_c.sum(axis=1), axis=0).fillna(0)
               .reset_index())
 
-    if not round(t_c.drop(columns='BEA Summary')
+    if not round(t_c.drop(columns=f'BEA {level}')
                     .sum(axis=1),5).isin([0,1]).all():
         print('WARNING: error calculating import shares.')
 
-    t_c = t_c.melt(id_vars=['BEA Summary'], var_name='TiVA Region',
+    t_c = t_c.melt(id_vars=[f'BEA {level}'], var_name='TiVA Region',
                    value_name='region_contributions_imports')
 
     return t_c

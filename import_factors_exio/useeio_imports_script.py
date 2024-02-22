@@ -148,7 +148,7 @@ def generate_exio_factors(years: list):
             out_Path /f'multiplier_df_exio_{year}.csv', index=False)
         calculate_and_store_emission_factors(multiplier_df)
         
-        # # Recalculat using TiVA regions
+        # # Recalculat using TiVA regions under original approach
         # t_c = calc_tiva_coefficients(year)
         # imports_multipliers = calculateWeightedEFsImportsData(
         #     # weighted_multipliers_bea_summary, t_c)
@@ -461,19 +461,23 @@ def calculate_and_store_emission_factors(multiplier_df):
                   .groupby([c, f'BEA {v}'] + cols)
                   .agg({'Amount': sum}).reset_index()
                   .rename(columns={f'BEA {v}': 'Sector'})
-                  .assign(BaseIOLevel='Summary')
+                  .assign(BaseIOLevel=v)
                   )
 
-        agg_df.to_csv(
-           out_Path / f'weighted_multipliers_{v}_{r}_exio_{year}.csv', index=False)
-
         if r == 'nation':
+            (agg_df.rename(columns={'Amount': 'Contribution_to_EF'})
+                   .to_csv(out_Path / f'{v.lower()}_imports_multipliers_contribution_by_{r}_exio_{year}.csv', index=False))
+
             agg_df = (agg_df
                       .groupby(['Sector'] + cols)
                       .agg({'Amount': sum})
+                      .assign(BaseIOLevel=v)
                       .reset_index())
             agg_df.to_csv(
-                out_Path /f'nation_{v}_imports_multipliers_exio_{year}.csv', index=False)
+                out_Path /f'aggregate_{v.lower()}_imports_multipliers_exio_{year}.csv', index=False)
+        elif r == 'subregion':
+            agg_df.to_csv(
+               out_Path / f'aggregate_{v.lower()}_imports_multipliers_by_{r}_exio_{year}.csv', index=False)
 
 
 def calculateWeightedEFsImportsData(weighted_multipliers,

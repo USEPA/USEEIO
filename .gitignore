@@ -5,3 +5,4 @@ import_factors_exio/output/*
 import_factors_exio/response_data/*
 import_factors_exio/API/*API_key.yaml
 !import_factors_exio/output/imports_multipliers*
+!import_factors_exio/output/aggregate*

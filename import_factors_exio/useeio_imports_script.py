@@ -237,7 +237,7 @@ def get_exio_to_useeio_concordance():
     USEEIO detail and mappings to Exiobase.
     modified slightly from: https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
     '''
-    path = conPath / "exio_to_bea_commodity_concordance.csv"
+    path = conPath / "exio_to_useeio2_commodity_concordance.csv"
     e_u_b = (pd.read_csv(path, dtype=str)
                .rename(columns={'Unnamed: 0':'BEA Detail'}))
     e_u_l = pd.melt(e_u_b, id_vars=['BEA Detail'], var_name='Exiobase Sector')

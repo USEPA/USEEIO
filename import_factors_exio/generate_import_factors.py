@@ -77,23 +77,35 @@ def generate_exio_factors(years: list):
         export_field = list(config.get('exports').values())[0]
         e_d = (e_d.merge(e_bil, on=['CountryCode','Exiobase Sector'], how='left')
                   .merge(e_u, on='Exiobase Sector', how='left')
-                  .drop(columns=['Exiobase Sector','Year']))
-        e_d = e_d.query(f'`{export_field}` > 0')
+                  )
         # INSERT HERE TO REVIEW SECTOR CONTRIBUTIONS WITHIN A COUNTRY
-        agg = e_d.groupby(['BEA Detail', 'CountryCode', 'TiVA Region']).agg('sum')
-        for c in [c for c in agg.columns if c != export_field]:
-            agg[c] = get_weighted_average(e_d, c, export_field, 
-                                          ['BEA Detail','CountryCode'])
-        # ^^ make sure not to drop when all exports to US are 0 but only single sector e.g. "USED"
+        # Weight exiobase sectors within BEA sectors according to trade
+        e_d = e_d.drop(columns=['Exiobase Sector','Year'])
+        agg_cols = ['BEA Detail', 'CountryCode', 'TiVA Region']
+        cols = [c for c in e_d.columns if c not in ([export_field] + agg_cols)]
+        agg_dict = {col: 'mean' if col in cols else 'sum'
+                    for col in cols + [export_field]}
+        agg = e_d.groupby(agg_cols).agg(agg_dict)
+        # Don't lose countries with no US exports in exiobase, as these countries
+        # may have exports according to US data, collapse them using straight mean
+        agg2 = agg.query(f'`{export_field}` == 0')
+        agg = agg.query(f'`{export_field}` > 0')
+        for c in cols:
+            agg[c] = get_weighted_average(e_d.query(f'`{export_field}` > 0'),
+                                          c, export_field, agg_cols)
+        agg = (pd.concat([agg, agg2], ignore_index=False)
+               .reset_index()
+               .sort_values(by=['BEA Detail', 'CountryCode'])
+               )
         u_c = get_detail_to_summary_useeio_concordance()
         ## Combine EFs with contributions by country
-        multiplier_df = (agg.reset_index().drop(columns=export_field)
+        multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
                             .merge(sr_i.drop(columns=['Unit', 'TiVA Region']),
                                    how='left',
                                    on=['CountryCode', 'BEA Detail'])
                             .merge(u_c, how='left', on='BEA Detail', validate='m:1')
                             )
-            ## CONSIDER OUTER MERGE ^^
+        ## CONSIDER OUTER MERGE ^^
         multiplier_df = calc_contribution_coefficients(multiplier_df)
 
         multiplier_df = multiplier_df.melt(

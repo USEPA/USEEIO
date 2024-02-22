@@ -1,3 +1,9 @@
+'''
+Compare national emission factors beteen appraoch based entirely on BEA/Census
+imports data to that where regions are aggregated to national based on TiVA data
+'''
+
+
 import pandas as pd
 from pathlib import Path
 

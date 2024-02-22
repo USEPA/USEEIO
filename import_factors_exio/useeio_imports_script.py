@@ -456,21 +456,21 @@ def calculate_and_store_emission_factors(multiplier_df):
         r = 'nation' if 'National' in k else 'subregion'
         c =  'CountryCode' if 'National' in k else 'TiVA Region'
         agg_df = (multiplier_df
-                  .assign(Amount = (multiplier_df['EF'] * multiplier_df[k])))
+                  .assign(FlowAmount = (multiplier_df['EF'] * multiplier_df[k])))
         agg_df = (agg_df
                   .groupby([c, f'BEA {v}'] + cols)
-                  .agg({'Amount': sum}).reset_index()
+                  .agg({'FlowAmount': sum}).reset_index()
                   .rename(columns={f'BEA {v}': 'Sector'})
                   .assign(BaseIOLevel=v)
                   )
 
         if r == 'nation':
-            (agg_df.rename(columns={'Amount': 'Contribution_to_EF'})
+            (agg_df.rename(columns={'FlowAmount': 'Contribution_to_EF'})
                    .to_csv(out_Path / f'{v.lower()}_imports_multipliers_contribution_by_{r}_exio_{year}.csv', index=False))
 
             agg_df = (agg_df
                       .groupby(['Sector'] + cols)
-                      .agg({'Amount': sum})
+                      .agg({'FlowAmount': sum})
                       .assign(BaseIOLevel=v)
                       .reset_index())
             agg_df.to_csv(

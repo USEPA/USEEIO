@@ -1,4 +1,4 @@
-TiVA Region,Sector,Unit,ReferenceCurrency,CurrencyYear,EmissionYear,PriceType,Flowable,Context,FlowUUID,Amount,BaseIOLevel
+TiVA Region,Sector,Unit,ReferenceCurrency,CurrencyYear,EmissionYear,PriceType,Flowable,Context,FlowUUID,FlowAmount,BaseIOLevel
 APAC,111CA,kg,USD,2019,2019,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.24771219260214664,Summary
 APAC,111CA,kg,USD,2019,2019,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0033792949117121256,Summary
 APAC,111CA,kg,USD,2019,2019,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0012383315312481527,Summary

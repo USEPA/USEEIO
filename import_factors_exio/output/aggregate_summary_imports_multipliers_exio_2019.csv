@@ -1,4 +1,4 @@
-Sector,Unit,ReferenceCurrency,CurrencyYear,EmissionYear,PriceType,Flowable,Context,FlowUUID,Amount,BaseIOLevel
+Sector,Unit,ReferenceCurrency,CurrencyYear,EmissionYear,PriceType,Flowable,Context,FlowUUID,FlowAmount,BaseIOLevel
 111CA,kg,USD,2019,2019,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.34964111385010793,Summary
 111CA,kg,USD,2019,2019,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.02370745967184811,Summary
 111CA,kg,USD,2019,2019,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0013950168235452127,Summary

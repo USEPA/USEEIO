@@ -23,6 +23,7 @@ def process_exiobase(year_start=2012, year_end=2022, download=False):
         d = {}
         d['M'] = e.satellite.M # raw satellite multipliers
         d['N'] = e.impacts.M # characterized multipliers
+        d['output'] = e.x
         d['Trade Total'] = trade[1]
         # ^^ df with gross total imports and exports per sector and region
         d['Bilateral Trade'] = trade[0]

@@ -73,7 +73,7 @@ def generate_exio_factors(years: list):
         ## by exports to US when sector mappings are not clean
         e_u = get_exio_to_useeio_concordance()
         e_d = pull_exiobase_multipliers(year)
-        e_bil = pull_exiobase_bilateral_trade(year)
+        e_bil = pull_exiobase_data(year, opt = "bilateral")
         export_field = list(config.get('exports').values())[0]
         e_d = (e_d.merge(e_bil, on=['CountryCode','Exiobase Sector'], how='left')
                   .merge(e_u, on='Exiobase Sector', how='left')
@@ -322,9 +322,10 @@ def pull_exiobase_multipliers(year):
     return M_df
 
 
-def pull_exiobase_bilateral_trade(year):
+def pull_exiobase_data(year, opt):
     '''
-    Extracts bilateral trade data by industry from countries to the U.S.
+    Extracts bilateral trade data (opt = "bilateral") by industry from
+    countries to the U.S. or industry output (opt = "output")
     from stored Exiobase model.
     '''
     file = resource_Path / f'exio_all_resources_{year}.pkl'
@@ -332,14 +333,21 @@ def pull_exiobase_bilateral_trade(year):
         print(f"Exiobase data not found for {year}")
         process_exiobase(year_start=year, year_end=year, download=True)
     exio = pkl.load(open(file,'rb'))
-    fields = {**config['fields'], **config['exports']}
-    t_df = exio['Bilateral Trade']
-    t_df = (t_df
-            .filter(['US'])
-            .reset_index()
-            .rename(columns=fields)
-            )
-    return t_df
+    fields = {**config['fields'], **config['exports'], **config['output']}
+    if opt == "bilateral":
+        df = exio['Bilateral Trade']
+        df = (df
+              .filter(['US'])
+              .reset_index()
+              .rename(columns=fields)
+              )
+    elif opt == "output":
+        df = exio['output']
+        df = (df
+              .reset_index()
+              .rename(columns=fields)
+              )
+    return df
 
 
 def calc_contribution_coefficients(df):

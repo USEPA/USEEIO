@@ -1,5 +1,6 @@
 import pandas as pd
 import pickle as pkl
+import numpy as np
 import yaml
 import sys
 import statistics
@@ -74,10 +75,17 @@ def generate_exio_factors(years: list):
         e_u = get_exio_to_useeio_concordance()
         e_d = pull_exiobase_multipliers(year)
         e_bil = pull_exiobase_data(year, opt = "bilateral")
+        e_out = pull_exiobase_data(year, opt = "output")
         export_field = list(config.get('exports').values())[0]
         e_d = (e_d.merge(e_bil, on=['CountryCode','Exiobase Sector'], how='left')
+                  .merge(e_out, on=['CountryCode','Exiobase Sector'], how='left')
                   .merge(e_u, on='Exiobase Sector', how='left')
                   )
+        # Perform adjustment for electricity which is not well characterized by
+        # export data
+        e_d[export_field] = np.where(e_d['BEA Detail'].str.startswith('221100'),
+                                     e_d['Output'], e_d[export_field])
+
         # INSERT HERE TO REVIEW SECTOR CONTRIBUTIONS WITHIN A COUNTRY
         # Weight exiobase sectors within BEA sectors according to trade
         e_d = e_d.drop(columns=['Exiobase Sector','Year'])

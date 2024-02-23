@@ -104,11 +104,11 @@ Sector,Unit,ReferenceCurrency,CurrencyYear,EmissionYear,PriceType,Flowable,Conte
 21311A,kg,USD,2019,2019,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.8286972492005934e-05,Detail
 21311A,kg,USD,2019,2019,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1696406170845704e-06,Detail
 21311A,kg CO2e,USD,2019,2019,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0985181614811206,Detail
-221100,kg,USD,2019,2019,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,8.610643895857784,Detail
-221100,kg,USD,2019,2019,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0018115726737343667,Detail
-221100,kg,USD,2019,2019,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00024750160136875,Detail
-221100,kg,USD,2019,2019,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.761409386548773e-08,Detail
-221100,kg CO2e,USD,2019,2019,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009433519829839273,Detail
+221100,kg,USD,2019,2019,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.4479991176357387,Detail
+221100,kg,USD,2019,2019,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.004276940602401686,Detail
+221100,kg,USD,2019,2019,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.28007432681006e-05,Detail
+221100,kg,USD,2019,2019,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.819654480232174e-08,Detail
+221100,kg CO2e,USD,2019,2019,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.029385539132245755,Detail
 221200,kg,USD,2019,2019,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.0,Detail
 221200,kg,USD,2019,2019,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0,Detail
 221200,kg,USD,2019,2019,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0,Detail

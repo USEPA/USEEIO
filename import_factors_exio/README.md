@@ -1,5 +1,5 @@
 # Generating Import Factors from Exiobase
-To generate import factors from exiobase, run the script [useeio_imports_script.py](useeio_imports_script.py) 
+To generate import factors from exiobase, run the script [generate_import_factors.py](generate_import_factors.py) 
 
 For each year, the following files are generated:
 
@@ -10,6 +10,9 @@ For each year, the following files are generated:
 - *detail_imports_multipliers_contribution_by_nation_exio_{year}.csv*: Import factors for the US, disaggregated by nation, by detail sector,
 - *summary_imports_multipliers_contribution_by_nation_exio_{year}.csv*: Import factors for the US , disaggregated by nation, by summary sector, 
 - *multiplier_df_exio_{year}.csv*: Full dataframe with emission factors and contributions by region and sector.
+
+## Census API Access
+In order to...
 
 ## Package requirements
 - pandas

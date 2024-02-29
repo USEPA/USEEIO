@@ -3,6 +3,8 @@ fields:
     sector: Exiobase Sector
 exports:
     US: Exports to US
+output:
+    indout: Output
 flows: # if using satellite.M
     # entries that start with the following keys
     CO2: Carbon dioxide

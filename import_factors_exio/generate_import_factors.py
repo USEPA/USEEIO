@@ -1,5 +1,6 @@
 import pandas as pd
 import pickle as pkl
+import numpy as np
 import yaml
 import sys
 import statistics
@@ -73,27 +74,46 @@ def generate_exio_factors(years: list):
         ## by exports to US when sector mappings are not clean
         e_u = get_exio_to_useeio_concordance()
         e_d = pull_exiobase_multipliers(year)
-        e_bil = pull_exiobase_bilateral_trade(year)
+        e_bil = pull_exiobase_data(year, opt = "bilateral")
+        e_out = pull_exiobase_data(year, opt = "output")
         export_field = list(config.get('exports').values())[0]
         e_d = (e_d.merge(e_bil, on=['CountryCode','Exiobase Sector'], how='left')
+                  .merge(e_out, on=['CountryCode','Exiobase Sector'], how='left')
                   .merge(e_u, on='Exiobase Sector', how='left')
-                  .drop(columns=['Exiobase Sector','Year']))
-        e_d = e_d.query(f'`{export_field}` > 0')
+                  )
+        # Perform adjustment for electricity which is not well characterized by
+        # export data
+        e_d[export_field] = np.where(e_d['BEA Detail'].str.startswith('221100'),
+                                     e_d['Output'], e_d[export_field])
+
         # INSERT HERE TO REVIEW SECTOR CONTRIBUTIONS WITHIN A COUNTRY
-        agg = e_d.groupby(['BEA Detail', 'CountryCode', 'TiVA Region']).agg('sum')
-        for c in [c for c in agg.columns if c != export_field]:
-            agg[c] = get_weighted_average(e_d, c, export_field, 
-                                          ['BEA Detail','CountryCode'])
-        # ^^ make sure not to drop when all exports to US are 0 but only single sector e.g. "USED"
+        # Weight exiobase sectors within BEA sectors according to trade
+        e_d = e_d.drop(columns=['Exiobase Sector','Year'])
+        agg_cols = ['BEA Detail', 'CountryCode', 'TiVA Region']
+        cols = [c for c in e_d.columns if c not in ([export_field] + agg_cols)]
+        agg_dict = {col: 'mean' if col in cols else 'sum'
+                    for col in cols + [export_field]}
+        agg = e_d.groupby(agg_cols).agg(agg_dict)
+        # Don't lose countries with no US exports in exiobase, as these countries
+        # may have exports according to US data, collapse them using straight mean
+        agg2 = agg.query(f'`{export_field}` == 0')
+        agg = agg.query(f'`{export_field}` > 0')
+        for c in cols:
+            agg[c] = get_weighted_average(e_d.query(f'`{export_field}` > 0'),
+                                          c, export_field, agg_cols)
+        agg = (pd.concat([agg, agg2], ignore_index=False)
+               .reset_index()
+               .sort_values(by=['BEA Detail', 'CountryCode'])
+               )
         u_c = get_detail_to_summary_useeio_concordance()
         ## Combine EFs with contributions by country
-        multiplier_df = (agg.reset_index().drop(columns=export_field)
+        multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
                             .merge(sr_i.drop(columns=['Unit', 'TiVA Region']),
                                    how='left',
                                    on=['CountryCode', 'BEA Detail'])
                             .merge(u_c, how='left', on='BEA Detail', validate='m:1')
                             )
-            ## CONSIDER OUTER MERGE ^^
+        ## CONSIDER OUTER MERGE ^^
         multiplier_df = calc_contribution_coefficients(multiplier_df)
 
         multiplier_df = multiplier_df.melt(
@@ -148,18 +168,10 @@ def generate_exio_factors(years: list):
             out_Path /f'multiplier_df_exio_{year}.csv', index=False)
         calculate_and_store_emission_factors(multiplier_df)
         
-        # # Recalculat using TiVA regions under original approach
+        # Optional: Recalculate using TiVA regions under original approach
         # t_c = calc_tiva_coefficients(year)
         # imports_multipliers = calculateWeightedEFsImportsData(
-        #     # weighted_multipliers_bea_summary, t_c)
-        #     weighted_multipliers_bea_summary_tiva.query('Amount_summary_tiva != 0'),
-        #     t_c.query('region_contributions_imports != 0'),
-        #     year)
-        # check = (set(t_c.query('region_contributions_imports != 0')['BEA Summary']) - 
-        #          set(weighted_multipliers_bea_summary_tiva.query('Amount_summary_tiva != 0')['BEA Summary']))
-        # if len(check) > 0:
-        #     print(f'There are sectors with imports but no emisson factors: {check}')
-
+        #     multiplier_df, t_c, year)
 
 
 def get_tiva_data(year):
@@ -318,9 +330,10 @@ def pull_exiobase_multipliers(year):
     return M_df
 
 
-def pull_exiobase_bilateral_trade(year):
+def pull_exiobase_data(year, opt):
     '''
-    Extracts bilateral trade data by industry from countries to the U.S.
+    Extracts bilateral trade data (opt = "bilateral") by industry from
+    countries to the U.S. or industry output (opt = "output")
     from stored Exiobase model.
     '''
     file = resource_Path / f'exio_all_resources_{year}.pkl'
@@ -328,14 +341,21 @@ def pull_exiobase_bilateral_trade(year):
         print(f"Exiobase data not found for {year}")
         process_exiobase(year_start=year, year_end=year, download=True)
     exio = pkl.load(open(file,'rb'))
-    fields = {**config['fields'], **config['exports']}
-    t_df = exio['Bilateral Trade']
-    t_df = (t_df
-            .filter(['US'])
-            .reset_index()
-            .rename(columns=fields)
-            )
-    return t_df
+    fields = {**config['fields'], **config['exports'], **config['output']}
+    if opt == "bilateral":
+        df = exio['Bilateral Trade']
+        df = (df
+              .filter(['US'])
+              .reset_index()
+              .rename(columns=fields)
+              )
+    elif opt == "output":
+        df = exio['output']
+        df = (df
+              .reset_index()
+              .rename(columns=fields)
+              )
+    return df
 
 
 def calc_contribution_coefficients(df):
@@ -458,9 +478,9 @@ def calculate_and_store_emission_factors(multiplier_df):
         agg_df = (multiplier_df
                   .assign(FlowAmount = (multiplier_df['EF'] * multiplier_df[k])))
         agg_df = (agg_df
-                  .groupby([c, f'BEA {v}'] + cols)
-                  .agg({'FlowAmount': sum}).reset_index()
                   .rename(columns={f'BEA {v}': 'Sector'})
+                  .groupby([c, 'Sector'] + cols)
+                  .agg({'FlowAmount': sum}).reset_index()
                   .assign(BaseIOLevel=v)
                   )
 
@@ -494,41 +514,47 @@ def calculateWeightedEFsImportsData(weighted_multipliers,
     '''
     weighted_df_imports = (
         weighted_multipliers
-        .merge(import_contribution_coeffs, how='right', validate='m:1',
+        .merge(import_contribution_coeffs, how='left', validate='m:1',
                on=['TiVA Region','BEA Summary'])
         .assign(region_contributions_imports=lambda x:
                 x['region_contributions_imports'].fillna(0))
-        .rename(columns={'Amount_summary_tiva':'EF'})
-            )
-
-    weighted_df_imports = (
-        weighted_df_imports.assign(Amount=lambda x:
-                                   x['EF'] *
-                                   x['region_contributions_imports'])
+        .assign(national_by_tiva=lambda x: x['region_contributions_imports'] *
+                x['Subregion Contribution to Summary'])
+        .assign(FlowAmount=lambda x: x['EF'] * x['national_by_tiva'])
+        .rename(columns={'national_by_tiva':'National Contribution to Summary TiVA'})
         )
     # INSERT HERE TO GET DATA BY TIVA REGION
-    tiva_summary = (weighted_df_imports
-                    .groupby(['Flowable', 'TiVA Region', 'BEA Summary'])
-                    .agg({'Amount': sum,
-                          'region_contributions_imports': sum})
-                    .rename(columns={'region_contributions_imports':
-                                     'contribution_imports'})
-                    )
-    tiva_summary['contribution_ef'] = (tiva_summary['Amount'] / 
-                                       tiva_summary.groupby(['BEA Summary', 'Flowable'])
-                                       ['Amount'].transform('sum'))
+    # tiva_summary = (weighted_df_imports
+    #                 .groupby(['Flowable', 'TiVA Region', 'BEA Summary'])
+    #                 .agg({'FlowAmount': sum})
+    #                 )
+    # tiva_summary['contribution_ef'] = (tiva_summary['Amount'] / 
+    #                                    tiva_summary.groupby(['BEA Summary', 'Flowable'])
+    #                                    ['Amount'].transform('sum'))
 
-    tiva_summary.drop(columns='Amount').to_csv(out_Path /
-        f'import_multipliers_by_TiVA_{year}.csv')
+    # tiva_summary.drop(columns='Amount').to_csv(out_Path /
+    #     f'import_multipliers_by_TiVA_{year}.csv')
 
     col = [c for c in weighted_df_imports if c in flow_cols]
 
     imports_multipliers = (
         weighted_df_imports
-        .groupby(['BEA Summary'] + col)
-        .agg({'Amount': 'sum'})
+        .rename(columns={f'BEA Summary': 'Sector'})
+        .groupby(['Sector'] + col)
+        .agg({'FlowAmount': 'sum'})
         .reset_index()
         )
+
+    check = (set(import_contribution_coeffs.query('region_contributions_imports != 0')['BEA Summary']) - 
+              set(imports_multipliers.query('FlowAmount != 0')['Sector']))
+    if len(check) > 0:
+        print(f'In the TiVA appraoch, there are sectors with imports but no '
+              f'emisson factors: {check}')
+
+    imports_multipliers.to_csv(
+        out_Path / f'summary_imports_multipliers_TiVA_approach_exio_{year}.csv',
+        index=False)
+
     return imports_multipliers
 
 

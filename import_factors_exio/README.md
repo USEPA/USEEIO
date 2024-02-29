@@ -17,3 +17,6 @@ For each year, the following files are generated:
 - fedelemflowlist
 - [currencyconverter](https://pypi.org/project/CurrencyConverter/)
 - pymrio
+
+## API Key
+To make calls to USATrade Online (Census) for goods imports data (by country, NAICS sector and year), users must first create an account on https://usatrade.census.gov/. After doing so, they will be provided with an API key. Store this as 'Census_API_key.yaml' in the API subfolder of the import_factors_exio directory.

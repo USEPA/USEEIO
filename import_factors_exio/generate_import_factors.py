@@ -70,6 +70,9 @@ def generate_exio_factors(years: list):
         if sum(sr_i.duplicated(['CountryCode', 'BEA Detail'])) > 0:
             print('Error calculating country coefficients by detail sector')
 
+        elec = get_electricity_imports(year)
+        sr_i = pd.concat([sr_i,elec],ignore_index=True)
+
         ## Generate country specific emission factors by BEA sector weighted
         ## by exports to US when sector mappings are not clean
         e_u = get_exio_to_useeio_concordance()
@@ -113,6 +116,10 @@ def generate_exio_factors(years: list):
                                    on=['CountryCode', 'BEA Detail'])
                             .merge(u_c, how='left', on='BEA Detail', validate='m:1')
                             )
+        ## NOTE: If in future more physical data are brought in, the code 
+        ##       is unable to distinguish and sort out mismatches by detail/
+        ##       summary sectors.
+        
         ## CONSIDER OUTER MERGE ^^
         multiplier_df = calc_contribution_coefficients(multiplier_df)
 
@@ -207,7 +214,30 @@ def get_tiva_data(year):
 
     return ri_df
 
-
+def get_electricity_imports(year):
+    url = 'https://www.eia.gov/electricity/annual/xls/epa_02_14.xlsx'
+    sheet = 'epa_02_14'
+    c_map = {'Mexico':'MX','Canada':'CA'}
+    df = pd.read_excel(url, sheet_name=sheet,usecols=[0,1,3],
+                       skiprows=[0,1,2,], skipfooter=1)
+    df.columns.values[1] = 'Canada'
+    df.columns.values[2] = 'Mexico'
+    df['Year'] = df['Year'].astype(int)
+    df_y = df.loc[df['Year']==year]
+    df_y = pd.melt(df_y, id_vars=['Year'],value_vars=['Mexico','Canada'])
+    df_y = df_y.rename(columns={'variable':'Country',
+                                'value':'Import Quantity'})
+    df_y = (df_y.assign(Unit='MWh')
+            .assign(BEADetail='221100')
+            .assign(Source='EIA')
+            .rename(columns={'BEADetail':'BEA Detail'}))
+    df_y['CountryCode'] = df_y['Country'].map(c_map)
+    df_y['TiVA Region']=df_y['CountryCode']
+    elec = df_y[['BEA Detail','Year','CountryCode','Import Quantity','Unit',
+                 'Source','Country','TiVA Region']]
+    elec['Year']=elec['Year'].astype(str)
+    return(elec)
+    
 def calc_tiva_coefficients(year, level='Summary'):
     '''
     Calculate the fractional contributions, by TiVA region, to total imports

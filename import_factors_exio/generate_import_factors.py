@@ -580,12 +580,12 @@ def calculateWeightedEFsImportsData(weighted_multipliers,
     check = (set(import_contribution_coeffs.query('region_contributions_imports != 0')['BEA Summary']) - 
               set(imports_multipliers_ts.query('FlowAmount != 0')['Sector']))
     if len(check) > 0:
-        print(f'In the TiVA approach, there are sectors with imports but no '
+        print(f'In the Summary TiVA approach, there are sectors with imports but no '
               f'emisson factors: {check}')
     check = (set(import_contribution_coeffs.query('region_contributions_imports != 0')['BEA Summary']) - 
               set(imports_multipliers_td.query('FlowAmount != 0')['Sector']))
     if len(check) > 0:
-        print(f'In the TiVA approach, there are sectors with imports but no '
+        print(f'In the Detail TiVA approach, there are sectors with imports but no '
               f'emisson factors: {check}')
 
     imports_multipliers_ts.to_csv(

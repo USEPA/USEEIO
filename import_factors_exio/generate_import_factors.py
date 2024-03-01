@@ -176,10 +176,9 @@ def generate_exio_factors(years: list):
         calculate_and_store_emission_factors(multiplier_df)
         
         # Optional: Recalculate using TiVA regions under original approach
-        # t_c = calc_tiva_coefficients(year)
-        # imports_multipliers = calculateWeightedEFsImportsData(
-        #     multiplier_df, t_c, year)
-
+        t_c = calc_tiva_coefficients(year)
+        imports_multipliers_ts, imports_multipliers_td = (
+            calculateWeightedEFsImportsData(multiplier_df, t_c, year))
 
 def get_tiva_data(year):
     '''
@@ -548,11 +547,53 @@ def calculateWeightedEFsImportsData(weighted_multipliers,
                on=['TiVA Region','BEA Summary'])
         .assign(region_contributions_imports=lambda x:
                 x['region_contributions_imports'].fillna(0))
-        .assign(national_by_tiva=lambda x: x['region_contributions_imports'] *
+        .assign(national_summary_by_tiva=lambda x: x['region_contributions_imports'] *
                 x['Subregion Contribution to Summary'])
-        .assign(FlowAmount=lambda x: x['EF'] * x['national_by_tiva'])
-        .rename(columns={'national_by_tiva':'National Contribution to Summary TiVA'})
+        .assign(FlowAmount_Summary=lambda x: x['EF'] * x['national_summary_by_tiva'])
+        .rename(columns={'national_summary_by_tiva':'National Contribution to Summary TiVA'})
+        .assign(national_detail_by_tiva=lambda x: x['region_contributions_imports'] *
+                x['Subregion Contribution to Detail'])
+        .assign(FlowAmount_Detail=lambda x: x['EF'] * x['national_detail_by_tiva'])
+        .rename(columns={'national_detail_by_tiva':'National Contribution to Detail TiVA'}))
+        
+    weighted_df_imports_td = weighted_df_imports.rename(columns={'FlowAmount_Detail':'FlowAmount'})
+    weighted_df_imports_ts = weighted_df_imports.rename(columns={'FlowAmount_Summary':'FlowAmount'})
+
+    col_ts = [c for c in weighted_df_imports_ts if c in flow_cols]
+    col_td = [c for c in weighted_df_imports_td if c in flow_cols]
+
+    imports_multipliers_ts = (
+        weighted_df_imports_ts
+        .rename(columns={f'BEA Summary': 'Sector'})
+        .groupby(['Sector'] + col_ts)
+        .agg({'FlowAmount': 'sum'})
+        .reset_index()
         )
+    imports_multipliers_td = (
+        weighted_df_imports_td
+        .rename(columns={f'BEA Detail': 'Sector'})
+        .groupby(['Sector'] + col_td)
+        .agg({'FlowAmount': 'sum'})
+        .reset_index()
+        )
+
+    check = (set(import_contribution_coeffs.query('region_contributions_imports != 0')['BEA Summary']) - 
+              set(imports_multipliers_ts.query('FlowAmount != 0')['Sector']))
+    if len(check) > 0:
+        print(f'In the TiVA approach, there are sectors with imports but no '
+              f'emisson factors: {check}')
+    check = (set(import_contribution_coeffs.query('region_contributions_imports != 0')['BEA Summary']) - 
+              set(imports_multipliers_td.query('FlowAmount != 0')['Sector']))
+    if len(check) > 0:
+        print(f'In the TiVA approach, there are sectors with imports but no '
+              f'emisson factors: {check}')
+
+    imports_multipliers_ts.to_csv(
+        out_Path / f'summary_imports_multipliers_TiVA_approach_exio_{year}.csv',
+        index=False)
+    imports_multipliers_td.to_csv(
+        out_Path / f'detail_imports_multipliers_TiVA_approach_exio_{year}.csv',
+        index=False)
     # INSERT HERE TO GET DATA BY TIVA REGION
     # tiva_summary = (weighted_df_imports
     #                 .groupby(['Flowable', 'TiVA Region', 'BEA Summary'])
@@ -564,28 +605,7 @@ def calculateWeightedEFsImportsData(weighted_multipliers,
 
     # tiva_summary.drop(columns='Amount').to_csv(out_Path /
     #     f'import_multipliers_by_TiVA_{year}.csv')
-
-    col = [c for c in weighted_df_imports if c in flow_cols]
-
-    imports_multipliers = (
-        weighted_df_imports
-        .rename(columns={f'BEA Summary': 'Sector'})
-        .groupby(['Sector'] + col)
-        .agg({'FlowAmount': 'sum'})
-        .reset_index()
-        )
-
-    check = (set(import_contribution_coeffs.query('region_contributions_imports != 0')['BEA Summary']) - 
-              set(imports_multipliers.query('FlowAmount != 0')['Sector']))
-    if len(check) > 0:
-        print(f'In the TiVA appraoch, there are sectors with imports but no '
-              f'emisson factors: {check}')
-
-    imports_multipliers.to_csv(
-        out_Path / f'summary_imports_multipliers_TiVA_approach_exio_{year}.csv',
-        index=False)
-
-    return imports_multipliers
+    return imports_multipliers_ts, imports_multipliers_td
 
 
 #%%

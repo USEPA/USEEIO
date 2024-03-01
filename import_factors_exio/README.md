@@ -11,8 +11,8 @@ For each year, the following files are generated:
 - *summary_imports_multipliers_contribution_by_nation_exio_{year}.csv*: Import factors for the US , disaggregated by nation, by summary sector, 
 - *multiplier_df_exio_{year}.csv*: Full dataframe with emission factors and contributions by region and sector.
 
-## Census API Access
-In order to...
+## BEA API Access
+To make calls to BEA for service imports data (by BEA service category, country, and year), users must first register at https://apps.bea.gov/api/signup/. After doing so, they will be provided with an API key to the provided email. Store this as 'BEA_API_key.yaml' in the API subfolder of the import_factors_exio directory.
 
 ## Package requirements
 - pandas
@@ -20,6 +20,3 @@ In order to...
 - fedelemflowlist
 - [currencyconverter](https://pypi.org/project/CurrencyConverter/)
 - pymrio
-
-## API Key
-To make calls to USATrade Online (Census) for goods imports data (by country, NAICS sector and year), users must first create an account on https://usatrade.census.gov/. After doing so, they will be provided with an API key. Store this as 'Census_API_key.yaml' in the API subfolder of the import_factors_exio directory.

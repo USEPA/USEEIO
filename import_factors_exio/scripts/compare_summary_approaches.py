@@ -7,7 +7,7 @@ imports data to that where regions are aggregated to national based on TiVA data
 import pandas as pd
 from pathlib import Path
 
-out_Path = Path(__file__).parent / 'output'
+out_Path = Path(__file__).parent.parent / 'output'
 mrio = 'exio'
 year = "2019"
 flow_cols = ['Sector', 'Unit',
@@ -22,6 +22,6 @@ tiva_df = tiva_df.rename(columns={'FlowAmount':'Amount_summary_tiva'})
 
 ta_df = api_df.merge(tiva_df, how='left',validate='m:1', on=[c for c in flow_cols])
 
-ta_df = (ta_df.assign(Ratio = (ta_df['Amount_summary_tiva'] - ta_df['FlowAmount'])/ta_df['Amount_summary_tiva']))
+ta_df = (ta_df.assign(Ratio = (ta_df['Amount_summary_tiva'] - ta_df['FlowAmount'])/ta_df['FlowAmount']))
 
 ta_df.to_csv(out_Path / f'TiVA_API_Comparison_{mrio}_{year}.csv', index=False)

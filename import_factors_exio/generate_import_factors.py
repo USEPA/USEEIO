@@ -177,8 +177,7 @@ def generate_exio_factors(years: list):
         
         # Optional: Recalculate using TiVA regions under original approach
         t_c = calc_tiva_coefficients(year)
-        imports_multipliers_ts, imports_multipliers_td = (
-            calculateWeightedEFsImportsData(multiplier_df, t_c, year))
+        calculate_and_store_TiVA_approach(multiplier_df, t_c, year)
 
 def get_tiva_data(year):
     '''
@@ -493,8 +492,8 @@ def calc_coefficients_bea_detail(df):
 
 def calculate_and_store_emission_factors(multiplier_df):
     '''
-    Calculates TiVA-exiobase sector and TiVA-bea summary sector emission
-    multipliers.
+    Calculates and saves import factors by region and aggregated to national
+    totals.
     '''
     cols = [c for c in multiplier_df if c in flow_cols]
     year = multiplier_df['Year'][0]
@@ -529,17 +528,13 @@ def calculate_and_store_emission_factors(multiplier_df):
                out_Path / f'aggregate_{v.lower()}_imports_multipliers_by_{r}_exio_{year}.csv', index=False)
 
 
-def calculateWeightedEFsImportsData(weighted_multipliers,
-                                    import_contribution_coeffs, year):
+def calculate_and_store_TiVA_approach(weighted_multipliers,
+                                      import_contribution_coeffs, year):
     '''
     Merges import contribution coefficients with weighted exiobase 
     multiplier dataframe. Import coefficients are then multiplied by the 
     weighted exiobase multipliers to produce weighted multipliers that 
-    incorporate imports data. These are stored in new 'Weighted-Imports 
-    (insert multiplier category)' columns. Subsequently, unnecessary columns, 
-    such as unweighted Exiobase multipliers and used contribution factors, 
-    are dropped from the dataframe. Other than weighted burden columns, the 
-    output dataframe only continues to include 'USEEIO Summary' codes.
+    incorporate TiVA imports by region.
     '''
     weighted_df_imports = (
         weighted_multipliers
@@ -559,20 +554,19 @@ def calculateWeightedEFsImportsData(weighted_multipliers,
     weighted_df_imports_td = weighted_df_imports.rename(columns={'FlowAmount_Detail':'FlowAmount'})
     weighted_df_imports_ts = weighted_df_imports.rename(columns={'FlowAmount_Summary':'FlowAmount'})
 
-    col_ts = [c for c in weighted_df_imports_ts if c in flow_cols]
-    col_td = [c for c in weighted_df_imports_td if c in flow_cols]
+    cols = [c for c in weighted_df_imports_ts if c in flow_cols]
 
     imports_multipliers_ts = (
         weighted_df_imports_ts
         .rename(columns={f'BEA Summary': 'Sector'})
-        .groupby(['Sector'] + col_ts)
+        .groupby(['Sector'] + cols)
         .agg({'FlowAmount': 'sum'})
         .reset_index()
         )
     imports_multipliers_td = (
         weighted_df_imports_td
         .rename(columns={f'BEA Detail': 'Sector'})
-        .groupby(['Sector'] + col_td)
+        .groupby(['Sector'] + cols)
         .agg({'FlowAmount': 'sum'})
         .reset_index()
         )
@@ -582,30 +576,13 @@ def calculateWeightedEFsImportsData(weighted_multipliers,
     if len(check) > 0:
         print(f'In the Summary TiVA approach, there are sectors with imports but no '
               f'emisson factors: {check}')
-    check = (set(import_contribution_coeffs.query('region_contributions_imports != 0')['BEA Summary']) - 
-              set(imports_multipliers_td.query('FlowAmount != 0')['Sector']))
-    if len(check) > 0:
-        print(f'In the Detail TiVA approach, there are sectors with imports but no '
-              f'emisson factors: {check}')
 
     imports_multipliers_ts.to_csv(
-        out_Path / f'summary_imports_multipliers_TiVA_approach_exio_{year}.csv',
+        out_Path / f'aggregate_summary_imports_multipliers_TiVA_approach_exio_{year}.csv',
         index=False)
     imports_multipliers_td.to_csv(
-        out_Path / f'detail_imports_multipliers_TiVA_approach_exio_{year}.csv',
+        out_Path / f'aggregate_detail_imports_multipliers_TiVA_approach_exio_{year}.csv',
         index=False)
-    # INSERT HERE TO GET DATA BY TIVA REGION
-    # tiva_summary = (weighted_df_imports
-    #                 .groupby(['Flowable', 'TiVA Region', 'BEA Summary'])
-    #                 .agg({'FlowAmount': sum})
-    #                 )
-    # tiva_summary['contribution_ef'] = (tiva_summary['Amount'] / 
-    #                                    tiva_summary.groupby(['BEA Summary', 'Flowable'])
-    #                                    ['Amount'].transform('sum'))
-
-    # tiva_summary.drop(columns='Amount').to_csv(out_Path /
-    #     f'import_multipliers_by_TiVA_{year}.csv')
-    return imports_multipliers_ts, imports_multipliers_td
 
 
 #%%

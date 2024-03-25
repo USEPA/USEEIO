@@ -1,0 +1,50 @@
+﻿ISO 3166-alpha-2,Country Name,TiVA Region,Census Schedule C - Country Code,BEA_AREAORCOUNTRY
+AT,Austria,EU,4330,Austria
+BE,Belgium,EU,4231,Belgium
+BG,Bulgaria,EU,4870,Bulgaria
+CY,Cyprus,EU,4910,Cyprus
+CZ,Czech Republic,EU,4351,CzechRep
+DE,Germany,EU,4280,Germany
+DK,Denmark,EU,4099,Denmark
+EE,Estonia,EU,4470,Estonia
+ES,Spain,EU,4700,Spain
+FI,Finland,EU,4050,Finland
+FR,France,EU,4279,France
+GR,Greece,EU,4840,Greece
+HR,Croatia,EU,4791,Croatia
+HU,Hungary,EU,4370,Hungary
+IE,Ireland,EU,4190,Ireland
+IT,Italy,EU,4759,Italy
+LT,Lithuania,EU,4510,Lithuania
+LU,Luxembourg,EU,4239,Luxembourg
+LV,Latvia,EU,4490,Latvia
+MT,Malta,EU,4730,Malta
+NL,Netherlands,EU,4210,Netherlands
+PL,Poland,EU,4550,Poland
+PT,Portugal,EU,4710,Portugal
+RO,Romania,EU,4850,Romania
+SE,Sweden,EU,4010,Sweden
+SI,Slovenia,EU,4792,Slovenia
+SK,Slovakia,EU,4359,Slovakia
+GB,United Kingdom,EU,4120,UnitedKingdom
+US,United States,US,9800,
+JP,Japan,JP,5880,Japan
+CN,China,CN,5700,China
+CA,Canada,CA,1220,Canada
+KR,"Korea, Republic of",APAC,5800,SouthKorea
+BR,Brazil,ROW,3510,Brazil
+IN,India,APAC,5330,India
+MX,Mexico,MX,2010,Mexico
+RU,Russian Federation,EU,4621,Russia
+AU,Australia,APAC,6021,Australia
+CH,Switzerland,EU,4419,Switzerland
+TR,Turkey,EU,4890,Turkey
+TW,"Taiwan, Province of China",APAC,5830,Taiwan
+NO,Norway,EU,4039,Norway
+ID,Indonesia,APAC,5600,Indonesia
+ZA,South Africa,ROW,7910,SouthAfrica
+WA,Namibia,ROW,7920,
+WL,Saint Lucia,ROW,2487,OthWestHem
+WE,West Bank,ROW,5083,MiddleEast
+WF,Wallis and Futuna,ROW,6413,AsiaAndPac
+WM,,ROW,,

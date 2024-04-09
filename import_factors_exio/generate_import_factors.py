@@ -89,6 +89,10 @@ def generate_exio_factors(years: list):
         e_d[export_field] = np.where(e_d['BEA Detail'].str.startswith('221100'),
                                      e_d['Output'], e_d[export_field])
 
+        # to maintain US data, use industry output as the export field for US
+        e_d[export_field] = np.where(e_d['CountryCode'] == "US",
+                                     e_d['Output'], e_d[export_field])
+
         # INSERT HERE TO REVIEW SECTOR CONTRIBUTIONS WITHIN A COUNTRY
         # Weight exiobase sectors within BEA sectors according to trade
         e_d = e_d.drop(columns=['Exiobase Sector','Year'])
@@ -119,58 +123,17 @@ def generate_exio_factors(years: list):
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
         ##       summary sectors.
-        
+
         ## CONSIDER OUTER MERGE ^^
+
+        # Extract out US data separately
+        us_df = multiplier_df.query('CountryCode == "US"')
+        us_df = df_prepare(us_df, year)
+        us_df.to_csv(
+            out_Path /f'us_df_exio_{year}.csv', index=False)
+
         multiplier_df = calc_contribution_coefficients(multiplier_df)
-
-        multiplier_df = multiplier_df.melt(
-            id_vars = [c for c in multiplier_df if c not in 
-                       config['flows'].values()],
-            var_name = 'Flow',
-            value_name = 'EF')
-    
-        multiplier_df = (
-            multiplier_df
-            .assign(Compartment='emission/air')
-            .assign(Unit='kg')
-            .assign(ReferenceCurrency='Euro')
-            .assign(CurrencyYear=str(year))
-            .assign(EmissionYear='2019' if year > 2019 else str(year))
-            # ^^ GHG data stops at 2019
-            .assign(PriceType='Basic')
-            )
-    
-        fl = (fedelem.get_flows()
-              .query('Flowable in @multiplier_df.Flow')
-              .filter(['Flowable', 'Context', 'Flow UUID'])
-              )
-        multiplier_df = (
-            multiplier_df
-            .merge(fl, how='left',
-                   left_on=['Flow', 'Compartment'],
-                   right_on=['Flowable', 'Context'],
-                   )
-            .assign(Flowable=lambda x: x['Flowable'].fillna(x['Flow']))
-            .drop(columns=['Flow', 'Compartment'])
-            .rename(columns={'Flow UUID': 'FlowUUID'})
-            .assign(FlowUUID=lambda x: x['FlowUUID'].fillna('n.a.'))
-            .assign(Context=lambda x: x['Context'].fillna('emission/air'))
-            )
-
-        # Currency adjustment
-        c = CurrencyConverter(fallback_on_missing_rate=True)
-        exch = statistics.mean([c.convert(1, 'EUR', 'USD', date=date(year, 1, 1)),
-                                c.convert(1, 'EUR', 'USD', date=date(year, 12, 30))])
-        multiplier_df = (
-            multiplier_df
-            .assign(EF=lambda x: x['EF']/exch)
-            .assign(ReferenceCurrency='USD')
-            )
-        multiplier_df.loc[multiplier_df['Flowable'] == 'HFCs and '
-                              'PFCs, unspecified', 'Unit'] = 'kg CO2e'
-        #^^ update units to kg CO2e for HFCs and PFCs unspecified, consider
-        # more dynamic implementation
-
+        multiplier_df = df_prepare(multiplier_df, year)
         multiplier_df.to_csv(
             out_Path /f'multiplier_df_exio_{year}.csv', index=False)
         calculate_and_store_emission_factors(multiplier_df)
@@ -178,6 +141,58 @@ def generate_exio_factors(years: list):
         # Optional: Recalculate using TiVA regions under original approach
         t_c = calc_tiva_coefficients(year)
         calculate_and_store_TiVA_approach(multiplier_df, t_c, year)
+
+
+def df_prepare(df, year):
+    "melt dataframe, add metadata, convert to fedefl and apply currency exchange"
+    df = df.melt(
+        id_vars = [c for c in df if c not in 
+                   config['flows'].values()],
+        var_name = 'Flow',
+        value_name = 'EF'
+        )
+
+    df = (df
+        .assign(Compartment='emission/air')
+        .assign(Unit='kg')
+        .assign(ReferenceCurrency='Euro')
+        .assign(CurrencyYear=str(year))
+        .assign(EmissionYear='2019' if year > 2019 else str(year))
+        # ^^ GHG data stops at 2019
+        .assign(PriceType='Basic')
+        )
+
+    fl = (fedelem.get_flows()
+          .query('Flowable in @df.Flow')
+          .filter(['Flowable', 'Context', 'Flow UUID'])
+          )
+    df = (df
+        .merge(fl, how='left',
+               left_on=['Flow', 'Compartment'],
+               right_on=['Flowable', 'Context'],
+               )
+        .assign(Flowable=lambda x: x['Flowable'].fillna(x['Flow']))
+        .drop(columns=['Flow', 'Compartment'])
+        .rename(columns={'Flow UUID': 'FlowUUID'})
+        .assign(FlowUUID=lambda x: x['FlowUUID'].fillna('n.a.'))
+        .assign(Context=lambda x: x['Context'].fillna('emission/air'))
+        )
+
+    # Currency adjustment
+    c = CurrencyConverter(fallback_on_missing_rate=True)
+    exch = statistics.mean([c.convert(1, 'EUR', 'USD', date=date(year, 1, 1)),
+                            c.convert(1, 'EUR', 'USD', date=date(year, 12, 30))])
+    df = (df
+        .assign(EF=lambda x: x['EF']/exch)
+        .assign(ReferenceCurrency='USD')
+        )
+    df.loc[df['Flowable'] == 'HFCs and PFCs, unspecified',
+           'Unit'] = 'kg CO2e'
+    #^^ update units to kg CO2e for HFCs and PFCs unspecified, consider
+    # more dynamic implementation
+
+    return df
+
 
 def get_tiva_data(year):
     '''

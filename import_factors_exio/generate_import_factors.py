@@ -27,8 +27,6 @@ i_d = imports data
 t_e = region mappings from BEA TiVA to exiobase countries
 t_c = BEA TiVA import contributions coefficients, by BEA naics category for 
       available region datasets
-e_u_b = exiobase to detail useeio concordance, binary format, from exiobase team
-e_u_l = exiobase to detail useeio concordance, converted to long format
 e_u = exiobase to detail useeio concordance, condensed long format
 u_cc = complete useeio internal concordance
 u_c = useeio detail to summary code concordance
@@ -284,7 +282,7 @@ def calc_tiva_coefficients(year, level='Summary'):
     return t_c
 
 
-def get_exio_to_useeio_concordance(schema='2012'):
+def get_exio_to_useeio_concordance(schema=2012):
     '''
     Opens Exiobase to USEEIO binary concordance.
     modified slightly and flattened from:
@@ -300,7 +298,7 @@ def get_exio_to_useeio_concordance(schema='2012'):
     return e_u
 
 
-def get_detail_to_summary_useeio_concordance():
+def get_detail_to_summary_useeio_concordance(schema=2012):
     '''
     Opens crosswalk between BEA (summary & detail) and USEEIO (with and 
     without waste disaggregation) sectors. USEEIO Detail with Waste Disagg 
@@ -308,7 +306,7 @@ def get_detail_to_summary_useeio_concordance():
     '''
     path = conPath / 'useeio_internal_concordance.csv'
     u_cc = (pd.read_csv(path, dtype=str)
-              .rename(columns={'BEA_Detail_Waste_Disagg': 'BEA Detail',
+              .rename(columns={f'USEEIO_Detail_{schema}': 'BEA Detail',
                                'BEA_Summary': 'BEA Summary'})
               )
     u_c = u_cc[['BEA Detail','BEA Summary']]

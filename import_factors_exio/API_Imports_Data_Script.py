@@ -139,7 +139,7 @@ def make_reqs(file, reqs, data_years):
     print('Successfully Collected All',file,'Requests')
     return d
 
-def get_census_df(d, c_d, data_years):
+def get_census_df(d, c_d, data_years, schema=2012):
     '''
     Creates a dataframe for Census response data for a given year.
     '''
@@ -162,7 +162,9 @@ def get_census_df(d, c_d, data_years):
         df = df.assign(Year=year)
     df = df.replace(np.nan, 0).reset_index()
     ## Merge in BEA Codes and flatten
-    c_b = pd.read_csv(apiPath / 'Census_API_Mappings.csv')
+    c_b = (pd.read_csv(apiPath / 'Census_API_Mappings.csv')
+           .rename(columns={f'BEA_Detail_{schema}': 'BEA Sector'})
+           )
     df = df.merge(c_b, how='left', on='NAICS')
     check = set(df[df['BEA Sector'].isna()]['NAICS'])
     if len(check) > 0:
@@ -178,7 +180,7 @@ def get_census_df(d, c_d, data_years):
             )
     return df
 
-def get_bea_df(d, b_d, data_years):
+def get_bea_df(d, b_d, data_years, schema=2012):
     '''
     Creates a dataframe for BEA response data for a given year.
     '''
@@ -186,6 +188,7 @@ def get_bea_df(d, b_d, data_years):
     n_d = {}
     df_all = pd.DataFrame()
     b_b = (pd.read_csv(apiPath / 'BEA_API_Mappings.csv')
+           .rename(columns={f'BEA_Detail_{schema}': 'BEA Sector'})
            .filter(['API BEA Service', 'BEA Sector'])
            .rename(columns={'API BEA Service': 'BEA Service'})
            )
@@ -225,7 +228,7 @@ def get_bea_df(d, b_d, data_years):
         df_all = pd.concat([df_all, df], ignore_index=True)
     return df_all
 
-def get_imports_data(year):
+def get_imports_data(year, schema=2012):
     '''
     A function to call from other scripts.
     '''
@@ -244,8 +247,8 @@ def get_imports_data(year):
         c_responses = make_reqs('Census', c_reqs, [year])
         pkl.dump(c_responses, open(dataPath / f'census_responses_{year}.pkl', 'wb'))
 
-    b_df = get_bea_df(b_responses, b_d, [year])
-    c_df = get_census_df(c_responses, c_d, [year])
+    b_df = get_bea_df(b_responses, b_d, [year], schema=schema)
+    c_df = get_census_df(c_responses, c_d, [year], schema=schema)
     i_df = pd.concat([c_df, b_df], ignore_index=True, axis=0)
     i_df['Country'] = i_df['CountryCode'].map(b_d)
     return i_df

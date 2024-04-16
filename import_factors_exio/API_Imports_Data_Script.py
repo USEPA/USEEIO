@@ -191,6 +191,7 @@ def get_bea_df(d, b_d, data_years, schema=2012):
            .rename(columns={f'BEA_Detail_{schema}': 'BEA Sector'})
            .filter(['API BEA Service', 'BEA Sector'])
            .rename(columns={'API BEA Service': 'BEA Service'})
+           .drop_duplicates()
            )
     for year in data_years:
         for k, v in d[year].items():

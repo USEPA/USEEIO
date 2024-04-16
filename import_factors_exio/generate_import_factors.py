@@ -284,21 +284,19 @@ def calc_tiva_coefficients(year, level='Summary'):
     return t_c
 
 
-def get_exio_to_useeio_concordance():
+def get_exio_to_useeio_concordance(schema='2012'):
     '''
     Opens Exiobase to USEEIO binary concordance.
-    Transforms wide-form Exiobase to USEEIO concordance into long form, 
-    extracts all mappings to create new, two column concordance consisting of 
-    USEEIO detail and mappings to Exiobase.
-    modified slightly from: https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
+    modified slightly and flattened from:
+        https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
     '''
     path = conPath / "exio_to_useeio2_commodity_concordance.csv"
-    e_u_b = (pd.read_csv(path, dtype=str)
-               .rename(columns={'Unnamed: 0':'BEA Detail'}))
-    e_u_l = pd.melt(e_u_b, id_vars=['BEA Detail'], var_name='Exiobase Sector')
-    e_u = (e_u_l.query('value == "1"')
-                .reset_index(drop=True))
-    e_u = (e_u[['BEA Detail','Exiobase Sector']])
+    e_u = (pd.read_csv(path, dtype=str)
+               .rename(columns={f'USEEIO_Detail_{schema}': 'BEA Detail'}))
+    e_u = (e_u.filter(['BEA Detail','Exiobase Sector'])
+              .drop_duplicates()
+              .reset_index(drop=True)
+              )
     return e_u
 
 

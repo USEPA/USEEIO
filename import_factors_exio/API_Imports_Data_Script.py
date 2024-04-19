@@ -164,6 +164,8 @@ def get_census_df(d, c_d, data_years, schema=2012):
     ## Merge in BEA Codes and flatten
     c_b = (pd.read_csv(apiPath / 'Census_API_Mappings.csv')
            .rename(columns={f'BEA_Detail_{schema}': 'BEA Sector'})
+           .filter(['NAICS', 'BEA Sector'])
+           .drop_duplicates()
            )
     df = df.merge(c_b, how='left', on='NAICS')
     check = set(df[df['BEA Sector'].isna()]['NAICS'])

@@ -350,8 +350,11 @@ def pull_exiobase_multipliers(year):
     M_df['flow'] = M_df.stressor.str.split(pat=' -', n=1, expand=True)[0]
     M_df['flow'] = M_df['flow'].map(fields)
     M_df = M_df.loc[M_df.flow.isin(fields.values())]
-    M_df = M_df.drop(columns='stressor', level=0).groupby('flow').agg('sum')
-    ##  ^^ TODO fix performance warning
+    M_df = (M_df
+            .sort_index(axis=1)
+            .drop(columns='stressor', level=0)
+            .groupby('flow').agg('sum')
+            )
     M_df = M_df / 1000000 # units are kg / million Euro
 
     # # for impacts
@@ -514,6 +517,7 @@ def calculate_and_store_emission_factors(multiplier_df):
     schema = str(int(multiplier_df['BaseIOSchema'][0]))
     cols = [c for c in multiplier_df if c in flow_cols]
     year = multiplier_df['Year'][0]
+    print(f'Saving files for {year}')
     for k, v in {'Subregion Contribution to Detail': 'Detail',
                  'Subregion Contribution to Summary': 'Summary',
                  'National Contribution to Detail': 'Detail',

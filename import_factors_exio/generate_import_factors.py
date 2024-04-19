@@ -549,7 +549,7 @@ def calculate_and_store_emission_factors(multiplier_df):
                out_Path / f'aggregate_{v.lower()}_imports_multipliers_by_{r}_exio_{year}_{schema[-2:]}sch.csv', index=False)
 
 
-def calculate_and_store_TiVA_approach(weighted_multipliers,
+def calculate_and_store_TiVA_approach(multiplier_df,
                                       import_contribution_coeffs, year):
     '''
     Merges import contribution coefficients with weighted exiobase 
@@ -557,8 +557,9 @@ def calculate_and_store_TiVA_approach(weighted_multipliers,
     weighted exiobase multipliers to produce weighted multipliers that 
     incorporate TiVA imports by region.
     '''
+    schema = str(int(multiplier_df['BaseIOSchema'][0]))
     weighted_df_imports = (
-        weighted_multipliers
+        multiplier_df
         .merge(import_contribution_coeffs, how='left', validate='m:1',
                on=['TiVA Region','BEA Summary'])
         .assign(region_contributions_imports=lambda x:
@@ -599,10 +600,10 @@ def calculate_and_store_TiVA_approach(weighted_multipliers,
               f'emisson factors: {check}')
 
     imports_multipliers_ts.to_csv(
-        out_Path / f'aggregate_summary_imports_multipliers_TiVA_approach_exio_{year}.csv',
+        out_Path / f'aggregate_summary_imports_multipliers_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
         index=False)
     imports_multipliers_td.to_csv(
-        out_Path / f'aggregate_detail_imports_multipliers_TiVA_approach_exio_{year}.csv',
+        out_Path / f'aggregate_detail_imports_multipliers_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
         index=False)
 
 

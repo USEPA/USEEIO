@@ -67,6 +67,7 @@ def generate_exio_factors(years: list, schema=2012):
         sr_i = get_subregion_imports(year, schema=schema)
         if len(sr_i.query('`Import Quantity` <0')) > 0:
             print('WARNING: negative import values...')
+            sr_i = sr_i.query('`Import Quantity` >= 0').reset_index(drop=True)
         if sum(sr_i.duplicated(['Country', 'BEA Detail'])) > 0:
             print('Error calculating country coefficients by detail sector')
 

@@ -67,7 +67,8 @@ def generate_exio_factors(years: list, schema=2012):
         sr_i = get_subregion_imports(year, schema=schema)
         if len(sr_i.query('`Import Quantity` <0')) > 0:
             print('WARNING: negative import values...')
-        if sum(sr_i.duplicated(['CountryCode', 'BEA Detail'])) > 0:
+            sr_i = sr_i.query('`Import Quantity` >= 0').reset_index(drop=True)
+        if sum(sr_i.duplicated(['Country', 'BEA Detail'])) > 0:
             print('Error calculating country coefficients by detail sector')
 
         elec = get_electricity_imports(year)
@@ -114,11 +115,19 @@ def generate_exio_factors(years: list, schema=2012):
                )
         u_c = get_detail_to_summary_useeio_concordance(schema=schema)
         ## Combine EFs with contributions by country
+        # Aggregate imports data by MRIO code
+        sr_i_agg = (sr_i.groupby([c for c in sr_i if c
+                                  not in ('Country', 'Import Quantity')])
+                    .agg({'Import Quantity': sum})
+                    .reset_index()
+                    )
+        exio_country_names = pd.read_csv(conPath / 'exio_country_names.csv')
         multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
-                            .merge(sr_i.drop(columns=['Unit', 'TiVA Region']),
+                            .merge(sr_i_agg.drop(columns=['Unit', 'TiVA Region']),
                                    how='left',
                                    on=['CountryCode', 'BEA Detail'])
                             .merge(u_c, how='left', on='BEA Detail', validate='m:1')
+                            .merge(exio_country_names, on='CountryCode', validate='m:1')
                             )
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
@@ -246,8 +255,8 @@ def get_electricity_imports(year):
             .rename(columns={'BEADetail':'BEA Detail'}))
     df_y['CountryCode'] = df_y['Country'].map(c_map)
     df_y['TiVA Region']=df_y['CountryCode']
-    elec = df_y[['BEA Detail','Year','CountryCode','Import Quantity','Unit',
-                 'Source','Country','TiVA Region']]
+    elec = df_y.filter(['BEA Detail','Year','Import Quantity','Unit',
+                        'Source','Country','TiVA Region'])
     elec['Year']=elec['Year'].astype(str)
     return(elec)
     
@@ -324,14 +333,18 @@ def get_subregion_imports(year, schema=2012):
     Generates dataset of imports by country by sector from BEA and Census
     '''
     sr_i = get_imports_data(year=year, schema=schema)
-    path = conPath / 'exio_tiva_concordance.csv'
+    path = conPath / 'exio_country_concordance.csv'
     regions = (pd.read_csv(path, dtype=str,
-                           usecols=['ISO 3166-alpha-2', 'TiVA Region'])
-               .rename(columns={'ISO 3166-alpha-2': 'CountryCode'})
+                           usecols=['Country', 'Country Code', 'TiVA Region'])
+               .rename(columns={'Country Code': 'CountryCode'})
                )
-    sr_i = (sr_i.merge(regions, on='CountryCode', how='left', validate='m:1')
+    sr_i = (sr_i.merge(regions, on='Country', how='left', validate='m:1')
                 .rename(columns={'BEA Sector':'BEA Detail'}))
-    return sr_i
+    missing = (set(sr_i[sr_i.isnull().any(axis=1)]['Country'])
+               - set(regions['Country']))
+    if len(missing) > 0:
+        print(f'WARNING: missing countries in correspondence: {missing}')
+    return sr_i.dropna(subset='CountryCode').reset_index(drop=True)
 
 
 def pull_exiobase_multipliers(year):
@@ -368,12 +381,15 @@ def pull_exiobase_multipliers(year):
             .rename(columns=fields)
             .assign(Year=str(year))
             )
-    path = conPath / 'exio_tiva_concordance.csv'
+    path = conPath / 'exio_country_concordance.csv'
     regions = (pd.read_csv(path, dtype=str,
-                           usecols=['ISO 3166-alpha-2', 'TiVA Region'])
-               .rename(columns={'ISO 3166-alpha-2': 'CountryCode'})
+                           usecols=['Country Code', 'TiVA Region'])
+               .rename(columns={'Country Code': 'CountryCode'})
+               .dropna()
+               .drop_duplicates()
                )
-    M_df = M_df.merge(regions, how='left', on='CountryCode')
+    # merge in TiVA regions
+    M_df = M_df.merge(regions, how='left', on='CountryCode', validate='m:1')
     return M_df
 
 
@@ -572,6 +588,20 @@ def calculate_and_store_TiVA_approach(multiplier_df,
                 x['Subregion Contribution to Detail'])
         .assign(FlowAmount_Detail=lambda x: x['EF'] * x['national_detail_by_tiva'])
         .rename(columns={'national_detail_by_tiva':'National Contribution to Detail TiVA'}))
+
+    contribution_comparison = (
+        weighted_df_imports
+        .filter(['BEA Detail', 'TiVA Region', 'CurrencyYear',
+                 'National Contribution to Detail',
+                 'National Contribution to Detail TiVA'])
+        .rename(columns={'CurrencyYear': 'Year'})
+        .drop_duplicates()
+        .groupby(['BEA Detail', 'TiVA Region', 'Year']).agg(sum)
+        .reset_index()
+        .assign(Tiva_over_SID = lambda x: 
+                x['National Contribution to Detail TiVA'] /
+                x['National Contribution to Detail'])
+        )
         
     weighted_df_imports_td = weighted_df_imports.rename(columns={'FlowAmount_Detail':'FlowAmount'})
     weighted_df_imports_ts = weighted_df_imports.rename(columns={'FlowAmount_Summary':'FlowAmount'})

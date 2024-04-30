@@ -1,0 +1,50 @@
+CountryCode,Country
+AT,Austria
+AU,Australia
+BE,Belgium
+BG,Bulgaria
+BR,Brazil
+CA,Canada
+CH,Switzerland
+CN,China
+CY,Cyprus
+CZ,Czech Republic
+DE,Germany
+DK,Denmark
+EE,Estonia
+ES,Spain
+FI,Finland
+FR,France
+GB,United Kingdom
+GR,Greece
+HR,Croatia
+HU,Hungary
+ID,Indonesia
+IE,Ireland
+IN,India
+IT,Italy
+JP,Japan
+KR,South Korea
+LT,Lithuania
+LU,Luxembourg
+LV,Latvia
+MT,Malta
+MX,Mexico
+NL,Netherlands
+NO,Norway
+PL,Poland
+PT,Portugal
+RO,Romania
+RU,Russia
+SE,Sweden
+SI,Slovenia
+SK,Slovakia
+TR,Turkey
+TW,Taiwan
+US,United States
+ZA,South Africa
+WA,"Rest of World, Asia and Pacific"
+WE,"Rest of World, Europe"
+WF,"Rest of World, Africa"
+WL,"Rest of World, America"
+WM,"Rest of World, Middle East"

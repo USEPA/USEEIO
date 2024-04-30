@@ -47,6 +47,20 @@ def get_CTY_CODE(file='country.txt'):
     df = df.rename(columns={'Code':'Census Code'})
     return(df)
 
+
+def get_BEA_country_list():
+    url = ('http://apps.bea.gov/api/data/?&UserID=__API__'
+           '&method=GetParameterValues&DataSetName=IntlServTrade&ParameterName=AreaOrCountry'
+           '&ResultFormat=json')
+    api = get_api_key('BEA_API')
+    url = url.replace('__API__', api)
+    r = requests.get(url)
+    countries = pd.DataFrame(r.json()['BEAAPI']['Results']['ParamValue'])
+    (countries
+     .rename(columns={'Key': 'BEA_AREAORCOUNTRY',
+                      'Desc': 'country'})
+     .to_csv(conPath / 'BEA_country.csv', index=False))
+
 def get_country_schema():
     '''
     Uses t_e dataframe, containing a concordance between countries across
@@ -56,18 +70,18 @@ def get_country_schema():
     (strings with their API name equivalents); and 2) c_d is a concordance 
     between exiobase ISO codes and Census country codes (4-digit)
     '''
-    cty=get_CTY_CODE()
-    t_e = pd.read_csv(conPath / 'exio_tiva_concordance.csv')
-    df = t_e.rename(columns={'ISO 3166-alpha-2':'ISO Code', 
-                             'BEA_AREAORCOUNTRY':'BEA'})
-    b_c = df[['ISO Code','BEA']].dropna(axis='index',how='any')
-    b_d = b_c.set_index('ISO Code')['BEA'].to_dict()
+    b_d = (pd.read_csv(conPath / 'BEA_country.csv')
+           .filter(['BEA_AREAORCOUNTRY', 'country'])
+           .drop_duplicates()
+           .set_index('country')['BEA_AREAORCOUNTRY']
+           .to_dict()
+           )
 
-    c_c = df[['ISO Code']].dropna(axis='index',how='any')
-    c_c = (pd.merge(c_c, cty, how='left',on='ISO Code')
-           .drop(columns='Name')
-           .dropna(axis='index', how='any'))
-    c_d = c_c.set_index('ISO Code')['Census Code'].to_dict()
+    c_d = (get_CTY_CODE()
+           .set_index('Name')['Census Code']
+           .to_dict()
+           )
+
     return (b_d, c_d)
 
 def create_Reqs(file, d, year):
@@ -85,19 +99,24 @@ def create_Reqs(file, d, year):
         string = f'{key}={value}&'
         req_url += string
     if components.get('api_key_required', False):
-        try:
-            with open(apiPath / f'{file}_key.yaml') as f:
-                api_key = yaml.safe_load(f)
-            req_url += f'UserID={api_key}&'
-        except FileNotFoundError:
-            raise FileNotFoundError(
-                f'API key required for {file}. Create the file '
-                f'"../import_factors_exio/API/{file}_key.yaml" and add your '
-                f'API key')
+        api_key = get_api_key(file)
+        req_url += f'UserID={api_key}&'
     req_url = req_url.rstrip('&')
     reqs[year] = complete_URLs(req_url, year, d)
     print('Successfully Created All', file[:-4], 'Request URLs')
     return reqs
+
+def get_api_key(file):
+    try:
+        with open(apiPath / f'{file}_key.yaml') as f:
+            api_key = yaml.safe_load(f)
+        return api_key
+    except FileNotFoundError:
+        raise FileNotFoundError(
+            f'API key required for {file}. Create the file '
+            f'"../import_factors_exio/API/{file}_key.yaml" and add your '
+            f'API key')
+
 
 def complete_URLs(req_url, year, d):
     '''
@@ -133,7 +152,11 @@ def make_reqs(file, reqs, data_years):
         year_reqs = reqs[year]
         d[year] = {}
         for key, value in year_reqs.items():
+            print(value['cty'])
             response = requests.get(value['req'])
+            if response.status_code == 204:
+                print(f'no content for {value["cty"]}')
+                continue
             value['data'] = response.json()
             d[year][key] = value
     print('Successfully Collected All',file,'Requests')
@@ -175,7 +198,7 @@ def get_census_df(d, c_d, data_years, schema=2012):
     df = (df.drop(columns='NAICS')
             .groupby(['BEA Sector', 'Year']).agg(sum)
             .reset_index()
-            .melt(id_vars=['BEA Sector', 'Year'], var_name='CountryCode',
+            .melt(id_vars=['BEA Sector', 'Year'], var_name='Country',
                   value_name='Import Quantity')
             .assign(Unit='USD')
             .assign(Source='Census')
@@ -216,12 +239,18 @@ def get_bea_df(d, b_d, data_years, schema=2012):
         ## Merge in BEA codes and flatten
         df = (df.merge(b_b, how='right', on='BEA Service', validate='1:m')
               .fillna(0)
-              .drop(columns='BEA Service')
+              .assign(n = lambda x: x['BEA Service'].map(
+                  x['BEA Service'].value_counts()))
               )
+        # divide imports by number of mapped sectors to keep total imports
+        # consistent on 1:m mappings
+        cols = [c for c in df if c not in ('BEA Service', 'BEA Sector', 'n')]
+        df[cols] = df[cols].div(df.n, axis=0)
+        df = df.drop(columns=['BEA Service', 'n'])
         if(len(df['BEA Sector'].unique()) != len(df)):
             raise ValueError("Duplicate BEA sectors")
         df = (df.melt(id_vars=['BEA Sector'],
-                      var_name='CountryCode',
+                      var_name='Country',
                       value_name='Import Quantity')
                 .assign(Unit='USD')
                 .assign(Source='BEA')
@@ -253,8 +282,7 @@ def get_imports_data(year, schema=2012):
     b_df = get_bea_df(b_responses, b_d, [year], schema=schema)
     c_df = get_census_df(c_responses, c_d, [year], schema=schema)
     i_df = pd.concat([c_df, b_df], ignore_index=True, axis=0)
-    i_df['Country'] = i_df['CountryCode'].map(b_d)
     return i_df
-
+#%%
 if __name__ == '__main__':
-    id_f = get_imports_data(year=2018)
+    i_df = get_imports_data(year=2019, schema=2017)

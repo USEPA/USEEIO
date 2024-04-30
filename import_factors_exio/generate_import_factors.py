@@ -27,8 +27,6 @@ i_d = imports data
 t_e = region mappings from BEA TiVA to exiobase countries
 t_c = BEA TiVA import contributions coefficients, by BEA naics category for 
       available region datasets
-e_u_b = exiobase to detail useeio concordance, binary format, from exiobase team
-e_u_l = exiobase to detail useeio concordance, converted to long format
 e_u = exiobase to detail useeio concordance, condensed long format
 u_cc = complete useeio internal concordance
 u_c = useeio detail to summary code concordance
@@ -39,8 +37,10 @@ e_d = Exiobase emission factors per unit currency
 
 #%%
 # set list of years to run for factors
-years = [2019]
-# years = list(range(2012,2021))
+# years = [2019]
+years = list(range(2017,2023))
+# years = list(range(2012,2017))
+schema = 2017
 
 dataPath = Path(__file__).parent / 'data'
 conPath = Path(__file__).parent / 'concordances'
@@ -58,16 +58,17 @@ with open(dataPath / "exio_config.yml", "r") as file:
     config = yaml.safe_load(file)
 
 
-def generate_exio_factors(years: list):
+def generate_exio_factors(years: list, schema=2012):
     '''
     Runs through script to produce emission factors for U.S. imports from exiobase
     '''
     for year in years:
         # Country imports by detail sector
-        sr_i = get_subregion_imports(year)
+        sr_i = get_subregion_imports(year, schema=schema)
         if len(sr_i.query('`Import Quantity` <0')) > 0:
             print('WARNING: negative import values...')
-        if sum(sr_i.duplicated(['CountryCode', 'BEA Detail'])) > 0:
+            sr_i = sr_i.query('`Import Quantity` >= 0').reset_index(drop=True)
+        if sum(sr_i.duplicated(['Country', 'BEA Detail'])) > 0:
             print('Error calculating country coefficients by detail sector')
 
         elec = get_electricity_imports(year)
@@ -75,7 +76,7 @@ def generate_exio_factors(years: list):
 
         ## Generate country specific emission factors by BEA sector weighted
         ## by exports to US when sector mappings are not clean
-        e_u = get_exio_to_useeio_concordance()
+        e_u = get_exio_to_useeio_concordance(schema=schema)
         e_d = pull_exiobase_multipliers(year)
         e_bil = pull_exiobase_data(year, opt = "bilateral")
         e_out = pull_exiobase_data(year, opt = "output")
@@ -96,7 +97,7 @@ def generate_exio_factors(years: list):
         # INSERT HERE TO REVIEW SECTOR CONTRIBUTIONS WITHIN A COUNTRY
         # Weight exiobase sectors within BEA sectors according to trade
         e_d = e_d.drop(columns=['Exiobase Sector','Year'])
-        agg_cols = ['BEA Detail', 'CountryCode', 'TiVA Region']
+        agg_cols = ['BEA Detail', 'CountryCode', 'TiVA Region', 'BaseIOSchema']
         cols = [c for c in e_d.columns if c not in ([export_field] + agg_cols)]
         agg_dict = {col: 'mean' if col in cols else 'sum'
                     for col in cols + [export_field]}
@@ -112,13 +113,21 @@ def generate_exio_factors(years: list):
                .reset_index()
                .sort_values(by=['BEA Detail', 'CountryCode'])
                )
-        u_c = get_detail_to_summary_useeio_concordance()
+        u_c = get_detail_to_summary_useeio_concordance(schema=schema)
         ## Combine EFs with contributions by country
+        # Aggregate imports data by MRIO code
+        sr_i_agg = (sr_i.groupby([c for c in sr_i if c
+                                  not in ('Country', 'Import Quantity')])
+                    .agg({'Import Quantity': sum})
+                    .reset_index()
+                    )
+        exio_country_names = pd.read_csv(conPath / 'exio_country_names.csv')
         multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
-                            .merge(sr_i.drop(columns=['Unit', 'TiVA Region']),
+                            .merge(sr_i_agg.drop(columns=['Unit', 'TiVA Region']),
                                    how='left',
                                    on=['CountryCode', 'BEA Detail'])
                             .merge(u_c, how='left', on='BEA Detail', validate='m:1')
+                            .merge(exio_country_names, on='CountryCode', validate='m:1')
                             )
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
@@ -130,16 +139,16 @@ def generate_exio_factors(years: list):
         us_df = multiplier_df.query('CountryCode == "US"')
         us_df = df_prepare(us_df, year)
         us_df.to_csv(
-            out_Path /f'us_df_exio_{year}.csv', index=False)
+            out_Path /f'us_df_exio_{year}_{str(schema)[-2:]}sch.csv', index=False)
 
-        multiplier_df = calc_contribution_coefficients(multiplier_df)
+        multiplier_df = calc_contribution_coefficients(multiplier_df, schema=schema)
         multiplier_df = df_prepare(multiplier_df, year)
         multiplier_df.to_csv(
-            out_Path /f'multiplier_df_exio_{year}.csv', index=False)
+            out_Path /f'multiplier_df_exio_{year}_{str(schema)[-2:]}sch.csv', index=False)
         calculate_and_store_emission_factors(multiplier_df)
         
         # Optional: Recalculate using TiVA regions under original approach
-        t_c = calc_tiva_coefficients(year)
+        t_c = calc_tiva_coefficients(year, schema=schema)
         calculate_and_store_TiVA_approach(multiplier_df, t_c, year)
 
 
@@ -246,19 +255,21 @@ def get_electricity_imports(year):
             .rename(columns={'BEADetail':'BEA Detail'}))
     df_y['CountryCode'] = df_y['Country'].map(c_map)
     df_y['TiVA Region']=df_y['CountryCode']
-    elec = df_y[['BEA Detail','Year','CountryCode','Import Quantity','Unit',
-                 'Source','Country','TiVA Region']]
+    elec = df_y.filter(['BEA Detail','Year','Import Quantity','Unit',
+                        'Source','Country','TiVA Region'])
     elec['Year']=elec['Year'].astype(str)
     return(elec)
     
-def calc_tiva_coefficients(year, level='Summary'):
+def calc_tiva_coefficients(year, level='Summary', schema=2012):
     '''
     Calculate the fractional contributions, by TiVA region, to total imports
     by BEA-summary sector. Resulting dataframe is long format. 
     '''
     t_df = get_tiva_data(year)
+    col = f'USEEIO_Detail_{schema}' if level == "Detail" else "BEA Summary"
     corr = (pd.read_csv(conPath / 'tiva_imports_corr.csv',
-                        usecols=['TiVA', f'BEA {level}'])
+                        usecols=['TiVA', col])
+            .rename(columns = {col: f'BEA {level}'})
             .drop_duplicates())
     # ^^ requires mapping of import codes to summary codes. These codes are 
     # between detail and summary.
@@ -284,25 +295,24 @@ def calc_tiva_coefficients(year, level='Summary'):
     return t_c
 
 
-def get_exio_to_useeio_concordance():
+def get_exio_to_useeio_concordance(schema=2012):
     '''
     Opens Exiobase to USEEIO binary concordance.
-    Transforms wide-form Exiobase to USEEIO concordance into long form, 
-    extracts all mappings to create new, two column concordance consisting of 
-    USEEIO detail and mappings to Exiobase.
-    modified slightly from: https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
+    modified slightly and flattened from:
+        https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
     '''
     path = conPath / "exio_to_useeio2_commodity_concordance.csv"
-    e_u_b = (pd.read_csv(path, dtype=str)
-               .rename(columns={'Unnamed: 0':'BEA Detail'}))
-    e_u_l = pd.melt(e_u_b, id_vars=['BEA Detail'], var_name='Exiobase Sector')
-    e_u = (e_u_l.query('value == "1"')
-                .reset_index(drop=True))
-    e_u = (e_u[['BEA Detail','Exiobase Sector']])
+    e_u = (pd.read_csv(path, dtype=str)
+               .rename(columns={f'USEEIO_Detail_{schema}': 'BEA Detail'}))
+    e_u = (e_u.filter(['BEA Detail','Exiobase Sector'])
+              .drop_duplicates()
+              .reset_index(drop=True)
+              .assign(BaseIOSchema = str(int(schema)))
+              )
     return e_u
 
 
-def get_detail_to_summary_useeio_concordance():
+def get_detail_to_summary_useeio_concordance(schema=2012):
     '''
     Opens crosswalk between BEA (summary & detail) and USEEIO (with and 
     without waste disaggregation) sectors. USEEIO Detail with Waste Disagg 
@@ -310,7 +320,7 @@ def get_detail_to_summary_useeio_concordance():
     '''
     path = conPath / 'useeio_internal_concordance.csv'
     u_cc = (pd.read_csv(path, dtype=str)
-              .rename(columns={'BEA_Detail_Waste_Disagg': 'BEA Detail',
+              .rename(columns={f'USEEIO_Detail_{schema}': 'BEA Detail',
                                'BEA_Summary': 'BEA Summary'})
               )
     u_c = u_cc[['BEA Detail','BEA Summary']]
@@ -318,19 +328,23 @@ def get_detail_to_summary_useeio_concordance():
     return u_c
 
 
-def get_subregion_imports(year):
+def get_subregion_imports(year, schema=2012):
     '''
     Generates dataset of imports by country by sector from BEA and Census
     '''
-    sr_i = get_imports_data(year=year)
-    path = conPath / 'exio_tiva_concordance.csv'
+    sr_i = get_imports_data(year=year, schema=schema)
+    path = conPath / 'exio_country_concordance.csv'
     regions = (pd.read_csv(path, dtype=str,
-                           usecols=['ISO 3166-alpha-2', 'TiVA Region'])
-               .rename(columns={'ISO 3166-alpha-2': 'CountryCode'})
+                           usecols=['Country', 'Country Code', 'TiVA Region'])
+               .rename(columns={'Country Code': 'CountryCode'})
                )
-    sr_i = (sr_i.merge(regions, on='CountryCode', how='left', validate='m:1')
+    sr_i = (sr_i.merge(regions, on='Country', how='left', validate='m:1')
                 .rename(columns={'BEA Sector':'BEA Detail'}))
-    return sr_i
+    missing = (set(sr_i[sr_i.isnull().any(axis=1)]['Country'])
+               - set(regions['Country']))
+    if len(missing) > 0:
+        print(f'WARNING: missing countries in correspondence: {missing}')
+    return sr_i.dropna(subset='CountryCode').reset_index(drop=True)
 
 
 def pull_exiobase_multipliers(year):
@@ -349,8 +363,11 @@ def pull_exiobase_multipliers(year):
     M_df['flow'] = M_df.stressor.str.split(pat=' -', n=1, expand=True)[0]
     M_df['flow'] = M_df['flow'].map(fields)
     M_df = M_df.loc[M_df.flow.isin(fields.values())]
-    M_df = M_df.drop(columns='stressor', level=0).groupby('flow').agg('sum')
-    ##  ^^ TODO fix performance warning
+    M_df = (M_df
+            .sort_index(axis=1)
+            .drop(columns='stressor', level=0)
+            .groupby('flow').agg('sum')
+            )
     M_df = M_df / 1000000 # units are kg / million Euro
 
     # # for impacts
@@ -364,12 +381,15 @@ def pull_exiobase_multipliers(year):
             .rename(columns=fields)
             .assign(Year=str(year))
             )
-    path = conPath / 'exio_tiva_concordance.csv'
+    path = conPath / 'exio_country_concordance.csv'
     regions = (pd.read_csv(path, dtype=str,
-                           usecols=['ISO 3166-alpha-2', 'TiVA Region'])
-               .rename(columns={'ISO 3166-alpha-2': 'CountryCode'})
+                           usecols=['Country Code', 'TiVA Region'])
+               .rename(columns={'Country Code': 'CountryCode'})
+               .dropna()
+               .drop_duplicates()
                )
-    M_df = M_df.merge(regions, how='left', on='CountryCode')
+    # merge in TiVA regions
+    M_df = M_df.merge(regions, how='left', on='CountryCode', validate='m:1')
     return M_df
 
 
@@ -401,12 +421,12 @@ def pull_exiobase_data(year, opt):
     return df
 
 
-def calc_contribution_coefficients(df):
+def calc_contribution_coefficients(df, schema=2012):
     '''
     Appends contribution coefficients to prepared dataframe.
     '''
     df['Import Quantity'] = df['Import Quantity'].fillna(0)
-    t_c = (calc_tiva_coefficients(year=df['Year'][0], level="Detail")
+    t_c = (calc_tiva_coefficients(year=df['Year'][0], level="Detail", schema=schema)
            .rename(columns={'region_contributions_imports': 'TiVA_coefficients'})
            )
     df = df.merge(t_c, on=['BEA Detail', 'TiVA Region'])
@@ -510,8 +530,10 @@ def calculate_and_store_emission_factors(multiplier_df):
     Calculates and saves import factors by region and aggregated to national
     totals.
     '''
+    schema = str(int(multiplier_df['BaseIOSchema'][0]))
     cols = [c for c in multiplier_df if c in flow_cols]
     year = multiplier_df['Year'][0]
+    print(f'Saving files for {year}')
     for k, v in {'Subregion Contribution to Detail': 'Detail',
                  'Subregion Contribution to Summary': 'Summary',
                  'National Contribution to Detail': 'Detail',
@@ -529,7 +551,7 @@ def calculate_and_store_emission_factors(multiplier_df):
 
         if r == 'nation':
             (agg_df.rename(columns={'FlowAmount': 'Contribution_to_EF'})
-                   .to_csv(out_Path / f'{v.lower()}_imports_multipliers_contribution_by_{r}_exio_{year}.csv', index=False))
+                   .to_csv(out_Path / f'{v.lower()}_imports_multipliers_contribution_by_{r}_exio_{year}_{schema[-2:]}sch.csv', index=False))
 
             agg_df = (agg_df
                       .groupby(['Sector'] + cols)
@@ -537,13 +559,13 @@ def calculate_and_store_emission_factors(multiplier_df):
                       .assign(BaseIOLevel=v)
                       .reset_index())
             agg_df.to_csv(
-                out_Path /f'aggregate_{v.lower()}_imports_multipliers_exio_{year}.csv', index=False)
+                out_Path /f'aggregate_{v.lower()}_imports_multipliers_exio_{year}_{schema[-2:]}sch.csv', index=False)
         elif r == 'subregion':
             agg_df.to_csv(
-               out_Path / f'aggregate_{v.lower()}_imports_multipliers_by_{r}_exio_{year}.csv', index=False)
+               out_Path / f'aggregate_{v.lower()}_imports_multipliers_by_{r}_exio_{year}_{schema[-2:]}sch.csv', index=False)
 
 
-def calculate_and_store_TiVA_approach(weighted_multipliers,
+def calculate_and_store_TiVA_approach(multiplier_df,
                                       import_contribution_coeffs, year):
     '''
     Merges import contribution coefficients with weighted exiobase 
@@ -551,8 +573,9 @@ def calculate_and_store_TiVA_approach(weighted_multipliers,
     weighted exiobase multipliers to produce weighted multipliers that 
     incorporate TiVA imports by region.
     '''
+    schema = str(int(multiplier_df['BaseIOSchema'][0]))
     weighted_df_imports = (
-        weighted_multipliers
+        multiplier_df
         .merge(import_contribution_coeffs, how='left', validate='m:1',
                on=['TiVA Region','BEA Summary'])
         .assign(region_contributions_imports=lambda x:
@@ -565,6 +588,20 @@ def calculate_and_store_TiVA_approach(weighted_multipliers,
                 x['Subregion Contribution to Detail'])
         .assign(FlowAmount_Detail=lambda x: x['EF'] * x['national_detail_by_tiva'])
         .rename(columns={'national_detail_by_tiva':'National Contribution to Detail TiVA'}))
+
+    contribution_comparison = (
+        weighted_df_imports
+        .filter(['BEA Detail', 'TiVA Region', 'CurrencyYear',
+                 'National Contribution to Detail',
+                 'National Contribution to Detail TiVA'])
+        .rename(columns={'CurrencyYear': 'Year'})
+        .drop_duplicates()
+        .groupby(['BEA Detail', 'TiVA Region', 'Year']).agg(sum)
+        .reset_index()
+        .assign(Tiva_over_SID = lambda x: 
+                x['National Contribution to Detail TiVA'] /
+                x['National Contribution to Detail'])
+        )
         
     weighted_df_imports_td = weighted_df_imports.rename(columns={'FlowAmount_Detail':'FlowAmount'})
     weighted_df_imports_ts = weighted_df_imports.rename(columns={'FlowAmount_Summary':'FlowAmount'})
@@ -593,13 +630,13 @@ def calculate_and_store_TiVA_approach(weighted_multipliers,
               f'emisson factors: {check}')
 
     imports_multipliers_ts.to_csv(
-        out_Path / f'aggregate_summary_imports_multipliers_TiVA_approach_exio_{year}.csv',
+        out_Path / f'aggregate_summary_imports_multipliers_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
         index=False)
     imports_multipliers_td.to_csv(
-        out_Path / f'aggregate_detail_imports_multipliers_TiVA_approach_exio_{year}.csv',
+        out_Path / f'aggregate_detail_imports_multipliers_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
         index=False)
 
 
 #%%
 if __name__ == '__main__':
-    generate_exio_factors(years = years)
+    generate_exio_factors(years = years, schema = schema)

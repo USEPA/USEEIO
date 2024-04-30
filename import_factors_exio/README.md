@@ -12,7 +12,9 @@ For each year, the following files are generated:
 - *multiplier_df_exio_{year}.csv*: Full dataframe with emission factors and contributions by region and sector.
 
 ## BEA API Access
-To make calls to BEA for service imports data (by BEA service category, country, and year), users must first register at https://apps.bea.gov/api/signup/. After doing so, they will be provided with an API key to the provided email. Store this as 'BEA_API_key.yaml' in the API subfolder of the import_factors_exio directory.
+To make calls to BEA for service imports data (by BEA service category, country, and year), users must first register at https://apps.bea.gov/api/signup/.
+After doing so, users will be provided with an API key to the provided email.
+Store this as 'BEA_API_key.yaml' in the API subfolder of the import_factors_exio directory.
 
 ## Package requirements
 - pandas

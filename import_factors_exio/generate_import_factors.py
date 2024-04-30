@@ -114,6 +114,7 @@ def generate_exio_factors(years: list, schema=2012):
                )
         u_c = get_detail_to_summary_useeio_concordance(schema=schema)
         ## Combine EFs with contributions by country
+        # Aggregate imports data by MRIO code
         sr_i_agg = (sr_i.groupby([c for c in sr_i if c
                                   not in ('Country', 'Import Quantity')])
                     .agg({'Import Quantity': sum})
@@ -584,6 +585,20 @@ def calculate_and_store_TiVA_approach(multiplier_df,
                 x['Subregion Contribution to Detail'])
         .assign(FlowAmount_Detail=lambda x: x['EF'] * x['national_detail_by_tiva'])
         .rename(columns={'national_detail_by_tiva':'National Contribution to Detail TiVA'}))
+
+    contribution_comparison = (
+        weighted_df_imports
+        .filter(['BEA Detail', 'TiVA Region', 'CurrencyYear',
+                 'National Contribution to Detail',
+                 'National Contribution to Detail TiVA'])
+        .rename(columns={'CurrencyYear': 'Year'})
+        .drop_duplicates()
+        .groupby(['BEA Detail', 'TiVA Region', 'Year']).agg(sum)
+        .reset_index()
+        .assign(Tiva_over_SID = lambda x: 
+                x['National Contribution to Detail TiVA'] /
+                x['National Contribution to Detail'])
+        )
         
     weighted_df_imports_td = weighted_df_imports.rename(columns={'FlowAmount_Detail':'FlowAmount'})
     weighted_df_imports_ts = weighted_df_imports.rename(columns={'FlowAmount_Summary':'FlowAmount'})

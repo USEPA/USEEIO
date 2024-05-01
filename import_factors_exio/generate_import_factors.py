@@ -120,6 +120,7 @@ def generate_exio_factors(years: list, schema=2012):
         agg = (pd.concat([agg, agg2], ignore_index=False)
                .reset_index()
                .sort_values(by=['BEA Detail', 'CountryCode'])
+               .merge(u_c, how='left', on='BEA Detail')
                )
         ## ^^ MRIO Emission Factors by USEEIO Detail in MRIO currency
 
@@ -142,14 +143,12 @@ def generate_exio_factors(years: list, schema=2012):
         multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
                             .merge(sr_i_agg.drop(columns=['Unit', 'TiVA Region']),
                                    how='left',
-                                   on=['CountryCode', 'BEA Detail'])
+                                   on=['CountryCode', 'BEA Detail', 'BEA Summary'])
                             .merge(exio_country_names, on='CountryCode', validate='m:1')
                             )
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
         ##       summary sectors.
-
-        ## CONSIDER OUTER MERGE ^^
 
         # Extract out US data separately
         us_df = multiplier_df.query('CountryCode == "US"')

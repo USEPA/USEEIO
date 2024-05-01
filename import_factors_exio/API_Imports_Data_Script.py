@@ -282,6 +282,7 @@ def get_imports_data(year, schema=2012):
     b_df = get_bea_df(b_responses, b_d, [year], schema=schema)
     c_df = get_census_df(c_responses, c_d, [year], schema=schema)
     i_df = pd.concat([c_df, b_df], ignore_index=True, axis=0)
+    i_df = i_df.rename(columns={'BEA Sector': 'BEA Detail'})
     return i_df
 #%%
 if __name__ == '__main__':

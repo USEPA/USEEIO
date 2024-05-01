@@ -63,8 +63,9 @@ def generate_exio_factors(years: list, schema=2012):
     Runs through script to produce emission factors for U.S. imports from exiobase
     '''
     for year in years:
+        u_c = get_detail_to_summary_useeio_concordance(schema=schema)
         # Country imports by detail sector
-        sr_i = get_subregion_imports(year, schema=schema)
+        sr_i = get_imports_data(year=year, schema=schema)
         if len(sr_i.query('`Import Quantity` <0')) > 0:
             print('WARNING: negative import values...')
             sr_i = sr_i.query('`Import Quantity` >= 0').reset_index(drop=True)
@@ -73,6 +74,13 @@ def generate_exio_factors(years: list, schema=2012):
 
         elec = get_electricity_imports(year)
         sr_i = pd.concat([sr_i,elec],ignore_index=True)
+        sr_i = sr_i.merge(u_c, how='left', on='BEA Detail')
+        sr_i = map_imports_to_regions(sr_i)
+        sr_i = calc_contribution_coefficients(sr_i, schema=schema)
+        ## ^^ Country contribution coefficients by sector
+        sr_i.to_csv(out_Path /
+                    f'country_contributions_by_sector_{year}.csv',
+                    index=False)
 
         ## Generate country specific emission factors by BEA sector weighted
         ## by exports to US when sector mappings are not clean
@@ -94,7 +102,7 @@ def generate_exio_factors(years: list, schema=2012):
         e_d[export_field] = np.where(e_d['CountryCode'] == "US",
                                      e_d['Output'], e_d[export_field])
 
-        # INSERT HERE TO REVIEW SECTOR CONTRIBUTIONS WITHIN A COUNTRY
+        # INSERT HERE TO REVIEW MRIO SECTOR CONTRIBUTIONS WITHIN A COUNTRY
         # Weight exiobase sectors within BEA sectors according to trade
         e_d = e_d.drop(columns=['Exiobase Sector','Year'])
         agg_cols = ['BEA Detail', 'CountryCode', 'TiVA Region', 'BaseIOSchema']
@@ -113,12 +121,21 @@ def generate_exio_factors(years: list, schema=2012):
                .reset_index()
                .sort_values(by=['BEA Detail', 'CountryCode'])
                )
-        u_c = get_detail_to_summary_useeio_concordance(schema=schema)
+        ## ^^ MRIO Emission Factors by USEEIO Detail in MRIO currency
+
         ## Combine EFs with contributions by country
-        # Aggregate imports data by MRIO code
+        # Aggregate imports data by MRIO country code
         sr_i_agg = (sr_i.groupby([c for c in sr_i if c
-                                  not in ('Country', 'Import Quantity')])
-                    .agg({'Import Quantity': sum})
+                                  not in ('Country', 'Import Quantity',
+                                          'cntry_cntrb_to_region_summary',
+                                          'cntry_cntrb_to_region_detail',
+                                          'cntry_cntrb_to_national_summary',
+                                          'cntry_cntrb_to_national_detail')])
+                    .agg({'Import Quantity': sum,
+                          'cntry_cntrb_to_region_summary': sum,
+                          'cntry_cntrb_to_region_detail': sum,
+                          'cntry_cntrb_to_national_summary': sum,
+                          'cntry_cntrb_to_national_detail': sum})
                     .reset_index()
                     )
         exio_country_names = pd.read_csv(conPath / 'exio_country_names.csv')
@@ -126,7 +143,6 @@ def generate_exio_factors(years: list, schema=2012):
                             .merge(sr_i_agg.drop(columns=['Unit', 'TiVA Region']),
                                    how='left',
                                    on=['CountryCode', 'BEA Detail'])
-                            .merge(u_c, how='left', on='BEA Detail', validate='m:1')
                             .merge(exio_country_names, on='CountryCode', validate='m:1')
                             )
         ## NOTE: If in future more physical data are brought in, the code 
@@ -141,8 +157,8 @@ def generate_exio_factors(years: list, schema=2012):
         us_df.to_csv(
             out_Path /f'us_df_exio_{year}_{str(schema)[-2:]}sch.csv', index=False)
 
-        multiplier_df = calc_contribution_coefficients(multiplier_df, schema=schema)
-        multiplier_df = df_prepare(multiplier_df, year)
+        multiplier_df = df_prepare(multiplier_df.query('CountryCode != "US"'),
+                                   year)
         multiplier_df.to_csv(
             out_Path /f'multiplier_df_exio_{year}_{str(schema)[-2:]}sch.csv', index=False)
         calculate_and_store_emission_factors(multiplier_df)
@@ -252,11 +268,10 @@ def get_electricity_imports(year):
             .assign(Source='EIA')
             .rename(columns={'BEADetail':'BEA Detail'}))
     df_y['CountryCode'] = df_y['Country'].map(c_map)
-    df_y['TiVA Region']=df_y['CountryCode']
-    elec = df_y.filter(['BEA Detail','Year','Import Quantity','Unit',
-                        'Source','Country','TiVA Region'])
+    elec = df_y.filter(['BEA Detail', 'Year', 'Import Quantity', 'Unit',
+                        'Source', 'Country'])
     elec['Year']=elec['Year'].astype(str)
-    return(elec)
+    return elec
     
 def calc_tiva_coefficients(year, level='Summary', schema=2012):
     '''
@@ -326,22 +341,18 @@ def get_detail_to_summary_useeio_concordance(schema=2012):
     return u_c
 
 
-def get_subregion_imports(year, schema=2012):
-    '''
-    Generates dataset of imports by country by sector from BEA and Census
-    '''
-    sr_i = get_imports_data(year=year, schema=schema)
+def map_imports_to_regions(sr_i):
     path = conPath / 'exio_country_concordance.csv'
     regions = (pd.read_csv(path, dtype=str,
                            usecols=['Country', 'Country Code', 'TiVA Region'])
                .rename(columns={'Country Code': 'CountryCode'})
                )
-    sr_i = (sr_i.merge(regions, on='Country', how='left', validate='m:1')
-                .rename(columns={'BEA Sector':'BEA Detail'}))
+    sr_i = sr_i.merge(regions, on='Country', how='left', validate='m:1')
     missing = (set(sr_i[sr_i.isnull().any(axis=1)]['Country'])
                - set(regions['Country']))
     if len(missing) > 0:
         print(f'WARNING: missing countries in correspondence: {missing}')
+
     return sr_i.dropna(subset='CountryCode').reset_index(drop=True)
 
 
@@ -423,33 +434,28 @@ def calc_contribution_coefficients(df, schema=2012):
     '''
     Appends contribution coefficients to prepared dataframe.
     '''
-    df['Import Quantity'] = df['Import Quantity'].fillna(0)
-    t_c = (calc_tiva_coefficients(year=df['Year'][0], level="Detail", schema=schema)
-           .rename(columns={'region_contributions_imports': 'TiVA_coefficients'})
-           )
-    df = df.merge(t_c, on=['BEA Detail', 'TiVA Region'])
-    df = calc_coefficients_bea_summary(df)
     df = calc_coefficients_bea_detail(df)
+    df = calc_coefficients_bea_summary(df)
 
-    if not(df['Subregion Contribution to Summary'].fillna(0).between(0,1).all() &
-           df['Subregion Contribution to Detail'].fillna(0).between(0,1).all() &
-           df['National Contribution to Summary'].fillna(0).between(0,1).all() &
-           df['National Contribution to Detail'].fillna(0).between(0,1).all()):
+    if not(df['cntry_cntrb_to_region_summary'].between(0,1).all() &
+           df['cntry_cntrb_to_region_detail'].between(0,1).all() &
+           df['cntry_cntrb_to_national_summary'].between(0,1).all() &
+           df['cntry_cntrb_to_national_detail'].between(0,1).all()):
         print('ERROR: Check contribution values outside of [0-1]')
-    return df.drop(columns=['TiVA_coefficients'])
+    return df
 
 
 def calc_coefficients_bea_summary(df):
     '''
-    Calculate the fractional contributions, by sector, of each Exiobase 
-    country to the TiVA region they are assigned. This creates 2 new columns:
-    1) 'TiVA_indout_subtotal, where industry outputs are summed according to
-    TiVA-sector pairings; 2) 'region_contributions_TiVA, where each 
-    Exiobase country's industry outputs are divided by their corresponding
-    TiVA_indout_subtotals to create the fractional contribution coefficients.
+    Calculate the fractional contributions of each country
+    to total imports by summary sector
     '''
-    
-    df['Subregion Contribution to Summary'] = (df['Import Quantity']/
+    df['cntry_cntrb_to_national_summary'] =(df['Import Quantity']/
+                                              df.groupby(['BEA Summary'])
+                                              ['Import Quantity']
+                                              .transform('sum'))
+
+    df['cntry_cntrb_to_region_summary'] = (df['Import Quantity']/
                                                df.groupby(['TiVA Region',
                                                            'BEA Summary'])
                                                ['Import Quantity']
@@ -457,47 +463,27 @@ def calc_coefficients_bea_summary(df):
 
     ## If no imports identified for summary code,
     ## where the country == region, set contribution to 1
-    ## where country != region, set contribution to detail equal for all countries
-    ## then multiply by the TiVA contributions
-    df.loc[(df['Subregion Contribution to Summary'].isna() &
+    df.loc[(df['cntry_cntrb_to_region_summary'].isna() &
         (df['CountryCode'] == df['TiVA Region'])),
-        'detail_contrib'] = 1
-    df.loc[(df['Subregion Contribution to Summary'].isna() &
-        (df['CountryCode'] != df['TiVA Region'])),
-        'detail_contrib'] = (
-            1 / df.groupby(['TiVA Region', 'BEA Detail'])
-                ['CountryCode'].transform('count'))
+        'cntry_cntrb_to_region_summary'] = 1
 
-    df['National Contribution to Summary'] =(df['Import Quantity']/
-                                              df.groupby(['BEA Summary'])
-                                              ['Import Quantity']
-                                              .transform('sum'))
-    df['Subregion Contribution to Summary'] = (
-        df['Subregion Contribution to Summary'].fillna(
-            df['TiVA_coefficients'] / df.groupby(['TiVA Region', 'BEA Summary'])
-            ['TiVA_coefficients'].transform('sum')))
-    df['National Contribution to Summary'] = (
-        df['National Contribution to Summary'].fillna(
-            df['TiVA_coefficients'] * df['detail_contrib']))
-    return df.drop(columns='detail_contrib')
+    if (df['cntry_cntrb_to_region_summary'].isnull().sum()) > 0:
+        print('WARNING: some summary sectors missing contributions')
+
+    return df
 
 
 def calc_coefficients_bea_detail(df):
     '''
-    Calculate the fractional contributions, by sector, of each Exiobase 
-    country to their corresponding USEEIO summary-level sector(s). These
-    concordances were based on Exiobase sector --> USEEIO Detail-level 
-    sector, and USEEIO detail-level sector --> USEEIO summary-level sector
-    mappins. The function creates 2 new columns: 1) 'USEEIO_indout_subtotal, 
-    where industry outputs are summed according to
-    TiVA-Exiobase sector-USEEIO summary sector combinations; 
-    2) 'regional_contributions_USEEIO, where each 
-    Exiobase country's industry outputs are divided by their corresponding
-    USEEIO_indout_subtotals to create the fractional contribution 
-    coefficients to each USEEIO category. 
+    Calculate the fractional contributions of each country
+    to total imports by detail sector
     '''
+    df['cntry_cntrb_to_national_detail'] = (df['Import Quantity']/
+                                              df.groupby(['BEA Detail'])
+                                              ['Import Quantity']
+                                              .transform('sum'))
     
-    df['Subregion Contribution to Detail'] = (df['Import Quantity']/
+    df['cntry_cntrb_to_region_detail'] = (df['Import Quantity']/
                                               df.groupby(['TiVA Region',
                                                           'BEA Detail'])
                                               ['Import Quantity']
@@ -505,21 +491,14 @@ def calc_coefficients_bea_detail(df):
     ## If no imports identified for detail code,
     ## where the country == region, set contribution to 1
     ## where country != region, set contribution to detail equal for all countries
-    df.loc[(df['Subregion Contribution to Detail'].isna() &
+    df.loc[(df['cntry_cntrb_to_region_detail'].isna() &
         (df['CountryCode'] == df['TiVA Region'])),
-        'Subregion Contribution to Detail'] = 1
-    df.loc[(df['Subregion Contribution to Detail'].isna() &
+        'cntry_cntrb_to_region_detail'] = 1
+    df.loc[(df['cntry_cntrb_to_region_detail'].isna() &
         (df['CountryCode'] != df['TiVA Region'])),
-        'Subregion Contribution to Detail'] = (
+        'cntry_cntrb_to_region_detail'] = (
             1 / df.groupby(['TiVA Region', 'BEA Detail'])
                 ['CountryCode'].transform('count'))
-    df['National Contribution to Detail'] =(df['Import Quantity']/
-                                              df.groupby(['BEA Detail'])
-                                              ['Import Quantity']
-                                              .transform('sum'))
-    df['National Contribution to Detail'] = (
-        df['National Contribution to Detail'].fillna(
-            df['TiVA_coefficients'] * df['Subregion Contribution to Detail']))
     return df
 
 
@@ -532,12 +511,12 @@ def calculate_and_store_emission_factors(multiplier_df):
     cols = [c for c in multiplier_df if c in flow_cols]
     year = multiplier_df['Year'][0]
     print(f'Saving files for {year}')
-    for k, v in {'Subregion Contribution to Detail': 'Detail',
-                 'Subregion Contribution to Summary': 'Summary',
-                 'National Contribution to Detail': 'Detail',
-                 'National Contribution to Summary': 'Summary'}.items():
-        r = 'nation' if 'National' in k else 'subregion'
-        c =  'CountryCode' if 'National' in k else 'TiVA Region'
+    for k, v in {'cntry_cntrb_to_region_detail': 'Detail',
+                 'cntry_cntrb_to_region_summary': 'Summary',
+                 'cntry_cntrb_to_national_detail': 'Detail',
+                 'cntry_cntrb_to_national_summary': 'Summary'}.items():
+        r = 'nation' if 'national' in k else 'subregion'
+        c =  'CountryCode' if 'national' in k else 'TiVA Region'
         agg_df = (multiplier_df
                   .assign(FlowAmount = (multiplier_df['EF'] * multiplier_df[k])))
         agg_df = (agg_df
@@ -579,29 +558,29 @@ def calculate_and_store_TiVA_approach(multiplier_df,
         .assign(region_contributions_imports=lambda x:
                 x['region_contributions_imports'].fillna(0))
         .assign(national_summary_by_tiva=lambda x: x['region_contributions_imports'] *
-                x['Subregion Contribution to Summary'])
+                x['cntry_cntrb_to_region_summary'])
         .assign(FlowAmount_Summary=lambda x: x['EF'] * x['national_summary_by_tiva'])
-        .rename(columns={'national_summary_by_tiva':'National Contribution to Summary TiVA'})
+        .rename(columns={'national_summary_by_tiva':'cntry_cntrb_to_national_summary TiVA'})
         .assign(national_detail_by_tiva=lambda x: x['region_contributions_imports'] *
-                x['Subregion Contribution to Detail'])
+                x['cntry_cntrb_to_region_detail'])
         .assign(FlowAmount_Detail=lambda x: x['EF'] * x['national_detail_by_tiva'])
-        .rename(columns={'national_detail_by_tiva':'National Contribution to Detail TiVA'}))
+        .rename(columns={'national_detail_by_tiva':'cntry_cntrb_to_national_detail TiVA'}))
 
     contribution_comparison = (
         weighted_df_imports
         .filter(['BEA Detail', 'BEA Summary', 'TiVA Region', 'Year', 'Country',
-                 'National Contribution to Summary',
-                 'National Contribution to Summary TiVA'])
+                 'cntry_cntrb_to_national_summary',
+                 'cntry_cntrb_to_national_summary TiVA'])
         .drop_duplicates()
         .drop(columns=['BEA Detail', 'Country'])
         .groupby(['BEA Summary', 'TiVA Region', 'Year']).agg(sum)
         .reset_index()
         .assign(Tiva_over_SID = lambda x: 
-                x['National Contribution to Summary TiVA'] /
-                x['National Contribution to Summary'])
+                x['cntry_cntrb_to_national_summary TiVA'] /
+                x['cntry_cntrb_to_national_summary'])
         .assign(Tiva_minus_SID = lambda x: abs(
-                x['National Contribution to Summary TiVA'] -
-                x['National Contribution to Summary']))
+                x['cntry_cntrb_to_national_summary TiVA'] -
+                x['cntry_cntrb_to_national_summary']))
         )
     summary = (contribution_comparison
                .groupby(['BEA Summary', 'Year'])

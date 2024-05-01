@@ -12,7 +12,7 @@ mrio = 'exio'
 year = "2019"
 schema = "17sch"
 flow_cols = ['Sector', 'Unit',
-             'CurrencyYear', 'EmissionYear', 'PriceType',
+             'Year', 'PriceType',
              'Flowable', 'Context', 'FlowUUID', 'ReferenceCurrency']
 
 tiva_df = f'aggregate_summary_imports_multipliers_TiVA_approach_{mrio}_{year}_{schema}.csv'

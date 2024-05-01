@@ -49,7 +49,7 @@ out_Path = Path(__file__).parent / 'output'
 out_Path.mkdir(exist_ok=True)
 
 flow_cols = ('Flow', 'Compartment', 'Unit',
-             'CurrencyYear', 'EmissionYear', 'PriceType',
+             'Year', 'PriceType',
              'Flowable', 'Context', 'FlowUUID', 'ReferenceCurrency')
 
 #%%
@@ -165,9 +165,7 @@ def df_prepare(df, year):
         .assign(Compartment='emission/air')
         .assign(Unit='kg')
         .assign(ReferenceCurrency='Euro')
-        .assign(CurrencyYear=str(year))
-        .assign(EmissionYear='2019' if year > 2019 else str(year))
-        # ^^ GHG data stops at 2019
+        .assign(Year=str(year))
         .assign(PriceType='Basic')
         )
 
@@ -591,10 +589,9 @@ def calculate_and_store_TiVA_approach(multiplier_df,
 
     contribution_comparison = (
         weighted_df_imports
-        .filter(['BEA Detail', 'BEA Summary', 'TiVA Region', 'CurrencyYear', 'Country',
+        .filter(['BEA Detail', 'BEA Summary', 'TiVA Region', 'Year', 'Country',
                  'National Contribution to Summary',
                  'National Contribution to Summary TiVA'])
-        .rename(columns={'CurrencyYear': 'Year'})
         .drop_duplicates()
         .drop(columns=['BEA Detail', 'Country'])
         .groupby(['BEA Summary', 'TiVA Region', 'Year']).agg(sum)

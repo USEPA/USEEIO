@@ -591,17 +591,26 @@ def calculate_and_store_TiVA_approach(multiplier_df,
 
     contribution_comparison = (
         weighted_df_imports
-        .filter(['BEA Detail', 'TiVA Region', 'CurrencyYear',
-                 'National Contribution to Detail',
-                 'National Contribution to Detail TiVA'])
+        .filter(['BEA Detail', 'BEA Summary', 'TiVA Region', 'CurrencyYear', 'Country',
+                 'National Contribution to Summary',
+                 'National Contribution to Summary TiVA'])
         .rename(columns={'CurrencyYear': 'Year'})
         .drop_duplicates()
-        .groupby(['BEA Detail', 'TiVA Region', 'Year']).agg(sum)
+        .drop(columns=['BEA Detail', 'Country'])
+        .groupby(['BEA Summary', 'TiVA Region', 'Year']).agg(sum)
         .reset_index()
         .assign(Tiva_over_SID = lambda x: 
-                x['National Contribution to Detail TiVA'] /
-                x['National Contribution to Detail'])
+                x['National Contribution to Summary TiVA'] /
+                x['National Contribution to Summary'])
+        .assign(Tiva_minus_SID = lambda x: abs(
+                x['National Contribution to Summary TiVA'] -
+                x['National Contribution to Summary']))
         )
+    summary = (contribution_comparison
+               .groupby(['BEA Summary', 'Year'])
+               .agg({'Tiva_minus_SID': ['mean', 'min', 'max']})
+               )
+    summary.to_csv(out_Path / f'country_contribution_coefficient_comparison_{year}.csv')
         
     weighted_df_imports_td = weighted_df_imports.rename(columns={'FlowAmount_Detail':'FlowAmount'})
     weighted_df_imports_ts = weighted_df_imports.rename(columns={'FlowAmount_Summary':'FlowAmount'})

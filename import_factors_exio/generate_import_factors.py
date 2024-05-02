@@ -150,14 +150,7 @@ def generate_exio_factors(years: list, schema=2012):
         ##       is unable to distinguish and sort out mismatches by detail/
         ##       summary sectors.
 
-        # Extract out US data separately
-        us_df = multiplier_df.query('CountryCode == "US"')
-        us_df = df_prepare(us_df, year)
-        us_df.to_csv(
-            out_Path /f'us_df_exio_{year}_{str(schema)[-2:]}sch.csv', index=False)
-
-        multiplier_df = df_prepare(multiplier_df.query('CountryCode != "US"'),
-                                   year)
+        multiplier_df = df_prepare(multiplier_df, year)
         multiplier_df.to_csv(
             out_Path /f'multiplier_df_exio_{year}_{str(schema)[-2:]}sch.csv', index=False)
         calculate_and_store_emission_factors(multiplier_df)

@@ -568,6 +568,13 @@ def calculate_and_store_TiVA_approach(multiplier_df,
                 x['cntry_cntrb_to_national_summary TiVA'] -
                 x['cntry_cntrb_to_national_summary']))
         )
+    contribution_comparison = (
+        contribution_comparison
+        .query('~(cntry_cntrb_to_national_summary == 0 and '
+               '`cntry_cntrb_to_national_summary TiVA` == 0)'))
+    contribution_comparison.to_csv(
+        out_Path / f'country_contribution_coefficient_comparison_detail_{year}.csv')
+
     summary = (contribution_comparison
                .groupby(['BEA Summary', 'Year'])
                .agg({'Tiva_minus_SID': ['mean', 'min', 'max']})

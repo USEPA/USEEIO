@@ -517,6 +517,7 @@ def calculate_and_store_emission_factors(multiplier_df):
         r = 'nation' if 'national' in k else 'subregion'
         c =  'CountryCode' if 'national' in k else 'TiVA Region'
         agg_df = (multiplier_df
+                  .dropna(subset='Import Quantity')
                   .assign(FlowAmount = (multiplier_df['EF'] * multiplier_df[k])))
         agg_df = (agg_df
                   .rename(columns={f'BEA {v}': 'Sector'})

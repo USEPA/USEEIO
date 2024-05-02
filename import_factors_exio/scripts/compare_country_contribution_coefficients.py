@@ -25,3 +25,4 @@ df = df.pivot(columns='Year', index='BEA Summary', values='difference')
 for y in years:
     df[y] = df[y].str.replace('0.0', '0', regex=False)
     df[y] = df[y].str.replace('0% [0%, 0%]', '-', regex=False)
+df.to_csv(out_Path / 'country_contribution_coefficient_comparison.csv')

@@ -51,7 +51,7 @@ with open(dataPath / "exio_config.yml", "r") as file:
     config = yaml.safe_load(file)
 
 
-def generate_exio_factors(years: list, schema=2012):
+def generate_exio_factors(years: list, schema=2012, calc_tiva=False):
     '''
     Runs through script to produce emission factors for U.S. imports from exiobase
     '''
@@ -149,8 +149,9 @@ def generate_exio_factors(years: list, schema=2012):
         calculate_and_store_emission_factors(multiplier_df)
         
         # Optional: Recalculate using TiVA regions under original approach
-        t_c = calc_tiva_coefficients(year, schema=schema)
-        calculate_and_store_TiVA_approach(multiplier_df, t_c, year)
+        if(calc_tiva):
+            t_c = calc_tiva_coefficients(year, schema=schema)
+            calculate_and_store_TiVA_approach(multiplier_df, t_c, year)
 
 
 def df_prepare(df, year):
@@ -511,8 +512,9 @@ def calculate_and_store_emission_factors(multiplier_df):
                   )
 
         if r == 'nation':
-            (agg_df.rename(columns={'FlowAmount': 'Contribution_to_EF'})
-                   .to_csv(out_Path / f'{v.lower()}_imports_multipliers_contribution_by_{r}_exio_{year}_{schema[-2:]}sch.csv', index=False))
+            # (agg_df.rename(columns={'FlowAmount': 'Contribution_to_EF'})
+            #        .to_csv(out_Path / f'{v.lower()}_imports_multipliers_contribution_by_{r}_exio_{year}_{schema[-2:]}sch.csv', index=False))
+            # # ^^ Shows the contribution to the EF by country
 
             agg_df = (agg_df
                       .groupby(['Sector'] + cols)
@@ -520,10 +522,10 @@ def calculate_and_store_emission_factors(multiplier_df):
                       .assign(BaseIOLevel=v)
                       .reset_index())
             agg_df.to_csv(
-                out_Path /f'aggregate_{v.lower()}_imports_multipliers_exio_{year}_{schema[-2:]}sch.csv', index=False)
+                out_Path /f'US_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv', index=False)
         elif r == 'subregion':
             agg_df.to_csv(
-               out_Path / f'aggregate_{v.lower()}_imports_multipliers_by_{r}_exio_{year}_{schema[-2:]}sch.csv', index=False)
+               out_Path / f'Regional_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv', index=False)
 
 
 def calculate_and_store_TiVA_approach(multiplier_df,
@@ -599,10 +601,10 @@ def calculate_and_store_TiVA_approach(multiplier_df,
               f'emisson factors: {check}')
 
     imports_multipliers_ts.to_csv(
-        out_Path / f'aggregate_summary_imports_multipliers_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
+        out_Path / f'US_summary_import_factors_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
         index=False)
     imports_multipliers_td.to_csv(
-        out_Path / f'aggregate_detail_imports_multipliers_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
+        out_Path / f'US_detail_import_factors_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
         index=False)
 
 

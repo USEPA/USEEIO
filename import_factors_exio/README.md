@@ -3,13 +3,13 @@ To generate import factors from exiobase, run the script [generate_import_factor
 
 For each year, the following files are generated:
 
-- *aggregate_detail_imports_multipliers_exio_{year}.csv*: Single set of import factors for the US by detail sector.
-- *aggregate_summary_imports_multipliers_exio_{year}.csv*: Single set of import factors for the US by summary sector.
-- *aggregate_detail_imports_multipliers_by_subregion_exio_{year}.csv*: Import factors for the US by TiVA region, by summary sector, 
-- *aggregate_summary_imports_multipliers_by_subregion_exio_{year}.csv*: Import factors for the US by TiVA region, by summary sector, 
-- *detail_imports_multipliers_contribution_by_nation_exio_{year}.csv*: Import factors for the US, disaggregated by nation, by detail sector,
-- *summary_imports_multipliers_contribution_by_nation_exio_{year}.csv*: Import factors for the US , disaggregated by nation, by summary sector, 
+- *US_detail_import_factors_exio_{year}.csv*: Single set of import factors for the US by detail sector.
+- *US_summary_import_factors_exio_{year}.csv*: Single set of import factors for the US by summary sector.
+- *Regional_detail_import_factors_exio_{year}.csv*: Import factors for each of seven regions, by detail sector, 
+- *Regional_summary_import_factors_exio_{year}.csv*: Import factors for each of seven regions, by summary sector, 
 - *multiplier_df_exio_{year}.csv*: Full dataframe with emission factors and contributions by region and sector.
+
+File names are appended with the BEA schema year, e.g., `_17sch`.
 
 ## BEA API Access
 To make calls to BEA for service imports data (by BEA service category, country, and year), users must first register at https://apps.bea.gov/api/signup/.

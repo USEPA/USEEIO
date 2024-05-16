@@ -17,11 +17,23 @@ Or you can create a virtual environment and install python libraries first:
 
 <!-- Try without: pip install path -->
 
-How do we install `esupy` and `fedelemflowlist`?  NOT these
 
-	npm install git+https://github.com/USEPA/esupy.git#egg=esupy
+	pip install git+https://github.com/USEPA/esupy.git#egg=esupy
 
-	npm install git+https://github.com/USEPA/USEEIO.git#egg=fedelemflowlist
+For the 'fedelemflowlist' install,
+when running either of the following, the error is:
+
+warning: Clone succeeded, but checkout failed.
+
+	pip install git+https://github.com/USEPA/fedelemflowlist.git#egg=fedelemflowlist
+ 
+	pip install git+https://github.com/USEPA/Federal-LCA-Commons-Elementary-Flow-List.git#egg=fedelemflowlist
+
+[The wiki](https://github.com/USEPA/fedelemflowlist/wiki/Install#installation-of-python-module-and-dependencies) includes installation instructions for fedelemflowlist. Make sure to use the latest release and not v1.0.8, or just put nothing at all.
+
+[Available models](https://dmap-data-commons-ord.s3.amazonaws.com/index.html?prefix=#USEEIO-State/) - All states 2012-2020.
+
+
 
 ## Resulting Data
 

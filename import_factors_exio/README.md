@@ -36,13 +36,13 @@ pyarrow is for 64-bit python, whereas fastparquet can be used for 32-bit (but ma
     #print(platform.architecture())
 -->
 
-Run to install esupy and fedelemflowlist
+Install esupy and fedelemflowlist
 
 	pip install git+https://github.com/USEPA/esupy.git#egg=esupy
 
 	pip install git+https://github.com/USEPA/fedelemflowlist.git#egg=fedelemflowlist
 
-If you get: `git-lfs: command not found` you may need to run the following. [Source](https://stackoverflow.com/questions/67395259/git-clone-git-lfs-filter-process-git-lfs-command-not-found)
+If you get the error `git-lfs: command not found` you may need to run the following. [Source](https://stackoverflow.com/questions/67395259/git-clone-git-lfs-filter-process-git-lfs-command-not-found)
 
 	brew install git-lfs
 	git lfs install

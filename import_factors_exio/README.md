@@ -2,7 +2,7 @@
 
 ## BEA API Access
 
-To make calls to BEA for service imports data (by BEA service category, country, and year), users must first register at https://apps.bea.gov/api/signup/.
+To make calls to US Bureau of Economic Analysis (BEA) API for service imports data (by BEA service category, country, and year), first register at https://apps.bea.gov/api/signup/.
 
 After doing so, users will be provided with an API key to the provided email.
 

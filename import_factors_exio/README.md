@@ -2,15 +2,15 @@
 
 ## BEA API Access
 
-To make calls to US Bureau of Economic Analysis (BEA) API for service imports data (by BEA service category, country, and year), first register at https://apps.bea.gov/api/signup/.
+To pull data on service imports from the US Bureau of Economic Analysis (BEA) by service category, country, and year, register for the BEA API at https://apps.bea.gov/api/signup/.
 
-After doing so, users will be provided with an API key to the provided email.
+After doing so, you'll be provided with an API key via email.
 
 Create the file "../import_factors_exio/API/BEA_API_key.yaml" and add your API key.
 
-## Pull Data from Exiobase
+## Pull Data from Exiobase and BEA
 
-To generate import factors from exiobase, run
+To generate import factors from exiobase using BEA, run:
 
 	python generate_import_factors.py
 

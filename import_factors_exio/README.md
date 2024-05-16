@@ -1,5 +1,29 @@
 # Generating Import Factors from Exiobase
-To generate import factors from exiobase, run the script [generate_import_factors.py](generate_import_factors.py) 
+
+To generate import factors from exiobase, run
+
+	python generate_import_factors.py
+
+Or you can create a virtual environment and install python libraries first:
+
+	python3 -m venv env
+	source env/bin/activate
+	pip install pandas
+	pip install pyyaml
+	pip install pymrio
+	pip install pathlib
+	pip install path
+	pip install currencyconverter
+
+<!-- Try without: pip install path -->
+
+How do we install `esupy` and `fedelemflowlist`?  NOT these
+
+	npm install git+https://github.com/USEPA/esupy.git#egg=esupy
+
+	npm install git+https://github.com/USEPA/USEEIO.git#egg=fedelemflowlist
+
+## Resulting Data
 
 For each year, the following files are generated:
 

@@ -14,9 +14,11 @@ Or you can create a virtual environment and install python libraries first:
 	pip install pathlib
 	pip install path
 	pip install currencyconverter
+	pip install pyarrow
+
+pyarrow is for 64-bit python, whereas fastparquet can be used for 32-bit (but may require additional dependencies).
 
 <!-- Try without: pip install path -->
-
 
 	pip install git+https://github.com/USEPA/esupy.git#egg=esupy
 

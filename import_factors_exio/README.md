@@ -10,11 +10,11 @@ Create the file "../import_factors_exio/API/BEA_API_key.yaml" and add your API k
 
 ## Pull Data from Exiobase and BEA
 
-To generate import factors from exiobase using BEA, run the following. Generating 6 years takes about 70 minutes.
+To generate import factors from exiobase using BEA, run the following. Generating 6 years takes about 70 minutes. The resulting 2017-2022 year files reside in the output subfolder, so you can avoid rerunning if those serve your needs. (Total output: 168.9 MB for 37 items)
 
 	python generate_import_factors.py
 
-Or you can create a virtual environment first and install python libraries:
+You can optionally create a virtual environment first and install the following python libraries:
 <!-- Let us know if you also need to add `pip install path` --->
 
 	python3 -m venv env

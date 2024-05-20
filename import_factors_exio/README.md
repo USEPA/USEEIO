@@ -10,12 +10,12 @@ Create the file "../import_factors_exio/API/BEA_API_key.yaml" and add your API k
 
 ## Pull Data from Exiobase and BEA
 
-To generate import factors from exiobase using BEA, run:
+To generate import factors from exiobase using BEA, run the following. Generating 6 years takes about 70 minutes.
 
 	python generate_import_factors.py
 
-Or you can create a virtual environment and install python libraries first:
-Try without: `pip install path` - might not be needed.
+Or you can create a virtual environment first and install python libraries:
+<!-- Let us know if you also need to add `pip install path` --->
 
 	python3 -m venv env
 	source env/bin/activate
@@ -23,7 +23,6 @@ Try without: `pip install path` - might not be needed.
 	pip install pyyaml
 	pip install pymrio
 	pip install pathlib
-	pip install path
 	pip install currencyconverter
 	pip install pyarrow
 
@@ -42,11 +41,13 @@ Install esupy and fedelemflowlist
 
 	pip install git+https://github.com/USEPA/fedelemflowlist.git#egg=fedelemflowlist
 
-If you get the error `git-lfs: command not found` you may need to run the following. [Source](https://stackoverflow.com/questions/67395259/git-clone-git-lfs-filter-process-git-lfs-command-not-found)
+If you get the error `git-lfs: command not found` you may need to run the following once. [Source](https://stackoverflow.com/questions/67395259/git-clone-git-lfs-filter-process-git-lfs-command-not-found)
 
 	brew install git-lfs
 	git lfs install
 	git lfs install --system
+
+On a Windows PC, if you get an error installing fedelemflowlist, try deleting the file wiki/Resources/FEDEFLContexts.xlsx to install v1.0.2. (FEDEFLContexts.xlsx does not exist in v1.0.2 and after.) Also, avoid putting a version number in the esupy and fedelemflowlist commands above so you are getting the latest. [See issue](https://github.com/USEPA/fedelemflowlist/issues/162)
 
 <!--
 If git-lfs not found next time, run the above outsite virtual env.
@@ -60,6 +61,9 @@ warning: error running /Applications/Xcode.app/Contents/Developer/usr/libexec/gi
 
 [Available models](https://dmap-data-commons-ord.s3.amazonaws.com/index.html?prefix=#USEEIO-State/) - All states 2012-2020.
 
+Now run the app. Before running, you can change the year range at the top of generate_import_factors.py. If the year is not yet available, the other years will still be generated. (2023 was not yet available on May 19, 2024.)
+
+	python generate_import_factors.py
 
 ## Resulting Data
 

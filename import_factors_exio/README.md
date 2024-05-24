@@ -1,5 +1,8 @@
 # Generating Import Factors from Exiobase
 
+"generate_import_factors.py" will pulls the Exiobase data and merges with BEA.
+You do not need to run “Exiobase_downloads.py”.
+
 ## BEA API Access
 
 To pull data on service imports from the US Bureau of Economic Analysis (BEA) by service category, country, and year, register for the BEA API at https://apps.bea.gov/api/signup/.

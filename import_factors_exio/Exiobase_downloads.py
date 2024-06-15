@@ -1,3 +1,11 @@
+# IMPORTANT: To download data, run "generate_import_factors.py"
+# You do NOT need to run “Exiobase_downloads.py”.
+# “Exiobase_downloads.py” is not set up super well to run from command line as the default line is:
+# process_exiobase(year_start = 2019, year_end=2019, download=False)
+
+# “Exiobase_downloads.py” error handling is not good.
+# You need “download=True” the first time.
+
 import pymrio
 from pathlib import Path
 import pickle as pkl

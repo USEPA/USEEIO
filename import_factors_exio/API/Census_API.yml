@@ -1,6 +1,6 @@
 author: US Census Bureau
 source_name: USA Data
-source_url: https://www.census.gov/programs-surveys/cbp.html
+source_url: https://usatrade.census.gov/
 bib_id: Census
 api_key_required: False
 format: json

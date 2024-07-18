@@ -10,6 +10,8 @@ from pathlib import Path
 
 import fedelemflowlist as fedelem
 from esupy.dqi import get_weighted_average
+import json
+
 
 # add path to subfolder for importing modules
 path_proj = Path(__file__).parents[1]
@@ -614,7 +616,31 @@ def calculate_and_store_TiVA_approach(multiplier_df,
         out_Path / f'US_detail_import_factors_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
         index=False)
 
-
+def generate_sector_data_from_json(input_path, output_path):
+    with open(input_path, 'r') as file:
+        sector_data = json.load(file)
+        filtered_sector_data = []
+        for sector in sector_data:
+          truncated_id = sector['code'][:5]
+          filtered_sector_data.append({
+            'SectorID': truncated_id,
+            'SectorName': sector['name']
+        })
+        # Convert to DataFrame
+        sector_df = pd.DataFrame(filtered_sector_data)
+        
+        # Define the path for the CSV file
+        sector_csv_path = output_path / 'Sector.csv'
+        
+        # Save the DataFrame to a CSV file
+        sector_df.to_csv(sector_csv_path, index=False)
+        print(f'Sector data saved to {sector_csv_path}')
+      
+# Path to the JSON file
+json_path = Path(__file__).parent / 'sectors.json'
+     
 #%%
 if __name__ == '__main__':
+    out_Path.mkdir(exist_ok=True)
+    generate_sector_data_from_json(json_path, output_path=out_Path)
     generate_exio_factors(years = years, schema = schema)

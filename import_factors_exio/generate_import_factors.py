@@ -131,7 +131,7 @@ def generate_exio_factors(years: list, schema=2012, calc_tiva=False):
                           'cntry_cntrb_to_national_detail': sum})
                     .reset_index()
                     )
-        exio_country_names = pd.read_csv(conPath / 'exio_country_names.csv')
+        exio_country_names = pd.read_csv(dataPath / 'exio_country_names.csv')
         multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
                             .merge(sr_i_agg.drop(columns=['Unit', 'Region']),
                                    how='left',

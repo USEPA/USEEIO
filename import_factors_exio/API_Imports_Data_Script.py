@@ -6,8 +6,8 @@ import requests
 from pathlib import Path
 
 apiPath = Path(__file__).parent / 'API'
+dPath = Path(__file__).parent / 'data'
 dataPath = Path(__file__).parent / 'response_data'
-conPath = Path(__file__).parent / 'concordances'
   
 #%%
 
@@ -26,14 +26,14 @@ def get_URL_Components(file):
             print(exc)
     return m
 
-def get_CTY_CODE(file='country.txt'):
+def get_CTY_CODE(file='Census_country_codes.txt'):
     '''
     Pulls in txt file of countries from Census to extract country codes 
     necessary to make requests in Census API. Returns dataframe of country:
     code items.
     '''
     l = []
-    with open(conPath / file) as f:
+    with open(dPath / file) as f:
         for line in f:
             a = line.split('|')
             l2 = []
@@ -59,7 +59,7 @@ def get_BEA_country_list():
     (countries
      .rename(columns={'Key': 'BEA_AREAORCOUNTRY',
                       'Desc': 'country'})
-     .to_csv(conPath / 'BEA_country.csv', index=False))
+     .to_csv(dPath / 'BEA_country_names.csv', index=False))
 
 def get_country_schema():
     '''
@@ -70,7 +70,7 @@ def get_country_schema():
     (strings with their API name equivalents); and 2) c_d is a concordance 
     between exiobase ISO codes and Census country codes (4-digit)
     '''
-    b_d = (pd.read_csv(conPath / 'BEA_country.csv')
+    b_d = (pd.read_csv(dPath / 'BEA_country_names.csv')
            .filter(['BEA_AREAORCOUNTRY', 'country'])
            .drop_duplicates()
            .set_index('country')['BEA_AREAORCOUNTRY']

@@ -14,7 +14,7 @@ from esupy.dqi import get_weighted_average
 # add path to subfolder for importing modules
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_factors_exio'))  # accepts str, not pathlib obj
-from API_Imports_Data_Script import get_imports_data
+from download_imports_data import get_imports_data
 from Exiobase_downloads import process_exiobase
 
 ''' 

@@ -8,6 +8,7 @@ from pathlib import Path
 apiPath = Path(__file__).parent / 'API'
 dPath = Path(__file__).parent / 'data'
 dataPath = Path(__file__).parent / 'response_data'
+conPath = Path(__file__).parent / 'concordances'
   
 #%%
 
@@ -185,7 +186,7 @@ def get_census_df(d, c_d, data_years, schema=2012):
         df = df.assign(Year=year)
     df = df.replace(np.nan, 0).reset_index()
     ## Merge in BEA Codes and flatten
-    c_b = (pd.read_csv(apiPath / 'Census_API_Mappings.csv')
+    c_b = (pd.read_csv(conPath / 'Census_to_useeio2_sector_concordance.csv')
            .rename(columns={f'BEA_Detail_{schema}': 'BEA Sector'})
            .filter(['NAICS', 'BEA Sector'])
            .drop_duplicates()
@@ -212,7 +213,7 @@ def get_bea_df(d, b_d, data_years, schema=2012):
     e_t_d = {v:k for k,v in b_d.items()}
     n_d = {}
     df_all = pd.DataFrame()
-    b_b = (pd.read_csv(apiPath / 'BEA_API_Mappings.csv')
+    b_b = (pd.read_csv(conPath / 'BEA_service_to_useeio2_sector_concordance.csv')
            .rename(columns={f'BEA_Detail_{schema}': 'BEA Sector'})
            .filter(['API BEA Service', 'BEA Sector'])
            .rename(columns={'API BEA Service': 'BEA Service'})

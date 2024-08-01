@@ -1,5 +1,5 @@
-# Generating Import Factors from Exiobase
-To generate import factors from exiobase, run the script [generate_import_factors.py](generate_import_factors.py) 
+# Generating Import Emission Factors from Exiobase
+To generate import emission factors from exiobase, run the script [generate_import_factors.py](generate_import_factors.py) 
 
 For each year, the following files are generated:
 

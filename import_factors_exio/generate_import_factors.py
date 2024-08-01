@@ -265,7 +265,7 @@ def calc_tiva_coefficients(year, level='Summary', schema=2012):
     '''
     t_df = get_tiva_data(year)
     col = f'USEEIO_Detail_{schema}' if level == "Detail" else "BEA Summary"
-    corr = (pd.read_csv(conPath / 'tiva_imports_corr.csv',
+    corr = (pd.read_csv(conPath / 'tiva_to_useeio2_sector_concordance.csv',
                         usecols=['TiVA', col])
             .rename(columns = {col: f'BEA {level}'})
             .drop_duplicates())

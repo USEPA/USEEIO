@@ -15,7 +15,7 @@ from esupy.dqi import get_weighted_average
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_factors_exio'))  # accepts str, not pathlib obj
 from download_imports_data import get_imports_data
-from Exiobase_downloads import process_exiobase
+from download_exiobase import process_exiobase
 
 ''' 
 VARIABLES:

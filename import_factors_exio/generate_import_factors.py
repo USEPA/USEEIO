@@ -71,8 +71,7 @@ def generate_exio_factors(years: list, schema=2012, calc_tiva=False):
         sr_i = map_imports_to_regions(sr_i)
         sr_i = calc_contribution_coefficients(sr_i, schema=schema)
         ## ^^ Country contribution coefficients by sector
-        sr_i.to_csv(out_Path /
-                    f'country_contributions_by_sector_{year}.csv',
+        sr_i.to_csv(out_Path / f'import_shares_{year}.csv',
                     index=False)
 
         ## Generate country specific emission factors by BEA sector weighted
@@ -573,13 +572,13 @@ def calculate_and_store_TiVA_approach(multiplier_df,
         .query('~(cntry_cntrb_to_national_summary == 0 and '
                '`cntry_cntrb_to_national_summary TiVA` == 0)'))
     contribution_comparison.to_csv(
-        out_Path / f'country_contribution_coefficient_comparison_detail_{year}.csv')
+        out_Path / f'import_shares_comparison_detail_{year}.csv')
 
     summary = (contribution_comparison
                .groupby(['BEA Summary', 'Year'])
                .agg({'Tiva_minus_SID': ['mean', 'min', 'max']})
                )
-    summary.to_csv(out_Path / f'country_contribution_coefficient_comparison_{year}.csv')
+    summary.to_csv(out_Path / f'import_shares_comparison_{year}.csv')
         
     weighted_df_imports_td = weighted_df_imports.rename(columns={'FlowAmount_Detail':'FlowAmount'})
     weighted_df_imports_ts = weighted_df_imports.rename(columns={'FlowAmount_Summary':'FlowAmount'})

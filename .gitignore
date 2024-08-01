@@ -4,6 +4,6 @@ import_factors_exio/processed_mrio_resources/*
 import_factors_exio/output/*
 import_factors_exio/response_data/*
 import_factors_exio/API/*API_key.yaml
-!import_factors_exio/output/*import_factors*
+!import_factors_exio/output/*import_factors_exio_2019*
 !import_factors_exio/output/aggregate*
-!import_factors_exio/output/country_contributions_by_sector*
+!import_factors_exio/output/import_shares_2019*

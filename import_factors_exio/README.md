@@ -12,6 +12,21 @@ For each year, the following files are generated:
 
 File names are appended with the BEA schema year, e.g., `_17sch`.
 
+The field in the *_import_factors* files are defined as
+
+| Field | Description | Example
+| --- | --- | ---
+| Sector | USEEIO sector code | `325111`
+| Year | Year of data | 2021
+| Unit | Numerator unit for Import factor | kg
+| ReferenceCurrency | Denominator unit for Import factor | USD
+| PriceType | Price type of ReferenceCurrency | Basic
+| Flowable | Name of substance | Carbon dioxide
+| Context | Environmental compartment to or from | air
+| FlowUUID | ID from FEDEFL | b6f010fb-a764-3063-af2d-bcb8309a97b7
+| FlowAmount | Import factor value | 0.57
+| BaseIOLevel | BEA IO table basis | Detail
+
 ## BEA API Access
 To make calls to BEA for service imports data (by BEA service category, country, and year), users must first register at https://apps.bea.gov/api/signup/.
 After doing so, users will be provided with an API key to the provided email.

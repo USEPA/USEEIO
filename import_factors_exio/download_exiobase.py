@@ -1,3 +1,7 @@
+"""
+Downloads and stores as pickle the relevant EXIOBASE matrices
+"""
+
 import pymrio
 from pathlib import Path
 import pickle as pkl
@@ -31,4 +35,4 @@ def process_exiobase(year_start=2012, year_end=2022, download=False):
         pkl.dump(d, open(resource_Path / f'exio_all_resources_{y}.pkl', 'wb'))
 
 if __name__ == '__main__':
-    process_exiobase(year_start = 2019, year_end=2019, download=False)
+    process_exiobase(year_start = 2019, year_end=2019, download=True)

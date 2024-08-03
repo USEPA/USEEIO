@@ -1,3 +1,7 @@
+"""
+Downloads and stores as pickle imports data from BEA and Census
+"""
+
 import pandas as pd
 import pickle as pkl
 import yaml

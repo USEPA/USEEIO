@@ -1,3 +1,7 @@
+"""
+Generates import factors from EXIOBASE
+"""
+
 import pandas as pd
 import pickle as pkl
 import numpy as np
@@ -17,22 +21,10 @@ sys.path.append(str(path_proj / 'import_factors_exio'))  # accepts str, not path
 from download_imports_data import get_imports_data
 from download_exiobase import process_exiobase
 
-''' 
-VARIABLES:
-t_df = dataframe of tiva region imports data
-t_c = BEA TiVA import contributions coefficients, by BEA naics category for 
-      available region datasets
-e_u = exiobase to detail useeio concordance, condensed long format
-u_c = useeio detail to summary code concordance
-sr_i = imports, by NAICS category, by country
-e_d = Exiobase emission factors per unit currency
-'''
 
 #%%
 # set list of years to run for factors
-# years = [2019]
 years = list(range(2017,2023))
-# years = list(range(2012,2017))
 schema = 2017
 
 dataPath = Path(__file__).parent / 'data'
@@ -511,20 +503,18 @@ def calculate_and_store_emission_factors(multiplier_df):
                   )
 
         if r == 'nation':
-            # (agg_df.rename(columns={'FlowAmount': 'Contribution_to_EF'})
-            #        .to_csv(out_Path / f'{v.lower()}_imports_multipliers_contribution_by_{r}_exio_{year}_{schema[-2:]}sch.csv', index=False))
-            # # ^^ Shows the contribution to the EF by country
-
             agg_df = (agg_df
                       .groupby(['Sector'] + cols)
                       .agg({'FlowAmount': sum})
                       .assign(BaseIOLevel=v)
                       .reset_index())
             agg_df.to_csv(
-                out_Path /f'US_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv', index=False)
+                out_Path / f'US_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv',
+                index=False)
         elif r == 'subregion':
             agg_df.to_csv(
-               out_Path / f'Regional_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv', index=False)
+                out_Path / f'Regional_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv',
+                index=False)
 
 
 def calculate_and_store_TiVA_approach(multiplier_df,

@@ -1,6 +1,8 @@
 # Generating Import Emission Factors from Exiobase
 To generate import emission factors from exiobase, run the script [generate_import_factors.py](generate_import_factors.py) 
 
+An import factor is created for an environmental flow (e.g., Carbon dioxide) in units of that flow per USD (e.g., kg/USD).
+
 For each year, the following files are generated:
 
 - *US_detail_import_factors_exio_{year}.csv*: Single set of import factors for the US by detail sector.
@@ -26,6 +28,8 @@ The field in the *_import_factors* files are defined as
 | FlowUUID | ID from FEDEFL | b6f010fb-a764-3063-af2d-bcb8309a97b7
 | FlowAmount | Import factor value | 0.57
 | BaseIOLevel | BEA IO table basis | Detail
+
+The environmental flows fields are the same as those used for USEEIO which are from the [Federal LCA Commons Elementary Flow List](https://github.com/USEPA/fedelemflowlist).
 
 ## BEA API Access
 To make calls to BEA for service imports data (by BEA service category, country, and year), users must first register at https://apps.bea.gov/api/signup/.

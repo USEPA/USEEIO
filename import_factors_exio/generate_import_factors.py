@@ -1,3 +1,7 @@
+"""
+Generates import factors from EXIOBASE
+"""
+
 import pandas as pd
 import pickle as pkl
 import numpy as np
@@ -10,31 +14,17 @@ from pathlib import Path
 
 import fedelemflowlist as fedelem
 from esupy.dqi import get_weighted_average
-import json
-
 
 # add path to subfolder for importing modules
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_factors_exio'))  # accepts str, not pathlib obj
-from API_Imports_Data_Script import get_imports_data
-from Exiobase_downloads import process_exiobase
+from download_imports_data import get_imports_data
+from download_exiobase import process_exiobase
 
-''' 
-VARIABLES:
-t_df = dataframe of tiva region imports data
-t_c = BEA TiVA import contributions coefficients, by BEA naics category for 
-      available region datasets
-e_u = exiobase to detail useeio concordance, condensed long format
-u_c = useeio detail to summary code concordance
-sr_i = imports, by NAICS category, by country
-e_d = Exiobase emission factors per unit currency
-'''
 
 #%%
 # set list of years to run for factors
-# years = [2019]
 years = list(range(2017,2023))
-# years = list(range(2012,2017))
 schema = 2017
 
 dataPath = Path(__file__).parent / 'data'
@@ -73,8 +63,7 @@ def generate_exio_factors(years: list, schema=2012, calc_tiva=False):
         sr_i = map_imports_to_regions(sr_i)
         sr_i = calc_contribution_coefficients(sr_i, schema=schema)
         ## ^^ Country contribution coefficients by sector
-        sr_i.to_csv(out_Path /
-                    f'country_contributions_by_sector_{year}.csv',
+        sr_i.to_csv(out_Path / f'import_shares_{year}.csv',
                     index=False)
 
         ## Generate country specific emission factors by BEA sector weighted
@@ -134,7 +123,7 @@ def generate_exio_factors(years: list, schema=2012, calc_tiva=False):
                           'cntry_cntrb_to_national_detail': sum})
                     .reset_index()
                     )
-        exio_country_names = pd.read_csv(conPath / 'exio_country_names.csv')
+        exio_country_names = pd.read_csv(dataPath / 'exio_country_names.csv')
         multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
                             .merge(sr_i_agg.drop(columns=['Unit', 'Region']),
                                    how='left',
@@ -268,7 +257,7 @@ def calc_tiva_coefficients(year, level='Summary', schema=2012):
     '''
     t_df = get_tiva_data(year)
     col = f'USEEIO_Detail_{schema}' if level == "Detail" else "BEA Summary"
-    corr = (pd.read_csv(conPath / 'tiva_imports_corr.csv',
+    corr = (pd.read_csv(conPath / 'tiva_to_useeio2_sector_concordance.csv',
                         usecols=['TiVA', col])
             .rename(columns = {col: f'BEA {level}'})
             .drop_duplicates())
@@ -514,20 +503,18 @@ def calculate_and_store_emission_factors(multiplier_df):
                   )
 
         if r == 'nation':
-            # (agg_df.rename(columns={'FlowAmount': 'Contribution_to_EF'})
-            #        .to_csv(out_Path / f'{v.lower()}_imports_multipliers_contribution_by_{r}_exio_{year}_{schema[-2:]}sch.csv', index=False))
-            # # ^^ Shows the contribution to the EF by country
-
             agg_df = (agg_df
                       .groupby(['Sector'] + cols)
                       .agg({'FlowAmount': sum})
                       .assign(BaseIOLevel=v)
                       .reset_index())
             agg_df.to_csv(
-                out_Path /f'US_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv', index=False)
+                out_Path / f'US_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv',
+                index=False)
         elif r == 'subregion':
             agg_df.to_csv(
-               out_Path / f'Regional_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv', index=False)
+                out_Path / f'Regional_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv',
+                index=False)
 
 
 def calculate_and_store_TiVA_approach(multiplier_df,
@@ -575,13 +562,13 @@ def calculate_and_store_TiVA_approach(multiplier_df,
         .query('~(cntry_cntrb_to_national_summary == 0 and '
                '`cntry_cntrb_to_national_summary TiVA` == 0)'))
     contribution_comparison.to_csv(
-        out_Path / f'country_contribution_coefficient_comparison_detail_{year}.csv')
+        out_Path / f'import_shares_comparison_detail_{year}.csv')
 
     summary = (contribution_comparison
                .groupby(['BEA Summary', 'Year'])
                .agg({'Tiva_minus_SID': ['mean', 'min', 'max']})
                )
-    summary.to_csv(out_Path / f'country_contribution_coefficient_comparison_{year}.csv')
+    summary.to_csv(out_Path / f'import_shares_comparison_{year}.csv')
         
     weighted_df_imports_td = weighted_df_imports.rename(columns={'FlowAmount_Detail':'FlowAmount'})
     weighted_df_imports_ts = weighted_df_imports.rename(columns={'FlowAmount_Summary':'FlowAmount'})
@@ -616,31 +603,7 @@ def calculate_and_store_TiVA_approach(multiplier_df,
         out_Path / f'US_detail_import_factors_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
         index=False)
 
-def generate_sector_data_from_json(input_path, output_path):
-    with open(input_path, 'r') as file:
-        sector_data = json.load(file)
-        filtered_sector_data = []
-        for sector in sector_data:
-          truncated_id = sector['code'][:5]
-          filtered_sector_data.append({
-            'SectorID': truncated_id,
-            'SectorName': sector['name']
-        })
-        # Convert to DataFrame
-        sector_df = pd.DataFrame(filtered_sector_data)
-        
-        # Define the path for the CSV file
-        sector_csv_path = output_path / 'Sector.csv'
-        
-        # Save the DataFrame to a CSV file
-        sector_df.to_csv(sector_csv_path, index=False)
-        print(f'Sector data saved to {sector_csv_path}')
-      
-# Path to the JSON file
-json_path = Path(__file__).parent / 'sectors.json'
-     
+
 #%%
 if __name__ == '__main__':
-    out_Path.mkdir(exist_ok=True)
-    generate_sector_data_from_json(json_path, output_path=out_Path)
     generate_exio_factors(years = years, schema = schema)

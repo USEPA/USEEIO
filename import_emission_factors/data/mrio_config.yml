@@ -1,11 +1,12 @@
-fields:
+exiobase:
+  fields:
     region: CountryCode
     sector: Exiobase Sector
-exports:
+  exports:
     US: Exports to US
-output:
+  output:
     indout: Output
-flows: # if using satellite.M
+  flows: # if using satellite.M
     # entries that start with the following keys
     CO2: Carbon dioxide
     CH4: Methane
@@ -14,7 +15,7 @@ flows: # if using satellite.M
     PFC: HFCs and PFCs, unspecified # units in kg CO2e
     SF6: Sulfur hexafluoride
 
-impacts: # if using impacts.M
+  impacts: # if using impacts.M
     Carbon dioxide (CO2) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Carbon dioxide
     Methane (CH4) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Methane
     Nitrous Oxide (N2O) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Nitrous oxide

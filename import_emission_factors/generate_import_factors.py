@@ -22,10 +22,10 @@ from download_imports_data import get_imports_data
 from download_exiobase import process_exiobase
 
 
-#%%
-# set list of years to run for factors
-years = list(range(2017,2023))
-schema = 2017
+#%% Set Parameters for import emission factors
+years = list(range(2017,2023)) # list
+schema = 2017 # int
+source = 'exiobase' # options are 'exiobase'
 
 dataPath = Path(__file__).parent / 'data'
 conPath = Path(__file__).parent / 'concordances'
@@ -39,8 +39,11 @@ flow_cols = ('Flow', 'Compartment', 'Unit',
 
 #%%
 
-with open(dataPath / "exio_config.yml", "r") as file:
+with open(dataPath / "mrio_config.yml", "r") as file:
     config = yaml.safe_load(file)
+    config = config.get(source)
+    if not config:
+        raise IndexError(f'MRIO config not found for {source}')
 
 
 def generate_exio_factors(years: list, schema=2012, calc_tiva=False):

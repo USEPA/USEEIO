@@ -119,7 +119,7 @@ def get_api_key(file):
     except FileNotFoundError:
         raise FileNotFoundError(
             f'API key required for {file}. Create the file '
-            f'"../import_factors_exio/API/{file}_key.yaml" and add your '
+            f'"../import_emission_factors/API/{file}_key.yaml" and add your '
             f'API key')
 
 

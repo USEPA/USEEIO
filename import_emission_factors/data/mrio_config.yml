@@ -1,7 +1,7 @@
 exiobase:
   fields:
     region: CountryCode
-    sector: Exiobase Sector
+    sector: MRIO Sector
   exports:
     US: Exports to US
   output:

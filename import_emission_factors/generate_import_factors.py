@@ -78,9 +78,9 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
         output = pull_mrio_data(year, opt = "output")
         export_field = list(config.get('exports').values())[0]
         mrio_df = (
-            mrio_df.merge(bilateral, on=['CountryCode','Exiobase Sector'], how='left')
-                   .merge(output, on=['CountryCode','Exiobase Sector'], how='left')
-                   .merge(mrio_to_useeio, on='Exiobase Sector', how='left')
+            mrio_df.merge(bilateral, on=['CountryCode','MRIO Sector'], how='left')
+                   .merge(output, on=['CountryCode','MRIO Sector'], how='left')
+                   .merge(mrio_to_useeio, on='MRIO Sector', how='left')
                    )
         # Perform adjustment for electricity which is not well characterized by
         # export data
@@ -93,7 +93,7 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
 
         # INSERT HERE TO REVIEW MRIO SECTOR CONTRIBUTIONS WITHIN A COUNTRY
         # Weight exiobase sectors within BEA sectors according to trade
-        mrio_df = mrio_df.drop(columns=['Exiobase Sector','Year'])
+        mrio_df = mrio_df.drop(columns=['MRIO Sector','Year'])
         agg_cols = ['BEA Detail', 'CountryCode', 'Region', 'BaseIOSchema']
         cols = [c for c in mrio_df.columns if c not in ([export_field] + agg_cols)]
         agg_dict = {col: 'mean' if col in cols else 'sum'
@@ -299,9 +299,9 @@ def get_mrio_to_useeio_concordance(schema=2012):
     ## TODO: make flexible for other MRIO
     path = conPath / "exio_to_useeio2_commodity_concordance.csv"
     e_u = (pd.read_csv(path, dtype=str)
-               .rename(columns={f'USEEIO_Detail_{schema}': 'BEA Detail'}))
-    ## TODO: rename Exiobase Sector to MRIO Sector
-    e_u = (e_u.filter(['BEA Detail','Exiobase Sector'])
+               .rename(columns={f'USEEIO_Detail_{schema}': 'BEA Detail',
+                                 'Exiobase Sector': 'MRIO Sector'}))
+    e_u = (e_u.filter(['BEA Detail','MRIO Sector'])
               .drop_duplicates()
               .reset_index(drop=True)
               .assign(BaseIOSchema = str(int(schema)))

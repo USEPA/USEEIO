@@ -1,5 +1,6 @@
 """
-Generates import factors from EXIOBASE
+Generates import factors from selected MRIO.
+Current options are: EXIOBASE
 """
 
 import pandas as pd
@@ -46,79 +47,80 @@ with open(dataPath / "mrio_config.yml", "r") as file:
         raise IndexError(f'MRIO config not found for {source}')
 
 
-def generate_exio_factors(years: list, schema=2012, calc_tiva=False):
+def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
     '''
     Runs through script to produce emission factors for U.S. imports from exiobase
     '''
     for year in years:
-        u_c = get_detail_to_summary_useeio_concordance(schema=schema)
+        useeio_corr = get_detail_to_summary_useeio_concordance(schema=schema)
         # Country imports by detail sector
-        sr_i = get_imports_data(year=year, schema=schema)
-        if len(sr_i.query('`Import Quantity` <0')) > 0:
+        imports = get_imports_data(year=year, schema=schema)
+        if len(imports.query('`Import Quantity` <0')) > 0:
             print('WARNING: negative import values...')
-            sr_i = sr_i.query('`Import Quantity` >= 0').reset_index(drop=True)
-        if sum(sr_i.duplicated(['Country', 'BEA Detail'])) > 0:
+            imports = imports.query('`Import Quantity` >= 0').reset_index(drop=True)
+        if sum(imports.duplicated(['Country', 'BEA Detail'])) > 0:
             print('Error calculating country coefficients by detail sector')
 
         elec = get_electricity_imports(year)
-        sr_i = pd.concat([sr_i,elec],ignore_index=True)
-        sr_i = sr_i.merge(u_c, how='left', on='BEA Detail')
-        sr_i = map_imports_to_regions(sr_i)
-        sr_i = calc_contribution_coefficients(sr_i, schema=schema)
+        imports = pd.concat([imports, elec],ignore_index=True)
+        imports = imports.merge(useeio_corr, how='left', on='BEA Detail')
+        imports = map_imports_to_regions(imports)
+        imports = calc_contribution_coefficients(imports, schema=schema)
         ## ^^ Country contribution coefficients by sector
-        sr_i.to_csv(out_Path / f'import_shares_{year}.csv',
-                    index=False)
+        imports.to_csv(out_Path / f'import_shares_{year}.csv',
+                       index=False)
 
         ## Generate country specific emission factors by BEA sector weighted
         ## by exports to US when sector mappings are not clean
-        e_u = get_exio_to_useeio_concordance(schema=schema)
-        e_d = pull_exiobase_multipliers(year)
-        e_bil = pull_exiobase_data(year, opt = "bilateral")
-        e_out = pull_exiobase_data(year, opt = "output")
+        mrio_to_useeio = get_mrio_to_useeio_concordance(schema=schema)
+        mrio_df = pull_mrio_multipliers(year)
+        bilateral = pull_mrio_data(year, opt = "bilateral")
+        output = pull_mrio_data(year, opt = "output")
         export_field = list(config.get('exports').values())[0]
-        e_d = (e_d.merge(e_bil, on=['CountryCode','Exiobase Sector'], how='left')
-                  .merge(e_out, on=['CountryCode','Exiobase Sector'], how='left')
-                  .merge(e_u, on='Exiobase Sector', how='left')
-                  )
+        mrio_df = (
+            mrio_df.merge(bilateral, on=['CountryCode','Exiobase Sector'], how='left')
+                   .merge(output, on=['CountryCode','Exiobase Sector'], how='left')
+                   .merge(mrio_to_useeio, on='Exiobase Sector', how='left')
+                   )
         # Perform adjustment for electricity which is not well characterized by
         # export data
-        e_d[export_field] = np.where(e_d['BEA Detail'].str.startswith('221100'),
-                                     e_d['Output'], e_d[export_field])
+        mrio_df[export_field] = np.where(mrio_df['BEA Detail'].str.startswith('221100'),
+                                         mrio_df['Output'], mrio_df[export_field])
 
         # to maintain US data, use industry output as the export field for US
-        e_d[export_field] = np.where(e_d['CountryCode'] == "US",
-                                     e_d['Output'], e_d[export_field])
+        mrio_df[export_field] = np.where(mrio_df['CountryCode'] == "US",
+                                         mrio_df['Output'], mrio_df[export_field])
 
         # INSERT HERE TO REVIEW MRIO SECTOR CONTRIBUTIONS WITHIN A COUNTRY
         # Weight exiobase sectors within BEA sectors according to trade
-        e_d = e_d.drop(columns=['Exiobase Sector','Year'])
+        mrio_df = mrio_df.drop(columns=['Exiobase Sector','Year'])
         agg_cols = ['BEA Detail', 'CountryCode', 'Region', 'BaseIOSchema']
-        cols = [c for c in e_d.columns if c not in ([export_field] + agg_cols)]
+        cols = [c for c in mrio_df.columns if c not in ([export_field] + agg_cols)]
         agg_dict = {col: 'mean' if col in cols else 'sum'
                     for col in cols + [export_field]}
-        agg = e_d.groupby(agg_cols).agg(agg_dict)
+        agg = mrio_df.groupby(agg_cols).agg(agg_dict)
         # Don't lose countries with no US exports in exiobase, as these countries
         # may have exports according to US data, collapse them using straight mean
         agg2 = agg.query(f'`{export_field}` == 0')
         agg = agg.query(f'`{export_field}` > 0')
         for c in cols:
-            agg[c] = get_weighted_average(e_d.query(f'`{export_field}` > 0'),
+            agg[c] = get_weighted_average(mrio_df.query(f'`{export_field}` > 0'),
                                           c, export_field, agg_cols)
         agg = (pd.concat([agg, agg2], ignore_index=False)
                .reset_index()
                .sort_values(by=['BEA Detail', 'CountryCode'])
-               .merge(u_c, how='left', on='BEA Detail')
+               .merge(useeio_corr, how='left', on='BEA Detail')
                )
         ## ^^ MRIO Emission Factors by USEEIO Detail in MRIO currency
 
         ## Combine EFs with contributions by country
         # Aggregate imports data by MRIO country code
-        sr_i_agg = (sr_i.groupby([c for c in sr_i if c
-                                  not in ('Country', 'Import Quantity',
-                                          'cntry_cntrb_to_region_summary',
-                                          'cntry_cntrb_to_region_detail',
-                                          'cntry_cntrb_to_national_summary',
-                                          'cntry_cntrb_to_national_detail')])
+        imports_agg = (
+            imports.groupby(
+                [c for c in imports if c not in (
+                    'Country', 'Import Quantity', 'cntry_cntrb_to_region_summary',
+                    'cntry_cntrb_to_region_detail', 'cntry_cntrb_to_national_summary',
+                    'cntry_cntrb_to_national_detail')])
                     .agg({'Import Quantity': sum,
                           'cntry_cntrb_to_region_summary': sum,
                           'cntry_cntrb_to_region_detail': sum,
@@ -128,7 +130,7 @@ def generate_exio_factors(years: list, schema=2012, calc_tiva=False):
                     )
         exio_country_names = pd.read_csv(dataPath / 'exio_country_names.csv')
         multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
-                            .merge(sr_i_agg.drop(columns=['Unit', 'Region']),
+                            .merge(imports_agg.drop(columns=['Unit', 'Region']),
                                    how='left',
                                    on=['CountryCode', 'BEA Detail', 'BEA Summary'])
                             .merge(exio_country_names, on='CountryCode', validate='m:1')
@@ -288,15 +290,17 @@ def calc_tiva_coefficients(year, level='Summary', schema=2012):
     return t_c
 
 
-def get_exio_to_useeio_concordance(schema=2012):
+def get_mrio_to_useeio_concordance(schema=2012):
     '''
-    Opens Exiobase to USEEIO binary concordance.
-    modified slightly and flattened from:
+    Opens MRIO to USEEIO binary concordance.
+    Exiobase corr modified slightly and flattened from:
         https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
     '''
+    ## TODO: make flexible for other MRIO
     path = conPath / "exio_to_useeio2_commodity_concordance.csv"
     e_u = (pd.read_csv(path, dtype=str)
                .rename(columns={f'USEEIO_Detail_{schema}': 'BEA Detail'}))
+    ## TODO: rename Exiobase Sector to MRIO Sector
     e_u = (e_u.filter(['BEA Detail','Exiobase Sector'])
               .drop_duplicates()
               .reset_index(drop=True)
@@ -335,10 +339,11 @@ def map_imports_to_regions(sr_i):
     return sr_i.dropna(subset='CountryCode').reset_index(drop=True)
 
 
-def pull_exiobase_multipliers(year):
+def pull_mrio_multipliers(year):
     '''
-    Extracts multiplier matrix from stored Exiobase model.
+    Extracts multiplier matrix from stored MRIO model.
     '''
+    ## TODO: make flexible for other MRIO
     file = resource_Path / f'exio_all_resources_{year}.pkl'
     if not file.exists():
         print(f"Exiobase data not found for {year}")
@@ -380,12 +385,13 @@ def pull_exiobase_multipliers(year):
     return M_df
 
 
-def pull_exiobase_data(year, opt):
+def pull_mrio_data(year, opt):
     '''
     Extracts bilateral trade data (opt = "bilateral") by industry from
     countries to the U.S. or industry output (opt = "output")
     from stored Exiobase model.
     '''
+    ## TODO: make flexible for other MRIO
     file = resource_Path / f'exio_all_resources_{year}.pkl'
     if not file.exists():
         print(f"Exiobase data not found for {year}")
@@ -609,4 +615,4 @@ def calculate_and_store_TiVA_approach(multiplier_df,
 
 #%%
 if __name__ == '__main__':
-    generate_exio_factors(years = years, schema = schema)
+    generate_import_emission_factors(years = years, schema = schema)

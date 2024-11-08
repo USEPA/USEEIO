@@ -42,3 +42,12 @@ Store this as 'BEA_API_key.yaml' in the API subfolder of the import_factors_exio
 - fedelemflowlist
 - [currencyconverter](https://pypi.org/project/CurrencyConverter/)
 - pymrio
+
+## MRIO Schema
+Processed MRIO objects are stored as `.pkl` files, separately for each year.
+These files are dictionaries which contain dataframes with the following keys:
+
+- *M*: rows are flows, columns are regions and commodities
+- *N* (optional): rows are impacts, columsn are regions and commodities
+- *Bilateral Trade*: rows are regions and commodities, columns are regions
+- *output*: rows are regions and commodities, single column is output

@@ -293,14 +293,11 @@ def calc_tiva_coefficients(year, level='Summary', schema=2012):
 def get_mrio_to_useeio_concordance(schema=2012):
     '''
     Opens MRIO to USEEIO binary concordance.
-    Exiobase corr modified slightly and flattened from:
-        https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
     '''
-    ## TODO: make flexible for other MRIO
-    path = conPath / "exio_to_useeio2_commodity_concordance.csv"
-    e_u = (pd.read_csv(path, dtype=str)
-               .rename(columns={f'USEEIO_Detail_{schema}': 'BEA Detail',
-                                 'Exiobase Sector': 'MRIO Sector'}))
+    path = conPath / config.get('useeio_concordance').get('file')
+    fields = config.get('useeio_concordance').get('fields')
+    fields = {k.replace('__schema__', str(schema)): v for k,v in fields.items()}
+    e_u = pd.read_csv(path, dtype=str).rename(columns={**fields})
     e_u = (e_u.filter(['BEA Detail','MRIO Sector'])
               .drop_duplicates()
               .reset_index(drop=True)

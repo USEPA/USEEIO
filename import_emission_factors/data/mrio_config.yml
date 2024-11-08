@@ -19,3 +19,11 @@ exiobase:
     Carbon dioxide (CO2) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Carbon dioxide
     Methane (CH4) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Methane
     Nitrous Oxide (N2O) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Nitrous oxide
+
+  useeio_concordance:
+    file: exio_to_useeio2_commodity_concordance.csv
+    # Exiobase corr modified slightly and flattened from:
+    # https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
+    fields:
+      USEEIO_Detail___schema__: 'BEA Detail'
+      Exiobase Sector: 'MRIO Sector'

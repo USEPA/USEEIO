@@ -49,7 +49,7 @@ with open(dataPath / "mrio_config.yml", "r") as file:
 
 def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
     '''
-    Runs through script to produce emission factors for U.S. imports from exiobase
+    Runs through script to produce emission factors for U.S. imports from MRIO
     '''
     for year in years:
         useeio_corr = get_detail_to_summary_useeio_concordance(schema=schema)
@@ -323,7 +323,7 @@ def get_detail_to_summary_useeio_concordance(schema=2012):
 
 
 def map_imports_to_regions(sr_i):
-    path = conPath / 'exio_country_concordance.csv'
+    path = conPath / f'{source}_country_concordance.csv'
     regions = (pd.read_csv(path, dtype=str,
                            usecols=['Country', 'CountryCode', 'Region'])
                )
@@ -340,15 +340,14 @@ def pull_mrio_multipliers(year):
     '''
     Extracts multiplier matrix from stored MRIO model.
     '''
-    ## TODO: make flexible for other MRIO
-    file = resource_Path / f'exio_all_resources_{year}.pkl'
+    file = resource_Path / f'{source}_all_resources_{year}.pkl'
     if not file.exists():
-        print(f"Exiobase data not found for {year}")
-        process_exiobase(year_start=year, year_end=year, download=True)
-    exio = pkl.load(open(file,'rb'))
+        print(f"{source} data not found for {year}")
+        process_mrio_data(year)
+    mrio = pkl.load(open(file,'rb'))
 
     # for satellite
-    M_df = exio['M'].copy().reset_index()
+    M_df = mrio['M'].copy().reset_index()
     fields = {**config['fields'], **config['flows']}
     M_df['flow'] = M_df.stressor.str.split(pat=' -', n=1, expand=True)[0]
     M_df['flow'] = M_df['flow'].map(fields)
@@ -361,7 +360,7 @@ def pull_mrio_multipliers(year):
     M_df = M_df / 1000000 # units are kg / million Euro
 
     # # for impacts
-    # M_df = exio['N']
+    # M_df = mrio['N']
     # fields = {**config['fields'], **config['impacts']}
     # M_df = M_df.loc[M_df.index.isin(fields.keys())]
 
@@ -371,7 +370,7 @@ def pull_mrio_multipliers(year):
             .rename(columns=fields)
             .assign(Year=str(year))
             )
-    path = conPath / 'exio_country_concordance.csv'
+    path = conPath / f'{source}_country_concordance.csv'
     regions = (pd.read_csv(path, dtype=str,
                            usecols=['CountryCode', 'Region'])
                .dropna()
@@ -386,29 +385,37 @@ def pull_mrio_data(year, opt):
     '''
     Extracts bilateral trade data (opt = "bilateral") by industry from
     countries to the U.S. or industry output (opt = "output")
-    from stored Exiobase model.
+    from stored MRIO model.
     '''
-    ## TODO: make flexible for other MRIO
-    file = resource_Path / f'exio_all_resources_{year}.pkl'
+    file = resource_Path / f'{source}_all_resources_{year}.pkl'
     if not file.exists():
-        print(f"Exiobase data not found for {year}")
-        process_exiobase(year_start=year, year_end=year, download=True)
-    exio = pkl.load(open(file,'rb'))
+        print(f"{source} data not found for {year}")
+        process_mrio_data(year)
+    mrio = pkl.load(open(file,'rb'))
     fields = {**config['fields'], **config['exports'], **config['output']}
     if opt == "bilateral":
-        df = exio['Bilateral Trade']
+        df = mrio['Bilateral Trade']
         df = (df
               .filter(['US'])
               .reset_index()
               .rename(columns=fields)
               )
     elif opt == "output":
-        df = exio['output']
+        df = mrio['output']
         df = (df
               .reset_index()
               .rename(columns=fields)
               )
     return df
+
+
+def process_mrio_data(year):
+    '''
+    Wrapper function to call correct MRIO processing function
+    '''
+    if source == "exiobase":
+        process_exiobase(year_start=year, year_end=year, download=True)
+    # elif source == "foo":
 
 
 def calc_contribution_coefficients(df, schema=2012):

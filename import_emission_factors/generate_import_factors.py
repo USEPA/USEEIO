@@ -92,14 +92,14 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
                                          mrio_df['Output'], mrio_df[export_field])
 
         # INSERT HERE TO REVIEW MRIO SECTOR CONTRIBUTIONS WITHIN A COUNTRY
-        # Weight exiobase sectors within BEA sectors according to trade
+        # Weight MRIO sectors within BEA sectors according to trade
         mrio_df = mrio_df.drop(columns=['MRIO Sector','Year'])
         agg_cols = ['BEA Detail', 'CountryCode', 'Region', 'BaseIOSchema']
         cols = [c for c in mrio_df.columns if c not in ([export_field] + agg_cols)]
         agg_dict = {col: 'mean' if col in cols else 'sum'
                     for col in cols + [export_field]}
         agg = mrio_df.groupby(agg_cols).agg(agg_dict)
-        # Don't lose countries with no US exports in exiobase, as these countries
+        # Don't lose countries with no US exports in MRIO, as these countries
         # may have exports according to US data, collapse them using straight mean
         agg2 = agg.query(f'`{export_field}` == 0')
         agg = agg.query(f'`{export_field}` > 0')
@@ -128,12 +128,12 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
                           'cntry_cntrb_to_national_detail': sum})
                     .reset_index()
                     )
-        exio_country_names = pd.read_csv(dataPath / 'exio_country_names.csv')
+        mrio_country_names = pd.read_csv(dataPath / f'{source}_country_names.csv')
         multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
                             .merge(imports_agg.drop(columns=['Unit', 'Region']),
                                    how='left',
                                    on=['CountryCode', 'BEA Detail', 'BEA Summary'])
-                            .merge(exio_country_names, on='CountryCode', validate='m:1')
+                            .merge(mrio_country_names, on='CountryCode', validate='m:1')
                             )
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
@@ -141,7 +141,7 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
 
         multiplier_df = df_prepare(multiplier_df, year)
         multiplier_df.to_csv(
-            out_Path /f'multiplier_df_exio_{year}_{str(schema)[-2:]}sch.csv', index=False)
+            out_Path /f'multiplier_df_{source}_{year}_{str(schema)[-2:]}sch.csv', index=False)
         calculate_and_store_emission_factors(multiplier_df)
         
         # Optional: Recalculate using TiVA regions under original approach
@@ -522,20 +522,20 @@ def calculate_and_store_emission_factors(multiplier_df):
                       .assign(BaseIOLevel=v)
                       .reset_index())
             agg_df.to_csv(
-                out_Path / f'US_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv',
+                out_Path / f'US_{v.lower()}_import_factors_{source}_{year}_{schema[-2:]}sch.csv',
                 index=False)
         elif r == 'subregion':
             agg_df.to_csv(
-                out_Path / f'Regional_{v.lower()}_import_factors_exio_{year}_{schema[-2:]}sch.csv',
+                out_Path / f'Regional_{v.lower()}_import_factors_{source}_{year}_{schema[-2:]}sch.csv',
                 index=False)
 
 
 def calculate_and_store_TiVA_approach(multiplier_df,
                                       import_contribution_coeffs, year):
     '''
-    Merges import contribution coefficients with weighted exiobase 
+    Merges import contribution coefficients with weighted MRIO 
     multiplier dataframe. Import coefficients are then multiplied by the 
-    weighted exiobase multipliers to produce weighted multipliers that 
+    weighted MRIO multipliers to produce weighted multipliers that 
     incorporate TiVA imports by region.
     '''
     schema = str(int(multiplier_df['BaseIOSchema'][0]))
@@ -610,10 +610,10 @@ def calculate_and_store_TiVA_approach(multiplier_df,
               f'emisson factors: {check}')
 
     imports_multipliers_ts.to_csv(
-        out_Path / f'US_summary_import_factors_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
+        out_Path / f'US_summary_import_factors_TiVA_approach_{source}_{year}_{schema[-2:]}sch.csv',
         index=False)
     imports_multipliers_td.to_csv(
-        out_Path / f'US_detail_import_factors_TiVA_approach_exio_{year}_{schema[-2:]}sch.csv',
+        out_Path / f'US_detail_import_factors_TiVA_approach_{source}_{year}_{schema[-2:]}sch.csv',
         index=False)
 
 

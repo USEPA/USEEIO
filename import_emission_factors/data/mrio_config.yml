@@ -41,12 +41,12 @@ ceda:
   output:
     industry_output: Output
   flows:
-    CO2: Carbon dioxide # units in kg CO2e
-    CH4: Methane # units in kg CO2e
+    CO2: Carbon dioxide
+    CH4: Methane
     HFCs: HFCs and PFCs, unspecified # units in kg CO2e
-    N2O: Nitrous oxide # units in kg CO2e
+    N2O: Nitrous oxide
     PFCs: HFCs and PFCs, unspecified # units in kg CO2e
-    SF6: Sulfur hexafluoride # units in kg CO2e
+    SF6: Sulfur hexafluoride
 
   useeio_concordance:
     file: ceda_to_useeio_commodity_concordance.csv

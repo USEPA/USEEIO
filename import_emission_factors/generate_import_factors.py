@@ -66,7 +66,7 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
         imports = map_imports_to_regions(imports)
         imports = calc_contribution_coefficients(imports, schema=schema)
         ## ^^ Country contribution coefficients by sector
-        imports.to_csv(out_Path / f'import_shares_{year}.csv',
+        imports.to_csv(out_Path / f'import_shares_{source}_{year}.csv',
                        index=False)
 
         ## Generate country specific emission factors by BEA sector weighted

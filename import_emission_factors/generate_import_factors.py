@@ -13,14 +13,14 @@ import pandas as pd
 import yaml
 from esupy.dqi import get_weighted_average
 
-from import_emission_factors.ceda_helpers import clean_ceda_M_matrix
-
 # add path to subfolder for importing modules
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_emission_factors'))  # accepts str, not pathlib obj
 from download_exiobase import process_exiobase
+from process_ceda import process_ceda
 from download_imports_data import get_imports_data
-from import_emission_factors.exiobase_helpers import clean_exiobase_M_matrix, exiobase_adjust_currency
+from exiobase_helpers import clean_exiobase_M_matrix, exiobase_adjust_currency
+from ceda_helpers import clean_ceda_M_matrix
 
 #%% Set Parameters for import emission factors
 years = list(range(2017,2023)) # list
@@ -166,7 +166,7 @@ def df_prepare(df, year):
         .assign(Unit='kg')
         .assign(ReferenceCurrency='Euro')
         .assign(Year=str(year))
-        .assign(PriceType='Basic')
+        .assign(PriceType=config.get('price_type'))
         )
 
     fl = (fedelem.get_flows()
@@ -406,6 +406,8 @@ def process_mrio_data(year):
     '''
     if source == "exiobase":
         process_exiobase(year_start=year, year_end=year, download=True)
+    elif source == "ceda":
+        process_ceda(year_start=year, year_end=year)
     else:
         raise ValueError(f"Download and processing not supported for source: {source}")
 

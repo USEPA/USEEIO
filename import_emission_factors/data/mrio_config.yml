@@ -1,6 +1,7 @@
 exiobase:
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: true
+  price_type: Basic
   fields:
     region: CountryCode
     sector: MRIO Sector
@@ -29,9 +30,11 @@ exiobase:
     fields:
       USEEIO_Detail___schema__: BEA Detail
       Exiobase Sector: MRIO Sector
+
 ceda:
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: false
+  price_type: Producer
   fields:
     country: CountryCode
     sector: MRIO Sector

@@ -26,13 +26,13 @@ def process_gloria(year_start=2012, year_end=2022, download=False):
         gloria = pymrio.parse_gloria(path=model_Path, version='59a',
                                      year=y)
         # temporary storage
-        pkl.dump(gloria, open(resource_Path / f'gloria_parsed_{y}.pkl', 'wb'))
+        # pkl.dump(gloria, open(resource_Path / f'gloria_parsed_{y}.pkl', 'wb'))
         # gloria = pkl.load(open(resource_Path / f'gloria_parsed_{y}.pkl','rb'))
-        gloria = gloria.calc_all()
-
+        gloria.calc_all()
+        # pkl.dump(gloria, open(resource_Path / f'gloria_calc_{y}.pkl', 'wb'))
+        # gloria = pkl.load(open(resource_Path / f'gloria_calc_{y}.pkl','rb'))
         d = {}
-        d['M'] = gloria.satellite.M # raw satellite multipliers
-        d['N'] = gloria.impacts.M # characterized multipliers
+        d['M'] = gloria.Q.M # raw satellite multipliers
         d['output'] = gloria.x
         trade = pymrio.IOSystem.get_gross_trade(gloria)
         d['Trade Total'] = trade[1]

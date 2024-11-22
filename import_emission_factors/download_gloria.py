@@ -15,12 +15,17 @@ resource_Path = Path(__file__).parent / 'processed_mrio_resources'
 # which matches with https://github.com/IndEcol/pymrio/pull/139
 import pymrio
 
+urls = pymrio.tools.iodownloader.GLORIA_CONFIG["datafiles"]
+urls = {k: [i for i in lst if 'GLORIA_STDDEV' not in i] for k, lst in urls.items()}
+## remove STDDEV files to reduce file size and improve runtime
+
 def process_gloria(year_start=2012, year_end=2022, download=False):
     years = list(range(year_start, year_end+1))
     if download == True:
         print('Downloading GLORIA files')
         pymrio.download_gloria(storage_folder=model_Path, year=years,
-                                version='59a')
+                               urls=urls,
+                               version='59a')
     
     for y in years:
         gloria = pymrio.parse_gloria(path=model_Path, version='59a',

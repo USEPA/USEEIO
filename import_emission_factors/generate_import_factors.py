@@ -3,30 +3,29 @@ Generates import factors from selected MRIO.
 Current options are: EXIOBASE
 """
 
-import pandas as pd
 import pickle as pkl
-import numpy as np
-import yaml
 import sys
-import statistics
-from currency_converter import CurrencyConverter
-from datetime import date
 from pathlib import Path
 
 import fedelemflowlist as fedelem
+import numpy as np
+import pandas as pd
+import yaml
 from esupy.dqi import get_weighted_average
 
 # add path to subfolder for importing modules
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_emission_factors'))  # accepts str, not pathlib obj
-from download_imports_data import get_imports_data
 from download_exiobase import process_exiobase
-
+from process_ceda import process_ceda
+from download_imports_data import get_imports_data
+from exiobase_helpers import clean_exiobase_M_matrix, exiobase_adjust_currency
+from ceda_helpers import clean_ceda_M_matrix
 
 #%% Set Parameters for import emission factors
 years = list(range(2017,2023)) # list
 schema = 2017 # int
-source = 'exiobase' # options are 'exiobase'
+source = 'exiobase' # options are 'exiobase', 'ceda'
 
 dataPath = Path(__file__).parent / 'data'
 conPath = Path(__file__).parent / 'concordances'
@@ -67,7 +66,7 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
         imports = map_imports_to_regions(imports)
         imports = calc_contribution_coefficients(imports, schema=schema)
         ## ^^ Country contribution coefficients by sector
-        imports.to_csv(out_Path / f'import_shares_{year}.csv',
+        imports.to_csv(out_Path / f'import_shares_{source}_{year}.csv',
                        index=False)
 
         ## Generate country specific emission factors by BEA sector weighted
@@ -77,15 +76,19 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
         bilateral = pull_mrio_data(year, opt = "bilateral")
         output = pull_mrio_data(year, opt = "output")
         export_field = list(config.get('exports').values())[0]
+
         mrio_df = (
             mrio_df.merge(bilateral, on=['CountryCode','MRIO Sector'], how='left')
                    .merge(output, on=['CountryCode','MRIO Sector'], how='left')
                    .merge(mrio_to_useeio, on='MRIO Sector', how='left')
                    )
-        # Perform adjustment for electricity which is not well characterized by
-        # export data
-        mrio_df[export_field] = np.where(mrio_df['BEA Detail'].str.startswith('221100'),
-                                         mrio_df['Output'], mrio_df[export_field])
+
+        if config.get('calculation_configs')\
+            .get('use_industry_output_for_usa_electricity_imports'):
+            # Perform adjustment for electricity which is not well characterized by
+            # export data
+            mrio_df[export_field] = np.where(mrio_df['BEA Detail'].str.startswith('221100'),
+                                            mrio_df['Output'], mrio_df[export_field])
 
         # to maintain US data, use industry output as the export field for US
         mrio_df[export_field] = np.where(mrio_df['CountryCode'] == "US",
@@ -138,7 +141,6 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
         ##       summary sectors.
-
         multiplier_df = df_prepare(multiplier_df, year)
         multiplier_df.to_csv(
             out_Path /f'multiplier_df_{source}_{year}_{str(schema)[-2:]}sch.csv', index=False)
@@ -164,7 +166,7 @@ def df_prepare(df, year):
         .assign(Unit='kg')
         .assign(ReferenceCurrency='Euro')
         .assign(Year=str(year))
-        .assign(PriceType='Basic')
+        .assign(PriceType=config.get('price_type'))
         )
 
     fl = (fedelem.get_flows()
@@ -183,18 +185,7 @@ def df_prepare(df, year):
         .assign(Context=lambda x: x['Context'].fillna('emission/air'))
         )
 
-    # Currency adjustment
-    c = CurrencyConverter(fallback_on_missing_rate=True)
-    exch = statistics.mean([c.convert(1, 'EUR', 'USD', date=date(year, 1, 1)),
-                            c.convert(1, 'EUR', 'USD', date=date(year, 12, 30))])
-    df = (df
-        .assign(EF=lambda x: x['EF']/exch)
-        .assign(ReferenceCurrency='USD')
-        )
-    df.loc[df['Flowable'] == 'HFCs and PFCs, unspecified',
-           'Unit'] = 'kg CO2e'
-    #^^ update units to kg CO2e for HFCs and PFCs unspecified, consider
-    # more dynamic implementation
+    df = adjust_currency_and_rename_flows_units(df, year)
 
     return df
 
@@ -232,6 +223,7 @@ def get_tiva_data(year):
 
     return ri_df
 
+
 def get_electricity_imports(year):
     url = 'https://www.eia.gov/electricity/annual/xls/epa_02_14.xlsx'
     sheet = 'epa_02_14'
@@ -255,6 +247,24 @@ def get_electricity_imports(year):
     elec['Year']=elec['Year'].astype(str)
     return elec
     
+
+def adjust_currency_and_rename_flows_units(df, year):
+    if source == "exiobase":
+        df = exiobase_adjust_currency(df, year)
+    elif source == "ceda":
+        # CEDA is already in USD, only need to rename units
+        df = df.assign(ReferenceCurrency='USD')
+    else:
+        raise ValueError(f"Received unsupported source: {source}")
+    
+    df.loc[df['Flowable'] == 'HFCs and PFCs, unspecified',
+        'Unit'] = 'kg CO2e'
+    #^^ update units to kg CO2e for HFCs and PFCs unspecified, consider
+    # more dynamic implementation
+
+    return df
+
+
 def calc_tiva_coefficients(year, level='Summary', schema=2012):
     '''
     Calculate the fractional contributions, by TiVA region, to total imports
@@ -346,30 +356,15 @@ def pull_mrio_multipliers(year):
         process_mrio_data(year)
     mrio = pkl.load(open(file,'rb'))
 
-    # for satellite
-    M_df = mrio['M'].copy().reset_index()
-    fields = {**config['fields'], **config['flows']}
-    M_df['flow'] = M_df.stressor.str.split(pat=' -', n=1, expand=True)[0]
-    M_df['flow'] = M_df['flow'].map(fields)
-    M_df = M_df.loc[M_df.flow.isin(fields.values())]
-    M_df = (M_df
-            .sort_index(axis=1)
-            .drop(columns='stressor', level=0)
-            .groupby('flow').agg('sum')
-            )
-    M_df = M_df / 1000000 # units are kg / million Euro
+    fields_to_rename = {**config['fields'], **config['flows']}
+    M_df = clean_mrio_M_matrix(mrio['M'], fields_to_rename)
+    M_df = M_df.assign(Year=str(year))
 
     # # for impacts
     # M_df = mrio['N']
     # fields = {**config['fields'], **config['impacts']}
     # M_df = M_df.loc[M_df.index.isin(fields.keys())]
 
-    M_df = (M_df
-            .transpose()
-            .reset_index()
-            .rename(columns=fields)
-            .assign(Year=str(year))
-            )
     path = conPath / f'{source}_country_concordance.csv'
     regions = (pd.read_csv(path, dtype=str,
                            usecols=['CountryCode', 'Region'])
@@ -395,11 +390,7 @@ def pull_mrio_data(year, opt):
     fields = {**config['fields'], **config['exports'], **config['output']}
     if opt == "bilateral":
         df = mrio['Bilateral Trade']
-        df = (df
-              .filter(['US'])
-              .reset_index()
-              .rename(columns=fields)
-              )
+        df = (clean_mrio_trade_data(df).rename(columns=fields))
     elif opt == "output":
         df = mrio['output']
         df = (df
@@ -415,7 +406,34 @@ def process_mrio_data(year):
     '''
     if source == "exiobase":
         process_exiobase(year_start=year, year_end=year, download=True)
-    # elif source == "foo":
+    elif source == "ceda":
+        process_ceda(year_start=year, year_end=year)
+    else:
+        raise ValueError(f"Download and processing not supported for source: {source}")
+
+
+def clean_mrio_M_matrix(M, fields_to_rename):
+    '''
+    Wrapper function to call correct M matrix cleaning function for MRIO
+    '''
+    if source == "exiobase":
+        return clean_exiobase_M_matrix(M, fields_to_rename)
+    elif source == "ceda":
+        return clean_ceda_M_matrix(M, fields_to_rename)
+    else:
+        raise ValueError(f"Received unsupported source: {source}")
+
+
+def clean_mrio_trade_data(df):
+    '''
+    Wrapper function to correctly clean the MRIO bilateral trade data
+    '''
+    if source == "exiobase":
+        return df.filter(['US']).reset_index()
+    elif source == "ceda":
+        return df
+    else:
+        raise ValueError(f"Received unsupported source: {source}")
 
 
 def calc_contribution_coefficients(df, schema=2012):

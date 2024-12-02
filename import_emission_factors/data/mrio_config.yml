@@ -1,4 +1,7 @@
 exiobase:
+  calculation_configs:
+    use_industry_output_for_usa_electricity_imports: true
+  price_type: Basic
   fields:
     region: CountryCode
     sector: MRIO Sector
@@ -25,5 +28,31 @@ exiobase:
     # Exiobase corr modified slightly and flattened from:
     # https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
     fields:
-      USEEIO_Detail___schema__: 'BEA Detail'
-      Exiobase Sector: 'MRIO Sector'
+      USEEIO_Detail___schema__: BEA Detail
+      Exiobase Sector: MRIO Sector
+
+ceda:
+  calculation_configs:
+    use_industry_output_for_usa_electricity_imports: false
+  price_type: Producer
+  fields:
+    country: CountryCode
+    sector: MRIO Sector
+  exports:
+    exports_to_usa: Exports to US
+    exporter: CountryCode
+  output:
+    industry_output: Output
+  flows:
+    CO2: Carbon dioxide
+    CH4: Methane
+    HFCs: HFCs and PFCs, unspecified # units in kg CO2e
+    N2O: Nitrous oxide
+    PFCs: HFCs and PFCs, unspecified # units in kg CO2e
+    SF6: Sulfur hexafluoride
+
+  useeio_concordance:
+    file: ceda_to_useeio_commodity_concordance.csv
+    fields:
+      USEEIO_Detail___schema__: BEA Detail
+      CEDA Sector: MRIO Sector

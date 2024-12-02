@@ -1,4 +1,5 @@
 exiobase:
+  process_function: download_exiobase/process_exiobase
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: true
   price_type: Basic

@@ -16,11 +16,11 @@ from esupy.dqi import get_weighted_average
 # add path to subfolder for importing modules
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_emission_factors'))  # accepts str, not pathlib obj
-from download_exiobase import process_exiobase
 from process_ceda import process_ceda
 from download_imports_data import get_imports_data
 from exiobase_helpers import clean_exiobase_M_matrix, exiobase_adjust_currency
 from ceda_helpers import clean_ceda_M_matrix
+
 
 #%% Set Parameters for import emission factors
 years = list(range(2017,2023)) # list
@@ -404,12 +404,20 @@ def process_mrio_data(year):
     '''
     Wrapper function to call correct MRIO processing function
     '''
-    if source == "exiobase":
-        process_exiobase(year_start=year, year_end=year, download=True)
-    elif source == "ceda":
-        process_ceda(year_start=year, year_end=year)
+    source_fxn = config.get('process_function').split('/')
+    try:
+        module = __import__(source_fxn[0])
+    except ModuleNotFoundError:
+        raise ModuleNotFoundError(f'No module named "{source_fxn[0]}". '
+                                  'process_function must contain the '
+                                  'source module for the function. '
+                                  'For example: '
+                                  '"download_exiobsase/process_exiobase"')
+    fxn = getattr(module, source_fxn[1])
+    if callable(fxn):
+        fxn(year_start=year, year_end=year)
     else:
-        raise ValueError(f"Download and processing not supported for source: {source}")
+        raise KeyError('Error parsing process_function key')
 
 
 def clean_mrio_M_matrix(M, fields_to_rename):

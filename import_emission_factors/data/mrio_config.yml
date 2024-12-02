@@ -1,5 +1,8 @@
 exiobase:
   process_function: download_exiobase/process_exiobase
+  clean_function: exiobase_helpers/clean_exiobase_M_matrix
+  clean_trade_function: exiobase_helpers/exiobase_clean_trade
+  currency_function: exiobase_helpers/exiobase_adjust_currency
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: true
   price_type: Basic
@@ -34,6 +37,7 @@ exiobase:
 
 ceda:
   process_function: process_ceda/process_ceda
+  clean_function: ceda_helpers/clean_ceda_M_matrix
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: false
   price_type: Producer

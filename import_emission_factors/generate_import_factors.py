@@ -17,8 +17,6 @@ from esupy.dqi import get_weighted_average
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_emission_factors'))  # accepts str, not pathlib obj
 from download_imports_data import get_imports_data
-from exiobase_helpers import clean_exiobase_M_matrix, exiobase_adjust_currency
-from ceda_helpers import clean_ceda_M_matrix
 
 
 #%% Set Parameters for import emission factors
@@ -248,14 +246,13 @@ def get_electricity_imports(year):
     
 
 def adjust_currency_and_rename_flows_units(df, year):
-    if source == "exiobase":
-        df = exiobase_adjust_currency(df, year)
-    elif source == "ceda":
-        # CEDA is already in USD, only need to rename units
-        df = df.assign(ReferenceCurrency='USD')
+    if 'currency_function' in config:
+        fxn = extract_function_from_config('currency_function')
+        df = fxn(df, year)
     else:
-        raise ValueError(f"Received unsupported source: {source}")
-    
+        # some MRIO already in USD, only need to rename units
+        df = df.assign(ReferenceCurrency='USD')
+
     df.loc[df['Flowable'] == 'HFCs and PFCs, unspecified',
         'Unit'] = 'kg CO2e'
     #^^ update units to kg CO2e for HFCs and PFCs unspecified, consider
@@ -411,24 +408,19 @@ def clean_mrio_M_matrix(M, fields_to_rename):
     '''
     Wrapper function to call correct M matrix cleaning function for MRIO
     '''
-    if source == "exiobase":
-        return clean_exiobase_M_matrix(M, fields_to_rename)
-    elif source == "ceda":
-        return clean_ceda_M_matrix(M, fields_to_rename)
-    else:
-        raise ValueError(f"Received unsupported source: {source}")
+    fxn = extract_function_from_config('clean_function')
+    return fxn(M, fields_to_rename)
 
 
 def clean_mrio_trade_data(df):
     '''
     Wrapper function to correctly clean the MRIO bilateral trade data
     '''
-    if source == "exiobase":
-        return df.filter(['US']).reset_index()
-    elif source == "ceda":
-        return df
+    if 'clean_trade_function' in config:
+        fxn = extract_function_from_config('clean_trade_function')
+        return fxn(df)
     else:
-        raise ValueError(f"Received unsupported source: {source}")
+        return df
 
 
 def calc_contribution_coefficients(df, schema=2012):
@@ -639,7 +631,7 @@ def extract_function_from_config(fkey):
                                   f'{fkey} must contain the '
                                   'source module for the function. '
                                   'For example: '
-                                  '"download_exiobsase/process_exiobase"')
+                                  '"download_exiobase/process_exiobase"')
     fxn = getattr(module, source_fxn[1])
     if callable(fxn):
         return fxn

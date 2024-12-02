@@ -32,3 +32,6 @@ def exiobase_adjust_currency(df, year):
         .assign(ReferenceCurrency='USD')
         )
     return df
+
+def exiobase_clean_trade(df):
+    return df.filter(['US']).reset_index()

@@ -7,6 +7,7 @@ import pandas as pd
 from pathlib import Path
 import pickle as pkl
 
+# https://drive.google.com/drive/folders/1tm1Cs5ABVRuE3fDkT80TfE5fPmnWPrA7
 
 model_Path = Path(__file__).parent / 'mrio_models'
 resource_Path = Path(__file__).parent / 'processed_mrio_resources'

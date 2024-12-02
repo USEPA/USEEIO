@@ -1,4 +1,5 @@
 exiobase:
+  process_function: download_exiobase/process_exiobase
   fields:
     region: CountryCode
     sector: MRIO Sector

@@ -20,7 +20,6 @@ from esupy.dqi import get_weighted_average
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_emission_factors'))  # accepts str, not pathlib obj
 from download_imports_data import get_imports_data
-from download_exiobase import process_exiobase
 
 
 #%% Set Parameters for import emission factors
@@ -413,9 +412,20 @@ def process_mrio_data(year):
     '''
     Wrapper function to call correct MRIO processing function
     '''
-    if source == "exiobase":
-        process_exiobase(year_start=year, year_end=year, download=True)
-    # elif source == "foo":
+    source_fxn = config.get('process_function').split('/')
+    try:
+        module = __import__(source_fxn[0])
+    except ModuleNotFoundError:
+        raise ModuleNotFoundError(f'No module named "{source_fxn[0]}". '
+                                  'process_function must contain the '
+                                  'source module for the function. '
+                                  'For example: '
+                                  '"download_exiobsase/process_exiobase"')
+    fxn = getattr(module, source_fxn[1])
+    if callable(fxn):
+        fxn(year_start=year, year_end=year)
+    else:
+        raise KeyError('Error parsing process_function key')
 
 
 def calc_contribution_coefficients(df, schema=2012):

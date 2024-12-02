@@ -33,6 +33,7 @@ exiobase:
       Exiobase Sector: MRIO Sector
 
 ceda:
+  process_function: process_ceda/process_ceda
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: false
   price_type: Producer

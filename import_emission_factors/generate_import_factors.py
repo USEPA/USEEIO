@@ -16,7 +16,6 @@ from esupy.dqi import get_weighted_average
 # add path to subfolder for importing modules
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_emission_factors'))  # accepts str, not pathlib obj
-from process_ceda import process_ceda
 from download_imports_data import get_imports_data
 from exiobase_helpers import clean_exiobase_M_matrix, exiobase_adjust_currency
 from ceda_helpers import clean_ceda_M_matrix

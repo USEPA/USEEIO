@@ -403,20 +403,8 @@ def process_mrio_data(year):
     '''
     Wrapper function to call correct MRIO processing function
     '''
-    source_fxn = config.get('process_function').split('/')
-    try:
-        module = __import__(source_fxn[0])
-    except ModuleNotFoundError:
-        raise ModuleNotFoundError(f'No module named "{source_fxn[0]}". '
-                                  'process_function must contain the '
-                                  'source module for the function. '
-                                  'For example: '
-                                  '"download_exiobsase/process_exiobase"')
-    fxn = getattr(module, source_fxn[1])
-    if callable(fxn):
-        fxn(year_start=year, year_end=year)
-    else:
-        raise KeyError('Error parsing process_function key')
+    fxn = extract_function_from_config('process_function')
+    fxn(year_start=year, year_end=year)
 
 
 def clean_mrio_M_matrix(M, fields_to_rename):
@@ -640,6 +628,23 @@ def calculate_and_store_TiVA_approach(multiplier_df,
     imports_multipliers_td.to_csv(
         out_Path / f'US_detail_import_factors_TiVA_approach_{source}_{year}_{schema[-2:]}sch.csv',
         index=False)
+
+
+def extract_function_from_config(fkey):
+    source_fxn = config.get(fkey).split('/')
+    try:
+        module = __import__(source_fxn[0])
+    except ModuleNotFoundError:
+        raise ModuleNotFoundError(f'No module named "{source_fxn[0]}". '
+                                  f'{fkey} must contain the '
+                                  'source module for the function. '
+                                  'For example: '
+                                  '"download_exiobsase/process_exiobase"')
+    fxn = getattr(module, source_fxn[1])
+    if callable(fxn):
+        return fxn
+    else:
+        raise KeyError(f'Error parsing {fkey} key')
 
 
 #%%

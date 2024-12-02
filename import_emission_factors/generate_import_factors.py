@@ -408,7 +408,7 @@ def clean_mrio_M_matrix(M, fields_to_rename):
     '''
     Wrapper function to call correct M matrix cleaning function for MRIO
     '''
-    fxn = extract_function_from_config('clean_function')
+    fxn = extract_function_from_config('clean_M_function')
     return fxn(M, fields_to_rename)
 
 

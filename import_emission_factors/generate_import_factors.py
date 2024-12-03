@@ -16,11 +16,8 @@ from esupy.dqi import get_weighted_average
 # add path to subfolder for importing modules
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_emission_factors'))  # accepts str, not pathlib obj
-from download_exiobase import process_exiobase
-from process_ceda import process_ceda
 from download_imports_data import get_imports_data
-from exiobase_helpers import clean_exiobase_M_matrix, exiobase_adjust_currency
-from ceda_helpers import clean_ceda_M_matrix
+
 
 #%% Set Parameters for import emission factors
 years = list(range(2017,2023)) # list
@@ -249,14 +246,13 @@ def get_electricity_imports(year):
     
 
 def adjust_currency_and_rename_flows_units(df, year):
-    if source == "exiobase":
-        df = exiobase_adjust_currency(df, year)
-    elif source == "ceda":
-        # CEDA is already in USD, only need to rename units
-        df = df.assign(ReferenceCurrency='USD')
+    if 'currency_function' in config:
+        fxn = extract_function_from_config('currency_function')
+        df = fxn(df, year)
     else:
-        raise ValueError(f"Received unsupported source: {source}")
-    
+        # some MRIO already in USD, only need to rename units
+        df = df.assign(ReferenceCurrency='USD')
+
     df.loc[df['Flowable'] == 'HFCs and PFCs, unspecified',
         'Unit'] = 'kg CO2e'
     #^^ update units to kg CO2e for HFCs and PFCs unspecified, consider
@@ -404,36 +400,27 @@ def process_mrio_data(year):
     '''
     Wrapper function to call correct MRIO processing function
     '''
-    if source == "exiobase":
-        process_exiobase(year_start=year, year_end=year, download=True)
-    elif source == "ceda":
-        process_ceda(year_start=year, year_end=year)
-    else:
-        raise ValueError(f"Download and processing not supported for source: {source}")
+    fxn = extract_function_from_config('process_function')
+    fxn(year_start=year, year_end=year)
 
 
 def clean_mrio_M_matrix(M, fields_to_rename):
     '''
     Wrapper function to call correct M matrix cleaning function for MRIO
     '''
-    if source == "exiobase":
-        return clean_exiobase_M_matrix(M, fields_to_rename)
-    elif source == "ceda":
-        return clean_ceda_M_matrix(M, fields_to_rename)
-    else:
-        raise ValueError(f"Received unsupported source: {source}")
+    fxn = extract_function_from_config('clean_M_function')
+    return fxn(M, fields_to_rename)
 
 
 def clean_mrio_trade_data(df):
     '''
     Wrapper function to correctly clean the MRIO bilateral trade data
     '''
-    if source == "exiobase":
-        return df.filter(['US']).reset_index()
-    elif source == "ceda":
-        return df
+    if 'clean_trade_function' in config:
+        fxn = extract_function_from_config('clean_trade_function')
+        return fxn(df)
     else:
-        raise ValueError(f"Received unsupported source: {source}")
+        return df
 
 
 def calc_contribution_coefficients(df, schema=2012):
@@ -633,6 +620,23 @@ def calculate_and_store_TiVA_approach(multiplier_df,
     imports_multipliers_td.to_csv(
         out_Path / f'US_detail_import_factors_TiVA_approach_{source}_{year}_{schema[-2:]}sch.csv',
         index=False)
+
+
+def extract_function_from_config(fkey):
+    source_fxn = config.get(fkey).split('/')
+    try:
+        module = __import__(source_fxn[0])
+    except ModuleNotFoundError:
+        raise ModuleNotFoundError(f'No module named "{source_fxn[0]}". '
+                                  f'{fkey} must contain the '
+                                  'source module for the function. '
+                                  'For example: '
+                                  '"download_exiobase/process_exiobase"')
+    fxn = getattr(module, source_fxn[1])
+    if callable(fxn):
+        return fxn
+    else:
+        raise KeyError(f'Error parsing {fkey} key')
 
 
 #%%

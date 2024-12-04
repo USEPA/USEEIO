@@ -32,11 +32,12 @@ def main(**kwargs):
     aliases = set(pd.read_csv(verPath / "aliases.csv")["Alias"])
     source = kwargs['s'] +".yaml"
 
+    if not (dataPath / source).exists():
+        raise IndexError(f'names file not found: {source}')
+
     with open(dataPath / source, "r") as file:
         names = yaml.safe_load(file)
         names = names.get("names")
-        if not names:
-            raise IndexError(f'names file not found {source}')
 
     names = list(set(names) - aliases)
     print("Your next alias is ... "+ random.choice(names))

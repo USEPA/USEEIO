@@ -15,6 +15,7 @@ The naming pattern is a set sequence of these parts with separator characters th
 {loc}{root} v{major}.{minor}.{patch}-{alias}-{YY}
 ```
 The version number is the major.minor.patch sequence. The version number plus the build identifier follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) for software with some adaptations appropriate for use for a computational model versioning scheme.
+Note that model specficiation files will not include spaces in the file name.
 
 ## Name parts
 The following table defines the parts of a model name.

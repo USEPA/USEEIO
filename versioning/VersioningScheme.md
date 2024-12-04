@@ -6,7 +6,7 @@ These model names are intended to identify a model by version and a set of key c
 They are independent of the software or authors producing the model.
 They are not full model descriptions.
 A named model does not imply that the model has been reviewed or released. 
-Models named and created prior to the advent of the 
+Models named and created prior to the advent of this versioning scheme are not renamed. 
 
 ## Naming pattern
 Model names are composed of parts in a clear pattern.

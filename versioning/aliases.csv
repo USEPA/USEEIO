@@ -1,2 +1,8 @@
-Alias,N or S,C or I,Sector Schema,Model Type,Price Type,IF source,Extentions,Indicators
+Alias,N or S,C or I,Sector Schema,Model Type,Price Type,IEF source,Extentions,Indicators
 redstart,N,C,BEA Detail 2017,EEIO,PRO,CEDA 2024,GHG (GHG_national_YYYYY_m2_v2.0),GHG (IPCC_AR6)
+cherpumple,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHG,GHG
+derby,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHGc,GHG
+kinglet,N,C,BEA Detail 2017,EEIO,PRO,EXIOBASE,,GHG
+kingbird,N,C,BEA Summary 2017,EEIO,PRO,EXIOBASE,,GHG
+cashew,S,C,BEA Summary 2012,EEIO,PRO,n.a.,,"ACID, CRHW, ENRG, ETOX, EUTR, GHG, HAPS, HCAN, HNCN, HRSP, HTOX, JOBS, LAND, OZON, SMOG, VADD, WATR"
+tanager,N,C,"Detail 2012, waste disaggregation",EEIO,PRO,n.a.,,"ACID, CCDD, CMSW, CRHW, ENRG, ETOX, EUTR, GHG, HAPS, HCAN, HNCN, HRSP, HTOX, JOBS, LAND, MNRL, NNRG, OZON, PEST, RNRG, SMOG, VADD, WATR"

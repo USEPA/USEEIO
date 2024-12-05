@@ -1,5 +1,16 @@
 Model,Version,Years,Alias,Modelspec,Excel,RDS,API,JSON,Status
-USEEIO v2.4,2.4.0,2017-2022,redstart,,,,,,draft
+USEEIO v2.4-catbird-17,2.4.0,2017,catbird,,,,,,draft
+USEEIO v2.4-catbird-18,2.4.0,2018,catbird,,,,,,draft
+USEEIO v2.4-catbird-19,2.4.0,2019,catbird,,,,,,draft
+USEEIO v2.4-catbird-20,2.4.0,2020,catbird,,,,,,draft
+USEEIO v2.4-catbird-21,2.4.0,2021,catbird,,,,,,draft
+USEEIO v2.4-catbird-22,2.4.0,2022,catbird,,,,,,draft
+USEEIO v2.4-oriole-17,2.4.0,2017,oriole,,,,,,draft
+USEEIO v2.4-oriole-18,2.4.0,2018,oriole,,,,,,draft
+USEEIO v2.4-oriole-19,2.4.0,2019,oriole,,,,,,draft
+USEEIO v2.4-oriole-20,2.4.0,2020,oriole,,,,,,draft
+USEEIO v2.4-oriole-21,2.4.0,2021,oriole,,,,,,draft
+USEEIO v2.4-oriole-22,2.4.0,2022,oriole,,,,,,draft
 StateEEIO v1.1-GHG-12,1.1.0,2012,cherpumple,[USEEIO-State](https://github.com/USEPA/USEEIO-State/blob/main/model_specs/all_states/StateEEIOv1.1-GHG-12.yml),https://catalog.data.gov/dataset/northeastern-u-s-state-consumption-based-emission-inventories-2012-2020-supporting-files,USEEIO-State,N,N,published
 StateEEIO v1.1-GHG-13,1.1.0,2013,cherpumple,[USEEIO-State](https://github.com/USEPA/USEEIO-State/blob/main/model_specs/all_states/StateEEIOv1.1-GHG-13.yml),https://catalog.data.gov/dataset/northeastern-u-s-state-consumption-based-emission-inventories-2012-2020-supporting-files,USEEIO-State,N,N,published
 StateEEIO v1.1-GHG-14,1.1.0,2014,cherpumple,[USEEIO-State](https://github.com/USEPA/USEEIO-State/blob/main/model_specs/all_states/StateEEIOv1.1-GHG-14.yml),https://catalog.data.gov/dataset/northeastern-u-s-state-consumption-based-emission-inventories-2012-2020-supporting-files,USEEIO-State,N,N,published
@@ -49,7 +60,7 @@ USEEIO v2.3-s-GHG-20,2.3.0,2020,kingbird,https://catalog.data.gov/dataset/useeio
 USEEIO v2.3-s-GHG-21,2.3.0,2021,kingbird,https://catalog.data.gov/dataset/useeio-models-with-import-emission-factors-for-greenhouse-gases-for-2017-2022-from-exiobas,https://catalog.data.gov/dataset/useeio-models-with-import-emission-factors-for-greenhouse-gases-for-2017-2022-from-exiobas,N,N,N,published
 USEEIO v2.3-s-GHG-22,2.3.0,2022,kingbird,https://catalog.data.gov/dataset/useeio-models-with-import-emission-factors-for-greenhouse-gases-for-2017-2022-from-exiobas,https://catalog.data.gov/dataset/useeio-models-with-import-emission-factors-for-greenhouse-gases-for-2017-2022-from-exiobas,N,N,N,published
 USEEIO v2.2.2-GHG,2.2.0,2022,wren,[supply-chain-factors](https://github.com/USEPA/supply-chain-factors/blob/main/model-specs/USEEIOv2.2.22-GHG.yml),N,N,N,N,published
-USEEIO v2.2-s-GEMH-YY,2.2.0,2012-2022,catbird,[USEEIO-Team](https://github.com/USEPA/USEEIO_team/tree/master/model_specs),N,N,N,N,internal
+USEEIO v2.2-s-GEMH-YY,2.2.0,2012-2022,redstart,[USEEIO-Team](https://github.com/USEPA/USEEIO_team/tree/master/model_specs),N,N,N,N,internal
 StateEEIO v1.0-s-12,1.0.0,2012,cashew,[USEEIO-State](https://github.com/USEPA/USEEIO-State/blob/main/model_specs/all_states/StateEEIOv1.0-s-12.yml),https://catalog.data.gov/dataset/useeio-state-models-v1-0-for-2020,USEEIO-State,N,N,published
 StateEEIO v1.0-s-13,1.0.0,2013,cashew,[USEEIO-State](https://github.com/USEPA/USEEIO-State/blob/main/model_specs/all_states/StateEEIOv1.0-s-13.yml),https://catalog.data.gov/dataset/useeio-state-models-v1-0-for-2020,USEEIO-State,N,N,published
 StateEEIO v1.0-s-14,1.0.0,2014,cashew,[USEEIO-State](https://github.com/USEPA/USEEIO-State/blob/main/model_specs/all_states/StateEEIOv1.0-s-14.yml),https://catalog.data.gov/dataset/useeio-state-models-v1-0-for-2020,USEEIO-State,N,N,published

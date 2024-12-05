@@ -1,11 +1,12 @@
 Alias,N or S,C or I,Sector Schema,Model Type,Price Type,IEF source,Extentions,Indicators
-redstart,N,C,BEA Detail 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
+catbird,N,C,BEA Detail 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
+oriole,N,C,BEA Summary 2017,EEI,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
 cherpumple,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHG_state_m1_v2.0.0,GHG
 derby,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHGc_state_[ME]_v2.0.3,GHG
 kinglet,N,C,BEA Detail 2017,EEIO,PRO,EXIOBASE,GHG_national_m2_v2.0.3,GHG
 kingbird,N,C,BEA Summary 2017,EEIO,PRO,EXIOBASE,GHG_national_m1_v2.0.3,GHG
 wren,N,C,BEA Detail 2017,EEIO,PRO,n.a.,GHG_national_m2_v2.0.3,GHG
-catbird,N,C,BEA Summary 2017,EEIO,PRO,n.a.,"GHG_national_m2_v2.0.2, Raw_Material_Extraction_national_v2.0.2, CRHW_national_v2.0.2, Employment_national_2013_v2.0.2","GHG, MF, CRHW, JOBS"
+redstart,N,C,BEA Summary 2017,EEIO,PRO,n.a.,"GHG_national_m2_v2.0.2, Raw_Material_Extraction_national_v2.0.2, CRHW_national_v2.0.2, Employment_national_2013_v2.0.2","GHG, MF, CRHW, JOBS"
 cashew,S,C,BEA Summary 2012,EEIO,PRO,n.a.,"GHG_state_m1_v2.0.0, CAP_HAP_state_m1_v2.0.0","ACID, CRHW, ENRG, ETOX, EUTR, GHG, HAPS, HCAN, HNCN, HRSP, HTOX, JOBS, LAND, OZON, SMOG, VADD, WATR"
 sparrow,N,C,"Detail 2012, waste disaggregation",EEIO,PRO,n.a.,GHG_national_m1_v1.3.1,GHG
 tanager,N,C,"Detail 2012, waste disaggregation",EEIO,PRO,n.a.,NGHGIAM,"ACID, CCDD, CMSW, CRHW, ENRG, ETOX, EUTR, GHG, HAPS, HCAN, HNCN, HRSP, HTOX, JOBS, LAND, MNRL, NNRG, OZON, PEST, RNRG, SMOG, VADD, WATR"

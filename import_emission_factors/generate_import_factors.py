@@ -22,7 +22,7 @@ from download_imports_data import get_imports_data
 #%% Set Parameters for import emission factors
 years = list(range(2017,2023)) # list
 schema = 2017 # int
-source = 'exiobase' # options are 'exiobase', 'ceda'
+source = 'gloria' # options are 'exiobase', 'ceda', 'gloria'
 
 dataPath = Path(__file__).parent / 'data'
 conPath = Path(__file__).parent / 'concordances'
@@ -163,7 +163,7 @@ def df_prepare(df, year):
         .assign(Unit='kg')
         .assign(ReferenceCurrency='Euro')
         .assign(Year=str(year))
-        .assign(PriceType=config.get('price_type'))
+        .assign(PriceType=config['price_type'])
         )
 
     fl = (fedelem.get_flows()

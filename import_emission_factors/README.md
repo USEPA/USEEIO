@@ -1,5 +1,5 @@
-# Generating Import Emission Factors from Exiobase
-To generate import emission factors from exiobase, run the script [generate_import_factors.py](generate_import_factors.py) 
+# Generating Import Emission Factors from an MRIO 
+To generate import emission factors from an MRIO model, the requisite MRIO data and correspondence files must be in place along with helper scripts to process the MRIO, then run the script [generate_import_factors.py](generate_import_factors.py) after changing the basic parameters to specific use of the desired MRIO as the source.
 
 An import factor is created for an environmental flow (e.g., Carbon dioxide) in units of that flow per USD (e.g., kg/USD).
 

@@ -29,7 +29,7 @@ Bolivia,BO,BOL,ROW
 Bosnia and Herzegovina,BA,BIH,EU
 Botswana,BW,BWA,ROW
 Brazil,BR,BRA,ROW
-British Indian Ocean Territory,IO,XAS,ROW
+British Indian Ocean Territory,IO,XAS,APAC
 British Virgin Islands,VG,XAM,ROW
 Brunei,BN,XAS,APAC
 Bulgaria,BG,BGR,EU
@@ -86,7 +86,7 @@ French Polynesia,PF,XAS,APAC
 French Southern and Antarctic Lands,TF,,ROW
 Gabon,GA,GAB,ROW
 Gambia,GM,GMB,ROW
-Gaza Strip administered by Israel,GZ,XAS,ROW
+Gaza Strip administered by Israel,GZ,XAS,APAC
 Georgia,GE,GEO,EU
 Germany,DE,DEU,EU
 Germany (Federal Republic of Germany),DE,DEU,EU
@@ -153,7 +153,7 @@ Moldova (Republic of Moldova),MD,XEU,EU
 Monaco,MC,XEU,EU
 Mongolia,MN,MNG,APAC
 Montenegro,ME,XEU,EU
-Montserrat,MS,XEU,ROW
+Montserrat,MS,XEU,EU
 Morocco,MA,MAR,ROW
 Mozambique,MZ,MOZ,ROW
 Namibia,NA,NAM,ROW
@@ -174,7 +174,7 @@ Oman,OM,OMN,ROW
 Other Africa (International Services Trade),,XAF,ROW
 Other Asia and Pacific (International Services Trade),,XAS,APAC
 Other Europe (International Services Trade),,XEU,EU
-Other Middle East (International Services Trade),,XAS,ROW
+Other Middle East (International Services Trade),,XAS,APAC
 Other South And Central America (International Services Trade),,XAM,ROW
 Other Western Hemisphere,,,ROW
 "Other Western Hemisphere, Other (International Services Trade)",,,ROW
@@ -204,7 +204,7 @@ Sao Tome and Principe,ST,XAF,ROW
 Saudi Arabia,SA,SAU,ROW
 Senegal,SN,SEN,ROW
 Serbia,RS,SRB,EU
-Seychelles,SC,XAS,ROW
+Seychelles,SC,XAS,APAC
 Sierra Leone,SL,SLE,ROW
 Singapore,SG,SGP,APAC
 Sint Maarten,SX,XAM,ROW
@@ -247,11 +247,11 @@ United Kingdom,GB,GBR,EU
 United States,US,USA,US
 Uruguay,UY,URY,ROW
 Uzbekistan,UZ,UZB,EU
-Vanuatu,VU,XAM,APAC
+Vanuatu,VU,XAM,ROW
 Venezuela,VE,VEN,ROW
 Vietnam,VN,VNM,APAC
 Wallis and Futuna,WF,XAS,APAC
-West Bank administered by Israel,WE,XAS,ROW
+West Bank administered by Israel,WE,XAS,APAC
 Yemen (Republic of Yemen),YE,DYE,ROW
 Zambia,ZM,ZMB,ROW
 Zimbabwe,ZW,ZWE,ROW

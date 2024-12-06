@@ -1,257 +1,257 @@
-Country,ISO Code,CountryCode,Region
-Afghanistan,AF,AFG,APAC
-Africa,,,
-Albania,AL,ALB,EU
-Algeria,DZ,DZA,ROW
-All countries,,,
-Andorra,AD,AND,EU
-Angola,AO,AGO,ROW
-Anguilla,AI,AIA,ROW
-Antigua and Barbuda,AG,ATG,ROW
-Argentina,AR,ARG,ROW
-Armenia,AM,ARM,EU
-Aruba,AW,ABW,ROW
-Asia and Pacific,,,
-Australia,AU,AUS,APAC
-Austria,AT,AUT,EU
-Azerbaijan,AZ,AZE,EU
-Bahamas,BS,BHS,ROW
-Bahrain,BH,BHR,ROW
-Bangladesh,BD,BGD,APAC
-Barbados,BB,BRB,ROW
-Belarus,BY,BLR,EU
-Belgium,BE,BEL,EU
-Belize,BZ,BLZ,ROW
-Benin,BJ,BEN,ROW
-Bermuda,BM,BMU,ROW
-Bhutan,BT,BTN,APAC
-Bolivia,BO,BOL,ROW
-Bosnia and Herzegovina,BA,BIH,EU
-Botswana,BW,BWA,ROW
-Brazil,BR,BRA,ROW
-British Indian Ocean Territory,IO,IOT,ROW
-British Virgin Islands,VG,VGB,ROW
-Brunei,BN,BRN,APAC
-Bulgaria,BG,BGR,EU
-Burkina Faso,BF,BFA,ROW
-Burma (Myanmar),MM,MMR,APAC
-Burundi,BI,BDI,APAC
-Cabo Verde,CV,CPV,ROW
-CAFTA-DR countries,,,
-Cambodia,KH,KHM,APAC
-Cameroon,CM,CMR,ROW
-Canada,CA,CAN,CA
-Cayman Islands,KY,CYM,ROW
-Central African Republic,CF,CAF,ROW
-Chad,TD,TCD,ROW
-Chile,CL,CHL,ROW
-China,CN,CHN,CN
-Christmas Island (in the Indian Ocean),CX,CXR,APAC
-Cocos (Keeling) Islands,CC,CCK,APAC
-Colombia,CO,COL,ROW
-Comoros,KM,COM,ROW
-"Congo, Democratic Republic of the Congo (formerly Za",rCD,ROW,ROW
-"Congo, Republic of the Congo",CG,COG,ROW
-Cook Islands,CK,COK,APAC
-Costa Rica,CR,CRI,ROW
-Cote d'Ivoire,CI,CIV,ROW
-Croatia,HR,HRV,EU
-Cuba,CU,CUB,ROW
-Curacao,CW,CUW,ROW
-Cyprus,CY,CYP,EU
-Czech Republic,CZ,CZE,EU
-Denmark,DK,DNK,EU
-"Denmark, except Greenland",DK,DNK,EU
-Djibouti,DJ,DJI,ROW
-Dominica,DM,DMA,ROW
-Dominican Republic,DO,DOM,ROW
-Ecuador,EC,ECU,ROW
-Egypt,EG,EGY,ROW
-El Salvador,SV,SLV,ROW
-Equatorial Guinea,GQ,GNQ,ROW
-Eritrea,ER,ERI,ROW
-Estonia,EE,EST,EU
-Eswatini,SZ,SWZ,ROW
-Ethiopia,ET,ETH,ROW
-Euro area,,,
-Europe,,,
-European Union,,,
-Falkland Islands (Islas Malvinas),FK,FLK,ROW
-Faroe Islands,FO,FRO,EU
-Fiji,FJ,FJI,APAC
-Finland,FI,FIN,EU
-France,FR,FRA,EU
-French Guiana,GF,GUF,ROW
-French Polynesia,PF,PYF,APAC
-French Southern and Antarctic Lands,TF,ATF,ROW
-Gabon,GA,GAB,ROW
-Gambia,GM,GMB,ROW
-Gaza Strip administered by Israel,GZ,ROW,ROW
-Georgia,GE,GEO,EU
-Germany,DE,DEU,EU
-Germany (Federal Republic of Germany),DE,DEU,EU
-Ghana,GH,GHA,ROW
-Gibraltar,GI,GIB,EU
-Greece,GR,GRC,EU
-Greenland,GL,GRL,EU
-Grenada,GD,GRD,ROW
-Guadeloupe,GP,GLP,ROW
-Guatemala,GT,GTM,ROW
-Guinea,GN,GIN,ROW
-Guinea-Bissau,GW,GNB,ROW
-Guyana,GY,GUY,ROW
-Haiti,HT,HTI,ROW
-Heard Island and McDonald Islands,HM,HMD,APAC
-Holy See (Vatican City),VA,VAT,EU
-Honduras,HN,HND,ROW
-Hong Kong,HK,HKG,APAC
-Hungary,HU,HUN,EU
-Iceland,IS,ISL,EU
-India,IN,IND,APAC
-Indonesia,ID,IDN,APAC
-International organizations and unallocated,,,
-Iran,IR,IRN,ROW
-Iraq,IQ,IRQ,ROW
-Ireland,IE,IRL,EU
-Israel,IL,ISR,ROW
-Italy,IT,ITA,EU
-Jamaica,JM,JAM,ROW
-Japan,JP,JPN,JP
-Jordan,JO,JOR,ROW
-Kazakhstan,KZ,KAZ,EU
-Kenya,KE,KEN,ROW
-Kiribati,KI,KIR,APAC
-Kosovo,KV,ROW,ROW
-Kuwait,KW,KWT,ROW
-Kyrgyzstan,KG,KGZ,EU
-Laos (Lao People's Democratic Republic),LA,LAO,APAC
-Latin America and Other Western Hemisphere,,,
-Latvia,LV,LVA,EU
-Lebanon,LB,LBN,ROW
-Lesotho,LS,LSO,ROW
-Liberia,LR,LBR,ROW
-Libya,LY,LBY,ROW
-Liechtenstein,LI,LIE,EU
-Lithuania,LT,LTU,EU
-Luxembourg,LU,LUX,EU
-Macao,MO,MAC,APAC
-Madagascar,MG,MDG,ROW
-Malawi,MW,MWI,ROW
-Malaysia,MY,MYS,APAC
-Maldives,MV,MDV,APAC
-Mali,ML,MLI,ROW
-Malta,MT,MLT,EU
-Marshall Islands,MH,MHL,APAC
-Martinique,MQ,MTQ,ROW
-Mauritania,MR,MRT,ROW
-Mauritius,MU,MUS,ROW
-Mayotte,YT,MYT,ROW
-Mexico,MX,MEX,MX
-"Micronesia, Federated States of",FM,FSM,APAC
-Middle East,,,
-Moldova (Republic of Moldova),MD,MDA,EU
-Monaco,MC,MCO,EU
-Mongolia,MN,MNG,APAC
-Montenegro,ME,MNE,EU
-Montserrat,MS,MSR,ROW
-Morocco,MA,MAR,ROW
-Mozambique,MZ,MOZ,ROW
-Namibia,,,ROW
-Nauru,NR,NRU,APAC
-Nepal,NP,NPL,APAC
-Netherlands,NL,NLD,EU
-New Caledonia,NC,NCL,APAC
-New Zealand,NZ,NZL,APAC
-Nicaragua,NI,NIC,ROW
-Niger,NE,NER,ROW
-Nigeria,NG,NGA,ROW
-Niue,NU,NIU,APAC
-Norfolk Island,NF,NFK,APAC
-North Korea (Democratic People's Republic of Korea),KP,PRK,APAC
-North Macedonia,MK,MKD,EU
-Norway,NO,NOR,EU
-Oman,OM,OMN,ROW
-Other Africa (International Services Trade),,,ROW
-Other Asia and Pacific (International Services Trade),,,APAC
-Other Europe (International Services Trade),,,EU
-Other Middle East (International Services Trade),,,ROW
-Other South And Central America (International Services Trade),,,ROW
-Other Western Hemisphere,,,ROW
-"Other Western Hemisphere, Other (International Services Trade)",,,ROW
-Pakistan,PK,PAK,APAC
-Palau,PW,PLW,APAC
-Panama,PA,PAN,ROW
-Papua New Guinea,PG,PNG,APAC
-Paraguay,PY,PRY,ROW
-Peru,PE,PER,ROW
-Philippines,PH,PHL,APAC
-Pitcairn Islands,PN,PCN,APAC
-Poland,PL,POL,EU
-Portugal,PT,PRT,EU
-Qatar,QA,QAT,ROW
-Reunion,RE,REU,ROW
-Romania,RO,ROU,EU
-Russia,RU,RUS,EU
-Rwanda,RW,RWA,ROW
-Saint Helena,SH,SHN,ROW
-Saint Kitts and Nevis,KN,KNA,ROW
-Saint Lucia,LC,LCA,ROW
-Saint Pierre and Miquelon,PM,SPM,ROW
-Saint Vincent and the Grenadines,VC,VCT,ROW
-Samoa (Western Samoa),WS,WSM,APAC
-San Marino,SM,SMR,EU
-Sao Tome and Principe,ST,STP,ROW
-Saudi Arabia,SA,SAU,ROW
-Senegal,SN,SEN,ROW
-Serbia,RS,SRB,EU
-Seychelles,SC,SYC,ROW
-Sierra Leone,SL,SLE,ROW
-Singapore,SG,SGP,APAC
-Sint Maarten,SX,SXM,ROW
-Slovakia,SK,SVK,EU
-Slovenia,SI,SVN,EU
-Solomon Islands,SB,SLB,APAC
-Somalia,SO,SOM,ROW
-South Africa,ZA,ZAF,ROW
-South and Central America,,,
-South Korea,KR,KOR,APAC
-South Korea (Republic of Korea),KR,KOR,APAC
-South Sudan,SS,SSD,ROW
-Spain,ES,ESP,EU
-Sri Lanka,LK,LKA,APAC
-Sudan,SD,SDN,ROW
-Suriname,SR,SUR,ROW
-Svalbard and Jan Mayen,SJ,SJM,EU
-Sweden,SE,SWE,EU
-Switzerland,CH,CHE,EU
-Syria (Syrian Arab Republic),SY,SYR,ROW
-Taiwan,TW,TWN,APAC
-Tajikistan,TJ,TJK,EU
-Tanzania (United Republic of Tanzania),TZ,TZA,ROW
-Thailand,TH,THA,APAC
-Timor-Leste,TL,TLS,APAC
-Togo,TG,TGO,ROW
-Tokelau,TK,TKL,APAC
-Tonga,TO,TON,APAC
-Trinidad and Tobago,TT,TTO,ROW
-Tunisia,TN,TUN,ROW
-Turkey,TR,TUR,EU
-Turkmenistan,TM,TKM,EU
-Turks and Caicos Islands,TC,TCA,ROW
-Tuvalu,TV,TUV,APAC
-Uganda,UG,UGA,ROW
-Ukraine,UA,UKR,EU
-United Arab Emirates,AE,ARE,ROW
-United Kingdom,GB,GBR,EU
-"United Kingdom Islands, Caribbean",,,
-United States,US,USA,US
-Uruguay,UY,URY,ROW
-Uzbekistan,UZ,UZB,EU
-Vanuatu,VU,VUT,APAC
-Venezuela,VE,VEN,ROW
-Vietnam,VN,VNM,APAC
-Wallis and Futuna,WF,WLF,APAC
-West Bank administered by Israel,WE,ROW,ROW
-Yemen (Republic of Yemen),YE,YEM,ROW
-Zambia,ZM,ZMB,ROW
-Zimbabwe,ZW,ZWE,ROW
+Country,ISO Code,CountryCode
+Afghanistan,AF,AFG
+Africa,,
+Albania,AL,ALB
+Algeria,DZ,DZA
+All countries,,
+Andorra,AD,AND
+Angola,AO,AGO
+Anguilla,AI,AIA
+Antigua and Barbuda,AG,ATG
+Argentina,AR,ARG
+Armenia,AM,ARM
+Aruba,AW,ABW
+Asia and Pacific,,
+Australia,AU,AUS
+Austria,AT,AUT
+Azerbaijan,AZ,AZE
+Bahamas,BS,BHS
+Bahrain,BH,BHR
+Bangladesh,BD,BGD
+Barbados,BB,BRB
+Belarus,BY,BLR
+Belgium,BE,BEL
+Belize,BZ,BLZ
+Benin,BJ,BEN
+Bermuda,BM,BMU
+Bhutan,BT,BTN
+Bolivia,BO,BOL
+Bosnia and Herzegovina,BA,BIH
+Botswana,BW,BWA
+Brazil,BR,BRA
+British Indian Ocean Territory,IO,IOT
+British Virgin Islands,VG,VGB
+Brunei,BN,BRN
+Bulgaria,BG,BGR
+Burkina Faso,BF,BFA
+Burma (Myanmar),MM,MMR
+Burundi,BI,BDI
+Cabo Verde,CV,CPV
+CAFTA-DR countries,,
+Cambodia,KH,KHM
+Cameroon,CM,CMR
+Canada,CA,CAN
+Cayman Islands,KY,CYM
+Central African Republic,CF,CAF
+Chad,TD,TCD
+Chile,CL,CHL
+China,CN,CHN
+Christmas Island (in the Indian Ocean),CX,CXR
+Cocos (Keeling) Islands,CC,CCK
+Colombia,CO,COL
+Comoros,KM,COM
+"Congo, Democratic Republic of the Congo (formerly Za",rCD,ROW
+"Congo, Republic of the Congo",CG,COG
+Cook Islands,CK,COK
+Costa Rica,CR,CRI
+Cote d'Ivoire,CI,CIV
+Croatia,HR,HRV
+Cuba,CU,CUB
+Curacao,CW,CUW
+Cyprus,CY,CYP
+Czech Republic,CZ,CZE
+Denmark,DK,DNK
+"Denmark, except Greenland",DK,DNK
+Djibouti,DJ,DJI
+Dominica,DM,DMA
+Dominican Republic,DO,DOM
+Ecuador,EC,ECU
+Egypt,EG,EGY
+El Salvador,SV,SLV
+Equatorial Guinea,GQ,GNQ
+Eritrea,ER,ERI
+Estonia,EE,EST
+Eswatini,SZ,SWZ
+Ethiopia,ET,ETH
+Euro area,,
+Europe,,
+European Union,,
+Falkland Islands (Islas Malvinas),FK,FLK
+Faroe Islands,FO,FRO
+Fiji,FJ,FJI
+Finland,FI,FIN
+France,FR,FRA
+French Guiana,GF,GUF
+French Polynesia,PF,PYF
+French Southern and Antarctic Lands,TF,ATF
+Gabon,GA,GAB
+Gambia,GM,GMB
+Gaza Strip administered by Israel,GZ,ROW
+Georgia,GE,GEO
+Germany,DE,DEU
+Germany (Federal Republic of Germany),DE,DEU
+Ghana,GH,GHA
+Gibraltar,GI,GIB
+Greece,GR,GRC
+Greenland,GL,GRL
+Grenada,GD,GRD
+Guadeloupe,GP,GLP
+Guatemala,GT,GTM
+Guinea,GN,GIN
+Guinea-Bissau,GW,GNB
+Guyana,GY,GUY
+Haiti,HT,HTI
+Heard Island and McDonald Islands,HM,HMD
+Holy See (Vatican City),VA,VAT
+Honduras,HN,HND
+Hong Kong,HK,HKG
+Hungary,HU,HUN
+Iceland,IS,ISL
+India,IN,IND
+Indonesia,ID,IDN
+International organizations and unallocated,,
+Iran,IR,IRN
+Iraq,IQ,IRQ
+Ireland,IE,IRL
+Israel,IL,ISR
+Italy,IT,ITA
+Jamaica,JM,JAM
+Japan,JP,JPN
+Jordan,JO,JOR
+Kazakhstan,KZ,KAZ
+Kenya,KE,KEN
+Kiribati,KI,KIR
+Kosovo,KV,ROW
+Kuwait,KW,KWT
+Kyrgyzstan,KG,KGZ
+Laos (Lao People's Democratic Republic),LA,LAO
+Latin America and Other Western Hemisphere,,
+Latvia,LV,LVA
+Lebanon,LB,LBN
+Lesotho,LS,LSO
+Liberia,LR,LBR
+Libya,LY,LBY
+Liechtenstein,LI,LIE
+Lithuania,LT,LTU
+Luxembourg,LU,LUX
+Macao,MO,MAC
+Madagascar,MG,MDG
+Malawi,MW,MWI
+Malaysia,MY,MYS
+Maldives,MV,MDV
+Mali,ML,MLI
+Malta,MT,MLT
+Marshall Islands,MH,MHL
+Martinique,MQ,MTQ
+Mauritania,MR,MRT
+Mauritius,MU,MUS
+Mayotte,YT,MYT
+Mexico,MX,MEX
+"Micronesia, Federated States of",FM,FSM
+Middle East,,
+Moldova (Republic of Moldova),MD,MDA
+Monaco,MC,MCO
+Mongolia,MN,MNG
+Montenegro,ME,MNE
+Montserrat,MS,MSR
+Morocco,MA,MAR
+Mozambique,MZ,MOZ
+Namibia,,
+Nauru,NR,NRU
+Nepal,NP,NPL
+Netherlands,NL,NLD
+New Caledonia,NC,NCL
+New Zealand,NZ,NZL
+Nicaragua,NI,NIC
+Niger,NE,NER
+Nigeria,NG,NGA
+Niue,NU,NIU
+Norfolk Island,NF,NFK
+North Korea (Democratic People's Republic of Korea),KP,PRK
+North Macedonia,MK,MKD
+Norway,NO,NOR
+Oman,OM,OMN
+Other Africa (International Services Trade),,
+Other Asia and Pacific (International Services Trade),,
+Other Europe (International Services Trade),,
+Other Middle East (International Services Trade),,
+Other South And Central America (International Services Trade),,
+Other Western Hemisphere,,
+"Other Western Hemisphere, Other (International Services Trade)",,
+Pakistan,PK,PAK
+Palau,PW,PLW
+Panama,PA,PAN
+Papua New Guinea,PG,PNG
+Paraguay,PY,PRY
+Peru,PE,PER
+Philippines,PH,PHL
+Pitcairn Islands,PN,PCN
+Poland,PL,POL
+Portugal,PT,PRT
+Qatar,QA,QAT
+Reunion,RE,REU
+Romania,RO,ROU
+Russia,RU,RUS
+Rwanda,RW,RWA
+Saint Helena,SH,SHN
+Saint Kitts and Nevis,KN,KNA
+Saint Lucia,LC,LCA
+Saint Pierre and Miquelon,PM,SPM
+Saint Vincent and the Grenadines,VC,VCT
+Samoa (Western Samoa),WS,WSM
+San Marino,SM,SMR
+Sao Tome and Principe,ST,STP
+Saudi Arabia,SA,SAU
+Senegal,SN,SEN
+Serbia,RS,SRB
+Seychelles,SC,SYC
+Sierra Leone,SL,SLE
+Singapore,SG,SGP
+Sint Maarten,SX,SXM
+Slovakia,SK,SVK
+Slovenia,SI,SVN
+Solomon Islands,SB,SLB
+Somalia,SO,SOM
+South Africa,ZA,ZAF
+South and Central America,,
+South Korea,KR,KOR
+South Korea (Republic of Korea),KR,KOR
+South Sudan,SS,SSD
+Spain,ES,ESP
+Sri Lanka,LK,LKA
+Sudan,SD,SDN
+Suriname,SR,SUR
+Svalbard and Jan Mayen,SJ,SJM
+Sweden,SE,SWE
+Switzerland,CH,CHE
+Syria (Syrian Arab Republic),SY,SYR
+Taiwan,TW,TWN
+Tajikistan,TJ,TJK
+Tanzania (United Republic of Tanzania),TZ,TZA
+Thailand,TH,THA
+Timor-Leste,TL,TLS
+Togo,TG,TGO
+Tokelau,TK,TKL
+Tonga,TO,TON
+Trinidad and Tobago,TT,TTO
+Tunisia,TN,TUN
+Turkey,TR,TUR
+Turkmenistan,TM,TKM
+Turks and Caicos Islands,TC,TCA
+Tuvalu,TV,TUV
+Uganda,UG,UGA
+Ukraine,UA,UKR
+United Arab Emirates,AE,ARE
+United Kingdom,GB,GBR
+"United Kingdom Islands, Caribbean",,
+United States,US,USA
+Uruguay,UY,URY
+Uzbekistan,UZ,UZB
+Vanuatu,VU,VUT
+Venezuela,VE,VEN
+Vietnam,VN,VNM
+Wallis and Futuna,WF,WLF
+West Bank administered by Israel,WE,ROW
+Yemen (Republic of Yemen),YE,YEM
+Zambia,ZM,ZMB
+Zimbabwe,ZW,ZWE

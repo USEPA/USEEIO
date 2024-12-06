@@ -21,7 +21,6 @@ from generate_import_shares import get_detail_to_summary_useeio_concordance, \
 
 #%% Set Parameters for import emission factors
 years = list(range(2017,2023)) # list
-years = [2019]
 schema = 2017 # int
 source = 'exiobase' # options are 'exiobase', 'ceda'
 

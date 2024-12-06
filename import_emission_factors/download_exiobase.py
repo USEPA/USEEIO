@@ -32,7 +32,7 @@ def process_exiobase(year_start=2012, year_end=2022, download=False):
         # ^^ df with gross total imports and exports per sector and region
         d['Bilateral Trade'] = trade[0]
         # ^^ df with rows: exporting country and sector, columns: importing countries
-        pkl.dump(d, open(resource_Path / f'exio_all_resources_{y}.pkl', 'wb'))
+        pkl.dump(d, open(resource_Path / f'exiobase_all_resources_{y}.pkl', 'wb'))
 
 if __name__ == '__main__':
     process_exiobase(year_start = 2019, year_end=2019, download=True)

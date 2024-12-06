@@ -17,7 +17,7 @@
 | USEEIO_Detail_2012 | Assigned USEEIO code from the 2012 schema
 | USEEIO_Detail_2017 | Assigned USEEIO code from the 2017 schema
 
-## [EXIOBASE Country/Region to BEA Service, Census Goods and TiVA trade region Concordance](exio_country_concordance.csv)
+## [EXIOBASE Country/Region to BEA Service, Census Goods and TiVA trade region Concordance](exiobase_country_concordance.csv)
 
 | Field | Description
 | --- | ---

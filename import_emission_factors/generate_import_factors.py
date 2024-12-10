@@ -1,6 +1,6 @@
 """
 Generates import factors from selected MRIO.
-Current options are: EXIOBASE
+Current options are: EXIOBASE, CEDA
 """
 
 import pickle as pkl

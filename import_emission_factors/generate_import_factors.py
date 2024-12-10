@@ -16,8 +16,8 @@ from esupy.dqi import get_weighted_average
 # add path to subfolder for importing modules
 path_proj = Path(__file__).parents[1]
 sys.path.append(str(path_proj / 'import_emission_factors'))  # accepts str, not pathlib obj
-from download_imports_data import get_imports_data
-
+from generate_import_shares import get_detail_to_summary_useeio_concordance, \
+    generate_import_shares
 
 #%% Set Parameters for import emission factors
 years = list(range(2017,2023)) # list
@@ -49,22 +49,10 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
     '''
     for year in years:
         useeio_corr = get_detail_to_summary_useeio_concordance(schema=schema)
-        # Country imports by detail sector
-        imports = get_imports_data(year=year, schema=schema)
-        if len(imports.query('`Import Quantity` <0')) > 0:
-            print('WARNING: negative import values...')
-            imports = imports.query('`Import Quantity` >= 0').reset_index(drop=True)
-        if sum(imports.duplicated(['Country', 'BEA Detail'])) > 0:
-            print('Error calculating country coefficients by detail sector')
-
-        elec = get_electricity_imports(year)
-        imports = pd.concat([imports, elec],ignore_index=True)
-        imports = imports.merge(useeio_corr, how='left', on='BEA Detail')
-        imports = map_imports_to_regions(imports)
-        imports = calc_contribution_coefficients(imports, schema=schema)
-        ## ^^ Country contribution coefficients by sector
-        imports.to_csv(out_Path / f'import_shares_{source}_{year}.csv',
-                       index=False)
+        if not (out_Path / f'import_shares_{year}.csv').exists():
+            generate_import_shares(year, schema)
+        imports = pd.read_csv(out_Path / f'import_shares_{year}.csv')
+        imports = map_mrio_countires(imports)
 
         ## Generate country specific emission factors by BEA sector weighted
         ## by exports to US when sector mappings are not clean
@@ -94,7 +82,7 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
         # INSERT HERE TO REVIEW MRIO SECTOR CONTRIBUTIONS WITHIN A COUNTRY
         # Weight MRIO sectors within BEA sectors according to trade
         mrio_df = mrio_df.drop(columns=['MRIO Sector','Year'])
-        agg_cols = ['BEA Detail', 'CountryCode', 'Region', 'BaseIOSchema']
+        agg_cols = ['BEA Detail', 'CountryCode', 'BaseIOSchema']
         cols = [c for c in mrio_df.columns if c not in ([export_field] + agg_cols)]
         agg_dict = {col: 'mean' if col in cols else 'sum'
                     for col in cols + [export_field]}
@@ -130,7 +118,7 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
                     )
         mrio_country_names = pd.read_csv(dataPath / f'{source}_country_names.csv')
         multiplier_df = (agg.reset_index(drop=True).drop(columns=export_field)
-                            .merge(imports_agg.drop(columns=['Unit', 'Region']),
+                            .merge(imports_agg.drop(columns=['Unit']),
                                    how='left',
                                    on=['CountryCode', 'BEA Detail', 'BEA Summary'])
                             .merge(mrio_country_names, on='CountryCode', validate='m:1')
@@ -219,30 +207,6 @@ def get_tiva_data(year):
         ri_df = pd.concat([ri_df, ri_r], axis=1)
 
     return ri_df
-
-
-def get_electricity_imports(year):
-    url = 'https://www.eia.gov/electricity/annual/xls/epa_02_14.xlsx'
-    sheet = 'epa_02_14'
-    c_map = {'Mexico':'MX','Canada':'CA'}
-    df = pd.read_excel(url, sheet_name=sheet,usecols=[0,1,3],
-                       skiprows=[0,1,2,], skipfooter=1)
-    df.columns.values[1] = 'Canada'
-    df.columns.values[2] = 'Mexico'
-    df['Year'] = df['Year'].astype(int)
-    df_y = df.loc[df['Year']==year]
-    df_y = pd.melt(df_y, id_vars=['Year'],value_vars=['Mexico','Canada'])
-    df_y = df_y.rename(columns={'variable':'Country',
-                                'value':'Import Quantity'})
-    df_y = (df_y.assign(Unit='MWh')
-            .assign(BEADetail='221100')
-            .assign(Source='EIA')
-            .rename(columns={'BEADetail':'BEA Detail'}))
-    df_y['CountryCode'] = df_y['Country'].map(c_map)
-    elec = df_y.filter(['BEA Detail', 'Year', 'Import Quantity', 'Unit',
-                        'Source', 'Country'])
-    elec['Year']=elec['Year'].astype(str)
-    return elec
     
 
 def adjust_currency_and_rename_flows_units(df, year):
@@ -312,34 +276,16 @@ def get_mrio_to_useeio_concordance(schema=2012):
     return e_u
 
 
-def get_detail_to_summary_useeio_concordance(schema=2012):
-    '''
-    Opens crosswalk between BEA (summary & detail) and USEEIO (with and 
-    without waste disaggregation) sectors. USEEIO Detail with Waste Disagg 
-    and corresponding summary-level codes. 
-    '''
-    path = conPath / 'useeio_internal_concordance.csv'
-    u_cc = (pd.read_csv(path, dtype=str)
-              .rename(columns={f'USEEIO_Detail_{schema}': 'BEA Detail',
-                               'BEA_Summary': 'BEA Summary'})
-              )
-    u_c = u_cc[['BEA Detail','BEA Summary']]
-    u_c = u_c.drop_duplicates()
-    return u_c
-
-
-def map_imports_to_regions(sr_i):
+def map_mrio_countires(df):
     path = conPath / f'{source}_country_concordance.csv'
-    regions = (pd.read_csv(path, dtype=str,
-                           usecols=['Country', 'CountryCode', 'Region'])
-               )
-    sr_i = sr_i.merge(regions, on='Country', how='left', validate='m:1')
-    missing = (set(sr_i[sr_i.isnull().any(axis=1)]['Country'])
-               - set(regions['Country']))
+    codes = pd.read_csv(path, dtype=str, usecols=['Country', 'CountryCode'])
+    df = df.merge(codes, on='Country', how='left', validate='m:1')
+    missing = (set(df[df.isnull().any(axis=1)]['Country'])
+               - set(codes['Country']))
     if len(missing) > 0:
         print(f'WARNING: missing countries in correspondence: {missing}')
 
-    return sr_i.dropna(subset='CountryCode').reset_index(drop=True)
+    return df.dropna(subset='CountryCode').reset_index(drop=True)
 
 
 def pull_mrio_multipliers(year):
@@ -361,14 +307,6 @@ def pull_mrio_multipliers(year):
     # fields = {**config['fields'], **config['impacts']}
     # M_df = M_df.loc[M_df.index.isin(fields.keys())]
 
-    path = conPath / f'{source}_country_concordance.csv'
-    regions = (pd.read_csv(path, dtype=str,
-                           usecols=['CountryCode', 'Region'])
-               .dropna()
-               .drop_duplicates()
-               )
-    # merge in regions
-    M_df = M_df.merge(regions, how='left', on='CountryCode', validate='m:1')
     return M_df
 
 
@@ -421,78 +359,6 @@ def clean_mrio_trade_data(df):
         return fxn(df)
     else:
         return df
-
-
-def calc_contribution_coefficients(df, schema=2012):
-    '''
-    Appends contribution coefficients to prepared dataframe.
-    '''
-    df = calc_coefficients_bea_detail(df)
-    df = calc_coefficients_bea_summary(df)
-
-    if not(df['cntry_cntrb_to_region_summary'].between(0,1).all() &
-           df['cntry_cntrb_to_region_detail'].between(0,1).all() &
-           df['cntry_cntrb_to_national_summary'].between(0,1).all() &
-           df['cntry_cntrb_to_national_detail'].between(0,1).all()):
-        print('ERROR: Check contribution values outside of [0-1]')
-    return df
-
-
-def calc_coefficients_bea_summary(df):
-    '''
-    Calculate the fractional contributions of each country
-    to total imports by summary sector
-    '''
-    df['cntry_cntrb_to_national_summary'] =(df['Import Quantity']/
-                                              df.groupby(['BEA Summary'])
-                                              ['Import Quantity']
-                                              .transform('sum'))
-
-    df['cntry_cntrb_to_region_summary'] = (df['Import Quantity']/
-                                               df.groupby(['Region',
-                                                           'BEA Summary'])
-                                               ['Import Quantity']
-                                               .transform('sum'))
-
-    ## If no imports identified for summary code,
-    ## where the country == region, set contribution to 1
-    df.loc[(df['cntry_cntrb_to_region_summary'].isna() &
-        (df['CountryCode'] == df['Region'])),
-        'cntry_cntrb_to_region_summary'] = 1
-
-    if (df['cntry_cntrb_to_region_summary'].isnull().sum()) > 0:
-        print('WARNING: some summary sectors missing contributions')
-
-    return df
-
-
-def calc_coefficients_bea_detail(df):
-    '''
-    Calculate the fractional contributions of each country
-    to total imports by detail sector
-    '''
-    df['cntry_cntrb_to_national_detail'] = (df['Import Quantity']/
-                                              df.groupby(['BEA Detail'])
-                                              ['Import Quantity']
-                                              .transform('sum'))
-    
-    df['cntry_cntrb_to_region_detail'] = (df['Import Quantity']/
-                                              df.groupby(['Region',
-                                                          'BEA Detail'])
-                                              ['Import Quantity']
-                                              .transform('sum'))
-    ## If no imports identified for detail code,
-    ## where the country == region, set contribution to 1
-    ## where country != region, set contribution to detail equal for all countries
-    df.loc[(df['cntry_cntrb_to_region_detail'].isna() &
-        (df['CountryCode'] == df['Region'])),
-        'cntry_cntrb_to_region_detail'] = 1
-    df.loc[(df['cntry_cntrb_to_region_detail'].isna() &
-        (df['CountryCode'] != df['Region'])),
-        'cntry_cntrb_to_region_detail'] = (
-            1 / df.groupby(['Region', 'BEA Detail'])
-                ['CountryCode'].transform('count'))
-    return df
 
 
 def calculate_and_store_emission_factors(multiplier_df):

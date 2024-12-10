@@ -1,0 +1,257 @@
+Country,ISO Code,CountryCode
+Afghanistan,AF,WA
+Africa,,
+Albania,AL,WE
+Algeria,DZ,WF
+All countries,,
+Andorra,AD,WE
+Angola,AO,WF
+Anguilla,AI,WL
+Antigua and Barbuda,AG,WL
+Argentina,AR,WL
+Armenia,AM,WE
+Aruba,AW,WL
+Asia and Pacific,,
+Australia,AU,AU
+Austria,AT,AT
+Azerbaijan,AZ,WE
+Bahamas,BS,WL
+Bahrain,BH,WM
+Bangladesh,BD,WA
+Barbados,BB,WL
+Belarus,BY,WE
+Belgium,BE,BE
+Belize,BZ,WL
+Benin,BJ,WF
+Bermuda,BM,WL
+Bhutan,BT,WA
+Bolivia,BO,WL
+Bosnia and Herzegovina,BA,WE
+Botswana,BW,WF
+Brazil,BR,BR
+British Indian Ocean Territory,IO,WF
+British Virgin Islands,VG,WL
+Brunei,BN,WA
+Bulgaria,BG,BG
+Burkina Faso,BF,WF
+Burma (Myanmar),MM,WA
+Burundi,BI,WA
+Cabo Verde,CV,WF
+CAFTA-DR countries,,
+Cambodia,KH,WA
+Cameroon,CM,WF
+Canada,CA,CA
+Cayman Islands,KY,WL
+Central African Republic,CF,WF
+Chad,TD,WF
+Chile,CL,WL
+China,CN,CN
+Christmas Island (in the Indian Ocean),CX,WA
+Cocos (Keeling) Islands,CC,WA
+Colombia,CO,WL
+Comoros,KM,WF
+"Congo, Democratic Republic of the Congo (formerly Za",rCD,WF
+"Congo, Republic of the Congo",CG,WF
+Cook Islands,CK,WA
+Costa Rica,CR,WL
+Cote d'Ivoire,CI,WF
+Croatia,HR,HR
+Cuba,CU,WL
+Curacao,CW,WL
+Cyprus,CY,CY
+Czech Republic,CZ,CZ
+Denmark,DK,DK
+"Denmark, except Greenland",DK,DK
+Djibouti,DJ,WF
+Dominica,DM,WL
+Dominican Republic,DO,WL
+Ecuador,EC,WL
+Egypt,EG,WF
+El Salvador,SV,WL
+Equatorial Guinea,GQ,WF
+Eritrea,ER,WF
+Estonia,EE,EE
+Eswatini,SZ,WF
+Ethiopia,ET,WF
+Euro area,,
+Europe,,
+European Union,,
+Falkland Islands (Islas Malvinas),FK,WL
+Faroe Islands,FO,WE
+Fiji,FJ,WA
+Finland,FI,FI
+France,FR,FR
+French Guiana,GF,WL
+French Polynesia,PF,WA
+French Southern and Antarctic Lands,TF,WF
+Gabon,GA,WF
+Gambia,GM,WF
+Gaza Strip administered by Israel,GZ,WM
+Georgia,GE,WE
+Germany,DE,DE
+Germany (Federal Republic of Germany),DE,DE
+Ghana,GH,WF
+Gibraltar,GI,WE
+Greece,GR,GR
+Greenland,GL,WE
+Grenada,GD,WL
+Guadeloupe,GP,WL
+Guatemala,GT,WL
+Guinea,GN,WF
+Guinea-Bissau,GW,WF
+Guyana,GY,WL
+Haiti,HT,WL
+Heard Island and McDonald Islands,HM,WA
+Holy See (Vatican City),VA,WE
+Honduras,HN,WL
+Hong Kong,HK,WA
+Hungary,HU,HU
+Iceland,IS,WE
+India,IN,IN
+Indonesia,ID,ID
+International organizations and unallocated,,
+Iran,IR,WM
+Iraq,IQ,WM
+Ireland,IE,IE
+Israel,IL,WM
+Italy,IT,IT
+Jamaica,JM,WL
+Japan,JP,JP
+Jordan,JO,WM
+Kazakhstan,KZ,WE
+Kenya,KE,WF
+Kiribati,KI,WA
+Kosovo,KV,WE
+Kuwait,KW,WM
+Kyrgyzstan,KG,WE
+Laos (Lao People's Democratic Republic),LA,WA
+Latin America and Other Western Hemisphere,,
+Latvia,LV,LV
+Lebanon,LB,WM
+Lesotho,LS,WF
+Liberia,LR,WF
+Libya,LY,WF
+Liechtenstein,LI,WE
+Lithuania,LT,LT
+Luxembourg,LU,LU
+Macao,MO,WA
+Madagascar,MG,WF
+Malawi,MW,WF
+Malaysia,MY,WA
+Maldives,MV,WA
+Mali,ML,WF
+Malta,MT,MT
+Marshall Islands,MH,WA
+Martinique,MQ,WL
+Mauritania,MR,WF
+Mauritius,MU,WF
+Mayotte,YT,WF
+Mexico,MX,MX
+"Micronesia, Federated States of",FM,WA
+Middle East,,
+Moldova (Republic of Moldova),MD,WE
+Monaco,MC,WE
+Mongolia,MN,WA
+Montenegro,ME,WE
+Montserrat,MS,WL
+Morocco,MA,WF
+Mozambique,MZ,WF
+Namibia,NA,WF
+Nauru,NR,WA
+Nepal,NP,WA
+Netherlands,NL,NL
+New Caledonia,NC,WA
+New Zealand,NZ,WA
+Nicaragua,NI,WL
+Niger,NE,WF
+Nigeria,NG,WF
+Niue,NU,WA
+Norfolk Island,NF,WA
+North Korea (Democratic People's Republic of Korea),KP,WA
+North Macedonia,MK,WE
+Norway,NO,NO
+Oman,OM,WM
+Other Africa (International Services Trade),,WF
+Other Asia and Pacific (International Services Trade),,WA
+Other Europe (International Services Trade),,WE
+Other Middle East (International Services Trade),,WM
+Other South And Central America (International Services Trade),,WL
+Other Western Hemisphere,,WL
+"Other Western Hemisphere, Other (International Services Trade)",,WL
+Pakistan,PK,WA
+Palau,PW,WA
+Panama,PA,WL
+Papua New Guinea,PG,WA
+Paraguay,PY,WL
+Peru,PE,WL
+Philippines,PH,WA
+Pitcairn Islands,PN,WA
+Poland,PL,PL
+Portugal,PT,PT
+Qatar,QA,WM
+Reunion,RE,WF
+Romania,RO,RO
+Russia,RU,RU
+Rwanda,RW,WF
+Saint Helena,SH,WF
+Saint Kitts and Nevis,KN,WL
+Saint Lucia,LC,WL
+Saint Pierre and Miquelon,PM,WL
+Saint Vincent and the Grenadines,VC,WL
+Samoa (Western Samoa),WS,WA
+San Marino,SM,WE
+Sao Tome and Principe,ST,WF
+Saudi Arabia,SA,WM
+Senegal,SN,WF
+Serbia,RS,WE
+Seychelles,SC,WF
+Sierra Leone,SL,WF
+Singapore,SG,WA
+Sint Maarten,SX,WL
+Slovakia,SK,SK
+Slovenia,SI,SI
+Solomon Islands,SB,WA
+Somalia,SO,WF
+South Africa,ZA,ZA
+South and Central America,,
+South Korea,KR,KR
+South Korea (Republic of Korea),KR,KR
+South Sudan,SS,WF
+Spain,ES,ES
+Sri Lanka,LK,WA
+Sudan,SD,WF
+Suriname,SR,WL
+Svalbard and Jan Mayen,SJ,WE
+Sweden,SE,SE
+Switzerland,CH,CH
+Syria (Syrian Arab Republic),SY,WM
+Taiwan,TW,TW
+Tajikistan,TJ,WE
+Tanzania (United Republic of Tanzania),TZ,WF
+Thailand,TH,WA
+Timor-Leste,TL,WA
+Togo,TG,WF
+Tokelau,TK,WA
+Tonga,TO,WA
+Trinidad and Tobago,TT,WL
+Tunisia,TN,WF
+Turkey,TR,TR
+Turkmenistan,TM,WE
+Turks and Caicos Islands,TC,WL
+Tuvalu,TV,WA
+Uganda,UG,WF
+Ukraine,UA,WE
+United Arab Emirates,AE,WM
+United Kingdom,GB,GB
+"United Kingdom Islands, Caribbean",,
+United States,US,US
+Uruguay,UY,WL
+Uzbekistan,UZ,WE
+Vanuatu,VU,WA
+Venezuela,VE,WL
+Vietnam,VN,WA
+Wallis and Futuna,WF,WA
+West Bank administered by Israel,WE,WM
+Yemen (Republic of Yemen),YE,WM
+Zambia,ZM,WF
+Zimbabwe,ZW,WF

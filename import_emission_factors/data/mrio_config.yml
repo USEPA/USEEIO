@@ -1,0 +1,64 @@
+exiobase:
+  process_function: download_exiobase/process_exiobase
+  clean_M_function: exiobase_helpers/clean_exiobase_M_matrix
+  clean_trade_function: exiobase_helpers/exiobase_clean_trade
+  currency_function: exiobase_helpers/exiobase_adjust_currency
+  calculation_configs:
+    use_industry_output_for_usa_electricity_imports: true
+  price_type: Basic
+  fields:
+    region: CountryCode
+    sector: MRIO Sector
+  exports:
+    US: Exports to US
+  output:
+    indout: Output
+  flows: # if using satellite.M
+    # entries that start with the following keys
+    CO2: Carbon dioxide
+    CH4: Methane
+    HFC: HFCs and PFCs, unspecified # units in kg CO2e
+    N2O: Nitrous oxide
+    PFC: HFCs and PFCs, unspecified # units in kg CO2e
+    SF6: Sulfur hexafluoride
+
+  impacts: # if using impacts.M
+    Carbon dioxide (CO2) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Carbon dioxide
+    Methane (CH4) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Methane
+    Nitrous Oxide (N2O) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Nitrous oxide
+
+  useeio_concordance:
+    file: exio_to_useeio2_commodity_concordance.csv
+    # Exiobase corr modified slightly and flattened from:
+    # https://ntnu.app.box.com/v/EXIOBASEconcordances/file/983477211189
+    fields:
+      USEEIO_Detail___schema__: BEA Detail
+      Exiobase Sector: MRIO Sector
+
+ceda:
+  process_function: process_ceda/process_ceda
+  clean_M_function: ceda_helpers/clean_ceda_M_matrix
+  calculation_configs:
+    use_industry_output_for_usa_electricity_imports: false
+  price_type: Producer
+  fields:
+    country: CountryCode
+    sector: MRIO Sector
+  exports:
+    exports_to_usa: Exports to US
+    exporter: CountryCode
+  output:
+    industry_output: Output
+  flows:
+    CO2: Carbon dioxide
+    CH4: Methane
+    HFCs: HFCs and PFCs, unspecified # units in kg CO2e
+    N2O: Nitrous oxide
+    PFCs: HFCs and PFCs, unspecified # units in kg CO2e
+    SF6: Sulfur hexafluoride
+
+  useeio_concordance:
+    file: ceda_to_useeio_commodity_concordance.csv
+    fields:
+      USEEIO_Detail___schema__: BEA Detail
+      CEDA Sector: MRIO Sector

@@ -1,0 +1,1516 @@
+Region,Sector,Year,Unit,ReferenceCurrency,PriceType,Flowable,Context,FlowUUID,FlowAmount,BaseIOLevel
+APAC,111CA,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.25511664800765166,Summary
+APAC,111CA,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005615287155851517,Summary
+APAC,111CA,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0010109211920155449,Summary
+APAC,111CA,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.9089733839958695e-08,Summary
+APAC,111CA,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004777216679189339,Summary
+APAC,113FF,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.13947603505275724,Summary
+APAC,113FF,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0017640418761944198,Summary
+APAC,113FF,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.595200063933064e-05,Summary
+APAC,113FF,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.0228047337412138e-08,Summary
+APAC,113FF,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0020625377372274177,Summary
+APAC,211,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,5.476237887193669,Summary
+APAC,211,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.22038256803212164,Summary
+APAC,211,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00015906773168004098,Summary
+APAC,211,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.6672080899062336e-07,Summary
+APAC,211,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0059905216951887255,Summary
+APAC,212,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.9393623880747264,Summary
+APAC,212,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.03225015219984859,Summary
+APAC,212,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.739491662905818e-05,Summary
+APAC,212,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.672902661740113e-07,Summary
+APAC,212,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.025657921023872383,Summary
+APAC,213,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.59765170309627,Summary
+APAC,213,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.04531286798873129,Summary
+APAC,213,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.978048464201898e-05,Summary
+APAC,213,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.5845160634080677e-07,Summary
+APAC,213,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008608549427623471,Summary
+APAC,311FT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4203852476510128,Summary
+APAC,311FT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.027889609687141464,Summary
+APAC,311FT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0014589722886197696,Summary
+APAC,311FT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.5194030673462652e-08,Summary
+APAC,311FT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.006248887572993464,Summary
+APAC,313TT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.6073019819840426,Summary
+APAC,313TT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.010643687103531738,Summary
+APAC,313TT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0001958930080092456,Summary
+APAC,313TT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.199654284591594e-08,Summary
+APAC,313TT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.021778928811467806,Summary
+APAC,315AL,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.6569119481772965,Summary
+APAC,315AL,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.01042238000600071,Summary
+APAC,315AL,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0002437962274298477,Summary
+APAC,315AL,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.988938372731796e-08,Summary
+APAC,315AL,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01300710683579999,Summary
+APAC,321,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.50855832344102,Summary
+APAC,321,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.013568961209324026,Summary
+APAC,321,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.000236997088722861,Summary
+APAC,321,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.425860096396312e-08,Summary
+APAC,321,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009927211322037114,Summary
+APAC,322,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.6723234977654268,Summary
+APAC,322,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.004495499159204182,Summary
+APAC,322,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.093644691744702e-05,Summary
+APAC,322,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.043875328458641e-08,Summary
+APAC,322,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.012963502569808142,Summary
+APAC,323,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.36909652577243907,Summary
+APAC,323,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.004646942262230468,Summary
+APAC,323,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.132669335856613e-05,Summary
+APAC,323,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.6464178995856188e-08,Summary
+APAC,323,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.007997895847132808,Summary
+APAC,324,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.7366515103529765,Summary
+APAC,324,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.023331167871053233,Summary
+APAC,324,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.539406660204454e-05,Summary
+APAC,324,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.579902725678423e-08,Summary
+APAC,324,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008542283522023146,Summary
+APAC,325,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.6274502630336176,Summary
+APAC,325,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.010106069257448459,Summary
+APAC,325,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00023387262251547129,Summary
+APAC,325,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.397702189408135e-08,Summary
+APAC,325,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.06590328774804174,Summary
+APAC,326,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4874064556966976,Summary
+APAC,326,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00484460230838406,Summary
+APAC,326,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.374591988220614e-05,Summary
+APAC,326,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.640850441050415e-08,Summary
+APAC,326,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.020159095454728247,Summary
+APAC,327,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.370718894456803,Summary
+APAC,327,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.007613333309520148,Summary
+APAC,327,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.278120302345693e-05,Summary
+APAC,327,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.1061156483349387e-07,Summary
+APAC,327,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.026856490850567582,Summary
+APAC,331,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.7879974178937673,Summary
+APAC,331,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00605192016296829,Summary
+APAC,331,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.211840275247464e-05,Summary
+APAC,331,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.5699469716769047e-07,Summary
+APAC,331,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.013284617115562466,Summary
+APAC,332,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.7322091894899418,Summary
+APAC,332,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.004872212815302522,Summary
+APAC,332,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.2646106758092544e-05,Summary
+APAC,332,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.5529412899801652e-07,Summary
+APAC,332,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.013613122770473132,Summary
+APAC,333,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4765223662405324,Summary
+APAC,333,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003295502001371176,Summary
+APAC,333,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.324226106468318e-05,Summary
+APAC,333,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.562487861226643e-08,Summary
+APAC,333,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010036080730097773,Summary
+APAC,334,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4014587834387255,Summary
+APAC,334,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002639970510753762,Summary
+APAC,334,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.74917242786802e-05,Summary
+APAC,334,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.414122518578197e-08,Summary
+APAC,334,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009600978914482965,Summary
+APAC,335,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4635393770164956,Summary
+APAC,335,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003250184979300365,Summary
+APAC,335,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.08016074587558e-05,Summary
+APAC,335,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.48175622898576e-08,Summary
+APAC,335,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.011046684675413415,Summary
+APAC,3361MV,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3932874020033602,Summary
+APAC,3361MV,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0022144964505113815,Summary
+APAC,3361MV,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.6915073060077626e-05,Summary
+APAC,3361MV,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.037166968646169e-08,Summary
+APAC,3361MV,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.00818009028663285,Summary
+APAC,3364OT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4508430407385817,Summary
+APAC,3364OT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002525084047699629,Summary
+APAC,3364OT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.13241276418668e-05,Summary
+APAC,3364OT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.646839637438348e-08,Summary
+APAC,3364OT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010144672565420312,Summary
+APAC,337,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.3640831893353904,Summary
+APAC,337,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.014667759375106953,Summary
+APAC,337,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0002551615445042825,Summary
+APAC,337,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.031087644741161e-08,Summary
+APAC,337,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01185496479681262,Summary
+APAC,339,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5668417883663535,Summary
+APAC,339,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0042754596095977895,Summary
+APAC,339,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.746553814763682e-05,Summary
+APAC,339,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.5855344537499444e-08,Summary
+APAC,339,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008502560184602874,Summary
+APAC,481,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.6380956645078824,Summary
+APAC,481,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005422641466749726,Summary
+APAC,481,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00011397406507617007,Summary
+APAC,481,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.028369966440162e-08,Summary
+APAC,481,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005917859761890876,Summary
+APAC,487OS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.1624614617657452,Summary
+APAC,487OS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0011745960292107707,Summary
+APAC,487OS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.572013659709076e-05,Summary
+APAC,487OS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.2443537964351183e-08,Summary
+APAC,487OS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0019118346548489037,Summary
+APAC,511,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.25010668754201887,Summary
+APAC,511,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.004412448441163778,Summary
+APAC,511,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.0111824407267347e-05,Summary
+APAC,511,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.987316359030415e-09,Summary
+APAC,511,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002050490753223968,Summary
+APAC,512,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.21048007741552566,Summary
+APAC,512,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003748608376926502,Summary
+APAC,512,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.90219605449709e-05,Summary
+APAC,512,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.651953143270586e-08,Summary
+APAC,512,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004056585357948554,Summary
+APAC,513,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.19533544358053845,Summary
+APAC,513,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0011777864843558238,Summary
+APAC,513,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.3309191354093267e-05,Summary
+APAC,513,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.099377591560465e-09,Summary
+APAC,513,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0015346554349822514,Summary
+APAC,514,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2741957665074964,Summary
+APAC,514,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003076843206570629,Summary
+APAC,514,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.615318738584844e-05,Summary
+APAC,514,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.613984590951909e-09,Summary
+APAC,514,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.001838419161552145,Summary
+APAC,521CI,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.11797664950795322,Summary
+APAC,521CI,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0011715963201409556,Summary
+APAC,521CI,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.2020305416872696e-05,Summary
+APAC,521CI,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.688911136276286e-09,Summary
+APAC,521CI,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0012092600256192858,Summary
+APAC,523,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.11298208192034138,Summary
+APAC,523,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0011328289671731072,Summary
+APAC,523,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.482364656112066e-05,Summary
+APAC,523,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.127404604411196e-09,Summary
+APAC,523,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0012522968344923428,Summary
+APAC,524,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07812853096775109,Summary
+APAC,524,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006919297559741249,Summary
+APAC,524,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.442269959059239e-06,Summary
+APAC,524,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.1094540612212466e-09,Summary
+APAC,524,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.000751714203683145,Summary
+APAC,5411,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.18803233839228278,Summary
+APAC,5411,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00261804826689493,Summary
+APAC,5411,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.5247220420788457e-05,Summary
+APAC,5411,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1786821495262129e-08,Summary
+APAC,5411,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002631532981929513,Summary
+APAC,5412OP,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.1785919195104999,Summary
+APAC,5412OP,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002447919811152229,Summary
+APAC,5412OP,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.455882257315319e-05,Summary
+APAC,5412OP,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1214504240071176e-08,Summary
+APAC,5412OP,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.003063207021637521,Summary
+APAC,5415,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.46229566921654786,Summary
+APAC,5415,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0017429077841980781,Summary
+APAC,5415,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.307476021592825e-05,Summary
+APAC,5415,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.5605206352896645e-09,Summary
+APAC,5415,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0016166008049489232,Summary
+APAC,561,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.19886829872260173,Summary
+APAC,561,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0026178709443839105,Summary
+APAC,561,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.64424225647204e-05,Summary
+APAC,561,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.2071481382662851e-08,Summary
+APAC,561,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0027617052250681795,Summary
+APAC,562,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5486982184073221,Summary
+APAC,562,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.10943940245452594,Summary
+APAC,562,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00013226196562594715,Summary
+APAC,562,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.057807669371762e-08,Summary
+APAC,562,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.00940668576954711,Summary
+APAC,61,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.206229993527368,Summary
+APAC,61,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0015070929553359946,Summary
+APAC,61,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.519809529713779e-05,Summary
+APAC,61,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.8632584627216878e-08,Summary
+APAC,61,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.00197108119886944,Summary
+APAC,711AS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.16515255517534147,Summary
+APAC,711AS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0027349360147080385,Summary
+APAC,711AS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.2731857773887395e-05,Summary
+APAC,711AS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.4171435957586233e-08,Summary
+APAC,711AS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0032895102048099245,Summary
+APAC,81,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.26331788621823954,Summary
+APAC,81,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001884907971351954,Summary
+APAC,81,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.868224070966292e-05,Summary
+APAC,81,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.333238164741695e-08,Summary
+APAC,81,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0037601812547197397,Summary
+APAC,GFE,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.14200500854375717,Summary
+APAC,GFE,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0015702998124839341,Summary
+APAC,GFE,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.8149369663182855e-05,Summary
+APAC,GFE,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.7200752491117e-09,Summary
+APAC,GFE,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002236047948873178,Summary
+APAC,Used,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.7434500932422313,Summary
+APAC,Used,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00678775619885884,Summary
+APAC,Used,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00010472961682996947,Summary
+APAC,Used,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.103445414636167e-08,Summary
+APAC,Used,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005744791083523561,Summary
+CA,111CA,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5149871076059608,Summary
+CA,111CA,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.02265133525547914,Summary
+CA,111CA,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.002151698529936538,Summary
+CA,111CA,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.2543093587349826e-07,Summary
+CA,111CA,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.10724771678737664,Summary
+CA,113FF,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.19986342648909447,Summary
+CA,113FF,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0010081951550295766,Summary
+CA,113FF,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.239713072070232e-05,Summary
+CA,113FF,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.757171470305415e-08,Summary
+CA,113FF,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.021141658607382187,Summary
+CA,211,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.0941428254560814,Summary
+CA,211,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.04313285139249221,Summary
+CA,211,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.0564084712106002e-05,Summary
+CA,211,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.6095962145691655e-07,Summary
+CA,211,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.1025483136566124,Summary
+CA,212,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.6078803614134758,Summary
+CA,212,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003692361065648388,Summary
+CA,212,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.3601443162067522e-05,Summary
+CA,212,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.8627635421720577e-06,Summary
+CA,212,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.5880340449339075,Summary
+CA,213,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.3728126135019836,Summary
+CA,213,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.04893144320481235,Summary
+CA,213,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.0538801419697843e-05,Summary
+CA,213,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.052020534634213e-07,Summary
+CA,213,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.2562401623810258,Summary
+CA,22,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.277337337755505,Summary
+CA,22,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003901575702286734,Summary
+CA,22,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.778899133398947e-05,Summary
+CA,22,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.779680563549286e-08,Summary
+CA,22,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.029839091918063648,Summary
+CA,311FT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.41469546079746994,Summary
+CA,311FT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.007994196657387199,Summary
+CA,311FT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0007320309549146643,Summary
+CA,311FT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.436110785124011e-08,Summary
+CA,311FT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03561000140155402,Summary
+CA,313TT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3280428822633018,Summary
+CA,313TT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0020150469810140607,Summary
+CA,313TT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.3821823774906278e-05,Summary
+CA,313TT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.829490941195645e-08,Summary
+CA,313TT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.016589982294287993,Summary
+CA,315AL,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3269283925672494,Summary
+CA,315AL,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002528263588279293,Summary
+CA,315AL,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.8636131432862355e-05,Summary
+CA,315AL,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.907174515154568e-08,Summary
+CA,315AL,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.016873791604554808,Summary
+CA,321,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3871422358298467,Summary
+CA,321,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003277810386068491,Summary
+CA,321,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.4965708295146485e-05,Summary
+CA,321,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.7946103315069096e-07,Summary
+CA,321,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.08455365927259169,Summary
+CA,322,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.428634863392678,Summary
+CA,322,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0022593537864570774,Summary
+CA,322,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.918708781349007e-05,Summary
+CA,322,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.6319449667740827e-07,Summary
+CA,322,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.06731794837014773,Summary
+CA,323,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.19236576188023738,Summary
+CA,323,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006983328895906794,Summary
+CA,323,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.3368446777684908e-05,Summary
+CA,323,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.3176293803692643e-08,Summary
+CA,323,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008804937034664012,Summary
+CA,324,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5064098218807088,Summary
+CA,324,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.010698415612828333,Summary
+CA,324,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.667661534058015e-05,Summary
+CA,324,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.6507422694913624e-07,Summary
+CA,324,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0714896704029128,Summary
+CA,325,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3937533903823857,Summary
+CA,325,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0022135646687728395,Summary
+CA,325,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.9590560040846155e-05,Summary
+CA,325,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.809339430670562e-07,Summary
+CA,325,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.13692004962633642,Summary
+CA,326,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.26994843316153777,Summary
+CA,326,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0015250313018134148,Summary
+CA,326,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.7514441623484944e-05,Summary
+CA,326,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.495146541544567e-08,Summary
+CA,326,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.016929797519564818,Summary
+CA,327,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.76461914929681,Summary
+CA,327,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0019457962290570384,Summary
+CA,327,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.6169692984222096e-05,Summary
+CA,327,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.5366119784953964e-07,Summary
+CA,327,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.1565114988640525,Summary
+CA,331,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3204843186767999,Summary
+CA,331,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0007896728572115943,Summary
+CA,331,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.337459057035437e-06,Summary
+CA,331,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.459197508543047e-08,Summary
+CA,331,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.024264174574666283,Summary
+CA,332,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.39738186958679017,Summary
+CA,332,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001685665358190656,Summary
+CA,332,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.584049645469407e-05,Summary
+CA,332,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.883797458016269e-08,Summary
+CA,332,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.029739860258217374,Summary
+CA,333,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.26512232244317935,Summary
+CA,333,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0013848546963490126,Summary
+CA,333,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.137802344235548e-05,Summary
+CA,333,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.729913350121695e-08,Summary
+CA,333,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01615284581292665,Summary
+CA,334,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2510772980745716,Summary
+CA,334,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0011631928586021602,Summary
+CA,334,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.3553105268605302e-05,Summary
+CA,334,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.478737719473832e-08,Summary
+CA,334,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.014753738374268572,Summary
+CA,335,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.31520886432341827,Summary
+CA,335,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0014005694785403856,Summary
+CA,335,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.4390907399336445e-05,Summary
+CA,335,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.106995481013555e-08,Summary
+CA,335,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.020263057078182132,Summary
+CA,3361MV,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.26985977465473543,Summary
+CA,3361MV,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0011679612465688104,Summary
+CA,3361MV,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.4008961914188797e-05,Summary
+CA,3361MV,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.835571398351969e-08,Summary
+CA,3361MV,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.013326852681894635,Summary
+CA,3364OT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.240470686299789,Summary
+CA,3364OT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0010761787480255704,Summary
+CA,3364OT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.2997034345581546e-05,Summary
+CA,3364OT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.149044023885282e-08,Summary
+CA,3364OT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.012069589855386661,Summary
+CA,337,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3789695113552388,Summary
+CA,337,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003043068025511506,Summary
+CA,337,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.37967208453499e-05,Summary
+CA,337,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.631474051225231e-07,Summary
+CA,337,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.07564207989806203,Summary
+CA,339,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.24664732064420442,Summary
+CA,339,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0012757777328821058,Summary
+CA,339,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.3777373368787944e-05,Summary
+CA,339,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.809984713149554e-08,Summary
+CA,339,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.015181380298958939,Summary
+CA,481,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.1014923550910984,Summary
+CA,481,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0020824080394566957,Summary
+CA,481,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.241992886456606e-05,Summary
+CA,481,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.6479750502775013e-08,Summary
+CA,481,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009853394056674849,Summary
+CA,487OS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08782267709295696,Summary
+CA,487OS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004630608171374328,Summary
+CA,487OS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.325701607606412e-06,Summary
+CA,487OS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.1821069365439475e-09,Summary
+CA,487OS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0022293330745490328,Summary
+CA,511,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.22788110512348633,Summary
+CA,511,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0010697524619064183,Summary
+CA,511,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.585137924195025e-05,Summary
+CA,511,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.3540013888341406e-08,Summary
+CA,511,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005148173305351731,Summary
+CA,512,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.32267582277446133,Summary
+CA,512,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0012519678336209742,Summary
+CA,512,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.3167492984119405e-05,Summary
+CA,512,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.621135462898839e-08,Summary
+CA,512,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005969792969947595,Summary
+CA,513,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08782267709295696,Summary
+CA,513,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004630608171374328,Summary
+CA,513,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.325701607606412e-06,Summary
+CA,513,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.1821069365439475e-09,Summary
+CA,513,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0022293330745490328,Summary
+CA,514,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.16486159686313268,Summary
+CA,514,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0009206251175424964,Summary
+CA,514,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.1011169217269463e-05,Summary
+CA,514,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1481188324224415e-08,Summary
+CA,514,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0044605517104278,Summary
+CA,521CI,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.06593258371308183,Summary
+CA,521CI,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00044721756201074325,Summary
+CA,521CI,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.096644809689331e-06,Summary
+CA,521CI,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.146062316019901e-09,Summary
+CA,521CI,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002065539013697734,Summary
+CA,523,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07367982684543724,Summary
+CA,523,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004693719991847439,Summary
+CA,523,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.972016977406302e-06,Summary
+CA,523,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.058306771033721e-09,Summary
+CA,523,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0024040116137348817,Summary
+CA,524,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.03534684496898532,Summary
+CA,524,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0003160423965732417,Summary
+CA,524,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.3637467179539341e-06,Summary
+CA,524,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.9314418781470423e-09,Summary
+CA,524,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0011944833893594545,Summary
+CA,5411,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08922684566194232,Summary
+CA,5411,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.000774796551946359,Summary
+CA,5411,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.794137015420675e-06,Summary
+CA,5411,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1095791989740188e-08,Summary
+CA,5411,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004301729458660475,Summary
+CA,5412OP,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.09535583789016364,Summary
+CA,5412OP,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0009413706077011932,Summary
+CA,5412OP,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.945988470677936e-06,Summary
+CA,5412OP,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.2389790652491176e-08,Summary
+CA,5412OP,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004821369494296438,Summary
+CA,5415,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08355538020109074,Summary
+CA,5415,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001129797991531735,Summary
+CA,5415,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.4287156497866225e-06,Summary
+CA,5415,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.2883898618197896e-08,Summary
+CA,5415,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005602154542366832,Summary
+CA,561,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.12254954457708572,Summary
+CA,561,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0008202550561270114,Summary
+CA,561,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.634240158397411e-06,Summary
+CA,561,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1801320296727513e-08,Summary
+CA,561,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004571802129769171,Summary
+CA,562,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.14131808033194165,Summary
+CA,562,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.016611165763396343,Summary
+CA,562,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.6648153568781247e-05,Summary
+CA,562,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.549755921090519e-08,Summary
+CA,562,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.012297026022370946,Summary
+CA,61,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07683399298005497,Summary
+CA,61,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004627098481953699,Summary
+CA,61,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.8405210079646224e-06,Summary
+CA,61,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.769931994436705e-09,Summary
+CA,61,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002636728559557059,Summary
+CA,711AS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.16897670717922708,Summary
+CA,711AS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0008544926064545451,Summary
+CA,711AS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.2251215151366724e-05,Summary
+CA,711AS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.0919862271433942e-08,Summary
+CA,711AS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004157898807973024,Summary
+CA,81,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.1533228422374533,Summary
+CA,81,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0010540121789955335,Summary
+CA,81,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.7184110805985627e-05,Summary
+CA,81,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.992333269631841e-08,Summary
+CA,81,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.00647398879985539,Summary
+CA,GFE,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.062054772360393445,Summary
+CA,GFE,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004720921410750148,Summary
+CA,GFE,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.404034771791413e-06,Summary
+CA,GFE,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.317518946284871e-09,Summary
+CA,GFE,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0025457760787992775,Summary
+CA,Used,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.11376280691834308,Summary
+CA,Used,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0007762195219565539,Summary
+CA,Used,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.41649511750367e-05,Summary
+CA,Used,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.609922536374622e-08,Summary
+CA,Used,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005068348387533784,Summary
+CN,111CA,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2407625267256588,Summary
+CN,111CA,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002666681623595267,Summary
+CN,111CA,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.000500731808779922,Summary
+CN,111CA,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.845222667821502e-08,Summary
+CN,111CA,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004740669366099793,Summary
+CN,113FF,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.05961727986961786,Summary
+CN,113FF,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006836370684749903,Summary
+CN,113FF,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.625490291515054e-05,Summary
+CN,113FF,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.477905502960219e-08,Summary
+CN,113FF,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0021838991973714634,Summary
+CN,211,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.5258031511738606,Summary
+CN,211,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.11332745150364068,Summary
+CN,211,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00013175875007699283,Summary
+CN,211,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.7951506515688225e-07,Summary
+CN,211,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.018068554181501384,Summary
+CN,212,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.382098970795433,Summary
+CN,212,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.011244056220277547,Summary
+CN,212,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00011737815317429943,Summary
+CN,212,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.100951884592077e-07,Summary
+CN,212,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01954487588496683,Summary
+CN,213,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.957880156009777,Summary
+CN,213,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.06110294046788071,Summary
+CN,213,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00012557843964400344,Summary
+CN,213,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.39688692277378e-07,Summary
+CN,213,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.019141719249621155,Summary
+CN,311FT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.43162807647412493,Summary
+CN,311FT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.006464514925598678,Summary
+CN,311FT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.000582580267023898,Summary
+CN,311FT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1678817784935401e-07,Summary
+CN,311FT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009988352465601221,Summary
+CN,313TT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5059046690835717,Summary
+CN,313TT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.006511068031356846,Summary
+CN,313TT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00018657835426255553,Summary
+CN,313TT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1477022315099278e-07,Summary
+CN,313TT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03891325699422005,Summary
+CN,315AL,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5543053495463667,Summary
+CN,315AL,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.006741259784069847,Summary
+CN,315AL,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00018840461310012843,Summary
+CN,315AL,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.0274468817427812e-07,Summary
+CN,315AL,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03189106675441441,Summary
+CN,321,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.8898344727364732,Summary
+CN,321,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0030517996792829953,Summary
+CN,321,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00010863896619551133,Summary
+CN,321,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.01792906564953e-07,Summary
+CN,321,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005039639901174128,Summary
+CN,322,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.0350720737344634,Summary
+CN,322,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00653001752689983,Summary
+CN,322,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00012926302901641342,Summary
+CN,322,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1936699295653814e-07,Summary
+CN,322,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03667605566825583,Summary
+CN,323,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.8171049771779957,Summary
+CN,323,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0047534426203777545,Summary
+CN,323,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.071364254850194e-05,Summary
+CN,323,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.651532361808733e-08,Summary
+CN,323,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03172535025890989,Summary
+CN,324,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.9320244736542513,Summary
+CN,324,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.018905510628047226,Summary
+CN,324,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.690182106577548e-05,Summary
+CN,324,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.075188358540446e-08,Summary
+CN,324,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.013886936878008165,Summary
+CN,325,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.1050399517121037,Summary
+CN,325,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.007322957104125345,Summary
+CN,325,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00014367370473681565,Summary
+CN,325,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.9297004282536717e-07,Summary
+CN,325,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.26267068063836047,Summary
+CN,326,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.585073548136439,Summary
+CN,326,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005059659325701212,Summary
+CN,326,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00011623560772571939,Summary
+CN,326,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.54290929168694e-08,Summary
+CN,326,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.039554480828180846,Summary
+CN,327,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.9451175514784258,Summary
+CN,327,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.010846341991653588,Summary
+CN,327,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0001006038311232795,Summary
+CN,327,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.5565119703628006e-07,Summary
+CN,327,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.031007968388565926,Summary
+CN,331,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.1730437061706234,Summary
+CN,331,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005415933721744931,Summary
+CN,331,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.528228485797049e-05,Summary
+CN,331,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.748368524644575e-08,Summary
+CN,331,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01986221877586536,Summary
+CN,332,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.1000860064360425,Summary
+CN,332,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.004428718599213449,Summary
+CN,332,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.1594226011126e-05,Summary
+CN,332,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.085863732866227e-08,Summary
+CN,332,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.016154661647921974,Summary
+CN,333,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.7352646963348535,Summary
+CN,333,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003895004529290765,Summary
+CN,333,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.0927927241714415e-05,Summary
+CN,333,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.990583469854724e-08,Summary
+CN,333,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.014575595846379385,Summary
+CN,334,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.613406523460474,Summary
+CN,334,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0033285764475756686,Summary
+CN,334,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.0484907841357874e-05,Summary
+CN,334,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.730762836346542e-08,Summary
+CN,334,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.018742842440131167,Summary
+CN,335,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.773185808633027,Summary
+CN,335,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0043081088581567355,Summary
+CN,335,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.076939856089078e-05,Summary
+CN,335,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.522554541402791e-08,Summary
+CN,335,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.016675714664493975,Summary
+CN,3361MV,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.7602940312554316,Summary
+CN,3361MV,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0039695332652102105,Summary
+CN,3361MV,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.39523985104681e-05,Summary
+CN,3361MV,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.764906211132838e-08,Summary
+CN,3361MV,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.014786515535433744,Summary
+CN,3364OT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.7275233445351972,Summary
+CN,3364OT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0038336101694716215,Summary
+CN,3364OT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.246142824039923e-05,Summary
+CN,3364OT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.658557376985095e-08,Summary
+CN,3364OT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.014806573524960287,Summary
+CN,337,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.8039989510349157,Summary
+CN,337,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0036220708621548642,Summary
+CN,337,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00010233134621246941,Summary
+CN,337,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.9606413288659e-08,Summary
+CN,337,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.00948211842891732,Summary
+CN,339,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.616158700945957,Summary
+CN,339,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0042668699574049136,Summary
+CN,339,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.505127644752358e-05,Summary
+CN,339,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.098316917664506e-08,Summary
+CN,339,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.014917341209448355,Summary
+CN,481,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.3613538106027498,Summary
+CN,481,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00429876980790094,Summary
+CN,481,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.725254324015479e-05,Summary
+CN,481,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.352182437616363e-08,Summary
+CN,481,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010358265609906027,Summary
+CN,487OS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.31373981435873305,Summary
+CN,487OS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00193483616696708,Summary
+CN,487OS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.1385413284095076e-05,Summary
+CN,487OS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.827978527380873e-08,Summary
+CN,487OS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0033217685608145937,Summary
+CN,511,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.36226777618365896,Summary
+CN,511,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0027068828904692178,Summary
+CN,511,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.42129122532104e-05,Summary
+CN,511,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.997121245219237e-08,Summary
+CN,511,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.011378842575272085,Summary
+CN,512,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.38745750223621384,Summary
+CN,512,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0031805882015106335,Summary
+CN,512,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.649962138852405e-05,Summary
+CN,512,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.220614022872306e-08,Summary
+CN,512,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.015834339405179438,Summary
+CN,513,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.31373981435873305,Summary
+CN,513,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0019348361669670798,Summary
+CN,513,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.138541328409507e-05,Summary
+CN,513,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.827978527380873e-08,Summary
+CN,513,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0033217685608145937,Summary
+CN,514,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.34483986989762905,Summary
+CN,514,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002387446381547605,Summary
+CN,514,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.8799873215722004e-05,Summary
+CN,514,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.161731217870977e-08,Summary
+CN,514,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008327340804518975,Summary
+CN,521CI,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.21337443314840288,Summary
+CN,521CI,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0016194960854597755,Summary
+CN,521CI,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.230782415105362e-05,Summary
+CN,521CI,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.9218105450127143e-08,Summary
+CN,521CI,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0042716419544557216,Summary
+CN,523,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.23479094641500844,Summary
+CN,523,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0018566964544641745,Summary
+CN,523,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.708668738074073e-05,Summary
+CN,523,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.395521191429519e-08,Summary
+CN,523,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005216443254864345,Summary
+CN,524,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2559697920308323,Summary
+CN,524,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0017912444737389875,Summary
+CN,524,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.883004293595726e-05,Summary
+CN,524,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.8172869585229408e-08,Summary
+CN,524,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.003895160002664012,Summary
+CN,5411,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3642685367099752,Summary
+CN,5411,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0032706606055574656,Summary
+CN,5411,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.448425520972914e-05,Summary
+CN,5411,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.416744834679934e-08,Summary
+CN,5411,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01304214658827905,Summary
+CN,5412OP,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.397278039077925,Summary
+CN,5412OP,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0033633605916561023,Summary
+CN,5412OP,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.690147403580093e-05,Summary
+CN,5412OP,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.3667357612681024e-08,Summary
+CN,5412OP,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.021207294779804528,Summary
+CN,5415,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3352265598509201,Summary
+CN,5415,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0020578136808471078,Summary
+CN,5415,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.018028381638474e-05,Summary
+CN,5415,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.4957856300983967e-08,Summary
+CN,5415,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.006069426100007517,Summary
+CN,561,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3492343943400822,Summary
+CN,561,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0031595316642865313,Summary
+CN,561,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.106723494451355e-05,Summary
+CN,561,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.17896135397146e-08,Summary
+CN,561,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01211349518720908,Summary
+CN,562,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.8846226021663122,Summary
+CN,562,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.04670337166932134,Summary
+CN,562,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.062939608333483e-05,Summary
+CN,562,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.423231395625094e-08,Summary
+CN,562,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009268288143326704,Summary
+CN,61,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.16654571674478574,Summary
+CN,61,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001192724924813534,Summary
+CN,61,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.7976543178021006e-05,Summary
+CN,61,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.55408330974461e-08,Summary
+CN,61,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0033373750262129347,Summary
+CN,711AS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.30423091516300044,Summary
+CN,711AS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002657360472388433,Summary
+CN,711AS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.43442972458596e-05,Summary
+CN,711AS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.249937617487673e-08,Summary
+CN,711AS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.014026996397846679,Summary
+CN,81,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.06244959607281951,Summary
+CN,81,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0003382050906553539,Summary
+CN,81,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.1093902557094528e-05,Summary
+CN,81,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.595346404941957e-09,Summary
+CN,81,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0010258050029750138,Summary
+CN,GFE,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.18892908542969075,Summary
+CN,GFE,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001258487709543264,Summary
+CN,GFE,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.640681635305546e-05,Summary
+CN,GFE,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.4587355512540997e-08,Summary
+CN,GFE,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.003117887398262612,Summary
+CN,Used,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4621592971724435,Summary
+CN,Used,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0032612244063420066,Summary
+CN,Used,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.324323904208338e-05,Summary
+CN,Used,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.1913690234739353e-08,Summary
+CN,Used,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0076329109476713985,Summary
+EU,111CA,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4090260291165278,Summary
+EU,111CA,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.016364846573680727,Summary
+EU,111CA,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0009427776559966598,Summary
+EU,111CA,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.87052706985698e-07,Summary
+EU,111CA,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.031539539841931176,Summary
+EU,113FF,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.623208054317966,Summary
+EU,113FF,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0038801301535063793,Summary
+EU,113FF,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.021452382953574e-05,Summary
+EU,113FF,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.450566602347867e-07,Summary
+EU,113FF,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03084110452451384,Summary
+EU,211,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5392684189773778,Summary
+EU,211,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.030891876350471345,Summary
+EU,211,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.8035532856758424e-05,Summary
+EU,211,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.6359895249927813e-07,Summary
+EU,211,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03244894256425795,Summary
+EU,212,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.8921991441917454,Summary
+EU,212,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005956237501781943,Summary
+EU,212,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.179174059284028e-05,Summary
+EU,212,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.365886119913445e-06,Summary
+EU,212,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.251788417198093,Summary
+EU,213,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,3.077689061521223,Summary
+EU,213,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0921729278303289,Summary
+EU,213,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.67190897435862e-05,Summary
+EU,213,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.707668667355872e-06,Summary
+EU,213,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.10752039605919445,Summary
+EU,311FT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.21398876756893417,Summary
+EU,311FT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005241464969535091,Summary
+EU,311FT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0002915105477016007,Summary
+EU,311FT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.821013382070944e-07,Summary
+EU,311FT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.025319017455888986,Summary
+EU,313TT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3357144419351978,Summary
+EU,313TT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0025987577897352916,Summary
+EU,313TT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.26014686774517e-05,Summary
+EU,313TT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.195372097232514e-08,Summary
+EU,313TT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.021703192346306355,Summary
+EU,315AL,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.1985392583649631,Summary
+EU,315AL,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0023964086071031026,Summary
+EU,315AL,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.831891084075626e-05,Summary
+EU,315AL,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.7106364753263424e-08,Summary
+EU,315AL,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.013188394012862271,Summary
+EU,321,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2695416131233586,Summary
+EU,321,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0022249751987077197,Summary
+EU,321,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.4645537283182244e-05,Summary
+EU,321,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.448878339153614e-07,Summary
+EU,321,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.040914775883983054,Summary
+EU,322,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.29842752216436164,Summary
+EU,322,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002403194319155129,Summary
+EU,322,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.263465366839632e-05,Summary
+EU,322,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.8099336146211042e-07,Summary
+EU,322,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.030208191267709936,Summary
+EU,323,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.1364931653611348,Summary
+EU,323,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00113966223668032,Summary
+EU,323,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.2649753938519599e-05,Summary
+EU,323,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.969604971851358e-08,Summary
+EU,323,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.007391289046105907,Summary
+EU,324,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.8822177761207726,Summary
+EU,324,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.019554228243228108,Summary
+EU,324,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.167465614112224e-05,Summary
+EU,324,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.379819008995536e-07,Summary
+EU,324,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.05657628317284476,Summary
+EU,325,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3605502956952804,Summary
+EU,325,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003029220283936057,Summary
+EU,325,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.46593296755045e-05,Summary
+EU,325,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.237144956081492e-07,Summary
+EU,325,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.040978198290087045,Summary
+EU,326,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.23910093200106441,Summary
+EU,326,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0019347996779367092,Summary
+EU,326,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.6880850893710435e-05,Summary
+EU,326,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.8018375071483195e-07,Summary
+EU,326,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.020607577382826578,Summary
+EU,327,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.7083978263230561,Summary
+EU,327,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0023366252892968392,Summary
+EU,327,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.165681275277804e-05,Summary
+EU,327,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.386771905355383e-07,Summary
+EU,327,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.07875027238214044,Summary
+EU,331,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5406573560500092,Summary
+EU,331,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0037768790397402297,Summary
+EU,331,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.931718985419217e-05,Summary
+EU,331,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.457549615542236e-07,Summary
+EU,331,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03298973630216028,Summary
+EU,332,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.23288537249529087,Summary
+EU,332,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001989897004330508,Summary
+EU,332,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.6545690821645783e-05,Summary
+EU,332,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.351116559227542e-07,Summary
+EU,332,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.018128579370391033,Summary
+EU,333,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.18582361654457694,Summary
+EU,333,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0014383294146830558,Summary
+EU,333,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.4484968015266202e-05,Summary
+EU,333,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.6565488762996093e-07,Summary
+EU,333,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.012438003651065867,Summary
+EU,334,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.18113095818975197,Summary
+EU,334,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0012394463033332695,Summary
+EU,334,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.4638067016835833e-05,Summary
+EU,334,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.3117885239787518e-07,Summary
+EU,334,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009147193338180844,Summary
+EU,335,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.24116737279076858,Summary
+EU,335,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0016343989510312958,Summary
+EU,335,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.750144743703069e-05,Summary
+EU,335,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.84046524002494e-07,Summary
+EU,335,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.013182258216560449,Summary
+EU,3361MV,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.20742459121077275,Summary
+EU,3361MV,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0015604651540217344,Summary
+EU,3361MV,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.699763301284808e-05,Summary
+EU,3361MV,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.5598174285314312e-07,Summary
+EU,3361MV,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010719519940779108,Summary
+EU,3364OT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.20259359043160824,Summary
+EU,3364OT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0015377949024955445,Summary
+EU,3364OT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.9089315202847706e-05,Summary
+EU,3364OT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.431262768736993e-07,Summary
+EU,3364OT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010929738110015193,Summary
+EU,337,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.24646300762231127,Summary
+EU,337,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0022256545693253157,Summary
+EU,337,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.423158273259844e-05,Summary
+EU,337,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.2826008070301535e-07,Summary
+EU,337,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03047419009934765,Summary
+EU,339,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.16663526684897412,Summary
+EU,339,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0009690100910431956,Summary
+EU,339,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.4436250134316948e-05,Summary
+EU,339,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.174146477577038e-08,Summary
+EU,339,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008854557207079505,Summary
+EU,481,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.8319167141279276,Summary
+EU,481,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00193813866556382,Summary
+EU,481,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.465515405447757e-05,Summary
+EU,481,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.9592212845707516e-08,Summary
+EU,481,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0044762716268504504,Summary
+EU,487OS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.0934578880238207,Summary
+EU,487OS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006556170965106261,Summary
+EU,487OS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.813103877130125e-06,Summary
+EU,487OS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.9664550780174995e-08,Summary
+EU,487OS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002476116755815924,Summary
+EU,511,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.09597202069343952,Summary
+EU,511,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0009028132854179409,Summary
+EU,511,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.3655259602404222e-05,Summary
+EU,511,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.7269024887464247e-08,Summary
+EU,511,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0034322952886474355,Summary
+EU,512,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08537408207448859,Summary
+EU,512,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0008967837214944465,Summary
+EU,512,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.4195217532028288e-05,Summary
+EU,512,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.997382784240916e-08,Summary
+EU,512,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0030258537000722946,Summary
+EU,513,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08099078565636587,Summary
+EU,513,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006988535177326545,Summary
+EU,513,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.230187751537158e-06,Summary
+EU,513,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.3454910351902933e-08,Summary
+EU,513,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.003090946498074324,Summary
+EU,514,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.091523096899157,Summary
+EU,514,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0008254592689732459,Summary
+EU,514,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.1701348441863784e-05,Summary
+EU,514,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.6030700829355803e-08,Summary
+EU,514,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.003286631218368111,Summary
+EU,521CI,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.05337457237146574,Summary
+EU,521CI,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00043733841270521967,Summary
+EU,521CI,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.852326628491897e-06,Summary
+EU,521CI,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.0950529598516315e-08,Summary
+EU,521CI,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0013599926874676119,Summary
+EU,523,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.05352936966199986,Summary
+EU,523,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00048740568644356724,Summary
+EU,523,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.300107958572655e-06,Summary
+EU,523,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1890707880678318e-08,Summary
+EU,523,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0014715171759178273,Summary
+EU,524,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.03517422829348342,Summary
+EU,524,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00021966774976124828,Summary
+EU,524,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.6832636274609674e-06,Summary
+EU,524,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.843526675888865e-09,Summary
+EU,524,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0010270596711611125,Summary
+EU,5411,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07797214284857432,Summary
+EU,5411,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006702038017766394,Summary
+EU,5411,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.0012961755029552e-05,Summary
+EU,5411,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.736879599908792e-08,Summary
+EU,5411,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0028146849072070005,Summary
+EU,5412OP,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08100129249919163,Summary
+EU,5412OP,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0007040154279666942,Summary
+EU,5412OP,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.0727610520984653e-05,Summary
+EU,5412OP,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.542651884782692e-08,Summary
+EU,5412OP,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0029963984944260157,Summary
+EU,5415,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.10753392757004332,Summary
+EU,5415,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0008776162416145144,Summary
+EU,5415,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.3805943834329422e-05,Summary
+EU,5415,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.8898174686182768e-08,Summary
+EU,5415,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.003605526264003968,Summary
+EU,561,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08314494406540603,Summary
+EU,561,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006739335503662481,Summary
+EU,561,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.88347826089311e-06,Summary
+EU,561,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.5428753056757835e-08,Summary
+EU,561,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0027678895136887833,Summary
+EU,562,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3658694405458164,Summary
+EU,562,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.07322979291611122,Summary
+EU,562,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.1878234478831e-05,Summary
+EU,562,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.6588980053878666e-07,Summary
+EU,562,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.07484960503345604,Summary
+EU,61,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.059758223063250196,Summary
+EU,61,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004803604848345682,Summary
+EU,61,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.32882743640815e-06,Summary
+EU,61,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.799263628271447e-08,Summary
+EU,61,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0016809275018823866,Summary
+EU,711AS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07090057924854146,Summary
+EU,711AS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0007055486508232416,Summary
+EU,711AS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.0727276078813853e-05,Summary
+EU,711AS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.094446214491796e-08,Summary
+EU,711AS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002579803998349894,Summary
+EU,81,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.03918488674494823,Summary
+EU,81,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00027755786753765434,Summary
+EU,81,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.170245992066715e-06,Summary
+EU,81,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1444620917492017e-08,Summary
+EU,81,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0011915276784214758,Summary
+EU,GFE,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.05225808957041365,Summary
+EU,GFE,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0003545901459338396,Summary
+EU,GFE,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.3872107703179285e-06,Summary
+EU,GFE,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.818790499310161e-08,Summary
+EU,GFE,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002399517920057144,Summary
+EU,Used,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,19.537181253193474,Summary
+EU,Used,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005476484106748915,Summary
+EU,Used,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0008860092578329967,Summary
+EU,Used,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.7464546021680135e-07,Summary
+EU,Used,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.017551529536664855,Summary
+JP,111CA,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.20465685103251754,Summary
+JP,111CA,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001435832862957074,Summary
+JP,111CA,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.970472281281714e-05,Summary
+JP,111CA,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.956619454068066e-08,Summary
+JP,111CA,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.11779039339201983,Summary
+JP,113FF,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.1548527066498205,Summary
+JP,113FF,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0010016628285914363,Summary
+JP,113FF,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.331508342022504e-05,Summary
+JP,113FF,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.043824974717272e-08,Summary
+JP,113FF,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03510122266306504,Summary
+JP,211,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,4.22220023409482,Summary
+JP,211,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.016976642207226306,Summary
+JP,211,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.522498537291764e-05,Summary
+JP,211,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.076041409184412e-07,Summary
+JP,211,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.2258225303923826,Summary
+JP,212,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.9465744280465234,Summary
+JP,212,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0018053967458666427,Summary
+JP,212,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.627862557085006e-05,Summary
+JP,212,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.596852589941287e-06,Summary
+JP,212,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,1.9021683665791032,Summary
+JP,213,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,16.694340758896185,Summary
+JP,213,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.05231603694431318,Summary
+JP,213,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00011865731405684348,Summary
+JP,213,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.5143945830600913e-06,Summary
+JP,213,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,1.7657245639590249,Summary
+JP,311FT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2655878617660017,Summary
+JP,311FT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003596864822051176,Summary
+JP,311FT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0002591819603811042,Summary
+JP,311FT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.98739118568188e-08,Summary
+JP,311FT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03862596839649686,Summary
+JP,313TT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5286011450305251,Summary
+JP,313TT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0022382581679197266,Summary
+JP,313TT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.3797715236904107e-05,Summary
+JP,313TT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.50729987131565e-08,Summary
+JP,313TT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.021799395376722396,Summary
+JP,315AL,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4939129375339433,Summary
+JP,315AL,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002105852782985855,Summary
+JP,315AL,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.9661319730609716e-05,Summary
+JP,315AL,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.795066067948231e-08,Summary
+JP,315AL,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.02038417018827651,Summary
+JP,321,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2579672327808057,Summary
+JP,321,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001323112215137583,Summary
+JP,321,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.7967857498374782e-05,Summary
+JP,321,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.5914681651299044e-08,Summary
+JP,321,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0396156629743372,Summary
+JP,322,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5737383140050873,Summary
+JP,322,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001974310292613581,Summary
+JP,322,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.561733646296863e-05,Summary
+JP,322,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.252192987188763e-08,Summary
+JP,322,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.07219334388153534,Summary
+JP,323,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2199570999126881,Summary
+JP,323,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0008249254322706201,Summary
+JP,323,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.311726934462797e-05,Summary
+JP,323,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.8147564207849638e-08,Summary
+JP,323,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.019825673782808622,Summary
+JP,324,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4412009433784568,Summary
+JP,324,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.014410714916737566,Summary
+JP,324,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.021942158867506e-06,Summary
+JP,324,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.183670616566432e-08,Summary
+JP,324,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.064808713297268,Summary
+JP,325,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5012959786474462,Summary
+JP,325,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0028095520091294774,Summary
+JP,325,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.504768450874995e-05,Summary
+JP,325,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.127733684224581e-07,Summary
+JP,325,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.036559565797131786,Summary
+JP,326,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.293800642768034,Summary
+JP,326,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001319280742585967,Summary
+JP,326,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.0884825962251307e-05,Summary
+JP,326,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.569862526961431e-08,Summary
+JP,326,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0239736526078988,Summary
+JP,327,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.6911360635185924,Summary
+JP,327,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0014790412083101623,Summary
+JP,327,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.68559609739391e-05,Summary
+JP,327,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.528875357911078e-07,Summary
+JP,327,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.25607068351696566,Summary
+JP,331,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.8586403352550127,Summary
+JP,331,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0025809817170359957,Summary
+JP,331,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.607070305665862e-05,Summary
+JP,331,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.914824590432993e-08,Summary
+JP,331,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.10975964329488024,Summary
+JP,332,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4082654090940845,Summary
+JP,332,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0013286605730081908,Summary
+JP,332,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.1123305204228222e-05,Summary
+JP,332,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.019028662241063e-08,Summary
+JP,332,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.04879075445113228,Summary
+JP,333,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2634935056011388,Summary
+JP,333,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0009280639063144302,Summary
+JP,333,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.82630037714951e-06,Summary
+JP,333,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.60976865684854e-08,Summary
+JP,333,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.027605653106260723,Summary
+JP,334,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.27227699721952314,Summary
+JP,334,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0009672779594637457,Summary
+JP,334,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.2481910529143668e-05,Summary
+JP,334,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.1537498779787316e-08,Summary
+JP,334,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.02094470666165912,Summary
+JP,335,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.28821621096431305,Summary
+JP,335,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0010350620988384984,Summary
+JP,335,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.244221363933281e-05,Summary
+JP,335,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.173519154422969e-08,Summary
+JP,335,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.023816926120667686,Summary
+JP,3361MV,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.29126599747471055,Summary
+JP,3361MV,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001078646085141972,Summary
+JP,3361MV,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.3226299945524493e-05,Summary
+JP,3361MV,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.353281647572733e-08,Summary
+JP,3361MV,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0236788292615756,Summary
+JP,3364OT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3128852215205373,Summary
+JP,3364OT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0011496588455111533,Summary
+JP,3364OT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.1766951695119887e-05,Summary
+JP,3364OT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.164917598411585e-08,Summary
+JP,3364OT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.027590278726616273,Summary
+JP,337,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2879941151674439,Summary
+JP,337,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001394187318875088,Summary
+JP,337,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.7742575668882067e-05,Summary
+JP,337,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.7299569460780396e-08,Summary
+JP,337,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03886181820240953,Summary
+JP,339,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3822635003188241,Summary
+JP,339,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001343495864997147,Summary
+JP,339,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.403628700654067e-05,Summary
+JP,339,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.60984897101141e-08,Summary
+JP,339,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.028255669363189136,Summary
+JP,481,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.6216649144379757,Summary
+JP,481,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001737941453525342,Summary
+JP,481,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.1451002805262573e-05,Summary
+JP,481,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.4451985834648976e-08,Summary
+JP,481,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009199113282480928,Summary
+JP,487OS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.036187147255693095,Summary
+JP,487OS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00016937633699091564,Summary
+JP,487OS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.2692957047438363e-06,Summary
+JP,487OS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.031326985295744e-09,Summary
+JP,487OS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005097496825549584,Summary
+JP,511,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.09972754015586538,Summary
+JP,511,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00046092477164183906,Summary
+JP,511,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.097930316859436e-06,Summary
+JP,511,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.0118060318055943e-08,Summary
+JP,511,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010426170170980475,Summary
+JP,512,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.12312194149906955,Summary
+JP,512,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0005807607485143227,Summary
+JP,512,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.655739727628524e-06,Summary
+JP,512,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.2822020152216693e-08,Summary
+JP,512,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.013568726128641238,Summary
+JP,513,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.036187147255693095,Summary
+JP,513,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00016937633699091564,Summary
+JP,513,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.2692957047438363e-06,Summary
+JP,513,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.031326985295744e-09,Summary
+JP,513,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005097496825549584,Summary
+JP,514,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07992467588294787,Summary
+JP,514,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00036450356734072064,Summary
+JP,514,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.838787033539654e-06,Summary
+JP,514,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.015135975939863e-09,Summary
+JP,514,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008240219285548338,Summary
+JP,521CI,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.05270594244303735,Summary
+JP,521CI,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0002218356201081592,Summary
+JP,521CI,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.422776443719182e-06,Summary
+JP,521CI,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.274472566522941e-09,Summary
+JP,521CI,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0049816671384216695,Summary
+JP,523,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.04951483141590792,Summary
+JP,523,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0002066129930423863,Summary
+JP,523,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.437923185512438e-06,Summary
+JP,523,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.933186365718076e-09,Summary
+JP,523,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004146328159612604,Summary
+JP,524,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.05315618976153939,Summary
+JP,524,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00024150571701878933,Summary
+JP,524,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.238512160194583e-06,Summary
+JP,524,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.7687449600353775e-09,Summary
+JP,524,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.006229851049972654,Summary
+JP,5411,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07420307758693033,Summary
+JP,5411,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0003244437892583058,Summary
+JP,5411,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.718980226299613e-06,Summary
+JP,5411,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.999149632521836e-09,Summary
+JP,5411,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.006341126833790162,Summary
+JP,5412OP,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07986415120105603,Summary
+JP,5412OP,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00035530695248352483,Summary
+JP,5412OP,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.382389778255225e-06,Summary
+JP,5412OP,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.19881656386539e-09,Summary
+JP,5412OP,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.006659552916380188,Summary
+JP,5415,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.09308472902642512,Summary
+JP,5415,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00039296527567531136,Summary
+JP,5415,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.253136696667772e-06,Summary
+JP,5415,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.092914148333885e-09,Summary
+JP,5415,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0063271756434290765,Summary
+JP,561,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07895768536277023,Summary
+JP,561,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0003322059797164995,Summary
+JP,561,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.7348198902305405e-06,Summary
+JP,561,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.185537031812305e-09,Summary
+JP,561,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.006917823145677166,Summary
+JP,562,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4817850620396739,Summary
+JP,562,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.006034059395641787,Summary
+JP,562,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.5310308983364503e-05,Summary
+JP,562,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.8075985344337763e-07,Summary
+JP,562,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.33206551306686793,Summary
+JP,61,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08842552774860242,Summary
+JP,61,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00035166140584968043,Summary
+JP,61,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.019570233437258e-06,Summary
+JP,61,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.964637809556658e-09,Summary
+JP,61,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009434672943993808,Summary
+JP,711AS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.09256815674069088,Summary
+JP,711AS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004593075883426449,Summary
+JP,711AS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.426376381794141e-06,Summary
+JP,711AS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1042639211758099e-08,Summary
+JP,711AS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01079059438772378,Summary
+JP,81,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.07310892627342118,Summary
+JP,81,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0002342348154776341,Summary
+JP,81,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.436175163849419e-06,Summary
+JP,81,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.952578204875621e-09,Summary
+JP,81,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.006607325201059149,Summary
+JP,GFE,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.053726452866013255,Summary
+JP,GFE,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00028418897008086085,Summary
+JP,GFE,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.8249223773771142e-06,Summary
+JP,GFE,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.918698919432469e-09,Summary
+JP,GFE,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010380181508421446,Summary
+JP,Used,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.9311528233175663,Summary
+JP,Used,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0015837451871806426,Summary
+JP,Used,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.5917623867729124e-05,Summary
+JP,Used,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.3446544059282393e-08,Summary
+JP,Used,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010035541667368909,Summary
+MX,111CA,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2590126085402348,Summary
+MX,111CA,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.028881486475546985,Summary
+MX,111CA,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0011061327334065236,Summary
+MX,111CA,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.197252266150096e-08,Summary
+MX,111CA,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01652765477859517,Summary
+MX,113FF,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.45060305235633513,Summary
+MX,113FF,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005036778507492546,Summary
+MX,113FF,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00013170978064435654,Summary
+MX,113FF,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.4525599476426276e-08,Summary
+MX,113FF,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.029267542994386716,Summary
+MX,211,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.3593920324182553,Summary
+MX,211,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.07263983359310676,Summary
+MX,211,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.569430765989603e-06,Summary
+MX,211,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.600721389443158e-09,Summary
+MX,211,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0042983214923395996,Summary
+MX,212,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5175202458600211,Summary
+MX,212,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0022047758360608737,Summary
+MX,212,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.2548086615530374e-05,Summary
+MX,212,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.3293012153435757e-07,Summary
+MX,212,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.12978088876586494,Summary
+MX,213,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,7.399916001372686,Summary
+MX,213,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.12075474784850262,Summary
+MX,213,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.990779369527055e-05,Summary
+MX,213,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.1077475270462338e-08,Summary
+MX,213,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.02394251310447711,Summary
+MX,22,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,7.181458767125109,Summary
+MX,22,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.009308461763499065,Summary
+MX,22,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00010303444133181672,Summary
+MX,22,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.6761541203030182e-08,Summary
+MX,22,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.02943647540015405,Summary
+MX,311FT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3121782880654291,Summary
+MX,311FT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.02273220405003949,Summary
+MX,311FT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.001008852018067016,Summary
+MX,311FT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.95073719862837e-08,Summary
+MX,311FT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.016450610426097693,Summary
+MX,313TT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.134085883080367,Summary
+MX,313TT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.006438288494987997,Summary
+MX,313TT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00011104387378617424,Summary
+MX,313TT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.475037674232183e-08,Summary
+MX,313TT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.015686090866502387,Summary
+MX,315AL,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.8829388848502742,Summary
+MX,315AL,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0046699937987196615,Summary
+MX,315AL,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00012069988162334287,Summary
+MX,315AL,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.1321250963797246e-08,Summary
+MX,315AL,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01527413454908996,Summary
+MX,321,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.1885406785770343,Summary
+MX,321,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0018729977544111734,Summary
+MX,321,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.392362982093973e-05,Summary
+MX,321,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.174103946640132e-08,Summary
+MX,321,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.02843703599593057,Summary
+MX,322,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.6063366462618938,Summary
+MX,322,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001980806675045233,Summary
+MX,322,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.313153240588704e-05,Summary
+MX,322,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.802278369215452e-08,Summary
+MX,322,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03246402773675927,Summary
+MX,323,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4238591285612625,Summary
+MX,323,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0019542119479650307,Summary
+MX,323,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.1173599713547813e-05,Summary
+MX,323,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.990352773625207e-08,Summary
+MX,323,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.023083989463535654,Summary
+MX,324,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.3745869839777214,Summary
+MX,324,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.04760307764555682,Summary
+MX,324,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.816171272978413e-05,Summary
+MX,324,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.4247161552950963e-08,Summary
+MX,324,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.015606680747068323,Summary
+MX,325,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.41550324359794455,Summary
+MX,325,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0031544707247130694,Summary
+MX,325,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.281510183158036e-05,Summary
+MX,325,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.794701087961488e-08,Summary
+MX,325,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.2197013014711398,Summary
+MX,326,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4117381441697483,Summary
+MX,326,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002749290217300158,Summary
+MX,326,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.652193274475405e-05,Summary
+MX,326,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.385114652255694e-08,Summary
+MX,326,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.039072783806423275,Summary
+MX,327,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.5500951034319679,Summary
+MX,327,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0020890964469749444,Summary
+MX,327,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.345181644608985e-05,Summary
+MX,327,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.2765928821216892e-08,Summary
+MX,327,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03195743448433615,Summary
+MX,331,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2152621387960794,Summary
+MX,331,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006251177248301474,Summary
+MX,331,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.103818294967581e-06,Summary
+MX,331,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.0111092496779859e-08,Summary
+MX,331,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.04911165975205078,Summary
+MX,332,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3676558767532717,Summary
+MX,332,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0015553628012287227,Summary
+MX,332,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.635580471150336e-05,Summary
+MX,332,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.468804256071134e-08,Summary
+MX,332,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.02238055237401769,Summary
+MX,333,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.25867773769988095,Summary
+MX,333,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0013785407671863567,Summary
+MX,333,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.4551630153221245e-05,Summary
+MX,333,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.788987419547529e-08,Summary
+MX,333,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03561017160615947,Summary
+MX,334,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3404783333817875,Summary
+MX,334,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0023829232579101922,Summary
+MX,334,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.3100324868369215e-05,Summary
+MX,334,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.0210226291329657e-08,Summary
+MX,334,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01744983374397785,Summary
+MX,335,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.32336319403965974,Summary
+MX,335,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0019078714954589389,Summary
+MX,335,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.816027483263142e-05,Summary
+MX,335,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.2607411857107406e-08,Summary
+MX,335,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.029389221082329955,Summary
+MX,3361MV,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4364835913732617,Summary
+MX,3361MV,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0016906583628374058,Summary
+MX,3361MV,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.4185820010101237e-05,Summary
+MX,3361MV,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.479575761521409e-08,Summary
+MX,3361MV,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01969244018106433,Summary
+MX,3364OT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5458489000668811,Summary
+MX,3364OT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001777524395937056,Summary
+MX,3364OT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.8259518554407037e-05,Summary
+MX,3364OT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.703487476703087e-08,Summary
+MX,3364OT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.020130840302584694,Summary
+MX,337,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.1054430799252795,Summary
+MX,337,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0027417992912891704,Summary
+MX,337,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.543484812126367e-05,Summary
+MX,337,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.6285499831765086e-08,Summary
+MX,337,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.027018178925306086,Summary
+MX,339,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4114047145375165,Summary
+MX,339,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0028487707005901974,Summary
+MX,339,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.3957756883957532e-05,Summary
+MX,339,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.305739365282364e-08,Summary
+MX,339,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.022105975762451453,Summary
+MX,481,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.7465196085466566,Summary
+MX,481,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.010031911622186727,Summary
+MX,481,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.821956493068878e-05,Summary
+MX,481,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.92176202235047e-08,Summary
+MX,481,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.00824730053921769,Summary
+MX,487OS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.10094239128404679,Summary
+MX,487OS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004150050227293471,Summary
+MX,487OS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.110086641512438e-06,Summary
+MX,487OS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.0643907460740735e-09,Summary
+MX,487OS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0037203115889583196,Summary
+MX,511,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2120108108576681,Summary
+MX,511,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0008442028742277498,Summary
+MX,511,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.02788523611277e-06,Summary
+MX,511,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.925394336987066e-09,Summary
+MX,511,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008047537128363693,Summary
+MX,512,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2631557681698105,Summary
+MX,512,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001078619296177324,Summary
+MX,512,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.599091662239913e-06,Summary
+MX,512,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.678864979104478e-09,Summary
+MX,512,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01123520655689287,Summary
+MX,513,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.10094239128404679,Summary
+MX,513,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004150050227293471,Summary
+MX,513,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.110086641512438e-06,Summary
+MX,513,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.064390746074073e-09,Summary
+MX,513,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.003720311588958319,Summary
+MX,514,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.16222453851944374,Summary
+MX,514,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006524940931482272,Summary
+MX,514,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.7241854808960505e-06,Summary
+MX,514,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.0027821959612526e-09,Summary
+MX,514,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.006129913578998135,Summary
+MX,521CI,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.12400674217885285,Summary
+MX,521CI,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0005886467571201317,Summary
+MX,521CI,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.4748903681715865e-05,Summary
+MX,521CI,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.045015929233831e-09,Summary
+MX,521CI,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.007352769225948479,Summary
+MX,523,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.10128724806192481,Summary
+MX,523,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0006745214488207257,Summary
+MX,523,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.8049516169720287e-05,Summary
+MX,523,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.5173744717390825e-09,Summary
+MX,523,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008163323238568932,Summary
+MX,524,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.09063149311478244,Summary
+MX,524,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0003374005175193749,Summary
+MX,524,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.842214936847614e-06,Summary
+MX,524,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.491761766256126e-09,Summary
+MX,524,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002471806648625318,Summary
+MX,5411,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.08451414294125244,Summary
+MX,5411,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0005005475686403591,Summary
+MX,5411,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.2105250419546725e-06,Summary
+MX,5411,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.404578473171918e-09,Summary
+MX,5411,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002308785221818021,Summary
+MX,5412OP,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.13786590831651316,Summary
+MX,5412OP,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.000679692361971359,Summary
+MX,5412OP,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,8.287883810116554e-06,Summary
+MX,5412OP,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.3320826021970404e-09,Summary
+MX,5412OP,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0042275546684918276,Summary
+MX,5415,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.16964435849486212,Summary
+MX,5415,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0005701514598774296,Summary
+MX,5415,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.2320645523316746e-06,Summary
+MX,5415,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.525986001547816e-09,Summary
+MX,5415,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002811754382181537,Summary
+MX,561,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.09388707182109832,Summary
+MX,561,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0005970091491421934,Summary
+MX,561,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.85472351564885e-06,Summary
+MX,561,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.5124660510578866e-09,Summary
+MX,561,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0027195465112398237,Summary
+MX,562,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.9569887554663282,Summary
+MX,562,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,3.2248651452276174,Summary
+MX,562,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.062897782258213e-06,Summary
+MX,562,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.0272209259309697e-07,Summary
+MX,562,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.12010784259443985,Summary
+MX,61,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.1638511036736311,Summary
+MX,61,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0004290186006296396,Summary
+MX,61,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.863669535168601e-06,Summary
+MX,61,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.134952321477059e-09,Summary
+MX,61,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.002578733839914207,Summary
+MX,711AS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.1829163963608868,Summary
+MX,711AS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.000731849008768503,Summary
+MX,711AS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.97617108965926e-06,Summary
+MX,711AS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.429741570909895e-09,Summary
+MX,711AS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005845229828491675,Summary
+MX,81,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.007241716727158169,Summary
+MX,81,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00022608913313857217,Summary
+MX,81,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.239507936187153e-06,Summary
+MX,81,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.1339878909607515e-10,Summary
+MX,81,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.00028460657604652295,Summary
+MX,GFE,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.12275010804815535,Summary
+MX,GFE,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001131137799238967,Summary
+MX,GFE,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.0408343835663167e-05,Summary
+MX,GFE,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,6.569412065120323e-09,Summary
+MX,GFE,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01029125631078268,Summary
+MX,Used,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,3.957359298705451,Summary
+MX,Used,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0016209667942672298,Summary
+MX,Used,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00019154779301877944,Summary
+MX,Used,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.4383765786178537e-08,Summary
+MX,Used,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01891723638456483,Summary
+ROW,111CA,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.23303926635222713,Summary
+ROW,111CA,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005468226448932549,Summary
+ROW,111CA,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0006458859197982788,Summary
+ROW,111CA,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.627249148408455e-08,Summary
+ROW,111CA,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009462469769229907,Summary
+ROW,113FF,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2227321541063071,Summary
+ROW,113FF,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002898183698927211,Summary
+ROW,113FF,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.881852627953066e-05,Summary
+ROW,113FF,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.5272273227029437e-08,Summary
+ROW,113FF,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0041414782673033805,Summary
+ROW,211,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.379619764574944,Summary
+ROW,211,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.03910064644222928,Summary
+ROW,211,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.22520839455858e-05,Summary
+ROW,211,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1182632174639643e-08,Summary
+ROW,211,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.003566843684592598,Summary
+ROW,212,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.319293275316398,Summary
+ROW,212,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.014761388745250664,Summary
+ROW,212,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00018863898223530872,Summary
+ROW,212,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.132206440678873e-08,Summary
+ROW,212,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.03768987393670652,Summary
+ROW,213,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.8899752696105736,Summary
+ROW,213,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.040759988982722165,Summary
+ROW,213,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.7949019746878624e-05,Summary
+ROW,213,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.585102155610562e-08,Summary
+ROW,213,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01684195201962107,Summary
+ROW,311FT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3208794046954272,Summary
+ROW,311FT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.032269445744699164,Summary
+ROW,311FT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0013615635855324022,Summary
+ROW,311FT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.979978938859764e-08,Summary
+ROW,311FT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.011224580519187604,Summary
+ROW,313TT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.4531369037054658,Summary
+ROW,313TT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0059237142647618705,Summary
+ROW,313TT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0002026226715895781,Summary
+ROW,313TT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.1777477001924668e-08,Summary
+ROW,313TT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.007570072291895258,Summary
+ROW,315AL,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.7129503795906603,Summary
+ROW,315AL,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.006414496242148941,Summary
+ROW,315AL,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0002391765720359593,Summary
+ROW,315AL,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.992145289371852e-08,Summary
+ROW,315AL,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.009099532537753582,Summary
+ROW,321,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2512835875095358,Summary
+ROW,321,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003584033635601428,Summary
+ROW,321,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0001016849349840149,Summary
+ROW,321,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.857507702983815e-08,Summary
+ROW,321,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.013113066984954671,Summary
+ROW,322,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5924018802631248,Summary
+ROW,322,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.010145026479090127,Summary
+ROW,322,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00017528906901203764,Summary
+ROW,322,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.495259866371468e-08,Summary
+ROW,322,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.027937259065341107,Summary
+ROW,323,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.23066320828201542,Summary
+ROW,323,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002051805498054157,Summary
+ROW,323,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,5.756288144461442e-05,Summary
+ROW,323,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.2913245621221145e-08,Summary
+ROW,323,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004579886167893208,Summary
+ROW,324,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.70757364057085,Summary
+ROW,324,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.026370178344691093,Summary
+ROW,324,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.423125693628718e-05,Summary
+ROW,324,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.472439526309325e-08,Summary
+ROW,324,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008658284807788411,Summary
+ROW,325,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.2126915147648178,Summary
+ROW,325,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.017731183356074008,Summary
+ROW,325,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0006434390950007093,Summary
+ROW,325,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.525239238876646e-08,Summary
+ROW,325,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.08549627916939309,Summary
+ROW,326,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3181807062052554,Summary
+ROW,326,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002467346162881214,Summary
+ROW,326,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.297649267542904e-05,Summary
+ROW,326,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.5381083665232596e-08,Summary
+ROW,326,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.013113493017557614,Summary
+ROW,327,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,1.5414794627085027,Summary
+ROW,327,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.007239401994924572,Summary
+ROW,327,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0001465444869282025,Summary
+ROW,327,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.790972659847128e-08,Summary
+ROW,327,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.014611603062487502,Summary
+ROW,331,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4063109414110297,Summary
+ROW,331,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0019822600409533484,Summary
+ROW,331,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.0353062135594267e-05,Summary
+ROW,331,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.3633677144407532e-08,Summary
+ROW,331,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010834272650355147,Summary
+ROW,332,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4594711490046345,Summary
+ROW,332,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0027658284568919506,Summary
+ROW,332,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.1034092172713025e-05,Summary
+ROW,332,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.8248008162687284e-08,Summary
+ROW,332,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.016430725473048947,Summary
+ROW,333,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4197788703805226,Summary
+ROW,333,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002890864552556222,Summary
+ROW,333,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.726327773731982e-05,Summary
+ROW,333,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.458390283490555e-08,Summary
+ROW,333,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.020687358411047848,Summary
+ROW,334,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3106692894754973,Summary
+ROW,334,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0019522545230877485,Summary
+ROW,334,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.16821199009705e-05,Summary
+ROW,334,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.721670365083773e-08,Summary
+ROW,334,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.007735858186694237,Summary
+ROW,335,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.3557314808138187,Summary
+ROW,335,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002669009117590616,Summary
+ROW,335,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.300881399900905e-05,Summary
+ROW,335,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.8022883513144413e-08,Summary
+ROW,335,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.014322420755818887,Summary
+ROW,3361MV,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.435306410142674,Summary
+ROW,3361MV,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0030443998591760295,Summary
+ROW,3361MV,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.777034743676016e-05,Summary
+ROW,3361MV,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.237348111838223e-08,Summary
+ROW,3361MV,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.010376086620665971,Summary
+ROW,3364OT,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.35782104013546817,Summary
+ROW,3364OT,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.002729047476893934,Summary
+ROW,3364OT,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,3.3474724263364355e-05,Summary
+ROW,3364OT,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,3.339364028876088e-08,Summary
+ROW,3364OT,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.011006191461432814,Summary
+ROW,337,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.4987055425888599,Summary
+ROW,337,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.00350045901179591,Summary
+ROW,337,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,9.510181117374392e-05,Summary
+ROW,337,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.158620701937637e-08,Summary
+ROW,337,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.01225602900540011,Summary
+ROW,339,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.29864738387751777,Summary
+ROW,339,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0020031357323158036,Summary
+ROW,339,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.454033467314289e-05,Summary
+ROW,339,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.3034723511137124e-08,Summary
+ROW,339,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.005353663266844275,Summary
+ROW,481,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.9134892774842815,Summary
+ROW,481,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003429149090079785,Summary
+ROW,481,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.676614731963996e-05,Summary
+ROW,481,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.651210278480223e-08,Summary
+ROW,481,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004813674592382122,Summary
+ROW,487OS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.12291975751766733,Summary
+ROW,487OS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0014829834593055443,Summary
+ROW,487OS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.0314798958144678e-05,Summary
+ROW,487OS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.947092730904405e-09,Summary
+ROW,487OS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004867799556127372,Summary
+ROW,511,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.15142769906042078,Summary
+ROW,511,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0044150736300665695,Summary
+ROW,511,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00016445778172638817,Summary
+ROW,511,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.986435636961896e-09,Summary
+ROW,511,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0045308581067139385,Summary
+ROW,512,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.20851688964697346,Summary
+ROW,512,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.014522627150901062,Summary
+ROW,512,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0007451001250699103,Summary
+ROW,512,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.305582697711586e-08,Summary
+ROW,512,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004990662429918095,Summary
+ROW,513,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.11412989656100725,Summary
+ROW,513,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0016539346001040595,Summary
+ROW,513,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.4002476026705743e-05,Summary
+ROW,513,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.728219287196085e-09,Summary
+ROW,513,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004448604753312087,Summary
+ROW,514,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.13721777044839373,Summary
+ROW,514,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003159798803110496,Summary
+ROW,514,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00010170498964365865,Summary
+ROW,514,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.055013543059256e-09,Summary
+ROW,514,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0045279360183972,Summary
+ROW,521CI,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.134458123273728,Summary
+ROW,521CI,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0017862129804944366,Summary
+ROW,521CI,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.034651604510855e-05,Summary
+ROW,521CI,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,4.951260264762163e-09,Summary
+ROW,521CI,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0026755910935767654,Summary
+ROW,523,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.13117257347855177,Summary
+ROW,523,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0018041208438728375,Summary
+ROW,523,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.841542869622325e-05,Summary
+ROW,523,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,5.072974069413172e-09,Summary
+ROW,523,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0023944848932290447,Summary
+ROW,524,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.06124782161543573,Summary
+ROW,524,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.001253692738917053,Summary
+ROW,524,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.289310734067613e-05,Summary
+ROW,524,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.9972376676757214e-09,Summary
+ROW,524,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0022315667028944726,Summary
+ROW,5411,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2170559803275669,Summary
+ROW,5411,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0024322011277144186,Summary
+ROW,5411,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,4.48872067938681e-05,Summary
+ROW,5411,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.2469509307859431e-08,Summary
+ROW,5411,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004159728009424277,Summary
+ROW,5412OP,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.19219542844933124,Summary
+ROW,5412OP,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0027842598516411472,Summary
+ROW,5412OP,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.0829861513669746e-05,Summary
+ROW,5412OP,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.1880278470166873e-08,Summary
+ROW,5412OP,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0038690449549109583,Summary
+ROW,5415,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.14725888537926587,Summary
+ROW,5415,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0027825706425571397,Summary
+ROW,5415,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,6.818989321321163e-05,Summary
+ROW,5415,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,8.570043584949413e-09,Summary
+ROW,5415,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0038077231201173027,Summary
+ROW,561,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.2600576850024439,Summary
+ROW,561,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.003499292747393753,Summary
+ROW,561,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,7.731050137130076e-05,Summary
+ROW,561,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.3751801110167126e-08,Summary
+ROW,561,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.003942494547098903,Summary
+ROW,562,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.5575749564754141,Summary
+ROW,562,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.11323518923520287,Summary
+ROW,562,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.00040044089719486686,Summary
+ROW,562,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.430441112714682e-07,Summary
+ROW,562,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.15557473054568574,Summary
+ROW,61,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.18673563860681017,Summary
+ROW,61,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.005031814229495911,Summary
+ROW,61,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.000173033089714723,Summary
+ROW,61,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.1101597372170746e-08,Summary
+ROW,61,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008441341973852337,Summary
+ROW,711AS,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.1683714772743792,Summary
+ROW,711AS,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.009334972185104672,Summary
+ROW,711AS,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0003993683237079149,Summary
+ROW,711AS,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,1.710919121554663e-08,Summary
+ROW,711AS,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.004043358642051575,Summary
+ROW,81,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.15927211289508963,Summary
+ROW,81,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0011578937688516294,Summary
+ROW,81,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,2.3372293451131287e-05,Summary
+ROW,81,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,7.106212805734976e-09,Summary
+ROW,81,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0020035386527540587,Summary
+ROW,GFE,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,0.12005605688310049,Summary
+ROW,GFE,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.0014164204226710217,Summary
+ROW,GFE,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,1.997060688240487e-05,Summary
+ROW,GFE,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,9.16437132856989e-09,Summary
+ROW,GFE,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.0034344159286734616,Summary
+ROW,Used,2019,kg,USD,Basic,Carbon dioxide,emission/air,b6f010fb-a764-3063-af2d-bcb8309a97b7,2.015679115148268,Summary
+ROW,Used,2019,kg,USD,Basic,Methane,emission/air,aab83476-ec6c-3742-af85-15d320b7ce80,0.023182632915439566,Summary
+ROW,Used,2019,kg,USD,Basic,Nitrous oxide,emission/air,cfee0524-7ad6-300b-b050-6249135a2492,0.0005218840658453357,Summary
+ROW,Used,2019,kg,USD,Basic,Sulfur hexafluoride,emission/air,8334c424-1603-3274-bec1-15a7bd5c8e86,2.3586056556216005e-08,Summary
+ROW,Used,2019,kg CO2e,USD,Basic,"HFCs and PFCs, unspecified",emission/air,n.a.,0.008268750631341207,Summary

@@ -1,8 +1,9 @@
 # Import Emission Factors
 
 Code in this folder can be used to produce measures of embodied environmental flows per dollar commodity imported into the U.S. 
-This is the active implementation of the methodology described in the USEPA report [Estimating embodied environmental flows in international imports for the USEEIO Model](https://cfpub.epa.gov/si/si_public_record_report.cfm?dirEntryId=362470). The two primary steps are the creation of import shares, which reflect the fractions of contributions from countries to a dollar import of a given commodity in a year. Import shares are independent of the MRIO.
-The second major step is the generation of the import emission factors from a given multi-regional input-output (MRIO) model. Import emissions factors are created by an environmental flow (e.g., Carbon dioxide) in units of that flow per USD (e.g., kg/USD).
+This is the active implementation of the methodology described in the USEPA report [Estimating embodied environmental flows in international imports for the USEEIO Model](https://cfpub.epa.gov/si/si_public_record_report.cfm?dirEntryId=362470). The two primary steps are the creation of import sharesand generation of the import emission factors. The first step is the creation of the import shares. The import shares are the fractions of contributions from countries to a dollar import of a given commodity in a year. Import shares are independent of the MRIO. The second major step is the generation of the import emission factors from a given multi-regional input-output (MRIO) model. Import emissions factors are created by an environmental flow (e.g., Carbon dioxide) in units of that flow per USD (e.g., kg/USD).
+
+## Steps
 
 1. Generate Import Shares
 
@@ -23,7 +24,7 @@ A country concordance and a commodity concordance are needed to relate the MRIO 
 
 2.3. Add configuration data 
 
-Configuration data specific to the MRIO need to be added to the [MRIO-config.yml](data/MRIO-config.yml).
+Configuration data specific to the MRIO need to be added to the [mrio_config.yml](data/mrio_config.yml).
 
 2.4 MRIO helper script
 

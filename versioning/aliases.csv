@@ -1,6 +1,7 @@
 Alias,N or S,C or I,Sector Schema,Model Type,Price Type,IEF source,Extentions,Indicators
+yellowthroat,N,C,BEA Summary 2017,EEIO,PRO,GLORIA 2022,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
 catbird,N,C,BEA Detail 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
-oriole,N,C,BEA Summary 2017,EEI,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
+oriole,N,C,BEA Summary 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
 cherpumple,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHG_state_m1_v2.0.0,GHG
 derby,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHGc_state_[ME]_v2.0.3,GHG
 kinglet,N,C,BEA Detail 2017,EEIO,PRO,EXIOBASE,GHG_national_m2_v2.0.3,GHG

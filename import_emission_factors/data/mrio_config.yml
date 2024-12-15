@@ -6,6 +6,7 @@ exiobase:
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: true
   price_type: Basic
+  reference_currency: Euro
   fields:
     region: CountryCode
     sector: MRIO Sector
@@ -22,10 +23,10 @@ exiobase:
     PFC: HFCs and PFCs, unspecified # units in kg CO2e
     SF6: Sulfur hexafluoride
 
-  impacts: # if using impacts.M
-    Carbon dioxide (CO2) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Carbon dioxide
-    Methane (CH4) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Methane
-    Nitrous Oxide (N2O) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Nitrous oxide
+  # impacts: # if using impacts.M
+  #   Carbon dioxide (CO2) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Carbon dioxide
+  #   Methane (CH4) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Methane
+  #   Nitrous Oxide (N2O) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Nitrous oxide
 
   useeio_concordance:
     file: exio_to_useeio2_commodity_concordance.csv
@@ -40,6 +41,7 @@ ceda:
   clean_M_function: ceda_helpers/clean_ceda_M_matrix
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: false
+  reference_currency: USD
   price_type: Producer
   fields:
     country: CountryCode
@@ -67,41 +69,19 @@ gloria:
   # process_function: download_exiobase/process_exiobase
   clean_M_function: gloria_helpers/clean_gloria_M_matrix
   clean_trade_function: gloria_helpers/gloria_clean_trade
-  # currency_function: gloria_helpers/gloria_adjust_currency
-  price_type: TBD
+  # currency_function: gloria_helpers/gloria_adjust_currency # 1000 USD
+  reference_currency: USD
+  price_type: Basic
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: true
   fields:
     region: CountryCode
     sector: MRIO Sector
-  exports: Basic
+  exports:
     USA: Exports to US
   output:
     indout: Output
-  flows: # if using satellite.M
-    # entries that start with the following keys
-    Limestone: Limestone
-    "'co2_excl_short_cycle_org_c_total_EDGAR_consistent'": Carbon dioxide
-    "'ch4_total_EDGAR_consistent'": Methane
-    # HFC: HFCs and PFCs, unspecified # units in kg CO2e
-    "'n2o_total_EDGAR_consistent'": Nitrous oxide
-    # PFC: HFCs and PFCs, unspecified # units in kg CO2e
-    "'sf6_total_EDGAR_consistent'": Sulfur hexafluoride
-    #lignite,other_sub-butiminous,coking,other_butiminous, anthracite,coal_and_peat: Coal
-    #various_residues: Crop Residues
-    #various_crops: Crops
-    "'Iron ores concentrates and compounds'": Ferrous ores
-    "'Grazed biomass'": Grazed biomass and fodder crops #must define other 'fodder crops'
-    "'Natural Gas'": Natural Gas #'Natural gas liquids' is another satellite indicator
-    #Silver, bauxite, gold, chromium, copper, manganese, other metal ores, nickel, lead, platinum, tin, titanium, uranium, zinc: Non-ferrous ores
-    #Gypsum, Ornamental_or_building_stone: Non-metallic minerals - construction dominant
-    #Industrial_sand_and_gravel, Industrial_minerals_n.e.c, : Non-metallic minerals - industrial or agricultural dominant
-    "'All other aquatic animals'": Non-wild animal products
-    #None: Other products mainly from fossil fuels e.g. plastics
-    "'Crude oil'": Petroleum
-    "'Wild fish catch'": Wild catch and harvest
-    "'Timber (Industrial roundwood)'": Wood
-    "'Crude oil'": Oil shale and tar sands
+  mapping_file: gloria_mapping.csv
 
   useeio_concordance:
     file: GLORIA_to_useeio2_commodity_concordance.csv

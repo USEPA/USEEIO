@@ -41,6 +41,11 @@ with open(dataPath / "mrio_config.yml", "r") as file:
     config = config.get(source)
     if not config:
         raise IndexError(f'MRIO config not found for {source}')
+    if config.get('mapping_file'):
+        # read in mapping file and recreate flows dict
+        flows = pd.read_csv(dataPath / config['mapping_file'])
+        config['mapping_file'] = flows
+        config['flows'] = dict(zip(flows['SourceFlowName'], flows['TargetFlowName']))
 
 
 def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
@@ -158,10 +163,19 @@ def df_prepare(df, year):
         value_name = 'EF'
         )
 
+    if config.get('mapping_file'):
+    # TODO update units and context assignment
+        df = (df
+            .assign(Compartment='emission/air')
+            .assign(Unit='kg')
+            )
+    else:
+        df = (df
+            .assign(Compartment='emission/air')
+            .assign(Unit='kg')
+            )
     df = (df
-        .assign(Compartment='emission/air')
-        .assign(Unit='kg')
-        .assign(ReferenceCurrency='Euro')
+        .assign(ReferenceCurrency=config['reference_currency'])
         .assign(Year=str(year))
         .assign(PriceType=config['price_type'])
         )
@@ -249,9 +263,6 @@ def adjust_currency_and_rename_flows_units(df, year):
     if 'currency_function' in config:
         fxn = extract_function_from_config('currency_function')
         df = fxn(df, year)
-    else:
-        # some MRIO already in USD, only need to rename units
-        df = df.assign(ReferenceCurrency='USD')
 
     df.loc[df['Flowable'] == 'HFCs and PFCs, unspecified',
         'Unit'] = 'kg CO2e'

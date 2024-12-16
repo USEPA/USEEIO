@@ -2,16 +2,16 @@ Alias,N or S,C or I,Sector Schema,Model Type,Price Type,IEF source,Extentions,In
 yellowthroat,N,C,BEA Summary 2017,EEIO,PRO,GLORIA 2022,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
 catbird,N,C,BEA Detail 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
 oriole,N,C,BEA Summary 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
-cherpumple,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHG_state_m1_v2.0.0,GHG
-derby,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHGc_state_[ME]_v2.0.3,GHG
-kinglet,N,C,BEA Detail 2017,EEIO,PRO,EXIOBASE,GHG_national_m2_v2.0.3,GHG
-kingbird,N,C,BEA Summary 2017,EEIO,PRO,EXIOBASE,GHG_national_m1_v2.0.3,GHG
-wren,N,C,BEA Detail 2017,EEIO,PRO,n.a.,GHG_national_m2_v2.0.3,GHG
-redstart,N,C,BEA Summary 2017,EEIO,PRO,n.a.,"GHG_national_m2_v2.0.2, Raw_Material_Extraction_national_v2.0.2, CRHW_national_v2.0.2, Employment_national_2013_v2.0.2","GHG, MF, CRHW, JOBS"
-cashew,S,C,BEA Summary 2012,EEIO,PRO,n.a.,"GHG_state_m1_v2.0.0, CAP_HAP_state_m1_v2.0.0","ACID, CRHW, ENRG, ETOX, EUTR, GHG, HAPS, HCAN, HNCN, HRSP, HTOX, JOBS, LAND, OZON, SMOG, VADD, WATR"
-sparrow,N,C,"Detail 2012, waste disaggregation",EEIO,PRO,n.a.,GHG_national_m1_v1.3.1,GHG
-tanager,N,C,"Detail 2012, waste disaggregation",EEIO,PRO,n.a.,NGHGIAM,"ACID, CCDD, CMSW, CRHW, ENRG, ETOX, EUTR, GHG, HAPS, HCAN, HNCN, HRSP, HTOX, JOBS, LAND, MNRL, NNRG, OZON, PEST, RNRG, SMOG, VADD, WATR"
-bunting,N,C,BEA Detail 2012,EEIO,PRO,n.a.,NGHGIAM,GHG
-vireo,N,C,BEA Summary 2012,EEIO,PRO,n.a.,NGHGIAM,GHG
-martin,N,I,BEA Detail 2012,EEIO,PRO,n.a.,NGHGIAM,GHG
-gnatcatcher,N,I,BEA Summary 2012,EEIO,PRO,n.a.,NGHGIAM,GHG
+cherpumple,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHG_state_m1_v2.0.0,GHG (IPCC_AR6)
+derby,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE,GHGc_state_[ME]_v2.0.3,GHG (IPCC_AR6)
+kinglet,N,C,BEA Detail 2017,EEIO,PRO,EXIOBASE,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
+kingbird,N,C,BEA Summary 2017,EEIO,PRO,EXIOBASE,GHG_national_m1_v2.0.3,GHG (IPCC_AR6)
+wren,N,C,BEA Detail 2017,EEIO,PRO,n.a.,GHG_national_m2_v2.0.3,GHG (IPCC_AR5)
+redstart,N,C,BEA Summary 2017,EEIO,PRO,n.a.,"GHG_national_m2_v2.0.2, Raw_Material_Extraction_national_v2.0.2, CRHW_national_v2.0.2, Employment_national_v2.0.2","GHG (IPCC_AR5), MF, CRHW, JOBS"
+cashew,S,C,BEA Summary 2012,EEIO,PRO,n.a.,"GHG_state_m1_v2.0.0, Water_state_m1_v2.0.0, CAP_HAP_state_m1_v2.0.0, GRDREL_state_v2.0.0, TRI_DMR_state_2013_v2.0.0, Land_state_v2.0, CRHW_state_2013_v2.0.0, Employment_state_v2.0.0","ACID, CRHW, ENRG, ETOX, EUTR, GHG (TRACI), HAPS, HCAN, HNCN, HRSP, HTOX, JOBS, LAND, OZON, SMOG, VADD, WATR"
+sparrow,N,C,"Detail 2012, waste disaggregation",EEIO,PRO,n.a.,GHG_national_m1_v1.3.1,GHG (TRACI)
+tanager,N,C,"Detail 2012, waste disaggregation",EEIO,PRO,n.a.,"NGHGIAM, Water_national_m1_v1.0.1, CAP_HAP_national_v0.3.1, GRDREL_national_v0.3.1, TRI_DMR_national_v0.3.1, Land_national_v1.0.1, CRHW_national_v0.3.1, Employment_national_v0.3.1, USEEIOv1.1_MINE, USEEIOv1.1_Energy, USEEIOv1.1_NPAG, USEEIOv1.1_PEST, USEEIOv1.1_CNHW, USEEIOv1.1_CNHWC","ACID, CCDD, CMSW, CRHW, ENRG, ETOX, EUTR, GHG (TRACI), HAPS, HCAN, HNCN, HRSP, HTOX, JOBS, LAND, MNRL, NNRG, OZON, PEST, RNRG, SMOG, VADD, WATR"
+bunting,N,C,BEA Detail 2012,EEIO,PRO,n.a.,NGHGIAM,GHG (TRACI)
+vireo,N,C,BEA Summary 2012,EEIO,PRO,n.a.,NGHGIAM,GHG (TRACI)
+martin,N,I,BEA Detail 2012,EEIO,PRO,n.a.,NGHGIAM,GHG (TRACI)
+gnatcatcher,N,I,BEA Summary 2012,EEIO,PRO,n.a.,NGHGIAM,GHG (TRACI)

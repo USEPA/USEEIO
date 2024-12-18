@@ -1,4 +1,4 @@
-def clean_ceda_M_matrix(M, fields_to_rename):
+def clean_ceda_M_matrix(M, fields_to_rename, **kwargs):
     M = M.rename(columns=fields_to_rename)
     M_melted = M.melt(
         id_vars=['CountryCode', 'MRIO Sector'], value_name='EF', var_name='flow'

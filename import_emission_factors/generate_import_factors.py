@@ -163,37 +163,48 @@ def df_prepare(df, year):
         value_name = 'EF'
         )
 
-    if config.get('mapping_file'):
-    # TODO update units and context assignment
+    if 'mapping_file' in config:
+        mapping = config.get('mapping_file')
         df = (df
-            .assign(Compartment='emission/air')
-            .assign(Unit='kg')
+            .assign(Context = lambda x: x['Flow'].map(
+                pd.Series(mapping['TargetFlowContext'].values,
+                          index=mapping['TargetFlowName'])
+                .to_dict()))
+            .assign(Unit = lambda x: x['Flow'].map(
+                pd.Series(mapping['TargetUnit'].values,
+                          index=mapping['TargetFlowName'])
+                .to_dict()))
+            .assign(FlowUUID = lambda x: x['Flow'].map(
+                pd.Series(mapping['TargetFlowUUID'].values,
+                          index=mapping['TargetFlowName'])
+                .to_dict()))
+            .assign(Flowable = lambda x: x['Flow'])
             )
     else:
         df = (df
             .assign(Compartment='emission/air')
             .assign(Unit='kg')
             )
+        fl = (fedelem.get_flows()
+              .query('Flowable in @df.Flow')
+              .filter(['Flowable', 'Context', 'Flow UUID'])
+              )
+        df = (df
+            .merge(fl, how='left',
+                   left_on=['Flow', 'Compartment'],
+                   right_on=['Flowable', 'Context'],
+                   )
+            .assign(Flowable=lambda x: x['Flowable'].fillna(x['Flow']))
+            .drop(columns=['Flow', 'Compartment'])
+            .rename(columns={'Flow UUID': 'FlowUUID'})
+            .assign(FlowUUID=lambda x: x['FlowUUID'].fillna('n.a.'))
+            .assign(Context=lambda x: x['Context'].fillna('emission/air'))
+            )
+
     df = (df
         .assign(ReferenceCurrency=config['reference_currency'])
         .assign(Year=str(year))
         .assign(PriceType=config['price_type'])
-        )
-
-    fl = (fedelem.get_flows()
-          .query('Flowable in @df.Flow')
-          .filter(['Flowable', 'Context', 'Flow UUID'])
-          )
-    df = (df
-        .merge(fl, how='left',
-               left_on=['Flow', 'Compartment'],
-               right_on=['Flowable', 'Context'],
-               )
-        .assign(Flowable=lambda x: x['Flowable'].fillna(x['Flow']))
-        .drop(columns=['Flow', 'Compartment'])
-        .rename(columns={'Flow UUID': 'FlowUUID'})
-        .assign(FlowUUID=lambda x: x['FlowUUID'].fillna('n.a.'))
-        .assign(Context=lambda x: x['Context'].fillna('emission/air'))
         )
 
     df = adjust_currency_and_rename_flows_units(df, year)
@@ -420,7 +431,7 @@ def clean_mrio_M_matrix(M, fields_to_rename):
     Wrapper function to call correct M matrix cleaning function for MRIO
     '''
     fxn = extract_function_from_config('clean_M_function')
-    return fxn(M, fields_to_rename)
+    return fxn(M, fields_to_rename, mapping=config.get('mapping_file'))
 
 
 def clean_mrio_trade_data(df):

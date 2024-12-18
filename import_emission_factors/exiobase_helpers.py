@@ -3,7 +3,7 @@ from datetime import date
 
 from currency_converter import CurrencyConverter
 
-def clean_exiobase_M_matrix(M, fields_to_rename):
+def clean_exiobase_M_matrix(M, fields_to_rename, **kwargs):
     # for satellite
     M_df = M.copy().reset_index()
 

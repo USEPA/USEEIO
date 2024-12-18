@@ -66,10 +66,10 @@ ceda:
       CEDA Sector: MRIO Sector
 
 gloria:
-  # process_function: download_exiobase/process_exiobase
+  process_function: download_gloria/process_gloria
   clean_M_function: gloria_helpers/clean_gloria_M_matrix
   clean_trade_function: gloria_helpers/gloria_clean_trade
-  # currency_function: gloria_helpers/gloria_adjust_currency # 1000 USD
+  currency_function: gloria_helpers/gloria_adjust_currency # 1000 USD
   reference_currency: USD
   price_type: Basic
   calculation_configs:

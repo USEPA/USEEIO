@@ -9,6 +9,7 @@ def clean_gloria_M_matrix(M, fields_to_rename, **kwargs):
     mapping = kwargs.get('mapping')
 
     M_df['flow'] = M_df['stressor'].map(fields_to_rename)
+    missing = [k for k in fields_to_rename.keys() if k not in M_df['stressor'].values]
     M_df['ConversionFactor'] = M_df['stressor'].map(
         pd.Series(mapping['ConversionFactor'].values,
                   index=mapping['SourceFlowName'])

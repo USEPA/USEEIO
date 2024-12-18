@@ -1,3 +1,5 @@
+""" Functions to support the processing of EXIOBASE MRIO models"""
+
 import statistics
 from datetime import date
 

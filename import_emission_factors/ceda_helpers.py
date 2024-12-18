@@ -1,3 +1,5 @@
+""" Functions to support the processing of CEDA MRIO models"""
+
 def clean_ceda_M_matrix(M, fields_to_rename, **kwargs):
     M = M.rename(columns=fields_to_rename)
     M_melted = M.melt(

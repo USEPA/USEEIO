@@ -1,0 +1,257 @@
+Country,ISO Code,Region
+Afghanistan,AF,APAC
+Africa,,
+Albania,AL,EU
+Algeria,DZ,ROW
+All countries,,
+Andorra,AD,EU
+Angola,AO,ROW
+Anguilla,AI,ROW
+Antigua and Barbuda,AG,ROW
+Argentina,AR,ROW
+Armenia,AM,EU
+Aruba,AW,ROW
+Asia and Pacific,,
+Australia,AU,APAC
+Austria,AT,EU
+Azerbaijan,AZ,EU
+Bahamas,BS,ROW
+Bahrain,BH,ROW
+Bangladesh,BD,APAC
+Barbados,BB,ROW
+Belarus,BY,EU
+Belgium,BE,EU
+Belize,BZ,ROW
+Benin,BJ,ROW
+Bermuda,BM,ROW
+Bhutan,BT,APAC
+Bolivia,BO,ROW
+Bosnia and Herzegovina,BA,EU
+Botswana,BW,ROW
+Brazil,BR,ROW
+British Indian Ocean Territory,IO,ROW
+British Virgin Islands,VG,ROW
+Brunei,BN,APAC
+Bulgaria,BG,EU
+Burkina Faso,BF,ROW
+Burma (Myanmar),MM,APAC
+Burundi,BI,APAC
+Cabo Verde,CV,ROW
+CAFTA-DR countries,,
+Cambodia,KH,APAC
+Cameroon,CM,ROW
+Canada,CA,CA
+Cayman Islands,KY,ROW
+Central African Republic,CF,ROW
+Chad,TD,ROW
+Chile,CL,ROW
+China,CN,CN
+Christmas Island (in the Indian Ocean),CX,APAC
+Cocos (Keeling) Islands,CC,APAC
+Colombia,CO,ROW
+Comoros,KM,ROW
+"Congo, Democratic Republic of the Congo (formerly Za",rCD,ROW
+"Congo, Republic of the Congo",CG,ROW
+Cook Islands,CK,APAC
+Costa Rica,CR,ROW
+Cote d'Ivoire,CI,ROW
+Croatia,HR,EU
+Cuba,CU,ROW
+Curacao,CW,ROW
+Cyprus,CY,EU
+Czech Republic,CZ,EU
+Denmark,DK,EU
+"Denmark, except Greenland",DK,EU
+Djibouti,DJ,ROW
+Dominica,DM,ROW
+Dominican Republic,DO,ROW
+Ecuador,EC,ROW
+Egypt,EG,ROW
+El Salvador,SV,ROW
+Equatorial Guinea,GQ,ROW
+Eritrea,ER,ROW
+Estonia,EE,EU
+Eswatini,SZ,ROW
+Ethiopia,ET,ROW
+Euro area,,
+Europe,,
+European Union,,
+Falkland Islands (Islas Malvinas),FK,ROW
+Faroe Islands,FO,EU
+Fiji,FJ,APAC
+Finland,FI,EU
+France,FR,EU
+French Guiana,GF,ROW
+French Polynesia,PF,APAC
+French Southern and Antarctic Lands,TF,ROW
+Gabon,GA,ROW
+Gambia,GM,ROW
+Gaza Strip administered by Israel,GZ,ROW
+Georgia,GE,EU
+Germany,DE,EU
+Germany (Federal Republic of Germany),DE,EU
+Ghana,GH,ROW
+Gibraltar,GI,EU
+Greece,GR,EU
+Greenland,GL,EU
+Grenada,GD,ROW
+Guadeloupe,GP,ROW
+Guatemala,GT,ROW
+Guinea,GN,ROW
+Guinea-Bissau,GW,ROW
+Guyana,GY,ROW
+Haiti,HT,ROW
+Heard Island and McDonald Islands,HM,APAC
+Holy See (Vatican City),VA,EU
+Honduras,HN,ROW
+Hong Kong,HK,APAC
+Hungary,HU,EU
+Iceland,IS,EU
+India,IN,APAC
+Indonesia,ID,APAC
+International organizations and unallocated,,
+Iran,IR,ROW
+Iraq,IQ,ROW
+Ireland,IE,EU
+Israel,IL,ROW
+Italy,IT,EU
+Jamaica,JM,ROW
+Japan,JP,JP
+Jordan,JO,ROW
+Kazakhstan,KZ,EU
+Kenya,KE,ROW
+Kiribati,KI,APAC
+Kosovo,KV,ROW
+Kuwait,KW,ROW
+Kyrgyzstan,KG,EU
+Laos (Lao People's Democratic Republic),LA,APAC
+Latin America and Other Western Hemisphere,,
+Latvia,LV,EU
+Lebanon,LB,ROW
+Lesotho,LS,ROW
+Liberia,LR,ROW
+Libya,LY,ROW
+Liechtenstein,LI,EU
+Lithuania,LT,EU
+Luxembourg,LU,EU
+Macao,MO,APAC
+Madagascar,MG,ROW
+Malawi,MW,ROW
+Malaysia,MY,APAC
+Maldives,MV,APAC
+Mali,ML,ROW
+Malta,MT,EU
+Marshall Islands,MH,APAC
+Martinique,MQ,ROW
+Mauritania,MR,ROW
+Mauritius,MU,ROW
+Mayotte,YT,ROW
+Mexico,MX,MX
+"Micronesia, Federated States of",FM,APAC
+Middle East,,
+Moldova (Republic of Moldova),MD,EU
+Monaco,MC,EU
+Mongolia,MN,APAC
+Montenegro,ME,EU
+Montserrat,MS,ROW
+Morocco,MA,ROW
+Mozambique,MZ,ROW
+Namibia,,ROW
+Nauru,NR,APAC
+Nepal,NP,APAC
+Netherlands,NL,EU
+New Caledonia,NC,APAC
+New Zealand,NZ,APAC
+Nicaragua,NI,ROW
+Niger,NE,ROW
+Nigeria,NG,ROW
+Niue,NU,APAC
+Norfolk Island,NF,APAC
+North Korea (Democratic People's Republic of Korea),KP,APAC
+North Macedonia,MK,EU
+Norway,NO,EU
+Oman,OM,ROW
+Other Africa (International Services Trade),,ROW
+Other Asia and Pacific (International Services Trade),,APAC
+Other Europe (International Services Trade),,EU
+Other Middle East (International Services Trade),,ROW
+Other South And Central America (International Services Trade),,ROW
+Other Western Hemisphere,,ROW
+"Other Western Hemisphere, Other (International Services Trade)",,ROW
+Pakistan,PK,APAC
+Palau,PW,APAC
+Panama,PA,ROW
+Papua New Guinea,PG,APAC
+Paraguay,PY,ROW
+Peru,PE,ROW
+Philippines,PH,APAC
+Pitcairn Islands,PN,APAC
+Poland,PL,EU
+Portugal,PT,EU
+Qatar,QA,ROW
+Reunion,RE,ROW
+Romania,RO,EU
+Russia,RU,EU
+Rwanda,RW,ROW
+Saint Helena,SH,ROW
+Saint Kitts and Nevis,KN,ROW
+Saint Lucia,LC,ROW
+Saint Pierre and Miquelon,PM,ROW
+Saint Vincent and the Grenadines,VC,ROW
+Samoa (Western Samoa),WS,APAC
+San Marino,SM,EU
+Sao Tome and Principe,ST,ROW
+Saudi Arabia,SA,ROW
+Senegal,SN,ROW
+Serbia,RS,EU
+Seychelles,SC,ROW
+Sierra Leone,SL,ROW
+Singapore,SG,APAC
+Sint Maarten,SX,ROW
+Slovakia,SK,EU
+Slovenia,SI,EU
+Solomon Islands,SB,APAC
+Somalia,SO,ROW
+South Africa,ZA,ROW
+South and Central America,,
+South Korea,KR,APAC
+South Korea (Republic of Korea),KR,APAC
+South Sudan,SS,ROW
+Spain,ES,EU
+Sri Lanka,LK,APAC
+Sudan,SD,ROW
+Suriname,SR,ROW
+Svalbard and Jan Mayen,SJ,EU
+Sweden,SE,EU
+Switzerland,CH,EU
+Syria (Syrian Arab Republic),SY,ROW
+Taiwan,TW,APAC
+Tajikistan,TJ,EU
+Tanzania (United Republic of Tanzania),TZ,ROW
+Thailand,TH,APAC
+Timor-Leste,TL,APAC
+Togo,TG,ROW
+Tokelau,TK,APAC
+Tonga,TO,APAC
+Trinidad and Tobago,TT,ROW
+Tunisia,TN,ROW
+Turkey,TR,EU
+Turkmenistan,TM,EU
+Turks and Caicos Islands,TC,ROW
+Tuvalu,TV,APAC
+Uganda,UG,ROW
+Ukraine,UA,EU
+United Arab Emirates,AE,ROW
+United Kingdom,GB,EU
+"United Kingdom Islands, Caribbean",,
+United States,US,US
+Uruguay,UY,ROW
+Uzbekistan,UZ,EU
+Vanuatu,VU,APAC
+Venezuela,VE,ROW
+Vietnam,VN,APAC
+Wallis and Futuna,WF,APAC
+West Bank administered by Israel,WE,ROW
+Yemen (Republic of Yemen),YE,ROW
+Zambia,ZM,ROW
+Zimbabwe,ZW,ROW

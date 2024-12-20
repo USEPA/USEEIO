@@ -25,47 +25,30 @@ Raising of animals n.e.c.; services to agriculture,112A00,112A00
 Raising of animals n.e.c.; services to agriculture,115000,115000
 Forestry and logging,113000,113000
 Forestry and logging,115000,115000
-Fishing,112A00,112A00
 Fishing,114000,114000
-Crustaceans and molluscs,112A00,112A00
 Crustaceans and molluscs,114000,114000
 Hard coal,212100,212100
-Hard coal,21311A,21311A
 Lignite and peat,212100,212100
-Lignite and peat,21311A,21311A
 Petroleum extraction,211000,211000
-Petroleum extraction,21311A,21311A
-Gas extraction,21311A,21311A
-Gas extraction,221200,221200
+Petroleum extraction,213111,213111
+Gas extraction,211000,211000
+Gas extraction,213111,213111
 Iron ores,2122A0,2122A0
-Iron ores,21311A,21311A
 Uranium ores,2122A0,2122A0
 Aluminium ore,2122A0,2122A0
-Aluminium ore,21311A,21311A
 Copper ores,212230,212230
-Copper ores,21311A,21311A
 Gold ores,2122A0,2122A0
-Gold ores,21311A,21311A
 Lead/zinc/silver ores,212230,212230
 Lead/zinc/silver ores,2122A0,2122A0
-Lead/zinc/silver ores,21311A,21311A
 Nickel ores,212230,212230
-Nickel ores,21311A,21311A
-Tin ores,212230,212230
 Tin ores,2122A0,2122A0
-Tin ores,21311A,21311A
 Other non-ferrous ores,2122A0,2122A0
-Other non-ferrous ores,21311A,21311A
 "Quarrying of stone, sand and clay",212310,212310
 "Quarrying of stone, sand and clay",2123A0,2123A0
-"Quarrying of stone, sand and clay",21311A,21311A
 Chemical and fertilizer minerals,2123A0,2123A0
-Chemical and fertilizer minerals,21311A,21311A
 Extraction of salt,2123A0,2123A0
-Extraction of salt,21311A,21311A
 Mining and quarrying n.e.c.; services to mining,2123A0,2123A0
 Mining and quarrying n.e.c.; services to mining,21311A,21311A
-Mining and quarrying n.e.c.; services to mining,213111,213111
 Beef meat,31161A,31161A
 Sheep meat,31161A,31161A
 Pork,31161A,31161A
@@ -78,13 +61,8 @@ Vegetable products,311420,311420
 Fruit products,311420,311420
 Food products and feeds n.e.c.,311111,311111
 Food products and feeds n.e.c.,311119,311119
-Food products and feeds n.e.c.,311210,311210
 Food products and feeds n.e.c.,311221,311221
-Food products and feeds n.e.c.,311230,311230
-Food products and feeds n.e.c.,311300,311300
 Food products and feeds n.e.c.,311410,311410
-Food products and feeds n.e.c.,311420,311420
-Food products and feeds n.e.c.,311520,311520
 Food products and feeds n.e.c.,311810,311810
 Food products and feeds n.e.c.,3118A0,3118A0
 Food products and feeds n.e.c.,311910,311910
@@ -105,7 +83,6 @@ Alcoholic and other  beverages,312120,312120
 Alcoholic and other  beverages,312130,312130
 Alcoholic and other  beverages,312140,312140
 Tobacco products,312200,312200
-Textiles and clothing,337900,337900
 Textiles and clothing,313100,313100
 Textiles and clothing,313200,313200
 Textiles and clothing,313300,313300
@@ -120,12 +97,6 @@ Sawmill products,321100,321100
 Sawmill products,321200,321200
 Sawmill products,321910,321910
 Sawmill products,3219A0,3219A0
-Sawmill products,337110,337110
-Sawmill products,337121,337121
-Sawmill products,337122,337122
-Sawmill products,337127,337127
-Sawmill products,337215,337215
-Sawmill products,33721A,33721A
 Pulp and paper,322110,322110
 Pulp and paper,322120,322120
 Pulp and paper,322130,322130
@@ -136,7 +107,7 @@ Pulp and paper,322291,322291
 Pulp and paper,322299,322299
 Printing,323110,323110
 Printing,323120,323120
-Coke oven products,212100,212100
+Coke oven products,324190,324190
 Refined petroleum products,324110,324110
 Refined petroleum products,325120,325120
 Refined petroleum products,324121,324121
@@ -447,26 +418,6 @@ Administrative services,561900,561900
 Government; social security; defence; public order,GSLGE,GSLGE
 Government; social security; defence; public order,GSLGH,GSLGH
 Government; social security; defence; public order,GSLGO,GSLGO
-Government; social security; defence; public order,F02S00,F02S00
-Government; social security; defence; public order,F02N00,F02N00
-Government; social security; defence; public order,F02E00,F02E00
-Government; social security; defence; public order,F02R00,F02R00
-Government; social security; defence; public order,F03000,F03000
-Government; social security; defence; public order,F04000,F04000
-Government; social security; defence; public order,F05000,F05000
-Government; social security; defence; public order,F06C00,F06C00
-Government; social security; defence; public order,F06E00,F06E00
-Government; social security; defence; public order,F06N00,F06N00
-Government; social security; defence; public order,F06S00,F06S00
-Government; social security; defence; public order,F07C00,F07C00
-Government; social security; defence; public order,F07E00,F07E00
-Government; social security; defence; public order,F07S00,F07S00
-Government; social security; defence; public order,F07N00,F07N00
-Government; social security; defence; public order,F01000,F01000
-Government; social security; defence; public order,F10C00,F10C00
-Government; social security; defence; public order,F10E00,F10E00
-Government; social security; defence; public order,F10N00,F10N00
-Government; social security; defence; public order,F10S00,F10S00
 Government; social security; defence; public order,S00101,S00101
 Government; social security; defence; public order,S00201,S00201
 Government; social security; defence; public order,S00102,S00102
@@ -507,8 +458,3 @@ Other services,813A00,813A00
 Other services,813B00,813B00
 Other services,814000,814000
 Other services,S00300,S00300
-,S00900,S00900
-,V00200,V00200
-,4200ID,4200ID
-,V00100,V00100
-,V00300,V00300

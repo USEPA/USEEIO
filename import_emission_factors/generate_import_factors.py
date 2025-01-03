@@ -321,7 +321,7 @@ def pull_mrio_multipliers(year):
     mrio = pkl.load(open(file,'rb'))
 
     fields_to_rename = {**config['fields'], **config['flows']}
-    M_df = clean_mrio_M_matrix(mrio['M'], fields_to_rename)
+    M_df = clean_mrio_M_matrix(mrio['M'], fields_to_rename, year)
     M_df = M_df.assign(Year=str(year))
 
     # # for impacts
@@ -364,12 +364,12 @@ def process_mrio_data(year):
     fxn(year_start=year, year_end=year)
 
 
-def clean_mrio_M_matrix(M, fields_to_rename):
+def clean_mrio_M_matrix(M, fields_to_rename, year):
     '''
     Wrapper function to call correct M matrix cleaning function for MRIO
     '''
     fxn = extract_function_from_config('clean_M_function')
-    return fxn(M, fields_to_rename, mapping=config.get('mapping_file'))
+    return fxn(M, fields_to_rename, mapping=config.get('mapping_file'), year=year)
 
 
 def clean_mrio_trade_data(df):
@@ -530,3 +530,5 @@ def extract_function_from_config(fkey):
 #%%
 if __name__ == '__main__':
     generate_import_emission_factors(years = years, schema = schema)
+    # multiplier_df = (pd.read_csv(out_Path /f'multiplier_df_{source}_2022_{str(schema)[-2:]}sch.csv')
+    #                   .query('Flow == "Carbon dioxide"'))

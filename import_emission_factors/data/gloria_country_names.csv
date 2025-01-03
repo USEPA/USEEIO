@@ -30,8 +30,8 @@ CHL,Chile
 CHN,China
 CIV,Cote d'Ivoire
 CMR,Cameroon
-COD,"Congo, Democratic Republic of the Congo (formerly Za"
-COG,"Congo, Republic of the Congo"
+COD,DR Congo
+COG,Rep Congo
 COL,Colombia
 CRI,Costa Rica
 CUB,Cuba
@@ -41,7 +41,7 @@ DEU,Germany
 DJI,Djibouti
 DNK,Denmark
 DOM,Dominican Republic
-DYE,Yemen (Republic of Yemen)
+DYE,DR Yemen (Aden)
 DZA,Algeria
 ECU,Ecuador
 EGY,Egypt
@@ -82,7 +82,7 @@ KGZ,Kyrgyzstan
 KHM,Cambodia
 KOR,South Korea
 KWT,Kuwait
-LAO,Laos (Lao People's Democratic Republic)
+LAO,Laos
 LBN,Lebanon
 LBR,Liberia
 LBY,Libya
@@ -115,7 +115,7 @@ PER,Peru
 PHL,Philippines
 PNG,Papua New Guinea
 POL,Poland
-PRK,North Korea (Democratic People's Republic of Korea)
+PRK,North Korea
 PRT,Portugal
 PRY,Paraguay
 QAT,Qatar
@@ -134,7 +134,7 @@ SRB,Serbia
 SVK,Slovakia
 SVN,Slovenia
 SWE,Sweden
-SYR,Syria (Syrian Arab Republic)
+SYR,Syria
 TCD,Chad
 TGO,Togo
 THA,Thailand
@@ -142,18 +142,18 @@ TJK,Tajikistan
 TKM,Turkmenistan
 TUN,Tunisia
 TUR,Turkey
-TZA,Tanzania (United Republic of Tanzania)
+TZA,Tanzania
 UGA,Uganda
 UKR,Ukraine
 URY,Uruguay
-USA,United States
+USA,United States of America
 UZB,Uzbekistan
 VEN,Venezuela
-VNM,Vietnam
+VNM,Viet Nam
 ZAF,South Africa
 ZMB,Zambia
 ZWE,Zimbabwe
-XAF,UPDATE Rest of Africa
-XAM,UPDATE Rest of America
-XAS,UPDATE Rest of Asia
-XEU,UPDATE Rest of Europe
+XAF,Rest of Africa
+XAM,Rest of Americas
+XAS,Rest of Asia-Pacific
+XEU,Rest of Europe

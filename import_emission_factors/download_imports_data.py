@@ -170,7 +170,7 @@ def make_reqs(file, reqs, data_years):
     print('Successfully Collected All',file,'Requests')
     return d
 
-def get_census_df(d, data_years, schema=2012):
+def get_census_df(d, data_years, group, schema=2012):
     '''
     Creates a dataframe for Census response data for a given year.
     '''
@@ -193,21 +193,26 @@ def get_census_df(d, data_years, schema=2012):
             df = pd.concat([df, cols], axis=1)
         df = df.assign(Year=year)
     df = df.replace(np.nan, 0).reset_index()
-    ## Merge in BEA Codes and flatten
-    c_b = (pd.read_csv(conPath / 'Census_to_useeio2_sector_concordance.csv')
-           .rename(columns={f'BEA_Detail_{schema}': 'BEA Sector'})
-           .filter(['NAICS', 'BEA Sector'])
-           .drop_duplicates()
-           )
-    df = df.merge(c_b, how='left', on='NAICS')
-    check = set(df[df['BEA Sector'].isna()]['NAICS'])
-    if len(check) > 0:
-        print(f'WARNING: BEA mapping missing for Census data '
-              f'for NAICS: {sorted(check)}')
-    df = (df.drop(columns='NAICS')
-            .groupby(['BEA Sector', 'Year']).agg(sum)
+    if group == 'BEA':
+        ## Merge in BEA Codes and flatten
+        c_b = (pd.read_csv(conPath / 'Census_to_useeio2_sector_concordance.csv')
+               .rename(columns={f'BEA_Detail_{schema}': 'BEA Sector'})
+               .filter(['NAICS', 'BEA Sector'])
+               .drop_duplicates()
+               )
+        df = df.merge(c_b, how='left', on='NAICS')
+        check = set(df[df['BEA Sector'].isna()]['NAICS'])
+        if len(check) > 0:
+            print(f'WARNING: BEA mapping missing for Census data '
+                  f'for NAICS: {sorted(check)}')
+        group_var = 'BEA Sector'
+        df = df.drop(columns='NAICS')
+    else:
+        group_var = 'NAICS'
+
+    df = (df.groupby([group_var, 'Year']).agg(sum)
             .reset_index()
-            .melt(id_vars=['BEA Sector', 'Year'], var_name='Country',
+            .melt(id_vars=[group_var, 'Year'], var_name='Country',
                   value_name='Import Quantity')
             .assign(Unit='USD')
             .assign(Source='Census')
@@ -290,10 +295,13 @@ def get_imports_data(year, schema=2012):
         pkl.dump(c_responses, open(dataPath / f'census_responses_{year}.pkl', 'wb'))
 
     b_df = get_bea_df(b_responses, [year], schema=schema)
-    c_df = get_census_df(c_responses, [year], schema=schema)
+    c_df = get_census_df(c_responses, [year], group='BEA', schema=schema)
     i_df = pd.concat([c_df, b_df], ignore_index=True, axis=0)
     i_df = i_df.rename(columns={'BEA Sector': 'BEA Detail'})
     return i_df
 #%%
 if __name__ == '__main__':
     i_df = get_imports_data(year=2019, schema=2017)
+
+    # c_responses = pkl.load(open(dataPath / f'census_responses_{2019}.pkl', 'rb'))
+    # c_df = get_census_df(c_responses, ['2019'], group='NAICS', schema=2017)

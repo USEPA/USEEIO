@@ -66,7 +66,8 @@ def get_BEA_country_list():
                       'Desc': 'country'})
      .to_csv(dPath / 'BEA_country_names.csv', index=False))
 
-def get_country_schema():
+
+def get_country_schema(file):
     '''
     Uses t_e dataframe, containing a concordance between countries across
     exiobase, BEA TiVA regions, BEA Service Imports, and Census Codes (not 
@@ -75,26 +76,28 @@ def get_country_schema():
     (strings with their API name equivalents); and 2) c_d is a concordance 
     between exiobase ISO codes and Census country codes (4-digit)
     '''
-    b_d = (pd.read_csv(dPath / 'BEA_country_names.csv')
-           .filter(['BEA_AREAORCOUNTRY', 'country'])
-           .drop_duplicates()
-           .set_index('country')['BEA_AREAORCOUNTRY']
-           .to_dict()
-           )
+    if file == "BEA_API":
+        country_dict = (pd.read_csv(dPath / 'BEA_country_names.csv')
+                           .filter(['BEA_AREAORCOUNTRY', 'country'])
+                           .drop_duplicates()
+                           .set_index('country')['BEA_AREAORCOUNTRY']
+                           .to_dict()
+                           )
+    elif file == "Census_API":
+        country_dict = (get_CTY_CODE()
+                        .set_index('Name')['Census Code']
+                        .to_dict()
+                        )
+    return country_dict
 
-    c_d = (get_CTY_CODE()
-           .set_index('Name')['Census Code']
-           .to_dict()
-           )
 
-    return (b_d, c_d)
-
-def create_Reqs(file, d, year):
+def create_Reqs(file, year):
     '''
     A function to develop all requests to either Census or BEA API. Requests 
     are developed and stored in a dictionary of the following structure:
     reqs = {year:{year_country:{year:YYYY, country=country, req: url}}}
     '''
+    country_dict = get_country_schema(file)
     components = get_URL_Components(file)
     reqs = {}
     year = str(year)
@@ -107,7 +110,7 @@ def create_Reqs(file, d, year):
         api_key = get_api_key(file)
         req_url += f'UserID={api_key}&'
     req_url = req_url.rstrip('&')
-    reqs[year] = complete_URLs(req_url, year, d)
+    reqs[year] = complete_URLs(req_url, year, country_dict)
     print('Successfully Created All', file[:-4], 'Request URLs')
     return reqs
 
@@ -167,16 +170,17 @@ def make_reqs(file, reqs, data_years):
     print('Successfully Collected All',file,'Requests')
     return d
 
-def get_census_df(d, c_d, data_years, schema=2012):
+def get_census_df(d, data_years, schema=2012):
     '''
     Creates a dataframe for Census response data for a given year.
     '''
+    country_dict0 = get_country_schema('Census_API')
+    country_dict = {v:k for k,v in country_dict0.items()}
     df = pd.DataFrame()
-    country_code = {v:k for k,v in c_d.items()}
     for year in data_years:
         for k, v in d[year].items():
             v_d = v['data']
-            cty = country_code.get(v['cty'])
+            cty = country_dict.get(v['cty'])
             value_df = pd.DataFrame(data=v_d[1:], columns=v_d[0])
             cols = value_df[['NAICS','GEN_CIF_YR']]
             cols = (cols
@@ -210,11 +214,13 @@ def get_census_df(d, c_d, data_years, schema=2012):
             )
     return df
 
-def get_bea_df(d, b_d, data_years, schema=2012):
+def get_bea_df(d, data_years, schema=2012):
     '''
     Creates a dataframe for BEA response data for a given year.
     '''
-    e_t_d = {v:k for k,v in b_d.items()}
+    country_dict0 = get_country_schema('BEA_API')
+    country_dict = {v:k for k,v in country_dict0.items()}
+
     n_d = {}
     df_all = pd.DataFrame()
     b_b = (pd.read_csv(conPath / 'BEA_service_to_useeio2_sector_concordance.csv')
@@ -226,7 +232,7 @@ def get_bea_df(d, b_d, data_years, schema=2012):
     for year in data_years:
         for k, v in d[year].items():
             cty = v['cty']
-            cty = e_t_d[cty]
+            cty = country_dict[cty]
             d_n = {}
             data = v['data']['BEAAPI']['Results']['Data']
             for item in data:
@@ -269,7 +275,6 @@ def get_imports_data(year, schema=2012):
     '''
     A function to call from other scripts.
     '''
-    b_d, c_d = get_country_schema()
     year = str(year)
     try:
         c_responses = pkl.load(open(dataPath / f'census_responses_{year}.pkl', 'rb'))
@@ -277,15 +282,15 @@ def get_imports_data(year, schema=2012):
     except FileNotFoundError:
         print('Responses not found locally, querying API')
         dataPath.mkdir(exist_ok=True)
-        b_reqs = create_Reqs('BEA_API', b_d, year)
-        c_reqs = create_Reqs('Census_API', c_d, year)
+        b_reqs = create_Reqs('BEA_API', year)
+        c_reqs = create_Reqs('Census_API', year)
         b_responses = make_reqs('BEA', b_reqs, [year])
         pkl.dump(b_responses, open(dataPath / f'bea_responses_{year}.pkl', 'wb'))
         c_responses = make_reqs('Census', c_reqs, [year])
         pkl.dump(c_responses, open(dataPath / f'census_responses_{year}.pkl', 'wb'))
 
-    b_df = get_bea_df(b_responses, b_d, [year], schema=schema)
-    c_df = get_census_df(c_responses, c_d, [year], schema=schema)
+    b_df = get_bea_df(b_responses, [year], schema=schema)
+    c_df = get_census_df(c_responses, [year], schema=schema)
     i_df = pd.concat([c_df, b_df], ignore_index=True, axis=0)
     i_df = i_df.rename(columns={'BEA Sector': 'BEA Detail'})
     return i_df

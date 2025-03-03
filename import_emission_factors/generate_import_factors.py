@@ -1,6 +1,6 @@
 """
 Generates import factors from selected MRIO.
-Current options are: EXIOBASE, CEDA
+Current options are: EXIOBASE, CEDA, GLORIA
 """
 
 import pickle as pkl
@@ -22,7 +22,7 @@ from generate_import_shares import get_detail_to_summary_useeio_concordance, \
 #%% Set Parameters for import emission factors
 years = list(range(2017,2023)) # list
 schema = 2017 # int
-source = 'exiobase' # options are 'exiobase', 'ceda'
+source = 'gloria' # options are 'exiobase', 'ceda', 'gloria'
 
 dataPath = Path(__file__).parent / 'data'
 conPath = Path(__file__).parent / 'concordances'
@@ -41,6 +41,11 @@ with open(dataPath / "mrio_config.yml", "r") as file:
     config = config.get(source)
     if not config:
         raise IndexError(f'MRIO config not found for {source}')
+    if config.get('mapping_file'):
+        # read in mapping file and recreate flows dict
+        flows = pd.read_csv(dataPath / config['mapping_file'])
+        config['mapping_file'] = flows
+        config['flows'] = dict(zip(flows['SourceFlowName'], flows['TargetFlowName']))
 
 
 def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
@@ -146,28 +151,48 @@ def df_prepare(df, year):
         value_name = 'EF'
         )
 
-    df = (df
-        .assign(Compartment='emission/air')
-        .assign(Unit='kg')
-        .assign(ReferenceCurrency='Euro')
-        .assign(Year=str(year))
-        .assign(PriceType=config.get('price_type'))
-        )
+    if 'mapping_file' in config:
+        mapping = config.get('mapping_file')
+        df = (df
+            .assign(Context = lambda x: x['Flow'].map(
+                pd.Series(mapping['TargetFlowContext'].values,
+                          index=mapping['TargetFlowName'])
+                .to_dict()))
+            .assign(Unit = lambda x: x['Flow'].map(
+                pd.Series(mapping['TargetUnit'].values,
+                          index=mapping['TargetFlowName'])
+                .to_dict()))
+            .assign(FlowUUID = lambda x: x['Flow'].map(
+                pd.Series(mapping['TargetFlowUUID'].values,
+                          index=mapping['TargetFlowName'])
+                .to_dict()))
+            .assign(Flowable = lambda x: x['Flow'])
+            )
+    else:
+        df = (df
+            .assign(Compartment='emission/air')
+            .assign(Unit='kg')
+            )
+        fl = (fedelem.get_flows()
+              .query('Flowable in @df.Flow')
+              .filter(['Flowable', 'Context', 'Flow UUID'])
+              )
+        df = (df
+            .merge(fl, how='left',
+                   left_on=['Flow', 'Compartment'],
+                   right_on=['Flowable', 'Context'],
+                   )
+            .assign(Flowable=lambda x: x['Flowable'].fillna(x['Flow']))
+            .drop(columns=['Flow', 'Compartment'])
+            .rename(columns={'Flow UUID': 'FlowUUID'})
+            .assign(FlowUUID=lambda x: x['FlowUUID'].fillna('n.a.'))
+            .assign(Context=lambda x: x['Context'].fillna('emission/air'))
+            )
 
-    fl = (fedelem.get_flows()
-          .query('Flowable in @df.Flow')
-          .filter(['Flowable', 'Context', 'Flow UUID'])
-          )
     df = (df
-        .merge(fl, how='left',
-               left_on=['Flow', 'Compartment'],
-               right_on=['Flowable', 'Context'],
-               )
-        .assign(Flowable=lambda x: x['Flowable'].fillna(x['Flow']))
-        .drop(columns=['Flow', 'Compartment'])
-        .rename(columns={'Flow UUID': 'FlowUUID'})
-        .assign(FlowUUID=lambda x: x['FlowUUID'].fillna('n.a.'))
-        .assign(Context=lambda x: x['Context'].fillna('emission/air'))
+        .assign(ReferenceCurrency=config['reference_currency'])
+        .assign(Year=str(year))
+        .assign(PriceType=config['price_type'])
         )
 
     df = adjust_currency_and_rename_flows_units(df, year)
@@ -213,9 +238,6 @@ def adjust_currency_and_rename_flows_units(df, year):
     if 'currency_function' in config:
         fxn = extract_function_from_config('currency_function')
         df = fxn(df, year)
-    else:
-        # some MRIO already in USD, only need to rename units
-        df = df.assign(ReferenceCurrency='USD')
 
     df.loc[df['Flowable'] == 'HFCs and PFCs, unspecified',
         'Unit'] = 'kg CO2e'
@@ -299,7 +321,7 @@ def pull_mrio_multipliers(year):
     mrio = pkl.load(open(file,'rb'))
 
     fields_to_rename = {**config['fields'], **config['flows']}
-    M_df = clean_mrio_M_matrix(mrio['M'], fields_to_rename)
+    M_df = clean_mrio_M_matrix(mrio['M'], fields_to_rename, year)
     M_df = M_df.assign(Year=str(year))
 
     # # for impacts
@@ -342,12 +364,12 @@ def process_mrio_data(year):
     fxn(year_start=year, year_end=year)
 
 
-def clean_mrio_M_matrix(M, fields_to_rename):
+def clean_mrio_M_matrix(M, fields_to_rename, year):
     '''
     Wrapper function to call correct M matrix cleaning function for MRIO
     '''
     fxn = extract_function_from_config('clean_M_function')
-    return fxn(M, fields_to_rename)
+    return fxn(M, fields_to_rename, mapping=config.get('mapping_file'), year=year)
 
 
 def clean_mrio_trade_data(df):
@@ -508,3 +530,5 @@ def extract_function_from_config(fkey):
 #%%
 if __name__ == '__main__':
     generate_import_emission_factors(years = years, schema = schema)
+    # multiplier_df = (pd.read_csv(out_Path /f'multiplier_df_{source}_2022_{str(schema)[-2:]}sch.csv')
+    #                   .query('Flow == "Carbon dioxide"'))

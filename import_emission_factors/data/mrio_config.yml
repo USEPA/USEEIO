@@ -6,6 +6,7 @@ exiobase:
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: true
   price_type: Basic
+  reference_currency: Euro
   fields:
     region: CountryCode
     sector: MRIO Sector
@@ -22,10 +23,10 @@ exiobase:
     PFC: HFCs and PFCs, unspecified # units in kg CO2e
     SF6: Sulfur hexafluoride
 
-  impacts: # if using impacts.M
-    Carbon dioxide (CO2) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Carbon dioxide
-    Methane (CH4) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Methane
-    Nitrous Oxide (N2O) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Nitrous oxide
+  # impacts: # if using impacts.M
+  #   Carbon dioxide (CO2) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Carbon dioxide
+  #   Methane (CH4) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Methane
+  #   Nitrous Oxide (N2O) IPCC categories 1 to 4 and 6 to 7 (excl land use, land use change and forestry): Nitrous oxide
 
   useeio_concordance:
     file: exio_to_useeio2_commodity_concordance.csv
@@ -40,6 +41,7 @@ ceda:
   clean_M_function: ceda_helpers/clean_ceda_M_matrix
   calculation_configs:
     use_industry_output_for_usa_electricity_imports: false
+  reference_currency: USD
   price_type: Producer
   fields:
     country: CountryCode
@@ -62,3 +64,27 @@ ceda:
     fields:
       USEEIO_Detail___schema__: BEA Detail
       CEDA Sector: MRIO Sector
+
+gloria:
+  process_function: download_gloria/process_gloria
+  clean_M_function: gloria_helpers/clean_gloria_M_matrix
+  clean_trade_function: gloria_helpers/gloria_clean_trade
+  currency_function: gloria_helpers/gloria_adjust_currency # 1000 USD
+  reference_currency: USD
+  price_type: Basic
+  calculation_configs:
+    use_industry_output_for_usa_electricity_imports: true
+  fields:
+    region: CountryCode
+    sector: MRIO Sector
+  exports:
+    USA: Exports to US
+  output:
+    indout: Output
+  mapping_file: gloria_mapping.csv
+
+  useeio_concordance:
+    file: GLORIA_to_useeio2_commodity_concordance.csv
+    fields:
+      USEEIO_Detail___schema__: BEA Detail
+      GLORIA Sector: MRIO Sector

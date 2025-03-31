@@ -361,6 +361,7 @@ Transport via pipeline,486000,486000
 Water transport,483000,483000
 Air transport,481000,481000
 Services to transport,493000,493000
+Services to transport,48A000,48A000
 Postal and courier services,492000,492000
 Hospitality,721000,721000
 Hospitality,722110,722110
@@ -371,8 +372,10 @@ Publishing,511120,511120
 Publishing,511130,511130
 Publishing,5111A0,5111A0
 Publishing,511200,511200
-Telecommunications,515100,515100
-Telecommunications,515200,515200
+Publishing,512100,512100
+Publishing,512200,512200
+Publishing,515100,515100
+Publishing,515200,515200
 Telecommunications,517110,517110
 Telecommunications,517210,517210
 Telecommunications,517A00,517A00

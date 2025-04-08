@@ -128,6 +128,9 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
                                    on=['CountryCode', 'BEA Detail', 'BEA Summary'])
                             .merge(mrio_country_names, on='CountryCode', validate='m:1')
                             )
+        missing = set(imports_agg['CountryCode']) - set(agg['CountryCode'])
+        if(len(missing) > 0):
+            print(f'WARNING: missing countries in correspondence: {missing}')
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
         ##       summary sectors.

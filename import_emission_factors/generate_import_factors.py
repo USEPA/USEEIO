@@ -131,6 +131,19 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
         missing = set(imports_agg['CountryCode']) - set(agg['CountryCode'])
         if(len(missing) > 0):
             print(f'WARNING: missing countries in correspondence: {missing}')
+
+        # Check for sectors missing from MRIO mapping file
+        check = pd.concat([
+            imports_agg.query('cntry_cntrb_to_national_detail > 0')[['BEA Summary', 'BEA Detail']].drop_duplicates().assign(source='imports'),
+            agg[['BEA Summary', 'BEA Detail']].drop_duplicates().assign(source='mrio')],
+            ignore_index=True)
+        duplicates = check.duplicated(keep=False, subset=['BEA Summary', 'BEA Detail'])
+        check_unique = check[~duplicates]
+        missing = check_unique.query('source == "imports"').sort_values(by='BEA Summary')
+        if(len(missing) > 0):
+            print(f'WARNING: sectors with imports not found in MRIO: \n',
+                  f'{missing.drop(columns="source")}')
+
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
         ##       summary sectors.

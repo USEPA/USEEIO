@@ -83,7 +83,7 @@ Finland,FI,FIN
 France,FR,FRA
 French Guiana,GF,XAM
 French Polynesia,PF,XAS
-French Southern and Antarctic Lands,TF,
+French Southern and Antarctic Lands,TF,XAF
 Gabon,GA,GAB
 Gambia,GM,GMB
 Gaza Strip administered by Israel,GZ,XAS
@@ -101,7 +101,7 @@ Guinea,GN,GIN
 Guinea-Bissau,GW,XAF
 Guyana,GY,XAM
 Haiti,HT,HTI
-Heard Island and McDonald Islands,HM,
+Heard Island and McDonald Islands,HM,XAS
 Holy See (Vatican City),VA,XEU
 Honduras,HN,HND
 Hong Kong,HK,HKG
@@ -176,8 +176,8 @@ Other Asia and Pacific (International Services Trade),,XAS
 Other Europe (International Services Trade),,XEU
 Other Middle East (International Services Trade),,XAS
 Other South And Central America (International Services Trade),,XAM
-Other Western Hemisphere,,
-"Other Western Hemisphere, Other (International Services Trade)",,
+Other Western Hemisphere,,XAM
+"Other Western Hemisphere, Other (International Services Trade)",,XAM
 Pakistan,PK,PAK
 Palau,PW,XAS
 Panama,PA,PAN
@@ -193,7 +193,7 @@ Reunion,RE,XAF
 Romania,RO,ROU
 Russia,RU,RUS
 Rwanda,RW,RWA
-Saint Helena,SH,
+Saint Helena,SH,XAF
 Saint Kitts and Nevis,KN,XAM
 Saint Lucia,LC,XAM
 Saint Pierre and Miquelon,PM,XAM
@@ -252,6 +252,6 @@ Venezuela,VE,VEN
 Vietnam,VN,VNM
 Wallis and Futuna,WF,XAS
 West Bank administered by Israel,WE,XAS
-Yemen (Republic of Yemen),YE,DYE
+Yemen (Republic of Yemen),YE,YEM
 Zambia,ZM,ZMB
 Zimbabwe,ZW,ZWE

@@ -128,10 +128,35 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
                                    on=['CountryCode', 'BEA Detail', 'BEA Summary'])
                             .merge(mrio_country_names, on='CountryCode', validate='m:1')
                             )
+        missing = set(imports_agg['CountryCode']) - set(agg['CountryCode'])
+        if(len(missing) > 0):
+            print(f'WARNING: missing countries in correspondence: {missing}')
+
+        # Check for sectors missing from MRIO mapping file
+        check = pd.concat([
+            imports_agg.query('cntry_cntrb_to_national_detail > 0')[['BEA Summary', 'BEA Detail']].drop_duplicates().assign(source='imports'),
+            agg[['BEA Summary', 'BEA Detail']].drop_duplicates().assign(source='mrio')],
+            ignore_index=True)
+        duplicates = check.duplicated(keep=False, subset=['BEA Summary', 'BEA Detail'])
+        check_unique = check[~duplicates]
+        missing = check_unique.query('source == "imports"').sort_values(by='BEA Summary')
+        if(len(missing) > 0):
+            print(f'WARNING: sectors with imports not found in MRIO: \n',
+                  f'{missing.drop(columns="source").to_string(index=False)}')
+
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
         ##       summary sectors.
         multiplier_df = df_prepare(multiplier_df, year)
+        check = (multiplier_df
+                 .query('Flow == @multiplier_df["Flow"][0]')
+                 .groupby(['BEA Summary']).agg({'cntry_cntrb_to_national_summary':'sum'})
+                 .rename(columns={'cntry_cntrb_to_national_summary': 'contrib'})
+                 .query('contrib > 0 and contrib <= 0.9999')
+                 )
+        if(len(check) > 0):
+            print(f'WARNING: some sectors may have missing data: \n'
+                  f'{check.to_string(index=True)}')
         multiplier_df.to_csv(
             out_Path /f'multiplier_df_{source}_{year}_{str(schema)[-2:]}sch.csv', index=False)
         calculate_and_store_emission_factors(multiplier_df)
@@ -302,8 +327,7 @@ def map_mrio_countires(df):
     path = conPath / f'{source}_country_concordance.csv'
     codes = pd.read_csv(path, dtype=str, usecols=['Country', 'CountryCode'])
     df = df.merge(codes, on='Country', how='left', validate='m:1')
-    missing = (set(df[df.isnull().any(axis=1)]['Country'])
-               - set(codes['Country']))
+    missing = (set(df[df.isnull().any(axis=1)]['Country']))
     if len(missing) > 0:
         print(f'WARNING: missing countries in correspondence: {missing}')
 

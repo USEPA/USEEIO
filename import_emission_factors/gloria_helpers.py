@@ -35,10 +35,11 @@ def clean_gloria_M_matrix(M, fields_to_rename, **kwargs):
     # filter dataset with sectors that have reasonable output to avoid outliers
     output = pull_mrio_data(year, 'output')
     M_df = (M_df.merge(output, how = 'left')
-            .query('Output > 1')
+            .query('Output > 1000')
             .reset_index(drop=True)
             .drop(columns='Output')
             )
+    ## ^^ Note that dropping rows can impact the trade contributions later
 
     drop_list = [
         # ('CHL', 'Motor vehicles, trailers and semi-trailers'),
@@ -47,7 +48,7 @@ def clean_gloria_M_matrix(M, fields_to_rename, **kwargs):
         # ('HKG', 'Plastic products'),
         # ('HKG', 'Quarrying of stone, sand and clay'),
         # ('HKG', 'Chemical and fertilizer minerals'),
-        ('SGP', 'Mining and quarrying n.e.c.; services to mining')
+        # ('SGP', 'Mining and quarrying n.e.c.; services to mining')
         ]
     for i in drop_list:
         print(f'Dropping outliers for {": ".join(i)}')

@@ -302,8 +302,7 @@ def map_mrio_countires(df):
     path = conPath / f'{source}_country_concordance.csv'
     codes = pd.read_csv(path, dtype=str, usecols=['Country', 'CountryCode'])
     df = df.merge(codes, on='Country', how='left', validate='m:1')
-    missing = (set(df[df.isnull().any(axis=1)]['Country'])
-               - set(codes['Country']))
+    missing = (set(df[df.isnull().any(axis=1)]['Country']))
     if len(missing) > 0:
         print(f'WARNING: missing countries in correspondence: {missing}')
 

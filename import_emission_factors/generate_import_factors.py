@@ -142,12 +142,21 @@ def generate_import_emission_factors(years: list, schema=2012, calc_tiva=False):
         missing = check_unique.query('source == "imports"').sort_values(by='BEA Summary')
         if(len(missing) > 0):
             print(f'WARNING: sectors with imports not found in MRIO: \n',
-                  f'{missing.drop(columns="source")}')
+                  f'{missing.drop(columns="source").to_string(index=False)}')
 
         ## NOTE: If in future more physical data are brought in, the code 
         ##       is unable to distinguish and sort out mismatches by detail/
         ##       summary sectors.
         multiplier_df = df_prepare(multiplier_df, year)
+        check = (multiplier_df
+                 .query('Flow == @multiplier_df["Flow"][0]')
+                 .groupby(['BEA Summary']).agg({'cntry_cntrb_to_national_summary':'sum'})
+                 .rename(columns={'cntry_cntrb_to_national_summary': 'contrib'})
+                 .query('contrib > 0 and contrib <= 0.9999')
+                 )
+        if(len(check) > 0):
+            print(f'WARNING: some sectors may have missing data: \n'
+                  f'{check.to_string(index=True)}')
         multiplier_df.to_csv(
             out_Path /f'multiplier_df_{source}_{year}_{str(schema)[-2:]}sch.csv', index=False)
         calculate_and_store_emission_factors(multiplier_df)

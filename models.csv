@@ -1,14 +1,14 @@
 Model,Version,Years,Alias,Modelspec,Excel,RDS,API,JSON,Status
-USEEIO v2.4.1-kingbird-17,2.4.1,2017,kingbird,,,,,,
-USEEIO v2.4.1-kingbird-18,2.4.1,2018,kingbird,,,,,,
-USEEIO v2.4.1-kingbird-19,2.4.1,2019,kingbird,,,,,,
-USEEIO v2.4.1-kingbird-20,2.4.1,2020,kingbird,,,,,,
-USEEIO v2.4.1-kingbird-21,2.4.1,2021,kingbird,,,,,,
-USEEIO v2.4.1-kingbird-22,2.4.1,2022,kingbird,,,,,,
-StateEEIO v1.2-pecan-YY,1.3.0,2012-2023,pecan,,,,,,draft
-StateEEIO v1.2-milkbar-YY,1.2.0,2012-2020,milkbar,,,,,,draft
-StateEEIO v1.2-shoofly-YY,1.2.0,2012-2020,shoofly,,,,,,draft
-USEEIO v2.4-yellowthroat-22,2.4.0,2022,yellowthroat,,,,,,draft
+USEEIO v2.5-kingbird-17,2.5,2017,kingbird,,,,,,draft
+USEEIO v2.5-kingbird-18,2.5,2018,kingbird,,,,,,draft
+USEEIO v2.5-kingbird-19,2.5,2019,kingbird,,,,,,draft
+USEEIO v2.5-kingbird-20,2.5,2020,kingbird,,,,,,draft
+USEEIO v2.5-kingbird-21,2.5,2021,kingbird,,,,,,draft
+USEEIO v2.5-kingbird-22,2.5,2022,kingbird,,,,,,draft
+StateEEIO v1.3-pecan-YY,1.3.0,2012-2023,pecan,,,,,,draft
+StateEEIO v1.2-milkbar-YY,1.2.0,2012-2020,milkbar,,,,,,internal
+StateEEIO v1.2-shoofly-YY,1.2.0,2012-2020,shoofly,,,,,,internal
+USEEIO v2.5-yellowthroat-22,2.5,2022,yellowthroat,,,,,,draft
 USEEIO v2.4-catbird-22,2.4.0,2022,catbird,[data.gov](https://catalog.data.gov/dataset/useeio-models-with-import-emission-factors-for-greenhouse-gases-for-2022-from-ceda-coupled),[data.gov](https://catalog.data.gov/dataset/useeio-models-with-import-emission-factors-for-greenhouse-gases-for-2022-from-ceda-coupled),N,N,N,published
 USEEIO v2.4-oriole-22,2.4.0,2022,oriole,[data.gov](https://catalog.data.gov/dataset/useeio-models-with-import-emission-factors-for-greenhouse-gases-for-2022-from-ceda-coupled),[data.gov](https://catalog.data.gov/dataset/useeio-models-with-import-emission-factors-for-greenhouse-gases-for-2022-from-ceda-coupled),N,N,N,published
 StateEEIO v1.1-GHG-12,1.1.0,2012,cherpumple,[USEEIO-State](https://github.com/USEPA/USEEIO-State/blob/main/model_specs/all_states/StateEEIOv1.1-GHG-12.yml),[data.gov](https://catalog.data.gov/dataset/northeastern-u-s-state-consumption-based-emission-inventories-2012-2020-supporting-files),USEEIO-State,N,N,published

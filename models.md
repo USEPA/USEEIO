@@ -1,7 +1,7 @@
 # Models
 
 The following table provides information on all USEEIO family models.
-More information for model given [aliases](#aliases) and [versions](#versions) can be found below.
+More information for model given [aliases](#aliases) and [versions](#versions---National-Models) can be found below.
 
 | Model                       | Version | Years | Alias        | Modelspec                                                                                                                               | Excel                                                                                                                                   | RDS          | API | JSON | Status    |
 |-----------------------------|---------|-------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------|-----|------|-----------|

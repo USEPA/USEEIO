@@ -2,6 +2,7 @@ Alias,N or S,C or I,Sector Schema,Model Type,Price Type,IEF source,Extentions,In
 pecan,S,C,BEA Summary 2017,EEIO,PRO,,,
 milkbar,S,C,"BEA Summary 2012, utility disaggregation",EEIO,PRO,n.a.,,
 shoofly,S,C,BEA Summary 2012,EEIO,PRO,n.a.,,
+waxwing,N,C,BEA Detail 2017,EEIO,PRO,GLORIA v59a,"GHG_national_m2_v2.0.3, Raw_material_extraction_national_v2.0.2","GHG (IPCC_AR6), MF-Bio, MF-Fossil, MF-Metal, MF-Mineral"
 yellowthroat,N,C,BEA Summary 2017,EEIO,PRO,GLORIA v59a,"GHG_national_m2_v2.0.3, Raw_material_extraction_national_v2.0.2","GHG (IPCC_AR6), MF-Bio, MF-Fossil, MF-Metal, MF-Mineral"
 catbird,N,C,BEA Detail 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
 oriole,N,C,BEA Summary 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)

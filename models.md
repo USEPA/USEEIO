@@ -1,12 +1,12 @@
 # Models
 
 The following table provides information on all USEEIO family models.
-More information for model given [aliases](#aliases) and [versions](#versions---National-Models) can be found below.
+More information for model given [aliases](#aliases) and [versions](#versions---national-models) can be found below.
 
 | Model                       | Version | Years | Alias        | Modelspec                                                                                                                               | Excel                                                                                                                                   | RDS          | API | JSON | Status    |
 |-----------------------------|---------|-------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------|-----|------|-----------|
-| USEEIO v2.5-kinglet-22      | 2.5     | 2022  | kinglet      | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | N            | N   | N    | published |
-| USEEIO v2.5-kingbird-17     | 2.5     | 2017  | kingbird     | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | N            | N   | N    | published |
+| USEEIO v2.5-kinglet-22      | 2.5     | 2022  | [kinglet][kinglet]       | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | N            | N   | N    | published |
+| USEEIO v2.5-kingbird-17     | 2.5     | 2017  | [kingbird][kingbird]     | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | N            | N   | N    | published |
 | USEEIO v2.5-kingbird-18     | 2.5     | 2018  | kingbird     | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | N            | N   | N    | published |
 | USEEIO v2.5-kingbird-19     | 2.5     | 2019  | kingbird     | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | N            | N   | N    | published |
 | USEEIO v2.5-kingbird-20     | 2.5     | 2020  | kingbird     | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | [data.gov](https://catalog.data.gov/dataset/useeio-v2-5-models)                                                                         | N            | N   | N    | published |
@@ -153,6 +153,9 @@ More information for model given [aliases](#aliases) and [versions](#versions---
 | gnatcatcher  | N      | I      | BEA Summary 2012                  | EEIO       | PRO        | n.a.        | NGHGIAM                                                                                                                                                                                                                                                                                            | GHG (TRACI)                                                                                                                                       |
 
 \* MF = Material Footprint, as defined in UNEP Global Material Footprint Database
+
+[kinglet]: ## "National, detail, 2017 schema, Exiobase IEFs"
+[kingbird]: ## "National, summary, 2017 schema, Exiobase IEFs"
 
 # Versions - National Models
 

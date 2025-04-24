@@ -154,8 +154,8 @@ More information for model given [aliases](#aliases) and [versions](#versions---
 
 \* MF = Material Footprint, as defined in UNEP Global Material Footprint Database
 
-[kinglet]: ## "National, detail, 2017 schema, Exiobase IEFs"
-[kingbird]: ## "National, summary, 2017 schema, Exiobase IEFs"
+[kinglet]: #aliases "National, detail, 2017 schema, Exiobase IEFs"
+[kingbird]: #aliases "National, summary, 2017 schema, Exiobase IEFs"
 
 # Versions - National Models
 

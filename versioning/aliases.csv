@@ -3,9 +3,9 @@ pecan,S,C,BEA Summary 2017,EEIO,PRO,EXIOBASE v3.8.2,GHG_state_m1_v2.0.5,GHG (IPC
 milkbar,S,C,"BEA Summary 2012, utility disaggregation",EEIO,PRO,n.a.,,
 shoofly,S,C,BEA Summary 2012,EEIO,PRO,n.a.,,
 waxwing,N,C,BEA Detail 2017,EEIO,PRO,GLORIA v59a,"GHG_national_m2_v2.0.3, Raw_material_extraction_national_v2.0.2","GHG (IPCC_AR6), MF-Bio, MF-Fossil, MF-Metal, MF-Mineral"
-yellowthroat,N,C,BEA Summary 2017,EEIO,PRO,GLORIA v59a,"GHG_national_m2_v2.0.3, Raw_material_extraction_national_v2.0.2","GHG (IPCC_AR6), MF-Bio, MF-Fossil, MF-Metal, MF-Mineral"
+yellowthroat,N,C,BEA Summary 2017,EEIO,PRO,GLORIA v59a,"GHG_national_m1_v2.0.3, Raw_material_extraction_national_v2.0.2","GHG (IPCC_AR6), MF-Bio, MF-Fossil, MF-Metal, MF-Mineral"
 catbird,N,C,BEA Detail 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
-oriole,N,C,BEA Summary 2017,EEIO,PRO,CEDA 2024,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)
+oriole,N,C,BEA Summary 2017,EEIO,PRO,CEDA 2024,GHG_national_m1_v2.0.3,GHG (IPCC_AR6)
 cherpumple,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE v3.8.2,GHG_state_m1_v2.0.0,GHG (IPCC_AR6)
 derby,S,C,BEA Summary 2012,EEIO,PRO,EXIOBASE v3.8.2,GHGc_state_[ME]_v2.0.3,GHG (IPCC_AR6)
 kinglet,N,C,BEA Detail 2017,EEIO,PRO,EXIOBASE v3.8.2,GHG_national_m2_v2.0.3,GHG (IPCC_AR6)

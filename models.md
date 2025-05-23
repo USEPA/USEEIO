@@ -127,7 +127,7 @@ More information for model given [aliases](#aliases) and [versions](#versions---
 | USEEIOv2.0.15-is-GHG        | 2.0.0   | 2015  | [gnatcatcher](#aliases)  | [supply-chain-factors](https://github.com/USEPA/supply-chain-factors/tree/v1.1.1/model-specs)                                           | N                                                                                                                                       | N            | N   | N    | published |
 | USEEIOv2.0.16-is-GHG        | 2.0.0   | 2016  | [gnatcatcher](#aliases)  | [supply-chain-factors](https://github.com/USEPA/supply-chain-factors/tree/v1.1.1/model-specs)                                           | N                                                                                                                                       | N            | N   | N    | published |
 
-[^1] USEEIO v2.5-waxwing-22 was erroneously published with an incorrect extension. It has been replaced by USEEIO v2.5.1-waxwing-22.
+[^1]: USEEIO v2.5-waxwing-22 was erroneously published with an incorrect extension. It has been replaced by USEEIO v2.5.1-waxwing-22.
 
 # Aliases
 
@@ -154,7 +154,7 @@ More information for model given [aliases](#aliases) and [versions](#versions---
 | martin       | N      | I      | BEA Detail 2012                   | EEIO       | PRO        | n.a.        | NGHGIAM                                                                                                                                                                                                                                                                                            | GHG (TRACI)                                                                                                                                       |
 | gnatcatcher  | N      | I      | BEA Summary 2012                  | EEIO       | PRO        | n.a.        | NGHGIAM                                                                                                                                                                                                                                                                                            | GHG (TRACI)                                                                                                                                       |
 
-[^MF] MF = Material Footprint, as defined in UNEP Global Material Footprint Database
+[^MF]: MF = Material Footprint, as defined in UNEP Global Material Footprint Database
 
 # Versions - National Models
 

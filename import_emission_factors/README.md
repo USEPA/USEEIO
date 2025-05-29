@@ -71,6 +71,7 @@ Store this as 'BEA_API_key.yaml' in the API subfolder of the import_emission_fac
 - esupy
 - fedelemflowlist
 - [currencyconverter](https://pypi.org/project/CurrencyConverter/)
+- openpyxl
 - pymrio
 
 ## MRIO Schema

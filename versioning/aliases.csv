@@ -1,4 +1,5 @@
 Alias,N or S,C or I,Sector Schema,Model Type,Price Type,IEF source,Extentions,Indicators
+phoebe,N,C,BEA Detail 2017,EEIO,PRO,n.a.,GHG_national_m2_v2.1.0,GHG (IPCC_AR6)
 pecan,S,C,BEA Summary 2017,EEIO,PRO,EXIOBASE v3.8.2,GHG_state_m1_v2.0.5,GHG (IPCC_AR6)
 milkbar,S,C,"BEA Summary 2012, utility disaggregation",EEIO,PRO,n.a.,,
 shoofly,S,C,BEA Summary 2012,EEIO,PRO,n.a.,,
